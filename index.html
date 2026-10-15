@@ -541,6 +541,68 @@ ul { list-style: none; }
   padding: 18px 24px; text-align: center;
   font-size: 0.75rem; color: rgba(255,255,255,.25);
 }
+.ft-emergency h4 { color: #E07A5F; font-size: 0.92rem; margin-bottom: 8px; }
+.ft-emergency p { font-size: 0.8rem; color: var(--sand); line-height: 1.8; }
+.ft-emergency strong { color: var(--white); }
+
+/* =====================================================
+   POCKET TRAVEL TOOLS (SURVIVAL CHINESE & CHECKLIST)
+   ===================================================== */
+.pocket-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; margin-top: 24px; }
+.zh-card {
+  background: var(--white); border: 1.5px solid var(--border);
+  border-radius: var(--radius-md); padding: 18px 20px;
+  box-shadow: var(--shadow-sm); display: flex; flex-direction: column; justify-content: space-between;
+  gap: 12px; transition: var(--transition);
+}
+.zh-card:hover { border-color: var(--terracotta); transform: translateY(-2px); box-shadow: var(--shadow-md); }
+.zh-header { display: flex; justify-content: space-between; align-items: flex-start; }
+.zh-th { font-size: 0.88rem; font-weight: 700; color: var(--text-dark); }
+.zh-tag { font-size: 0.68rem; padding: 2px 8px; border-radius: 4px; background: rgba(192,107,58,0.1); color: var(--terracotta); font-weight: 600; }
+.zh-main { background: #FAF5EF; border-radius: 8px; padding: 14px; text-align: center; border: 1px dashed var(--sand); }
+.zh-text { font-size: 1.6rem; font-weight: 700; color: #B33927; font-family: 'Noto Serif SC', 'Songti SC', serif; letter-spacing: 1px; }
+.zh-pinyin { font-size: 0.78rem; color: var(--text-muted); margin-top: 4px; }
+.zh-actions { display: flex; gap: 8px; }
+.btn-pocket {
+  flex: 1; padding: 8px 12px; border-radius: 6px; font-size: 0.76rem; font-weight: 600;
+  cursor: pointer; border: 1px solid var(--border); background: var(--white); color: var(--text-dark);
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px; transition: var(--transition);
+}
+.btn-pocket:hover { background: var(--cream-2); border-color: var(--sand-dark); }
+.btn-pocket.btn-primary { background: var(--terracotta); color: var(--white); border-color: var(--terracotta); }
+.btn-pocket.btn-primary:hover { background: var(--terra-dark); }
+
+/* BIG TEXT MODAL */
+.big-modal {
+  display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.88);
+  z-index: 9999; align-items: center; justify-content: center; padding: 24px;
+}
+.big-modal.open { display: flex; animation: fadeIn 0.2s ease; }
+.big-modal-content {
+  background: var(--white); padding: 40px 28px; border-radius: var(--radius-xl);
+  max-width: 500px; width: 100%; text-align: center; position: relative;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+}
+.big-modal-close {
+  position: absolute; top: 16px; right: 16px; background: #EEE; border: none;
+  width: 36px; height: 36px; border-radius: 50%; font-size: 1.2rem; cursor: pointer;
+}
+.big-modal-th { font-size: 1rem; color: var(--text-muted); margin-bottom: 12px; }
+.big-modal-zh { font-size: clamp(2.4rem, 8vw, 3.8rem); font-weight: 800; color: #B33927; line-height: 1.2; margin-bottom: 8px; }
+.big-modal-pinyin { font-size: 1rem; color: var(--text-mid); }
+.big-modal-hint { margin-top: 20px; font-size: 0.78rem; color: var(--sand-dark); border-top: 1px solid #EEE; padding-top: 14px; }
+
+/* CHECKLIST */
+.checklist-wrap { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 24px; margin-top: 24px; }
+.check-item { display: flex; align-items: flex-start; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--cream-3); cursor: pointer; }
+.check-item:last-child { border-bottom: none; }
+.check-box { width: 22px; height: 22px; border: 2px solid var(--sand-dark); border-radius: 6px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; transition: var(--transition); }
+.check-item.done .check-box { background: var(--forest); border-color: var(--forest); }
+.check-item.done .check-box::after { content: '✓'; color: #FFF; font-size: 13px; font-weight: bold; }
+.check-item.done .check-title { text-decoration: line-through; color: var(--text-muted); }
+.check-title { font-size: 0.88rem; font-weight: 600; color: var(--text-dark); }
+.check-sub { font-size: 0.74rem; color: var(--text-muted); margin-top: 2px; }
+
 
 /* =====================================================
    RESPONSIVE — Tablet (≤1024px)
@@ -743,6 +805,7 @@ ul { list-style: none; }
     </div>
     <ul class="nav-links">
       <li><a href="#itinerary"  class="nav-link">กำหนดการ</a></li>
+      <li><a href="#pocket-tools" class="nav-link">🇨🇳 ภาษาจีน/ยื่นดู</a></li>
       <li><a href="#overview"   class="nav-link">ภาพรวม</a></li>
       <li><a href="#highlights" class="nav-link">ไฮไลท์</a></li>
       <li><a href="#budget"     class="nav-link">งบประมาณ</a></li>
@@ -1325,6 +1388,221 @@ ul { list-style: none; }
   </div>
 </section>
 
+<!-- ============ POCKET TRAVEL TOOLS ============ -->
+<section id="pocket-tools" class="section section-alt">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">ใช้จริงหน้างาน</span>
+      <h2 class="section-title">🇨🇳 ภาษาจีนเอาตัวรอด &amp; ยื่นดูตัวโต</h2>
+      <p class="section-desc">กดปุ่ม <strong>"ขยายตัวโต"</strong> เพื่อยื่นหน้าจอให้คนขับแท็กซี่หรือคนขายดูได้ทันที หรือกด <strong>"คัดลอก"</strong> ไปวางในแอปแผนที่จีน (Amap / 高德地图)</p>
+    </div>
+
+    <div class="pocket-grid">
+      <!-- 1 -->
+      <div class="zh-card">
+        <div class="zh-header">
+          <span class="zh-th">โรงแรมเติงหาง (คุนหมิง)</span>
+          <span class="zh-tag">โรงแรม</span>
+        </div>
+        <div class="zh-main">
+          <div class="zh-text">腾航酒店</div>
+          <div class="zh-pinyin">Téng háng jiǔdiàn (โรงแรมพักรอต่อเครื่อง)</div>
+        </div>
+        <div class="zh-actions">
+          <button class="btn-pocket" onclick="copyText('昆明长水国际机场腾航酒店')">📋 คัดลอก</button>
+          <button class="btn-pocket btn-primary" onclick="showBig('โรงแรมเติงหาง (คุนหมิง)', '腾航酒店', 'Téng háng jiǔdiàn')">🔍 ขยายตัวโต</button>
+        </div>
+      </div>
+
+      <!-- 2 -->
+      <div class="zh-card">
+        <div class="zh-header">
+          <span class="zh-th">โฮมสเตย์หลงลั่วเหอ (ลี่เจียง)</span>
+          <span class="zh-tag">โรงแรม</span>
+        </div>
+        <div class="zh-main">
+          <div class="zh-text">龙络河客栈</div>
+          <div class="zh-pinyin">Lóng luò hé kèzhàn (พักคืนแรก ลี่เจียง)</div>
+        </div>
+        <div class="zh-actions">
+          <button class="btn-pocket" onclick="copyText('丽江龙络河客栈')">📋 คัดลอก</button>
+          <button class="btn-pocket btn-primary" onclick="showBig('โฮมสเตย์หลงลั่วเหอ', '龙络河客栈', 'Lóng luò hé kèzhàn')">🔍 ขยายตัวโต</button>
+        </div>
+      </div>
+
+      <!-- 3 -->
+      <div class="zh-card">
+        <div class="zh-header">
+          <span class="zh-th">โรงแรม Qiyue Linyin Bieyuan (เมืองเก่าลี่เจียง)</span>
+          <span class="zh-tag">จุดฝากกระเป๋า</span>
+        </div>
+        <div class="zh-main">
+          <div class="zh-text">栖跃林荫别院·木府店</div>
+          <div class="zh-pinyin">Qī yuè línyīn biéyuàn (สาขา Mufu)</div>
+        </div>
+        <div class="zh-actions">
+          <button class="btn-pocket" onclick="copyText('栖跃林荫别院·木府店')">📋 คัดลอก</button>
+          <button class="btn-pocket btn-primary" onclick="showBig('โรงแรม Qiyue (จุดฝากกระเป๋า)', '栖跃林荫别院·木府店', 'Qī yuè línyīn biéyuàn')">🔍 ขยายตัวโต</button>
+        </div>
+      </div>
+
+      <!-- 4 -->
+      <div class="zh-card">
+        <div class="zh-header">
+          <span class="zh-th">สถานีขนส่งลี่เจียง (ซื้อตั๋วไปเฉียวโถว)</span>
+          <span class="zh-tag">สถานีขนส่ง</span>
+        </div>
+        <div class="zh-main">
+          <div class="zh-text">丽江客运站</div>
+          <div class="zh-pinyin">Lìjiāng kèyùn zhàn (ไปซื้อตั๋วก่อน 18:30)</div>
+        </div>
+        <div class="zh-actions">
+          <button class="btn-pocket" onclick="copyText('丽江客运站')">📋 คัดลอก</button>
+          <button class="btn-pocket btn-primary" onclick="showBig('สถานีขนส่งลี่เจียง', '丽江客运站', 'Lìjiāng kèyùn zhàn')">🔍 ขยายตัวโต</button>
+        </div>
+      </div>
+
+      <!-- 5 -->
+      <div class="zh-card">
+        <div class="zh-header">
+          <span class="zh-th">ซื้อตั๋วรถบัส: ไปสะพานเฉียวโถว</span>
+          <span class="zh-tag">บอกคนขายตั๋ว</span>
+        </div>
+        <div class="zh-main">
+          <div class="zh-text">买去桥头的车票</div>
+          <div class="zh-pinyin">Mǎi qù Qiáotóu de chēpiào (ซื้อตั๋วไปเฉียวโถว)</div>
+        </div>
+        <div class="zh-actions">
+          <button class="btn-pocket" onclick="copyText('你好，我想买去桥头的客车票两张')">📋 คัดลอก</button>
+          <button class="btn-pocket btn-primary" onclick="showBig('บอกคนขายตั๋วบัส', '买去桥头的票 2张', 'Mǎi qù Qiáotóu de piào liǎng zhāng')">🔍 ขยายตัวโต</button>
+        </div>
+      </div>
+
+      <!-- 6 -->
+      <div class="zh-card">
+        <div class="zh-header">
+          <span class="zh-th">จุดเริ่มเดินเทรค Tiger Leaping Gorge</span>
+          <span class="zh-tag">จุดเทรคกิ้ง</span>
+        </div>
+        <div class="zh-main">
+          <div class="zh-text">虎跳峡高路徒步</div>
+          <div class="zh-pinyin">Hǔ tiào xiá gāolù túbù (High Trail)</div>
+        </div>
+        <div class="zh-actions">
+          <button class="btn-pocket" onclick="copyText('虎跳峡高路徒步入口')">📋 คัดลอก</button>
+          <button class="btn-pocket btn-primary" onclick="showBig('ไปจุดเริ่ม High Trail', '我要去虎跳峡高路入口', 'Wǒ yào qù Hǔ tiào xiá gāolù rùkǒu')">🔍 ขยายตัวโต</button>
+        </div>
+      </div>
+
+      <!-- 7 -->
+      <div class="zh-card">
+        <div class="zh-header">
+          <span class="zh-th">ที่พักคืนเทรคกิ้ง (Summit Inn)</span>
+          <span class="zh-tag">โรงแรมบนเขา</span>
+        </div>
+        <div class="zh-main">
+          <div class="zh-text">虎跳峡峰臻山舍</div>
+          <div class="zh-pinyin">Summit Inn (ที่พักชมวิวมุมสูง)</div>
+        </div>
+        <div class="zh-actions">
+          <button class="btn-pocket" onclick="copyText('虎跳峡峰臻山舍')">📋 คัดลอก</button>
+          <button class="btn-pocket btn-primary" onclick="showBig('โรงแรม Summit Inn', '虎跳峡峰臻山舍', 'Hǔ tiào xiá Fēng zhēn shān shè')">🔍 ขยายตัวโต</button>
+        </div>
+      </div>
+
+      <!-- 8 -->
+      <div class="zh-card">
+        <div class="zh-header">
+          <span class="zh-th">โรงแรมแชงกรี-ลา (2 คืน)</span>
+          <span class="zh-tag">โรงแรม</span>
+        </div>
+        <div class="zh-main">
+          <div class="zh-text">香格里拉大酒店</div>
+          <div class="zh-pinyin">โรงแรมในเมืองโบราณตู๋เค่อจง</div>
+        </div>
+        <div class="zh-actions">
+          <button class="btn-pocket" onclick="copyText('独克宗古城')">📋 คัดลอก</button>
+          <button class="btn-pocket btn-primary" onclick="showBig('เมืองโบราณแชงกรี-ลา', '独克宗古城', 'Dú kè zōng gǔchéng')">🔍 ขยายตัวโต</button>
+        </div>
+      </div>
+
+      <!-- 9 -->
+      <div class="zh-card">
+        <div class="zh-header">
+          <span class="zh-th">สถานีรถไฟความเร็วสูงแชงกรี-ลา</span>
+          <span class="zh-tag">สถานีรถไฟ</span>
+        </div>
+        <div class="zh-main">
+          <div class="zh-text">香格里拉站</div>
+          <div class="zh-pinyin">Xiānggélǐlā Zhàn (ขึ้นรถไฟ C-638)</div>
+        </div>
+        <div class="zh-actions">
+          <button class="btn-pocket" onclick="copyText('香格里拉站')">📋 คัดลอก</button>
+          <button class="btn-pocket btn-primary" onclick="showBig('สถานีรถไฟแชงกรี-ลา', '香格里拉站', 'Xiānggélǐlā Zhàn')">🔍 ขยายตัวโต</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- DAILY CRITICAL CHECKLIST -->
+    <div class="checklist-wrap">
+      <h3 style="font-size:1.15rem; font-weight:700; color:var(--text-dark); margin-bottom:12px;">✅ Check-list จุดสำคัญห้ามพลาด (แตะเพื่อติ๊กบันทึก)</h3>
+      <p style="font-size:0.8rem; color:var(--text-muted); margin-bottom:16px;">ข้อมูลที่ติ๊กจะจำไว้ในเครื่องอัตโนมัติ ไม่หายเมื่อปิดหน้าเว็บ</p>
+
+      <div class="check-item" onclick="toggleCheck(this, 'c1')">
+        <div class="check-box"></div>
+        <div>
+          <div class="check-title">25 ต.ค. (คุนหมิง): ต้องรับกระเป๋าใหญ่ 20 กก. ออกมาผ่านศุลกากรเสมอ (ไม่ Check-through)</div>
+          <div class="check-sub">เมื่อถึงคุนหมิงต้องรับกระเป๋าออกมาและไปฝากไว้ที่โรงแรมเติงหาง</div>
+        </div>
+      </div>
+
+      <div class="check-item" onclick="toggleCheck(this, 'c2')">
+        <div class="check-box"></div>
+        <div>
+          <div class="check-title">26 ต.ค. (ลี่เจียง): ซื้อตั๋วรถบัสไปสะพานเฉียวโถวที่สถานีขนส่งก่อนเวลา 18:30 น.</div>
+          <div class="check-sub">เดินไปซื้อที่สถานีขนส่งลี่เจียง (丽江客运站) เพื่อใช้เดินทางเช้าวันรุ่งขึ้น</div>
+        </div>
+      </div>
+
+      <div class="check-item" onclick="toggleCheck(this, 'c3')">
+        <div class="check-box"></div>
+        <div>
+          <div class="check-title">27 ต.ค. (เช้าออกเดินทาง): ฝากกระเป๋าเดินทางใหญ่ 20 กก. ไว้ที่โรงแรม Qiyue</div>
+          <div class="check-sub">นำเฉพาะเป้เล็ก 20–25L ขึ้นเทรคกิ้ง 4 วัน ไม่แบกกระเป๋าใหญ่ขึ้นเขาเด็ดขาด</div>
+        </div>
+      </div>
+
+      <div class="check-item" onclick="toggleCheck(this, 'c4')">
+        <div class="check-box"></div>
+        <div>
+          <div class="check-title">28 ต.ค. (Tina's GH): นัดรถบัส/แท็กซี่ต่อไปแชงกรี-ลาล่วงหน้าตอนถึง Tina's</div>
+          <div class="check-sub">จองรถรอบบ่ายเพื่อเข้าเมืองเก่าตู๋เค่อจง แชงกรี-ลา</div>
+        </div>
+      </div>
+
+      <div class="check-item" onclick="toggleCheck(this, 'c5')">
+        <div class="check-box"></div>
+        <div>
+          <div class="check-title">30 ต.ค. (บ่าย): รับกระเป๋าใหญ่ที่ฝากไว้คืนที่โรงแรม Qiyue ลี่เจียง</div>
+          <div class="check-sub">หลังลงจากรถไฟ C-638 แวะรับกระเป๋าก่อนนั่ง Airport Bus ไปสนามบิน LJG</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- BIG TEXT POPUP MODAL -->
+<div class="big-modal" id="bigModal" onclick="closeBig()">
+  <div class="big-modal-content" onclick="event.stopPropagation()">
+    <button class="big-modal-close" onclick="closeBig()">✕</button>
+    <div class="big-modal-th" id="bmTh">สถานที่</div>
+    <div class="big-modal-zh" id="bmZh">中文</div>
+    <div class="big-modal-pinyin" id="bmPinyin">Pinyin</div>
+    <div class="big-modal-hint">📱 ยื่นหน้าจอนี้ให้คนขับรถ หรือคนท้องถิ่นดูได้เลย</div>
+  </div>
+</div>
+
 <!-- ============ OVERVIEW ============ -->
 <section id="overview" class="section">
   <div class="container">
@@ -1618,11 +1896,15 @@ ul { list-style: none; }
       <p>🛫 MU-9614, MU-5923, MU-5922, MU-9621</p>
       <p>🗺️ คุนหมิง — ลี่เจียง — Tiger Leaping Gorge — แชงกรี-ลา</p>
     </div>
-    <div>
-      <p class="ft-quote">"ไม่ใช่จุดหมายปลายทาง แต่คือการเดินทางที่ทำให้ชีวิตมีความหมาย"</p>
+    <div class="ft-emergency">
+      <h4>🚨 เบอร์ฉุกเฉินในจีน</h4>
+      <p><strong>110:</strong> ตำรวจ (Police)</p>
+      <p><strong>120:</strong> รถพยาบาล / แพทย์ฉุกเฉิน</p>
+      <p><strong>+86-10-8532-4004:</strong> สถานทูตไทย ณ กรุงปักกิ่ง</p>
+      <p><strong>+86-871-6316-6669:</strong> สถานกงสุลใหญ่ ณ นครคุนหมิง</p>
     </div>
   </div>
-  <div class="footer-bar">ยูนนาน 2569</div>
+  <div class="footer-bar">ยูนนาน 2026 — Pocket Travel Guide</div>
 </footer>
 
 <script>
@@ -1714,6 +1996,42 @@ window.addEventListener('scroll', () => {
     l.classList.toggle('active-link', l.getAttribute('href') === `#${cur}`);
   });
 }, { passive: true });
+// SURVIVAL CHINESE & MODAL
+function copyText(str) {
+  navigator.clipboard.writeText(str).then(() => {
+    alert('📋 คัดลอกเรียบร้อย: ' + str + '\n(นำไปวางใน Amap / Baidu Maps ได้เลย)');
+  }).catch(() => {
+    prompt('กด Ctrl+C เพื่อคัดลอกข้อความนี้:', str);
+  });
+}
+
+function showBig(th, zh, pinyin) {
+  document.getElementById('bmTh').textContent = th;
+  document.getElementById('bmZh').textContent = zh;
+  document.getElementById('bmPinyin').textContent = pinyin;
+  document.getElementById('bigModal').classList.add('open');
+}
+
+function closeBig() {
+  document.getElementById('bigModal').classList.remove('open');
+}
+
+// CHECKLIST LOCAL STORAGE
+function toggleCheck(el, key) {
+  el.classList.toggle('done');
+  const isDone = el.classList.contains('done');
+  localStorage.setItem('yunnan_check_' + key, isDone ? '1' : '0');
+}
+
+// LOAD SAVED CHECKLIST STATE
+document.addEventListener('DOMContentLoaded', () => {
+  ['c1', 'c2', 'c3', 'c4', 'c5'].forEach(key => {
+    if (localStorage.getItem('yunnan_check_' + key) === '1') {
+      const item = document.querySelector(`[onclick*="'${key}'"]`);
+      if (item) item.classList.add('done');
+    }
+  });
+});
 </script>
 </body>
 </html>
