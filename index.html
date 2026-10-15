@@ -1666,19 +1666,21 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
 });
 
 // SCROLL ANIMATIONS
-const io = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
-  });
-}, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+if ('IntersectionObserver' in window) {
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.05, rootMargin: '50px' });
 
-document.querySelectorAll(
-  '.info-card, .hl-card, .bl-item, .tip-card, .route-stop, .tl-card, .budget-total'
-).forEach((el, i) => {
-  el.style.cssText += `opacity:0;transform:translateY(20px);transition:opacity .5s ease ${i*0.05}s, transform .5s ease ${i*0.05}s`;
-  io.observe(el);
-});
-document.head.insertAdjacentHTML('beforeend', '<style>.in{opacity:1!important;transform:translateY(0)!important}</style>');
+  document.querySelectorAll(
+    '.info-card, .hl-card, .bl-item, .tip-card, .route-stop, .tl-card, .budget-total'
+  ).forEach((el, i) => {
+    el.classList.add('fade-ready');
+    io.observe(el);
+  });
+}
+document.head.insertAdjacentHTML('beforeend', '<style>.fade-ready{opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .5s ease}.in{opacity:1!important;transform:translateY(0)!important}</style>');
 
 // BUDGET BAR ANIMATION
 const barObs = new IntersectionObserver((entries) => {
