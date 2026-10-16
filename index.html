@@ -118,7 +118,8 @@ ul { list-style: none; }
    ===================================================== */
 #hero {
   position: relative; height: 100vh; min-height: 680px;
-  display: flex; align-items: flex-end;
+  display: flex; flex-direction: column; justify-content: space-between;
+  padding-top: 86px;
   overflow: hidden;
 }
 .hero-bg { position: absolute; inset: 0; }
@@ -140,11 +141,15 @@ ul { list-style: none; }
     transparent 100%
   );
 }
+.hero-top-route {
+  position: relative; z-index: 2;
+  width: 100%;
+}
 .hero-content {
   position: relative; z-index: 2;
-  width: 100%; padding: 0 0 72px;
+  width: 100%; padding: 0 0 54px;
 }
-.hero-content .container { display: flex; align-items: flex-end; justify-content: space-between; gap: 32px; }
+.hero-content .container { display: flex; align-items: flex-end; justify-content: flex-start; }
 
 .hero-text { max-width: 620px; }
 .hero-eyebrow {
@@ -192,15 +197,18 @@ ul { list-style: none; }
 .hero-cta:hover svg { transform: translateX(4px); }
 
 .hero-route-box {
-  background: rgba(255, 255, 255, 0.88);
-  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  padding: 18px 24px 10px;
+  padding: 14px 28px 10px;
   box-shadow: var(--shadow-md);
-  max-width: 520px;
   width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
+.hero-route-box::-webkit-scrollbar { display: none; }
 .hero-route-box .route-wrap {
   margin-bottom: 0;
 }
@@ -240,16 +248,18 @@ ul { list-style: none; }
    ROUTE
    ===================================================== */
 .route-wrap {
-  display: flex; align-items: center; justify-content: center;
-  gap: 0; flex-wrap: wrap; row-gap: 16px; margin-bottom: 32px;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 0; flex-wrap: nowrap !important;
+  width: 100%; min-width: 560px; margin-bottom: 0;
 }
 .route-stop {
-  display: flex; flex-direction: column; align-items: center; gap: 6px;
+  display: flex; flex-direction: column; align-items: center; gap: 4px;
+  flex-shrink: 0; text-align: center;
 }
 .rs-bubble {
-  width: 54px; height: 54px; border-radius: 50%;
+  width: 50px; height: 50px; border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
-  font-size: 1.4rem;
+  font-size: 1.35rem;
   background: var(--white); border: 2px solid var(--border-strong);
   box-shadow: var(--shadow-sm); transition: var(--transition);
 }
@@ -257,11 +267,11 @@ ul { list-style: none; }
 .route-stop:last-child  .rs-bubble {
   border-color: var(--terracotta); background: rgba(192,107,58,.06);
 }
-.route-stop:hover .rs-bubble { transform: scale(1.12); border-color: var(--terracotta); }
-.rs-name { font-size: 0.78rem; font-weight: 600; color: var(--text-dark); }
-.rs-date { font-size: 0.68rem; color: var(--text-muted); }
+.route-stop:hover .rs-bubble { transform: scale(1.1); border-color: var(--terracotta); }
+.rs-name { font-size: 0.78rem; font-weight: 600; color: var(--text-dark); white-space: nowrap; }
+.rs-date { font-size: 0.68rem; color: var(--text-muted); white-space: nowrap; }
 .route-line {
-  flex: 1; min-width: 28px; padding-bottom: 28px;
+  flex: 1; min-width: 18px; padding-bottom: 22px;
   display: flex; align-items: center;
 }
 .route-line-inner {
@@ -645,7 +655,7 @@ ul { list-style: none; }
   .nav-link { font-size: 1rem; padding: 12px 18px; border-radius: var(--radius-sm); }
 
   /* HERO */
-  #hero { min-height: 100svh; align-items: flex-end; }
+  #hero { min-height: 100svh; padding-top: 76px; justify-content: space-between; }
   .hero-overlay {
     background: linear-gradient(
       to top,
@@ -655,28 +665,25 @@ ul { list-style: none; }
       transparent 100%
     );
   }
-  .hero-content { padding: 0 0 48px; }
-  .hero-content .container {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 20px;
-  }
-  .hero-title { font-size: clamp(2.6rem, 12vw, 4rem); }
-  .hero-title-sub { font-size: 1rem; }
+  .hero-top-route { padding-top: 8px; }
   .hero-route-box {
-    max-width: 100%;
-    padding: 14px 16px 8px;
+    padding: 12px 14px 8px;
+    border-radius: var(--radius-md);
   }
+  .hero-content { padding: 0 0 36px; }
+  .hero-title { font-size: clamp(2.4rem, 11vw, 3.8rem); }
+  .hero-title-sub { font-size: 0.95rem; }
 
   /* SECTION */
   .section { padding: 56px 0; }
   .section-header { margin-bottom: 36px; }
 
   /* ROUTE */
-  .route-wrap { gap: 0; overflow-x: auto; flex-wrap: nowrap; justify-content: flex-start; padding: 0 8px 12px; }
-  .route-stop { min-width: 72px; }
+  .route-wrap { min-width: 500px; padding: 0 4px; }
+  .rs-bubble { width: 42px; height: 42px; font-size: 1.15rem; }
   .rs-name { font-size: 0.7rem; }
-  .route-line { min-width: 20px; }
+  .rs-date { font-size: 0.62rem; }
+  .route-line { min-width: 14px; padding-bottom: 20px; }
 
   /* HIGHLIGHTS */
   .hl-card { min-width: 155px; }
@@ -726,11 +733,16 @@ ul { list-style: none; }
   .section-desc { font-size: 0.88rem; }
 
   /* HERO */
-  .hero-content { padding: 0 0 36px; }
+  .hero-content { padding: 0 0 28px; }
   .hero-title { font-size: clamp(2.2rem, 14vw, 3rem); }
   .hero-eyebrow { font-size: 0.7rem; padding: 5px 12px; }
   .hero-cta { padding: 12px 22px; font-size: 0.85rem; }
-  .hero-route-box { padding: 12px 12px 6px; }
+  .hero-route-box { padding: 10px 10px 6px; }
+  .route-wrap { min-width: 440px; }
+  .rs-bubble { width: 38px; height: 38px; font-size: 1.05rem; }
+  .rs-name { font-size: 0.64rem; }
+  .rs-date { font-size: 0.58rem; }
+  .route-line { min-width: 10px; padding-bottom: 18px; }
 
   /* HIGHLIGHTS */
   .hl-card { min-width: 145px; aspect-ratio: 3/4; }
@@ -802,22 +814,9 @@ ul { list-style: none; }
     <img src="images/lijiang_hero.jpg" alt="เมืองเก่าลี่เจียง" class="hero-img" />
     <div class="hero-overlay"></div>
   </div>
-  <div class="hero-content">
+  <!-- ROUTE BAR ON TOP (แถวเดียวบนสุด) -->
+  <div class="hero-top-route">
     <div class="container">
-      <div class="hero-text">
-        <div class="hero-eyebrow">
-          <span class="dot"></span>
-          24 – 31 ตุลาคม 2569 &nbsp;|&nbsp; 8 วัน 7 คืน
-        </div>
-        <h1 class="hero-title">ยูนนาน<br/>2026</h1>
-        <p class="hero-title-sub">ลี่เจียง — Tiger Leaping Gorge — แชงกรี-ลา</p>
-        <a href="#itinerary" class="hero-cta">
-          ดูกำหนดการเดินทาง
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-      </div>
-      
-      <!-- ROUTE ON TOP -->
       <div class="hero-route-box">
         <div class="route-wrap">
           <div class="route-stop">
@@ -856,6 +855,23 @@ ul { list-style: none; }
             <span class="rs-date">31 ต.ค.</span>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-content">
+    <div class="container">
+      <div class="hero-text">
+        <div class="hero-eyebrow">
+          <span class="dot"></span>
+          24 – 31 ตุลาคม 2569 &nbsp;|&nbsp; 8 วัน 7 คืน
+        </div>
+        <h1 class="hero-title">ยูนนาน<br/>2026</h1>
+        <p class="hero-title-sub">ลี่เจียง — Tiger Leaping Gorge — แชงกรี-ลา</p>
+        <a href="#itinerary" class="hero-cta">
+          ดูกำหนดการเดินทาง
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
       </div>
     </div>
   </div>
