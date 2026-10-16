@@ -800,7 +800,6 @@ ul { list-style: none; }
     <ul class="nav-links">
       <li><a href="#itinerary"  class="nav-link">กำหนดการ</a></li>
       <li><a href="#highlights" class="nav-link">ไฮไลท์</a></li>
-      <li><a href="#budget"     class="nav-link">งบประมาณ</a></li>
     </ul>
     <button class="nav-toggle" id="navToggle" aria-label="เปิดเมนู">
       <span></span><span></span><span></span>
@@ -1466,97 +1465,7 @@ ul { list-style: none; }
   </div>
 </section>
 
-<!-- ============ BUDGET ============ -->
-<section id="budget" class="section section-alt">
-  <div class="container">
-    <div class="section-header">
-      <span class="section-label">งบประมาณ</span>
-      <h2 class="section-title">สรุปค่าใช้จ่าย</h2>
-      <p class="section-desc">คำนวณต่อคนสำหรับ 2 ท่าน อัตราแลกเปลี่ยน 1 หยวน ≈ 5 บาท</p>
-    </div>
-    <div class="budget-hero">
-      <div class="budget-total">
-        <div class="bt-sub">ค่าใช้จ่ายรวม 2 คน</div>
-        <div class="bt-num">฿ 30,388</div>
-        <div class="bt-per">เฉลี่ยต่อคน <strong>฿ 15,194</strong></div>
-      </div>
-    </div>
-    <div class="budget-list">
-      <div class="bl-item">
-        <div class="bl-icon">✈️</div>
-        <div class="bl-info">
-          <span class="bl-cat">ตั๋วเครื่องบิน</span>
-          <span class="bl-desc">China Eastern BKK ⇄ KMG ⇄ LJG ไป-กลับ (ชำระแล้ว)</span>
-        </div>
-        <div class="bl-amounts">
-          <span class="bl-total">฿ 16,252</span>
-          <span class="bl-per-text">฿ 8,126 / คน</span>
-        </div>
-        <div class="bl-bar-row"><div class="bl-fill" style="width:0%" data-target="53.5%"></div></div>
-      </div>
-      <div class="bl-item">
-        <div class="bl-icon">🏨</div>
-        <div class="bl-info">
-          <span class="bl-cat">ที่พัก</span>
-          <span class="bl-desc">5 คืน (KMG, โฮมสเตย์ LJG, Summit Inn, แชงกรี-ลา 2 คืน, Qiyue)</span>
-        </div>
-        <div class="bl-amounts">
-          <span class="bl-total">฿ 3,353</span>
-          <span class="bl-per-text">฿ 1,677 / คน</span>
-        </div>
-        <div class="bl-bar-row"><div class="bl-fill" style="width:0%" data-target="11%"></div></div>
-      </div>
-      <div class="bl-item">
-        <div class="bl-icon">🍜</div>
-        <div class="bl-info">
-          <span class="bl-cat">อาหารและเครื่องดื่ม</span>
-          <span class="bl-desc">ทุกมื้อตลอด 8 วัน รวม Layover คุนหมิง</span>
-        </div>
-        <div class="bl-amounts">
-          <span class="bl-total">฿ 4,200</span>
-          <span class="bl-per-text">฿ 2,100 / คน</span>
-        </div>
-        <div class="bl-bar-row"><div class="bl-fill" style="width:0%" data-target="13.8%"></div></div>
-      </div>
-      <div class="bl-item">
-        <div class="bl-icon">🎯</div>
-        <div class="bl-info">
-          <span class="bl-cat">กิจกรรมและค่าเข้าชม</span>
-          <span class="bl-desc">อุทยานผู่ต๋าชั่ว, บัตรเข้า Tiger Gorge, วัดซงจ้านหลิน</span>
-        </div>
-        <div class="bl-amounts">
-          <span class="bl-total">฿ 3,150</span>
-          <span class="bl-per-text">฿ 1,575 / คน</span>
-        </div>
-        <div class="bl-bar-row"><div class="bl-fill" style="width:0%" data-target="10.4%"></div></div>
-      </div>
-      <div class="bl-item">
-        <div class="bl-icon">🚌</div>
-        <div class="bl-info">
-          <span class="bl-cat">ค่าเดินทางในประเทศ</span>
-          <span class="bl-desc">Metro, รถบัส, รถไฟความเร็วสูง, Airport Shuttle</span>
-        </div>
-        <div class="bl-amounts">
-          <span class="bl-total">฿ 1,620</span>
-          <span class="bl-per-text">฿ 810 / คน</span>
-        </div>
-        <div class="bl-bar-row"><div class="bl-fill" style="width:0%" data-target="5.3%"></div></div>
-      </div>
-      <div class="bl-item">
-        <div class="bl-icon">🛡️</div>
-        <div class="bl-info">
-          <span class="bl-cat">ซิมโรมมิ่ง + ประกันภัย</span>
-          <span class="bl-desc">Insurverse + SIM การ์ด 2 ท่าน</span>
-        </div>
-        <div class="bl-amounts">
-          <span class="bl-total">฿ 1,814</span>
-          <span class="bl-per-text">฿ 907 / คน</span>
-        </div>
-        <div class="bl-bar-row"><div class="bl-fill" style="width:0%" data-target="6%"></div></div>
-      </div>
-    </div>
-  </div>
-</section>
+
 
 <!-- ============ FOOTER ============ -->
 <footer id="footer">
@@ -1639,20 +1548,7 @@ if ('IntersectionObserver' in window) {
 }
 document.head.insertAdjacentHTML('beforeend', '<style>.fade-ready{opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .5s ease}.in{opacity:1!important;transform:translateY(0)!important}</style>');
 
-// BUDGET BAR ANIMATION
-const barObs = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      e.target.querySelectorAll('.bl-fill').forEach(bar => {
-        const t = bar.dataset.target;
-        setTimeout(() => { bar.style.width = t; }, 150);
-      });
-      barObs.unobserve(e.target);
-    }
-  });
-}, { threshold: 0.3 });
-const bl = document.querySelector('.budget-list');
-if (bl) barObs.observe(bl);
+
 
 // PARALLAX
 const heroImg = document.querySelector('.hero-img');
