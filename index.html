@@ -429,8 +429,33 @@ ul { list-style: none; }
   background: var(--white); border: 1px solid var(--border);
   border-radius: var(--radius-md); padding: 14px 18px;
   box-shadow: var(--shadow-sm); transition: var(--transition);
+  position: relative; overflow: hidden;
 }
 .tl-row:hover .tl-card { border-color: rgba(192,107,58,.25); box-shadow: var(--shadow-md); }
+
+/* Background image card for attraction places */
+.tl-card.has-bg {
+  background-size: cover;
+  background-position: center;
+  border-color: rgba(192,107,58,.35);
+  min-height: 120px;
+}
+.tl-card.has-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.92) 48%, rgba(255,255,255,0.55) 100%);
+  z-index: 0;
+  transition: var(--transition);
+}
+.tl-row:hover .tl-card.has-bg::before {
+  background: linear-gradient(to right, rgba(255,255,255,0.93) 0%, rgba(255,255,255,0.88) 50%, rgba(255,255,255,0.4) 100%);
+}
+.tl-card.has-bg > * {
+  position: relative;
+  z-index: 1;
+}
+
 .tl-card-title {
   font-size: 0.9rem; font-weight: 700; color: var(--ink); margin-bottom: 4px;
 }
@@ -891,7 +916,7 @@ ul { list-style: none; }
         <div class="tl-row activity">
           <div class="tl-time">11:00 – 14:00</div>
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
-          <div class="tl-card">
+          <div class="tl-card has-bg" style="background-image: url('images/kunming_city.jpg');">
             <div class="tl-card-title">🌿 สวนชุ่ยหู (翠湖公园)</div>
             <p>ขึ้น Metro สาย 6 จากสถานี Airport Center เที่ยวสวน ชิมก๋วยเตี๋ยวข้ามสะพานชื่อดัง</p>
             <div class="tags"><span class="tag info">Metro 5–7 หยวน</span><span class="tag cost">~฿100 / คน</span></div>
@@ -900,7 +925,7 @@ ul { list-style: none; }
         <div class="tl-row activity">
           <div class="tl-time">14:00 – 18:00</div>
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
-          <div class="tl-card">
+          <div class="tl-card has-bg" style="background-image: url('images/kunming_city.jpg');">
             <div class="tl-card-title">🛍️ ถนนคนเดินหนานผิง (南屏步行街)</div>
             <p>เดินเล่น ช็อปปิ้ง ชมลานประตูม้าทองไก่หยก (金马碧鸡坊) ไม่มีค่าใช้จ่าย</p>
             <div class="tags"><span class="tag free">เดินเท้าฟรี</span></div>
@@ -977,7 +1002,7 @@ ul { list-style: none; }
         <div class="tl-row activity">
           <div class="tl-time">14:00 – 17:30</div>
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
-          <div class="tl-card">
+          <div class="tl-card has-bg" style="background-image: url('images/lijiang_hero.jpg');">
             <div class="tl-card-title">🐉 สระมังกรดำ (黑龙潭公园)</div>
             <p>รถเมล์สาย 3/4/8 จากป้ายตลาดจงอี้ (1 หยวน) ชมสระและถ่ายรูปวิวเขาหิมะอวี้หลง</p>
             <div class="tags"><span class="tag cost">฿10 / คน (ไป-กลับ 4 หยวน)</span><span class="tag star">📸 จุดถ่ายรูป</span></div>
@@ -986,7 +1011,7 @@ ul { list-style: none; }
         <div class="tl-row transport">
           <div class="tl-time">17:30 – 20:30</div>
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
-          <div class="tl-card">
+          <div class="tl-card has-bg" style="background-image: url('images/lijiang_hero.jpg');">
             <div class="tl-card-title">🚌 ซื้อตั๋วบัสไปสะพานเฉียวโถว + เดินเที่ยวเมืองเก่า</div>
             <p>ซื้อที่สถานีขนส่งลี่เจียงก่อน 18:30 น. รอบ 08:00/08:30 น. แล้วเดินเล่นในเมืองเก่า</p>
             <div class="tags"><span class="tag cost">ตั๋วบัส ฿175 / คน (~35 หยวน)</span></div>
@@ -1053,7 +1078,7 @@ ul { list-style: none; }
         <div class="tl-row trekking">
           <div class="tl-time">14:30 – 17:00</div>
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
-          <div class="tl-card">
+          <div class="tl-card has-bg" style="background-image: url('images/tiger_leaping_gorge.jpg');">
             <div class="tl-card-title">⛰️ 28 Bends — โค้งปราบเซียน!</div>
             <p>ไต่ระดับ 28 โค้งชันต่อเนื่อง ทดสอบขีดจำกัด วิวที่ยอดเขาคุ้มค่ามาก</p>
             <div class="tags"><span class="tag trek-t">ท้าทายที่สุดในเส้นทาง</span><span class="tag star">🌟 ไฮไลท์</span></div>
@@ -1103,7 +1128,7 @@ ul { list-style: none; }
         <div class="tl-row trekking">
           <div class="tl-time">09:00 – 12:30</div>
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
-          <div class="tl-card">
+          <div class="tl-card has-bg" style="background-image: url('images/tiger_leaping_gorge.jpg');">
             <div class="tl-card-title">🥾 High Trail เลียบผา → Tina's Guesthouse</div>
             <p>ผ่าน Halfway และน้ำตกกวนอิม วิวหน้าผาสุดตระการตา</p>
             <div class="tags"><span class="tag trek-t">~3.5 ชม.</span><span class="tag info">น้ำตกกวนอิม 💧</span></div>
@@ -1138,7 +1163,7 @@ ul { list-style: none; }
         <div class="tl-row food">
           <div class="tl-time">18:30 – 21:30</div>
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
-          <div class="tl-card">
+          <div class="tl-card has-bg" style="background-image: url('images/shangrila_night.jpg');">
             <div class="tl-card-title">🙏 กงล้อมนต์ยักษ์ + หม้อไฟเนื้อจามรี 🐃</div>
             <p>หมุนกงล้อมนต์ทองคำยักษ์วัดกุยซาน (最大转经筒) แล้วทานหม้อไฟเนื้อจามรี</p>
             <div class="tags"><span class="tag cost">฿300 / คน</span><span class="tag star">🌟 ไฮไลท์</span></div>
@@ -1169,7 +1194,7 @@ ul { list-style: none; }
         <div class="tl-row activity">
           <div class="tl-time">08:30 – 15:30</div>
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
-          <div class="tl-card">
+          <div class="tl-card has-bg" style="background-image: url('images/potatso_park.jpg');">
             <div class="tl-card-title">🏞️ อุทยานแห่งชาติผู่ต๋าชั่ว (普达措国家公园)</div>
             <p>รถ Scenic Shuttle Bus (รถเหลือง) เดินเทรคกิ้งริมทะเลสาบซู่ตู๋ ชมธรรมชาติสูงกว่า 3,500 เมตร</p>
             <div class="tags"><span class="tag cost">฿890 / คน (178 หยวน รวมรถ + ตั๋วเข้า)</span><span class="tag star">🌟 ไฮไลท์</span></div>
@@ -1186,7 +1211,7 @@ ul { list-style: none; }
         <div class="tl-row food">
           <div class="tl-time">18:30 – 21:00</div>
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
-          <div class="tl-card">
+          <div class="tl-card has-bg" style="background-image: url('images/shangrila_night.jpg');">
             <div class="tl-card-title">🌙 เดินเล่นเมืองเก่า + มื้อเย็น</div>
             <div class="tags"><span class="tag cost">฿200 / คน</span></div>
           </div>
@@ -1216,7 +1241,7 @@ ul { list-style: none; }
         <div class="tl-row activity">
           <div class="tl-time">08:30 – 12:30</div>
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
-          <div class="tl-card">
+          <div class="tl-card has-bg" style="background-image: url('images/songzanlin_temple.jpg');">
             <div class="tl-card-title">🕌 วัดซงจ้านหลิน (松赞林寺)</div>
             <p>รถเมล์สาย 3 จากประตูตะวันออก/ใต้ (2 หยวน) ชมวัดพุทธทิเบตที่ยิ่งใหญ่ที่สุดในยูนนาน สร้างปี 1679</p>
             <div class="tags"><span class="tag cost">ค่าเข้าชม ฿460 / คน (90 หยวน + รถเมล์)</span><span class="tag star">🌟 ไฮไลท์</span></div>
@@ -1308,7 +1333,7 @@ ul { list-style: none; }
         <div class="tl-row activity">
           <div class="tl-time">11:00 – 18:30</div>
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
-          <div class="tl-card">
+          <div class="tl-card has-bg" style="background-image: url('images/kunming_city.jpg');">
             <div class="tl-card-title">🌆 Layover คุนหมิง 10+ ชั่วโมง</div>
             <p>Metro สาย 6 เที่ยวเมือง ทานมื้อเที่ยง ช็อปปิ้งของฝากสุดท้าย แล้วนั่ง Metro กลับสนามบิน</p>
             <div class="tags"><span class="tag cost">~฿375 / คน</span></div>
