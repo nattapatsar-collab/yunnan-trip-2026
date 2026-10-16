@@ -117,9 +117,9 @@ ul { list-style: none; }
    HERO
    ===================================================== */
 #hero {
-  position: relative; height: 100vh; min-height: 680px;
-  display: flex; flex-direction: column; justify-content: space-between;
-  padding-top: 86px;
+  position: relative; height: auto; min-height: 100vh;
+  display: flex; align-items: flex-end;
+  padding: 104px 0 48px;
   overflow: hidden;
 }
 .hero-bg { position: absolute; inset: 0; }
@@ -135,21 +135,22 @@ ul { list-style: none; }
   position: absolute; inset: 0;
   background: linear-gradient(
     to top,
-    rgba(250,247,242,0.97) 0%,
-    rgba(250,247,242,0.6) 30%,
-    rgba(250,247,242,0.1) 65%,
+    rgba(250,247,242,0.98) 0%,
+    rgba(250,247,242,0.72) 45%,
+    rgba(250,247,242,0.18) 75%,
     transparent 100%
   );
 }
-.hero-top-route {
+.hero-content {
   position: relative; z-index: 2;
   width: 100%;
 }
-.hero-content {
-  position: relative; z-index: 2;
-  width: 100%; padding: 0 0 54px;
+.hero-content .container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
 }
-.hero-content .container { display: flex; align-items: flex-end; justify-content: flex-start; }
 
 .hero-text { max-width: 620px; }
 .hero-eyebrow {
@@ -681,7 +682,7 @@ ul { list-style: none; }
   .nav-link { font-size: 1rem; padding: 12px 18px; border-radius: var(--radius-sm); }
 
   /* HERO */
-  #hero { min-height: 100svh; padding-top: 76px; justify-content: space-between; }
+  #hero { min-height: 100svh; padding: 88px 0 28px; justify-content: flex-end; }
   .hero-overlay {
     background: linear-gradient(
       to top,
@@ -691,12 +692,12 @@ ul { list-style: none; }
       transparent 100%
     );
   }
-  .hero-top-route { padding-top: 8px; }
+  .hero-content { padding: 0; }
+  .hero-content .container { gap: 18px; }
   .hero-route-box {
     padding: 12px 14px 8px;
     border-radius: var(--radius-md);
   }
-  .hero-content { padding: 0 0 36px; }
   .hero-title { font-size: clamp(2.4rem, 11vw, 3.8rem); }
   .hero-title-sub { font-size: 0.95rem; }
 
@@ -759,7 +760,8 @@ ul { list-style: none; }
   .section-desc { font-size: 0.88rem; }
 
   /* HERO */
-  .hero-content { padding: 0 0 28px; }
+  .hero-content { padding: 0; }
+  .hero-content .container { gap: 14px; }
   .hero-title { font-size: clamp(2.2rem, 14vw, 3rem); }
   .hero-eyebrow { font-size: 0.7rem; padding: 5px 12px; }
   .hero-cta { padding: 12px 22px; font-size: 0.85rem; }
@@ -840,9 +842,23 @@ ul { list-style: none; }
     <img src="images/lijiang_hero.jpg" alt="เมืองเก่าลี่เจียง" class="hero-img" />
     <div class="hero-overlay"></div>
   </div>
-  <!-- ROUTE BAR ON TOP (แถวเดียวบนสุด) -->
-  <div class="hero-top-route">
+
+  <div class="hero-content">
     <div class="container">
+      <div class="hero-text">
+        <div class="hero-eyebrow">
+          <span class="dot"></span>
+          24 – 31 ตุลาคม 2569 &nbsp;|&nbsp; 8 วัน 7 คืน
+        </div>
+        <h1 class="hero-title">ยูนนาน<br/>2026</h1>
+        <p class="hero-title-sub">ลี่เจียง — Tiger Leaping Gorge — แชงกรี-ลา</p>
+        <a href="#itinerary" class="hero-cta">
+          ดูกำหนดการเดินทาง
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <!-- ROUTE BAR BELOW 'ดูกำหนดการเดินทาง' -->
       <div class="hero-route-box">
         <div class="route-wrap">
           <div class="route-stop">
@@ -881,23 +897,6 @@ ul { list-style: none; }
             <span class="rs-date">31 ต.ค.</span>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="hero-content">
-    <div class="container">
-      <div class="hero-text">
-        <div class="hero-eyebrow">
-          <span class="dot"></span>
-          24 – 31 ตุลาคม 2569 &nbsp;|&nbsp; 8 วัน 7 คืน
-        </div>
-        <h1 class="hero-title">ยูนนาน<br/>2026</h1>
-        <p class="hero-title-sub">ลี่เจียง — Tiger Leaping Gorge — แชงกรี-ลา</p>
-        <a href="#itinerary" class="hero-cta">
-          ดูกำหนดการเดินทาง
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
       </div>
     </div>
   </div>
