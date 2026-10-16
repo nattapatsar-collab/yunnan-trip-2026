@@ -348,12 +348,25 @@ ul { list-style: none; }
 .hl-layer {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(20,16,14,0.92) 0%, rgba(20,16,14,0.45) 55%, transparent 100%);
+  background: linear-gradient(
+    to top,
+    rgba(16,12,10,0.92) 0%,
+    rgba(16,12,10,0.55) 50%,
+    rgba(16,12,10,0.15) 75%,
+    transparent 100%
+  );
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 14px 12px;
+  padding: 14px 12px 18px;
   transition: var(--transition);
+}
+.hl-content {
+  height: 98px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
 }
 .hl-badge {
   display: inline-block;
@@ -366,31 +379,44 @@ ul { list-style: none; }
   font-size: 0.62rem;
   letter-spacing: 0.3px;
   margin-bottom: 6px;
+  white-space: nowrap;
 }
 .hl-name {
   font-family: 'Noto Serif Thai', serif;
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   font-weight: 700;
   color: var(--white);
-  line-height: 1.25;
-  margin-bottom: 4px;
+  line-height: 1.22;
+  margin-bottom: 3px;
 }
 .hl-zh {
   font-size: 0.72em;
   color: rgba(255,255,255,.65);
   display: block;
+  margin-top: 2px;
 }
 .hl-desc {
-  font-size: 0.72rem;
-  color: rgba(255,255,255,.8);
-  line-height: 1.45;
+  position: absolute;
+  inset: 0;
+  background: rgba(20, 16, 14, 0.93);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  padding: 18px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 0.76rem;
+  color: rgba(255, 255, 255, 0.92);
+  line-height: 1.55;
   opacity: 0;
-  transform: translateY(6px);
-  transition: var(--transition);
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  border-radius: var(--radius-md);
+  z-index: 5;
 }
 .hl-card:hover .hl-desc {
   opacity: 1;
-  transform: translateY(0);
 }
 
 /* =====================================================
@@ -746,7 +772,8 @@ ul { list-style: none; }
 
   /* HIGHLIGHTS */
   .hl-card { min-width: 145px; aspect-ratio: 3/4; }
-  .hl-name { font-size: 0.88rem; }
+  .hl-content { height: 90px; }
+  .hl-name { font-size: 0.84rem; }
 
   /* TABS */
   .tab-btn { padding: 8px 12px; font-size: 0.75rem; }
@@ -1416,48 +1443,60 @@ ul { list-style: none; }
       <div class="hl-card">
         <img src="images/kunming_city.jpg" alt="คุนหมิง" class="hl-img" />
         <div class="hl-layer">
-          <span class="hl-badge">เมืองฤดูใบไม้ผลิ</span>
-          <div class="hl-name">คุนหมิง <span class="hl-zh">昆明</span></div>
+          <div class="hl-content">
+            <span class="hl-badge">เมืองฤดูใบไม้ผลิ</span>
+            <div class="hl-name">คุนหมิง <span class="hl-zh">昆明</span></div>
+          </div>
           <p class="hl-desc">สวนชุ่ยหู ก๋วยเตี๋ยวข้ามสะพาน ถนนหนานผิง Layover 10 ชั่วโมงคุ้มมาก</p>
         </div>
       </div>
       <div class="hl-card">
         <img src="images/lijiang_hero.jpg" alt="เมืองเก่าลี่เจียง" class="hl-img" />
         <div class="hl-layer">
-          <span class="hl-badge">มรดกโลก UNESCO</span>
-          <div class="hl-name">เมืองเก่าลี่เจียง <span class="hl-zh">丽江古城</span></div>
+          <div class="hl-content">
+            <span class="hl-badge">มรดกโลก UNESCO</span>
+            <div class="hl-name">เมืองเก่าลี่เจียง <span class="hl-zh">丽江古城</span></div>
+          </div>
           <p class="hl-desc">เดินเล่นในเมืองเก่านาซีอายุกว่า 800 ปี ลำธารใสไหลผ่านซอกซอย พร้อมวิวเขาหิมะอวี้หลงเป็นฉากหลัง</p>
         </div>
       </div>
       <div class="hl-card">
         <img src="images/tiger_leaping_gorge.jpg" alt="Tiger Leaping Gorge" class="hl-img" />
         <div class="hl-layer">
-          <span class="hl-badge">เทรคกิ้งระดับโลก</span>
-          <div class="hl-name">Tiger Leaping Gorge <span class="hl-zh">虎跳峡</span></div>
+          <div class="hl-content">
+            <span class="hl-badge">เทรคกิ้งระดับโลก</span>
+            <div class="hl-name">Tiger Leaping Gorge <span class="hl-zh">虎跳峡</span></div>
+          </div>
           <p class="hl-desc">High Trail เลียบหน้าผา 28 Bends โค้งปราบเซียน สูงกว่า 3,900 เมตร</p>
         </div>
       </div>
       <div class="hl-card">
         <img src="images/shangrila_night.jpg" alt="แชงกรี-ลา" class="hl-img" />
         <div class="hl-layer">
-          <span class="hl-badge">ดินแดนสวรรค์</span>
-          <div class="hl-name">แชงกรี-ลา <span class="hl-zh">香格里拉</span></div>
+          <div class="hl-content">
+            <span class="hl-badge">ดินแดนสวรรค์</span>
+            <div class="hl-name">แชงกรี-ลา <span class="hl-zh">香格里拉</span></div>
+          </div>
           <p class="hl-desc">กงล้อมนต์ทองคำยักษ์ที่ใหญ่สุดในโลก เมืองโบราณตู๋เค่อจงยามค่ำคืน</p>
         </div>
       </div>
       <div class="hl-card">
         <img src="images/potatso_park.jpg" alt="อุทยานผู่ต๋าชั่ว" class="hl-img" />
         <div class="hl-layer">
-          <span class="hl-badge">อุทยานแห่งชาติ</span>
-          <div class="hl-name">ผู่ต๋าชั่ว <span class="hl-zh">普达措国家公园</span></div>
+          <div class="hl-content">
+            <span class="hl-badge">อุทยานแห่งชาติ</span>
+            <div class="hl-name">ผู่ต๋าชั่ว <span class="hl-zh">普达措国家公园</span></div>
+          </div>
           <p class="hl-desc">ทะเลสาบซู่ตู๋ใสบริสุทธิ์ ป่าสน ทุ่งหญ้า สูงกว่า 3,500 เมตร</p>
         </div>
       </div>
       <div class="hl-card">
         <img src="images/songzanlin_temple.jpg" alt="วัดซงจ้านหลิน" class="hl-img" />
         <div class="hl-layer">
-          <span class="hl-badge">วัดทิเบตยูนนาน</span>
-          <div class="hl-name">ซงจ้านหลิน <span class="hl-zh">松赞林寺</span></div>
+          <div class="hl-content">
+            <span class="hl-badge">วัดทิเบตยูนนาน</span>
+            <div class="hl-name">ซงจ้านหลิน <span class="hl-zh">松赞林寺</span></div>
+          </div>
           <p class="hl-desc">วัดพุทธทิเบตที่ยิ่งใหญ่ที่สุดในยูนนาน สร้างปี 1679 บนยอดเนิน</p>
         </div>
       </div>
