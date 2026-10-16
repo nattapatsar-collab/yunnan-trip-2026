@@ -191,27 +191,19 @@ ul { list-style: none; }
 .hero-cta svg { width: 18px; height: 18px; transition: var(--transition); }
 .hero-cta:hover svg { transform: translateX(4px); }
 
-.hero-stats {
-  display: flex; flex-direction: column; gap: 12px;
-  animation: fadeUp 0.7s 0.2s ease both;
-}
-.hero-stat {
-  background: var(--white);
+.hero-route-box {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(12px);
   border: 1px solid var(--border);
-  border-radius: var(--radius-md);
-  padding: 14px 20px;
-  text-align: center;
-  min-width: 120px;
-  box-shadow: var(--shadow-sm);
+  border-radius: var(--radius-lg);
+  padding: 18px 24px 10px;
+  box-shadow: var(--shadow-md);
+  max-width: 520px;
+  width: 100%;
 }
-.hs-num {
-  display: block;
-  font-family: 'Playfair Display', serif;
-  font-size: 1.9rem; font-weight: 700;
-  color: var(--terracotta);
-  line-height: 1;
+.hero-route-box .route-wrap {
+  margin-bottom: 0;
 }
-.hs-label { font-size: 0.72rem; color: var(--text-muted); }
 
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(24px); }
@@ -249,7 +241,7 @@ ul { list-style: none; }
    ===================================================== */
 .route-wrap {
   display: flex; align-items: center; justify-content: center;
-  gap: 0; flex-wrap: wrap; row-gap: 16px; margin-bottom: 56px;
+  gap: 0; flex-wrap: wrap; row-gap: 16px; margin-bottom: 32px;
 }
 .route-stop {
   display: flex; flex-direction: column; align-items: center; gap: 6px;
@@ -300,43 +292,96 @@ ul { list-style: none; }
    HIGHLIGHTS
    ===================================================== */
 .hl-grid {
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
-  gap: 16px;
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding: 4px 4px 18px;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+.hl-grid::-webkit-scrollbar {
+  height: 6px;
+}
+.hl-grid::-webkit-scrollbar-track {
+  background: rgba(0,0,0,0.04);
+  border-radius: 4px;
+}
+.hl-grid::-webkit-scrollbar-thumb {
+  background: var(--sand);
+  border-radius: 4px;
 }
 .hl-card {
-  position: relative; border-radius: var(--radius-lg);
-  overflow: hidden; cursor: pointer;
-  aspect-ratio: 4/3; box-shadow: var(--shadow-md);
+  flex: 1 1 0;
+  min-width: 170px;
+  scroll-snap-align: start;
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  cursor: pointer;
+  aspect-ratio: 3/4;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
 }
-.hl-card.wide { grid-column: span 2; aspect-ratio: 16/9; }
-.hl-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
-.hl-card:hover .hl-img { transform: scale(1.07); }
+.hl-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+.hl-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+.hl-card:hover .hl-img {
+  transform: scale(1.08);
+}
 .hl-layer {
-  position: absolute; inset: 0;
-  background: linear-gradient(to top, rgba(30,26,22,0.88) 0%, rgba(30,26,22,0.15) 55%, transparent 100%);
-  display: flex; flex-direction: column; justify-content: flex-end;
-  padding: 22px; transition: var(--transition);
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(20,16,14,0.92) 0%, rgba(20,16,14,0.45) 55%, transparent 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 14px 12px;
+  transition: var(--transition);
 }
 .hl-badge {
-  display: inline-block; width: fit-content;
-  background: rgba(250,247,242,.2); border: 1px solid rgba(250,247,242,.35);
-  color: rgba(255,255,255,.9); padding: 4px 10px; border-radius: 50px;
-  font-size: 0.68rem; letter-spacing: 0.5px; margin-bottom: 8px;
+  display: inline-block;
+  width: fit-content;
+  background: rgba(250,247,242,.22);
+  border: 1px solid rgba(250,247,242,.35);
+  color: rgba(255,255,255,.95);
+  padding: 3px 8px;
+  border-radius: 50px;
+  font-size: 0.62rem;
+  letter-spacing: 0.3px;
+  margin-bottom: 6px;
 }
 .hl-name {
   font-family: 'Noto Serif Thai', serif;
-  font-size: 1.25rem; font-weight: 700; color: var(--white);
-  line-height: 1.2; margin-bottom: 6px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.25;
+  margin-bottom: 4px;
 }
-.hl-card.wide .hl-name { font-size: 1.8rem; }
-.hl-zh { font-size: 0.7em; color: rgba(255,255,255,.55); display: block; }
+.hl-zh {
+  font-size: 0.72em;
+  color: rgba(255,255,255,.65);
+  display: block;
+}
 .hl-desc {
-  font-size: 0.82rem; color: rgba(255,255,255,.75);
-  line-height: 1.6; opacity: 0; transform: translateY(8px);
-  transition: var(--transition); max-width: 360px;
+  font-size: 0.72rem;
+  color: rgba(255,255,255,.8);
+  line-height: 1.45;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: var(--transition);
 }
-.hl-card:hover .hl-desc { opacity: 1; transform: translateY(0); }
+.hl-card:hover .hl-desc {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 /* =====================================================
    ITINERARY TABS
@@ -575,13 +620,7 @@ ul { list-style: none; }
    RESPONSIVE — Tablet (≤1024px)
    ===================================================== */
 @media(max-width:1024px){
-  .info-cards { grid-template-columns: repeat(2,1fr); }
-  .hl-grid    { grid-template-columns: repeat(2,1fr); }
-  .hl-card.wide { grid-column: span 2; }
-  .tips-grid  { grid-template-columns: repeat(2,1fr); }
   .footer-grid{ grid-template-columns: 1fr 1fr; gap: 36px; }
-  .hero-stats { gap: 10px; }
-  .hero-stat  { min-width: 100px; padding: 12px 16px; }
 }
 
 /* =====================================================
@@ -624,18 +663,10 @@ ul { list-style: none; }
   }
   .hero-title { font-size: clamp(2.6rem, 12vw, 4rem); }
   .hero-title-sub { font-size: 1rem; }
-  .hero-stats {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 8px;
-    width: 100%;
+  .hero-route-box {
+    max-width: 100%;
+    padding: 14px 16px 8px;
   }
-  .hero-stat {
-    flex: 1 1 calc(50% - 4px);
-    min-width: 0;
-    padding: 10px 12px;
-  }
-  .hs-num { font-size: 1.5rem; }
 
   /* SECTION */
   .section { padding: 56px 0; }
@@ -648,13 +679,7 @@ ul { list-style: none; }
   .route-line { min-width: 20px; }
 
   /* HIGHLIGHTS */
-  .hl-grid { grid-template-columns: 1fr; }
-  .hl-card.wide { grid-column: span 1; aspect-ratio: 16/9; }
-  .hl-card { aspect-ratio: 16/9; }
-  .hl-desc { opacity: 1; transform: translateY(0); }
-
-  /* INFO CARDS */
-  .info-cards { grid-template-columns: 1fr 1fr; }
+  .hl-card { min-width: 155px; }
 
   /* TABS */
   .tab-row { overflow-x: auto; flex-wrap: nowrap; padding-bottom: 8px; -webkit-overflow-scrolling: touch; }
@@ -705,16 +730,11 @@ ul { list-style: none; }
   .hero-title { font-size: clamp(2.2rem, 14vw, 3rem); }
   .hero-eyebrow { font-size: 0.7rem; padding: 5px 12px; }
   .hero-cta { padding: 12px 22px; font-size: 0.85rem; }
-  .hero-stats { gap: 6px; }
-  .hero-stat { flex: 1 1 calc(50% - 3px); padding: 8px 10px; }
-  .hs-num { font-size: 1.35rem; }
-
-  /* INFO */
-  .info-cards { grid-template-columns: 1fr; gap: 12px; }
+  .hero-route-box { padding: 12px 12px 6px; }
 
   /* HIGHLIGHTS */
-  .hl-card, .hl-card.wide { aspect-ratio: 4/3; }
-  .hl-name { font-size: 1.1rem; }
+  .hl-card { min-width: 145px; aspect-ratio: 3/4; }
+  .hl-name { font-size: 0.88rem; }
 
   /* TABS */
   .tab-btn { padding: 8px 12px; font-size: 0.75rem; }
@@ -743,11 +763,6 @@ ul { list-style: none; }
   .bl-cat { font-size: 0.85rem; }
   .bl-desc { font-size: 0.72rem; }
 
-  /* TIPS */
-  .tips-grid { grid-template-columns: 1fr; gap: 12px; }
-  .tip-card { padding: 20px 18px; }
-  .tip-icon { font-size: 1.8rem; margin-bottom: 10px; }
-
   /* ROUTE */
   .route-wrap { padding-bottom: 8px; }
   .rs-bubble { width: 44px; height: 44px; font-size: 1.1rem; }
@@ -772,10 +787,8 @@ ul { list-style: none; }
     </div>
     <ul class="nav-links">
       <li><a href="#itinerary"  class="nav-link">กำหนดการ</a></li>
-      <li><a href="#overview"   class="nav-link">ภาพรวม</a></li>
       <li><a href="#highlights" class="nav-link">ไฮไลท์</a></li>
       <li><a href="#budget"     class="nav-link">งบประมาณ</a></li>
-      <li><a href="#tips"       class="nav-link">เคล็ดลับ</a></li>
     </ul>
     <button class="nav-toggle" id="navToggle" aria-label="เปิดเมนู">
       <span></span><span></span><span></span>
@@ -803,22 +816,45 @@ ul { list-style: none; }
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
       </div>
-      <div class="hero-stats">
-        <div class="hero-stat">
-          <span class="hs-num">8</span>
-          <span class="hs-label">วัน</span>
-        </div>
-        <div class="hero-stat">
-          <span class="hs-num">4</span>
-          <span class="hs-label">เมือง</span>
-        </div>
-        <div class="hero-stat">
-          <span class="hs-num">2</span>
-          <span class="hs-label">คน</span>
-        </div>
-        <div class="hero-stat">
-          <span class="hs-num">~15k</span>
-          <span class="hs-label">บาท/คน</span>
+      
+      <!-- ROUTE ON TOP -->
+      <div class="hero-route-box">
+        <div class="route-wrap">
+          <div class="route-stop">
+            <div class="rs-bubble">✈️</div>
+            <span class="rs-name">กรุงเทพฯ</span>
+            <span class="rs-date">24 ต.ค.</span>
+          </div>
+          <div class="route-line"><div class="route-line-inner"></div></div>
+          <div class="route-stop">
+            <div class="rs-bubble">🌆</div>
+            <span class="rs-name">คุนหมิง</span>
+            <span class="rs-date">25 ต.ค.</span>
+          </div>
+          <div class="route-line"><div class="route-line-inner"></div></div>
+          <div class="route-stop">
+            <div class="rs-bubble">🏘️</div>
+            <span class="rs-name">ลี่เจียง</span>
+            <span class="rs-date">26–27 ต.ค.</span>
+          </div>
+          <div class="route-line"><div class="route-line-inner"></div></div>
+          <div class="route-stop">
+            <div class="rs-bubble">🥾</div>
+            <span class="rs-name">Tiger Gorge</span>
+            <span class="rs-date">27–28 ต.ค.</span>
+          </div>
+          <div class="route-line"><div class="route-line-inner"></div></div>
+          <div class="route-stop">
+            <div class="rs-bubble">🙏</div>
+            <span class="rs-name">แชงกรี-ลา</span>
+            <span class="rs-date">28–30 ต.ค.</span>
+          </div>
+          <div class="route-line"><div class="route-line-inner"></div></div>
+          <div class="route-stop">
+            <div class="rs-bubble">🏠</div>
+            <span class="rs-name">กลับบ้าน</span>
+            <span class="rs-date">31 ต.ค.</span>
+          </div>
         </div>
       </div>
     </div>
@@ -1354,78 +1390,6 @@ ul { list-style: none; }
   </div>
 </section>
 
-<!-- ============ OVERVIEW ============ -->
-<section id="overview" class="section">
-  <div class="container">
-    <div class="section-header">
-      <span class="section-label">ภาพรวมการเดินทาง</span>
-      <h2 class="section-title">เส้นทางทั้งหมด</h2>
-      <p class="section-desc">8 วันสำรวจยูนนาน ตั้งแต่เมืองหมอกคุนหมิง สู่เมืองเก่านาซีลี่เจียง ลุยเทรคกิ้งหุบเขาเสือกระโจน และขึ้นแชงกรี-ลาดินแดนทิเบต</p>
-    </div>
-
-    <div class="route-wrap">
-      <div class="route-stop">
-        <div class="rs-bubble">✈️</div>
-        <span class="rs-name">กรุงเทพฯ</span>
-        <span class="rs-date">24 ต.ค.</span>
-      </div>
-      <div class="route-line"><div class="route-line-inner"></div></div>
-      <div class="route-stop">
-        <div class="rs-bubble">🌆</div>
-        <span class="rs-name">คุนหมิง</span>
-        <span class="rs-date">25 ต.ค.</span>
-      </div>
-      <div class="route-line"><div class="route-line-inner"></div></div>
-      <div class="route-stop">
-        <div class="rs-bubble">🏘️</div>
-        <span class="rs-name">ลี่เจียง</span>
-        <span class="rs-date">26–27 ต.ค.</span>
-      </div>
-      <div class="route-line"><div class="route-line-inner"></div></div>
-      <div class="route-stop">
-        <div class="rs-bubble">🥾</div>
-        <span class="rs-name">Tiger Gorge</span>
-        <span class="rs-date">27–28 ต.ค.</span>
-      </div>
-      <div class="route-line"><div class="route-line-inner"></div></div>
-      <div class="route-stop">
-        <div class="rs-bubble">🙏</div>
-        <span class="rs-name">แชงกรี-ลา</span>
-        <span class="rs-date">28–30 ต.ค.</span>
-      </div>
-      <div class="route-line"><div class="route-line-inner"></div></div>
-      <div class="route-stop">
-        <div class="rs-bubble">🏠</div>
-        <span class="rs-name">กลับบ้าน</span>
-        <span class="rs-date">31 ต.ค.</span>
-      </div>
-    </div>
-
-    <div class="info-cards">
-      <div class="info-card">
-        <div class="ic-icon">✈️</div>
-        <h3>เที่ยวบิน</h3>
-        <p>China Eastern Airlines<br/>BKK ⇄ KMG ⇄ LJG<br/>MU-9614 / 5923 / 5922 / 9621</p>
-      </div>
-      <div class="info-card">
-        <div class="ic-icon">🏨</div>
-        <h3>ที่พัก</h3>
-        <p>5 คืน โรงแรมและโฮมสเตย์<br/>รวมเกสต์เฮาส์บนยอดเขา<br/>Tiger Leaping Gorge</p>
-      </div>
-      <div class="info-card">
-        <div class="ic-icon">🗺️</div>
-        <h3>กิจกรรม</h3>
-        <p>เทรคกิ้ง High Trail<br/>อุทยานผู่ต๋าชั่ว<br/>วัดซงจ้านหลิน</p>
-      </div>
-      <div class="info-card">
-        <div class="ic-icon">🚇</div>
-        <h3>การเดินทาง</h3>
-        <p>Metro คุนหมิง<br/>รถบัสและรถไฟความเร็วสูง<br/>จ่ายผ่าน Alipay ทั้งหมด</p>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ============ HIGHLIGHTS ============ -->
 <section id="highlights" class="section section-alt">
   <div class="container">
@@ -1434,7 +1398,7 @@ ul { list-style: none; }
       <h2 class="section-title">สิ่งที่ไม่ควรพลาด</h2>
     </div>
     <div class="hl-grid">
-      <div class="hl-card wide">
+      <div class="hl-card">
         <img src="images/lijiang_hero.jpg" alt="เมืองเก่าลี่เจียง" class="hl-img" />
         <div class="hl-layer">
           <span class="hl-badge">มรดกโลก UNESCO</span>
@@ -1578,58 +1542,6 @@ ul { list-style: none; }
     <div class="budget-note">
       <div class="bn-icon">💡</div>
       <p>แนะนำเตรียม <strong>งบสำรองฉุกเฉิน 3,000 บาท/คน</strong> เผื่อของฝาก ค่าอาหารเพิ่มเติม หรือเหตุการณ์ไม่คาดฝัน ชำระทุกอย่างผ่าน <strong>Alipay</strong> สะดวกและไม่มีค่าธรรมเนียมแลกเปลี่ยน</p>
-    </div>
-  </div>
-</section>
-
-<!-- ============ TIPS ============ -->
-<section id="tips" class="section">
-  <div class="container">
-    <div class="section-header">
-      <span class="section-label">เคล็ดลับการเดินทาง</span>
-      <h2 class="section-title">รู้ก่อน เที่ยวสบาย</h2>
-    </div>
-    <div class="tips-grid">
-      <div class="tip-card">
-        <div class="tip-icon">📱</div>
-        <h3>Alipay</h3>
-        <p>จีนแทบไม่ใช้เงินสด ผูก Alipay กับบัตรเครดิตไทยก่อนเดินทาง ทุกร้านรับสแกน QR รวมถึงรถเมล์และ Metro</p>
-      </div>
-      <div class="tip-card">
-        <div class="tip-icon">🔒</div>
-        <h3>VPN</h3>
-        <p>ดาวน์โหลด VPN ก่อนเข้าจีน เพราะในจีนดาวน์โหลดไม่ได้ ช่วยให้ใช้ Google Maps, LINE, Instagram ได้ปกติ</p>
-      </div>
-      <div class="tip-card">
-        <div class="tip-icon">🧳</div>
-        <h3>กระเป๋า 2 ใบ</h3>
-        <p>กระเป๋าใหญ่ 20 กก. ฝากที่โรงแรมลี่เจียง + เป้เล็ก 20–25L สำหรับ 4 วันเทรคกิ้ง (Tiger Gorge และแชงกรี-ลา)</p>
-      </div>
-      <div class="tip-card">
-        <div class="tip-icon">⛰️</div>
-        <h3>ความสูง</h3>
-        <p>แชงกรี-ลาอยู่สูง 3,300 ม. อาจปวดหัวเล็กน้อยช่วงแรก ดื่มน้ำมากๆ หลีกเลี่ยงแอลกอฮอล์ และพักผ่อนให้เพียงพอ</p>
-      </div>
-      <div class="tip-card">
-        <div class="tip-icon">🥾</div>
-        <h3>เตรียมตัวเทรคกิ้ง</h3>
-        <p>รองเท้า Hiking ที่ดี ไม้เดินเทรค น้ำ 2 ลิตร ครีมกันแดด SPF 50+ และเสื้อกันลม High Trail ท้าทายพอควร</p>
-      </div>
-      <div class="tip-card">
-        <div class="tip-icon">🌤️</div>
-        <h3>อากาศตุลาคม</h3>
-        <p>ลี่เจียงกลางวัน 15–22°C กลางคืนลงถึง 5–10°C แชงกรี-ลาหนาวกว่ามาก เตรียมเสื้อกันหนาวและถุงมือ</p>
-      </div>
-      <div class="tip-card">
-        <div class="tip-icon">🚇</div>
-        <h3>Metro คุนหมิง</h3>
-        <p>สาย 6 วิ่งตรงจากสนามบินเข้าเมือง 5–7 หยวน สะดวกและถูกมาก จ่ายผ่าน Alipay หรือซื้อตั๋วที่เครื่อง</p>
-      </div>
-      <div class="tip-card">
-        <div class="tip-icon">📡</div>
-        <h3>ซิมโรมมิ่ง</h3>
-        <p>เตรียมซิมโรมมิ่งจากไทย ใช้ร่วมกับ VPN เพื่อความต่อเนื่องในการสื่อสารตลอดทริป</p>
-      </div>
     </div>
   </div>
 </section>
