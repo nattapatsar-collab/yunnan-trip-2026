@@ -792,6 +792,314 @@ body {
   color: rgba(255, 255, 255, 0.8);
 }
 
+
+/* CATEGORY BADGES (Anti-AI Clean Tags) */
+.cat-pill {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 600;
+  padding: 2px 7px;
+  border-radius: 5px;
+  margin-right: 6px;
+  vertical-align: middle;
+  letter-spacing: -0.01em;
+}
+.cat-pill.flight   { background: rgba(0, 113, 227, 0.1); color: #0071E3; }
+.cat-pill.hotel    { background: rgba(88, 86, 214, 0.1); color: #5856D6; }
+.cat-pill.transit  { background: rgba(255, 149, 0, 0.12); color: #C96800; }
+.cat-pill.food     { background: rgba(255, 45, 85, 0.1); color: #D61840; }
+.cat-pill.trek     { background: rgba(52, 199, 89, 0.14); color: #1A8038; }
+.cat-pill.sight    { background: rgba(50, 173, 230, 0.14); color: #0077A6; }
+.cat-pill.prep     { background: rgba(142, 142, 147, 0.14); color: #636366; }
+
+/* WEATHER & ALTITUDE PILL ON DAY HEAD */
+.dh-weather {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.74rem;
+  color: var(--label-secondary);
+  background: rgba(0, 0, 0, 0.04);
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+  margin-top: 6px;
+  font-weight: 500;
+}
+.dh-weather.warn {
+  background: rgba(255, 149, 0, 0.12);
+  color: #B25900;
+  font-weight: 600;
+}
+
+/* FEATURED CARD MEDIA BANNER */
+.card-media {
+  margin: -10px -15px 10px;
+  height: 140px;
+  overflow: hidden;
+  border-radius: 11px 11px 0 0;
+  position: relative;
+}
+.card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.tl-card:hover .card-media img {
+  transform: scale(1.03);
+}
+
+/* CHINESE COPY & SHOW DRIVER ACTION BAR */
+.card-action-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 8px;
+  padding-top: 6px;
+  border-top: 1px dashed rgba(0, 0, 0, 0.08);
+}
+.action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 9px;
+  font-size: 0.72rem;
+  font-weight: 500;
+  border-radius: 6px;
+  border: 1px solid var(--system-border);
+  background: var(--system-bg);
+  color: var(--label-secondary);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  font-family: inherit;
+}
+.action-btn:hover {
+  background: #FFFFFF;
+  color: var(--apple-blue);
+  border-color: rgba(0, 113, 227, 0.4);
+}
+.action-btn.show-driver {
+  color: var(--apple-blue);
+  background: rgba(0, 113, 227, 0.06);
+  border-color: rgba(0, 113, 227, 0.2);
+  font-weight: 600;
+}
+
+/* DRIVER MODAL (Show to Driver) */
+.driver-modal {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 2000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.driver-modal.active {
+  display: flex;
+}
+.driver-modal-backdrop {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.68);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+.driver-modal-content {
+  position: relative;
+  z-index: 2;
+  background: #FFFFFF;
+  border-radius: 20px;
+  padding: 24px 28px;
+  width: 100%;
+  max-width: 440px;
+  text-align: center;
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.28);
+  animation: dmPop 0.25s cubic-bezier(0.25, 1, 0.5, 1);
+}
+@keyframes dmPop {
+  from { transform: scale(0.92); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+.dm-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+.dm-badge {
+  font-size: 0.74rem;
+  font-weight: 600;
+  color: var(--apple-blue);
+  background: var(--apple-blue-tint);
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+}
+.dm-close {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--label-tertiary);
+  line-height: 1;
+  padding: 4px;
+}
+.dm-zh {
+  font-size: 2.3rem;
+  font-weight: 700;
+  color: #000000;
+  line-height: 1.25;
+  margin-bottom: 6px;
+  user-select: all;
+  letter-spacing: 0.04em;
+}
+.dm-pinyin {
+  font-size: 1rem;
+  color: var(--label-secondary);
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+.dm-th {
+  font-size: 0.94rem;
+  color: var(--label-primary);
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+.dm-copy-btn {
+  width: 100%;
+  padding: 12px;
+  background: var(--apple-blue);
+  color: #FFFFFF;
+  border: none;
+  border-radius: var(--radius-pill);
+  font-size: 0.92rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.2s ease;
+}
+.dm-copy-btn:hover {
+  background: var(--apple-blue-hover);
+}
+
+/* TOAST POPUP */
+.toast-popup {
+  position: fixed;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%) translateY(50px);
+  background: rgba(28, 28, 30, 0.94);
+  color: #FFFFFF;
+  padding: 9px 18px;
+  border-radius: var(--radius-pill);
+  font-size: 0.82rem;
+  font-weight: 500;
+  z-index: 3000;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.25s cubic-bezier(0.25, 1, 0.5, 1);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+.toast-popup.show {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+}
+
+/* BUDGET SECTION */
+.budget-total-box {
+  background: linear-gradient(135deg, #0071E3 0%, #0056B3 100%);
+  color: #FFFFFF;
+  border-radius: 16px;
+  padding: 24px;
+  text-align: center;
+  margin-bottom: 24px;
+  box-shadow: 0 8px 28px rgba(0, 113, 227, 0.35);
+}
+.bt-label {
+  font-size: 0.82rem;
+  font-weight: 500;
+  opacity: 0.9;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.bt-amount {
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin: 6px 0;
+}
+.bt-note {
+  font-size: 0.85rem;
+  opacity: 0.85;
+}
+.budget-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 24px;
+}
+.bc-item {
+  background: var(--system-card);
+  border: 1px solid var(--system-border);
+  border-radius: 14px;
+  padding: 16px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.bc-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.bc-icon {
+  font-size: 1.3rem;
+}
+.bc-status {
+  font-size: 0.68rem;
+  font-weight: 600;
+  padding: 2px 7px;
+  border-radius: 4px;
+}
+.bc-status.paid {
+  background: rgba(52, 199, 89, 0.14);
+  color: #1A8038;
+}
+.bc-status.est {
+  background: rgba(255, 149, 0, 0.12);
+  color: #C96800;
+}
+.bc-cat {
+  font-size: 0.76rem;
+  color: var(--label-secondary);
+  font-weight: 500;
+}
+.bc-val {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--label-primary);
+  letter-spacing: -0.02em;
+}
+.bc-sub {
+  font-size: 0.72rem;
+  color: var(--label-tertiary);
+}
+
+@media (max-width: 768px) {
+  .budget-card-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+}
+@media (max-width: 480px) {
+  .budget-card-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* TIMELINE CARDS WITH BACKGROUND IMAGES */
 .tl-card.has-bg {
   background-size: cover;
@@ -1224,6 +1532,8 @@ body {
     <ul class="nav-links">
       <li><a href="#itinerary"  class="nav-link">กำหนดการ</a></li>
       <li><a href="#highlights" class="nav-link">ไฮไลท์</a></li>
+      <li><a href="#budget"     class="nav-link">งบประมาณ</a></li>
+      <li><a href="javascript:void(0)" onclick="saveOffline()" class="nav-link" style="color:var(--apple-blue);font-weight:500;">💾 โหมดออฟไลน์</a></li>
     </ul>
     <button class="nav-toggle" id="navToggle" aria-label="เปิดเมนู">
       <span></span><span></span><span></span>
@@ -1326,6 +1636,7 @@ body {
           <span class="dh-label">วันที่ 1</span>
           <div class="dh-title">ออกเดินทาง กรุงเทพฯ สู่คุนหมิง</div>
           <span class="dh-date">วันเสาร์ที่ 24 ตุลาคม 2569</span>
+          <div class="dh-weather">🌤️ คุนหมิง 15–22°C · ความสูง 1,890m · อากาศสบาย ฤดูใบไม้ผลิ</div>
         </div>
         <div class="dh-emoji">✈️</div>
       </div>
@@ -1334,40 +1645,47 @@ body {
           <div class="tl-time">ก่อนเดินทาง</div>
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
           <div class="tl-card">
-            <div class="tl-card-title">🛡️ ซิมโรมมิ่ง & ประกันการเดินทางต่างประเทศ</div>
+            <div class="tl-card-title"><span class="cat-pill prep">เตรียมตัว</span>ซิมการ์ดโรมมิ่ง & ประกันภัยการเดินทางต่างประเทศ</div>
             <ul class="tl-bullets">
-              <li>เปิดใช้ซิมการ์ดโรมมิ่ง/อินเทอร์เน็ตที่ใช้งานในจีนได้ลื่นไหล ไม่ติดบล็อกโซเชียล</li>
-              <li>ทำประกันภัยการเดินทางต่างประเทศ Insurverse (คุ้มครองอุบัติเหตุและสุขภาพ 2 ท่าน)</li>
-              <li>ติดตั้งแอป Alipay / WeChat Pay ผูกบัตรเครดิตให้พร้อมสแกนจ่าย</li>
+              <li>เปิดใช้ SIM โรมมิ่ง (ไม่ติดบล็อกโซเชียล เล่น Facebook, LINE, Google ได้ปกติ)</li>
+              <li>ทำประกันภัยการเดินทางต่างประเทศ Insurverse คุ้มครองอุบัติเหตุและสุขภาพ (2 ท่าน)</li>
+              <li>ติดตั้งและผูกบัตรเครดิตใน Alipay และ WeChat Pay ให้พร้อมใช้งาน</li>
             </ul>
             <div class="tags"><span class="tag cost">฿907 / คน (รวม ฿1,814)</span><span class="tag info">Insurverse + SIM</span></div>
           </div>
         </div>
+
         <div class="tl-row prep">
           <div class="tl-time">ก่อนเดินทาง</div>
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
           <div class="tl-card">
-            <div class="tl-card-title">✈️ ตั๋วเครื่องบินไป-กลับ China Eastern Airlines</div>
+            <div class="tl-card-title"><span class="cat-pill flight">ตั๋วบิน</span>ตั๋วเครื่องบินไป-กลับ China Eastern Airlines (4 เที่ยวบิน)</div>
             <ul class="tl-bullets">
-              <li>บินครบ 4 เที่ยวบิน BKK ⇄ KMG ⇄ LJG (MU-9614, MU-5923, MU-5922, MU-9621)</li>
-              <li>ตรวจสอบพาสปอร์ต (อายุคงเหลือเกิน 6 เดือน) และเช็กอินออนไลน์ล่วงหน้า</li>
+              <li>บินครบ 4 ขา: BKK ⇄ KMG ⇄ LJG (MU-9614, MU-5923, MU-5922, MU-9621)</li>
+              <li>เช็กอายุพาสปอร์ตคงเหลือเกิน 6 เดือน และทำเช็กอินออนไลน์ล่วงหน้า</li>
             </ul>
             <div class="tags"><span class="tag cost">฿8,126 / คน (รวม ฿16,252.23)</span><span class="tag free">ชำระแล้ว</span></div>
           </div>
         </div>
+
         <div class="tl-row flight">
           <div class="tl-time">20:50 – 00:30</div>
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
           <div class="tl-card">
-            <div class="tl-card-title">✈️ MU-9614 — สุวรรณภูมิ (BKK) → คุนหมิง (KMG)</div>
+            <div class="tl-card-title"><span class="cat-pill flight">เที่ยวบิน</span>MU-9614 — สุวรรณภูมิ (BKK) → คุนหมิง (KMG)</div>
             <ul class="tl-bullets">
-              <li>China Eastern บินตรงจากสุวรรณภูมิสู่สนามบินคุนหมิงฉางสุ่ย (3 ชม. 40 นาที)</li>
-              <li>ลงจอดเวลา 00:30 น. (เวลาท้องถิ่นประเทศจีน เร็วกว่าไทย 1 ชั่วโมง)</li>
+              <li>China Eastern บินตรงจากสุวรรณภูมิสู่สนามบินคุนหมิงฉางสุ่ย (昆明长水国际机场) บิน 3 ชม. 40 นาที</li>
+              <li>ลงจอดเวลา 00:30 น. (เวลาจีน เร็วกว่าไทย 1 ชม.)</li>
             </ul>
+            <div class="card-action-bar">
+              <button class="action-btn" onclick="copyText('昆明长水国际机场')">📋 ก๊อปปี้ชื่อจีน</button>
+              <button class="action-btn show-driver" onclick="openDriverModal('昆明长水国际机场', 'Kūnmíng Chángshuǐ Guójì Jīchǎng', 'สนามบินนานาชาติคุนหมิงฉางสุ่ย')">🔍 โชว์คนขับ</button>
+            </div>
             <div class="tags"><span class="tag flight-t">บินตรง 3:40 ชม.</span><span class="tag free">รวมในตั๋วเครื่องบินแล้ว</span></div>
           </div>
         </div>
-      </div>    <div class="day-footer-nav">
+      </div>
+      <div class="day-footer-nav">
         <button type="button" class="dfn-top-btn" title="กลับขึ้นด้านบนของวันนี้">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="16" height="16"><path d="M18 15l-6-6-6 6"/></svg>
           <span>บนสุด</span>
@@ -1380,7 +1698,6 @@ body {
           <span class="dfn-icon">›</span>
         </button>
       </div>
-
     </div>
 
     <!-- DAY 1 -->
@@ -1388,8 +1705,9 @@ body {
       <div class="day-head">
         <div class="dh-left">
           <span class="dh-label">วันที่ 2</span>
-          <div class="dh-title">คุนหมิง เมืองฤดูใบไม้ผลิ</div>
+          <div class="dh-title">คุนหมิง เมืองแห่งฤดูใบไม้ผลิ</div>
           <span class="dh-date">วันอาทิตย์ที่ 25 ตุลาคม 2569</span>
+          <div class="dh-weather">🌤️ คุนหมิง 15–22°C · ความสูง 1,890m · แดดอุ่น ลมเย็นสบาย</div>
         </div>
         <div class="dh-emoji">🌸</div>
       </div>
@@ -1398,137 +1716,161 @@ body {
           <div class="tl-time">00:30 – 01:30</div>
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
           <div class="tl-card">
-            <div class="tl-card-title">🛬 ผ่าน ตม. & สแกนศุลกากร สนามบิน KMG</div>
+            <div class="tl-card-title"><span class="cat-pill transit">ตม. ขาเข้า</span>ผ่านด่านตรวจคนเข้าเมือง & รับกระเป๋าใหญ่ 20 กก.</div>
             <ul class="tl-bullets">
-              <li>ผ่านด่าน ตม. สแกนลายนิ้วมือ และตรวจคนเข้าเมือง</li>
-              <li>รับกระเป๋าเดินทางใหญ่ 20 กก. ที่สายพาน นำผ่านเครื่องเอกซเรย์ศุลกากร</li>
-              <li>⚠️ <strong>สำคัญมาก:</strong> ต้องรับกระเป๋าใหญ่ออกมาผ่านด่านศุลกากรที่คุนหมิงเสมอ</li>
+              <li>ผ่านขั้นตอนตรวจคนเข้าเมือง (ตม.) สแกนลายนิ้วมือ</li>
+              <li>รับกระเป๋าเดินทางใหญ่ที่สายพาน นำผ่านเอกซเรย์ศุลกากร</li>
+              <li>⚠️ <strong>สำคัญมาก:</strong> ต้องรับกระเป๋าใหญ่ออกมาผ่านด่านศุลกากรคุนหมิงเสมอ</li>
             </ul>
-            <div class="tags"><span class="tag info">ต้องรับสัมภาระใหญ่</span></div>
+            <div class="tags"><span class="tag info">ต้องรับสัมภาระใหญ่เสมอ</span></div>
           </div>
         </div>
+
         <div class="tl-row transport">
           <div class="tl-time">01:30 – 02:00</div>
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
           <div class="tl-card">
-            <div class="tl-card-title">🚌 Shuttle Bus → โรงแรมเติงหาง (腾航酒店)</div>
+            <div class="tl-card-title"><span class="cat-pill transit">รถตู้</span>Shuttle Bus → โรงแรมเติงหาง (腾航酒店)</div>
             <ul class="tl-bullets">
-              <li>ติดต่อจุดบริการรถรับ-ส่งฟรี 24 ชม. ของโรงแรมเติงหางหน้าอาคาร</li>
-              <li>นั่งรถตู้ประมาณ 10–15 นาทีถึงโรงแรม และเช็กอินเข้าห้องพัก</li>
+              <li>ติดต่อจุดบริการรถตู้รับ-ส่งฟรี 24 ชม. ของโรงแรมเติงหางหน้าอาคารผู้โดยสาร</li>
+              <li>นั่งรถตู้ ~10 นาทีถึงโรงแรม และเช็กอินเข้าห้องพัก</li>
             </ul>
+            <div class="card-action-bar">
+              <button class="action-btn" onclick="copyText('昆明腾航酒店')">📋 ก๊อปปี้ชื่อจีน</button>
+              <button class="action-btn show-driver" onclick="openDriverModal('昆明腾航酒店', 'Kūnmíng Téngháng Jiǔdiàn', 'โรงแรมเติงหาง คุนหมิง (ใกล้สนามบิน)')">🔍 โชว์คนขับ</button>
+            </div>
             <div class="tags"><span class="tag free">บริการรถรับ-ส่งฟรี 24 ชม.</span></div>
           </div>
         </div>
+
         <div class="tl-row sleep">
           <div class="tl-time">02:00 – 10:00</div>
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
           <div class="tl-card">
-            <div class="tl-card-title">😴 พักผ่อนชาร์จพลัง @ โรงแรมเติงหาง (腾航酒店)</div>
+            <div class="tl-card-title"><span class="cat-pill hotel">ที่พัก</span>เช็กอินพักผ่อน โรงแรมเติงหาง (腾航酒店)</div>
             <ul class="tl-bullets">
-              <li>อาบน้ำอุ่น นอนหลับพักผ่อนเต็มอิ่ม 8 ชั่วโมงบนเตียงนุ่มสบาย (1 ห้อง 1 คืน)</li>
-              <li>ชาร์จพลังให้ร่างกายสดชื่นหลังจากเดินทางข้ามคืน</li>
+              <li>พักผ่อน 1 คืน อาบน้ำอุ่น ชาร์จแบตเตอรี่อุปกรณ์ (1 ห้อง 1 คืน)</li>
+              <li>โรงแรมใกล้สนามบิน บริการรับ-ส่งฟรีตลอดคืน</li>
             </ul>
             <div class="tags"><span class="tag cost">ห้องพัก ฿249 / คน (รวม ฿498.53)</span></div>
           </div>
         </div>
+
         <div class="tl-row">
           <div class="tl-time">10:00 – 11:00</div>
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
           <div class="tl-card">
-            <div class="tl-card-title">🧳 เช็กเอาต์ & ฝากกระเป๋าเดินทางใบใหญ่</div>
+            <div class="tl-card-title"><span class="cat-pill hotel">เช็กเอาต์</span>เช็กเอาต์ & ฝากกระเป๋าเดินทางใหญ่ไว้ที่โรงแรม</div>
             <ul class="tl-bullets">
-              <li>เช็กเอาต์และฝากกระเป๋าเดินทางใหญ่ 20 กก. ไว้ที่เคาน์เตอร์โรงแรมฟรี</li>
-              <li>ตัวเปล่าออกไปเที่ยวในเมืองคุนหมิงได้อย่างคล่องตัว</li>
+              <li>เช็กเอาต์และฝากกระเป๋าเดินทาง 20 กก. ไว้ที่ฟรอนต์โรงแรมฟรี</li>
+              <li>พกเฉพาะกระเป๋าสะพายใบเล็กออกไปเที่ยวตัวเมืองคุนหมิง</li>
             </ul>
-            <div class="tags"><span class="tag free">บริการรับฝากสัมภาระฟรี</span></div>
+            <div class="tags"><span class="tag free">รับฝากสัมภาระฟรี</span></div>
           </div>
         </div>
+
         <div class="tl-row activity">
           <div class="tl-time">11:00 – 14:00</div>
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
-          <div class="tl-card has-bg" style="background-image: url('images/kunming_city.jpg');">
-            <div class="tl-card-title">🌿 สวนชุ่ยหู (翠湖公园) + ก๋วยเตี๋ยวข้ามสะพาน</div>
+          <div class="tl-card">
+            <div class="card-media"><img src="images/kunming_city.jpg" alt="สวนชุ่ยหู คุนหมิง" /></div>
+            <div class="tl-card-title"><span class="cat-pill sight">ไฮไลท์</span>สวนชุ่ยหู (翠湖公园) & ก๋วยเตี๋ยวข้ามสะพาน</div>
             <ul class="tl-bullets">
-              <li>นั่งรถโรงแรมต่อ Metro สาย 6 (สถานี Airport Center / 机场中心站) สู่ใจกลางเมือง</li>
-              <li>เดินเที่ยวชมบรรยากาศร่มรื่นของสวนชุ่ยหู สวนมรกตใจกลางคุนหมิง</li>
-              <li>ชิม "ก๋วยเตี๋ยวข้ามสะพาน" (过桥米线) ซิกเนเจอร์อันดับหนึ่งของยูนนาน</li>
+              <li>นั่งรถโรงแรมต่อ Metro สาย 6 (สถานี Airport Center / 机场中心站) เข้าเมือง</li>
+              <li>เดินเล่นสวนสาธารณะใจกลางเมืองคุนหมิง บรรยากาศร่มรื่น</li>
+              <li>กิน "ก๋วยเตี๋ยวข้ามสะพาน" (过桥米线) เมนูซิกเนเจอร์อันดับหนึ่งของยูนนาน</li>
             </ul>
+            <div class="card-action-bar">
+              <button class="action-btn" onclick="copyText('翠湖公园')">📋 ก๊อปปี้ชื่อจีน</button>
+              <button class="action-btn show-driver" onclick="openDriverModal('翠湖公园', 'Cuìhú Gōngyuán', 'สวนชุ่ยหู คุนหมิง')">🔍 โชว์คนขับ</button>
+            </div>
             <div class="tags"><span class="tag info">Metro สาย 6 (~5-7 หยวน)</span><span class="tag cost">อาหาร & รถ ฿100 / คน (รวม ฿200)</span></div>
           </div>
         </div>
+
         <div class="tl-row activity">
           <div class="tl-time">14:00 – 18:00</div>
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
-          <div class="tl-card has-bg" style="background-image: url('images/kunming_city.jpg');">
-            <div class="tl-card-title">🛍️ ถนนคนเดินหนานผิง & ลานประตูม้าทองไก่หยก</div>
+          <div class="tl-card">
+            <div class="tl-card-title"><span class="cat-pill sight">ช็อปปิ้ง</span>ถนนคนเดินหนานผิง & ลานประตูม้าทองไก่หยก</div>
             <ul class="tl-bullets">
-              <li>เดินเล่นช็อปปิ้งย่านการค้าถนนคนเดินหนานผิง (南屏步行街)</li>
-              <li>ถ่ายภาพแลนด์มาร์กประวัติศาสตร์ "ลานประตูม้าทองไก่หยก" (金马碧鸡坊)</li>
+              <li>เดินเล่นย่านการค้าถนนคนเดินหนานผิง (南屏步行街)</li>
+              <li>ถ่ายรูปแลนด์มาร์กประวัติศาสตร์ ลานประตูม้าทองไก่หยก (金马碧鸡坊)</li>
             </ul>
-            <div class="tags"><span class="tag free">เดินเท้าเที่ยวชมฟรี</span></div>
+            <div class="card-action-bar">
+              <button class="action-btn" onclick="copyText('南屏步行街')">📋 ก๊อปปี้ชื่อจีน</button>
+              <button class="action-btn show-driver" onclick="openDriverModal('南屏步行街', 'Nánpíng Bùxíngjiē', 'ถนนคนเดินหนานผิง คุนหมิง')">🔍 โชว์คนขับ</button>
+            </div>
+            <div class="tags"><span class="tag free">เดินเที่ยวชมฟรี</span></div>
           </div>
         </div>
+
         <div class="tl-row food">
           <div class="tl-time">18:00 – 19:00</div>
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
           <div class="tl-card">
-            <div class="tl-card-title">🍜 มื้อเย็นตัวเมืองคุนหมิง + Metro กลับโรงแรม</div>
+            <div class="tl-card-title"><span class="cat-pill food">อาหารเย็น</span>มื้อเย็นตัวเมืองคุนหมิง & Metro กลับโรงแรม</div>
             <ul class="tl-bullets">
-              <li>ทานอาหารเย็นอร่อยๆ ในตัวเมืองคุนหมิง</li>
-              <li>แตะจ่าย Alipay ขึ้น Metro สาย 6 กลับสถานี Airport Center มารับกระเป๋าที่โรงแรม</li>
+              <li>กินอาหารเย็นในตัวเมืองคุนหมิง</li>
+              <li>สแกน Alipay ขึ้น Metro สาย 6 กลับสถานี Airport Center มารับกระเป๋าที่โรงแรม</li>
             </ul>
             <div class="tags"><span class="tag cost">มื้อเย็น & Metro ฿100 / คน (รวม ฿200)</span></div>
           </div>
         </div>
+
         <div class="tl-row transport">
           <div class="tl-time">19:00 – 20:30</div>
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
           <div class="tl-card">
-            <div class="tl-card-title">🚐 Shuttle Bus โรงแรม → สนามบินคุนหมิง (KMG)</div>
+            <div class="tl-card-title"><span class="cat-pill transit">รถรับส่ง</span>Shuttle Bus โรงแรม → สนามบินคุนหมิง (KMG)</div>
             <ul class="tl-bullets">
               <li>รับกระเป๋าใหญ่ขึ้นรถ Shuttle Bus ฟรีของโรงแรมเติงหาง</li>
-              <li>ส่งตรงถึงหน้าประตูทางเข้าอาคารผู้โดยสารขาออกในประเทศ (Domestic Terminal)</li>
+              <li>ส่งตรงหน้าประตูอาคารผู้โดยสารขาออกในประเทศ (Domestic Terminal)</li>
             </ul>
             <div class="tags"><span class="tag free">บริการรถโรงแรมฟรี</span></div>
           </div>
         </div>
+
         <div class="tl-row">
-          <div class="tl-time">20:30 – 22:25</div>
+          <div class="tl-time">20:30 – 22:45</div>
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
           <div class="tl-card">
-            <div class="tl-card-title">🎫 เช็กอินเคาน์เตอร์ในประเทศ สนามบิน KMG</div>
+            <div class="tl-card-title"><span class="cat-pill flight">เช็กอิน</span>เช็กอิน & โหลดกระเป๋า China Eastern ไฟลต์ในประเทศ</div>
             <ul class="tl-bullets">
               <li>เช็กอินเคาน์เตอร์ China Eastern โหลดกระเป๋าเดินทางใหญ่ 20 กก.</li>
-              <li>ผ่านจุดตรวจค้นความปลอดภัยและเดินไปรอขึ้นเครื่องที่เกต</li>
+              <li>ผ่านจุดตรวจความปลอดภัย เข้าไปรอขึ้นเครื่องที่เกต</li>
             </ul>
-            <div class="tags"><span class="tag info">เคาน์เตอร์ China Eastern</span></div>
+            <div class="tags"><span class="tag info">ไฟลต์ในประเทศ (Domestic)</span></div>
           </div>
         </div>
+
         <div class="tl-row flight">
-          <div class="tl-time">22:25 – 23:35</div>
+          <div class="tl-time">22:45 – 23:45</div>
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
           <div class="tl-card">
-            <div class="tl-card-title">✈️ MU-5923 — คุนหมิง (KMG) → ลี่เจียง (LJG)</div>
+            <div class="tl-card-title"><span class="cat-pill flight">เที่ยวบิน</span>MU-5923 — คุนหมิง (KMG) → ลี่เจียง (LJG)</div>
             <ul class="tl-bullets">
-              <li>China Eastern เที่ยวบิน MU-5923 บินข้ามขุนเขาสู่สนามบินลี่เจียงซานอี้ (1 ชม. 10 นาที)</li>
-              <li>เครื่องลงจอดเวลา 23:35 น.</li>
+              <li>เที่ยวบิน MU-5923 บินตรงสู่สนามบินลี่เจียงซานอี้ (丽江三义机场) บิน 1 ชม.</li>
+              <li>ลงจอดเวลา 23:45 น.</li>
             </ul>
-            <div class="tags"><span class="tag flight-t">1:10 ชม.</span><span class="tag free">รวมในตั๋วเครื่องบินแล้ว</span></div>
+            <div class="tags"><span class="tag flight-t">1:00 ชม.</span><span class="tag free">รวมในตั๋วเครื่องบินแล้ว</span></div>
           </div>
         </div>
+
         <div class="tl-row">
-          <div class="tl-time">23:35 – 00:30</div>
+          <div class="tl-time">23:45 – 00:30</div>
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
           <div class="tl-card">
-            <div class="tl-card-title">🛬 รับกระเป๋าใหญ่ & นัดหมายรถโฮมสเตย์</div>
+            <div class="tl-card-title"><span class="cat-pill transit">รับกระเป๋า</span>รับกระเป๋า & พบคนขับรถโฮมสเตย์หลงลั่วเหอ</div>
             <ul class="tl-bullets">
               <li>รับกระเป๋าเดินทางที่สายพานสนามบินลี่เจียง</li>
-              <li>ติดต่อคนขับรถของโฮมสเตย์หลงลั่วเหอที่มารอรับหน้าทางออกอาคารผู้โดยสาร</li>
+              <li>พบคนขับรถของโฮมสเตย์หลงลั่วเหอที่มารอรับหน้าทางออกอาคารผู้โดยสาร</li>
             </ul>
             <div class="tags"><span class="tag info">สนามบินลี่เจียง (LJG)</span></div>
           </div>
         </div>
-      </div>    <div class="day-footer-nav">
+      </div>
+      <div class="day-footer-nav">
         <button type="button" class="dfn-btn prev" data-goto="d0">
           <span class="dfn-icon">‹</span>
           <div class="dfn-info">
@@ -1548,7 +1890,6 @@ body {
           <span class="dfn-icon">›</span>
         </button>
       </div>
-
     </div>
 
     <!-- DAY 2 -->
@@ -1558,6 +1899,7 @@ body {
           <span class="dh-label">วันที่ 3</span>
           <div class="dh-title">ลี่เจียง เมืองเก่ามรดกโลก</div>
           <span class="dh-date">วันจันทร์ที่ 26 ตุลาคม 2569</span>
+          <div class="dh-weather">⛅ ลี่เจียง 8–18°C · ความสูง 2,400m · แดดแรง กลางคืนหนาวจัด</div>
         </div>
         <div class="dh-emoji">🏘️</div>
       </div>
@@ -1566,145 +1908,198 @@ body {
           <div class="tl-time">00:30 – 01:00</div>
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
           <div class="tl-card">
-            <div class="tl-card-title">🚗 รถรับส่ง → โฮมสเตย์หลงลั่วเหอ (龙络河客栈)</div>
+            <div class="tl-card-title"><span class="cat-pill hotel">ที่พัก</span>รถรับส่ง → โฮมสเตย์หลงลั่วเหอ (龙络河客栈)</div>
             <ul class="tl-bullets">
-              <li>นั่งรถรับส่งของโฮมสเตย์ใกล้สนามบิน เช็กอิน อาบน้ำอุ่น พักผ่อน 1 คืน</li>
+              <li>รถรับส่งของโฮมสเตย์ใกล้สนามบิน เช็กอินพักผ่อน 1 คืน</li>
             </ul>
+            <div class="card-action-bar">
+              <button class="action-btn" onclick="copyText('丽江龙络河客栈')">📋 ก๊อปปี้ชื่อจีน</button>
+              <button class="action-btn show-driver" onclick="openDriverModal('丽江龙络河客栈', 'Lìjiāng Lóngluòhé Kèzhàn', 'โฮมสเตย์หลงลั่วเหอ ลี่เจียง (ใกล้สนามบิน)')">🔍 โชว์คนขับ</button>
+            </div>
             <div class="tags"><span class="tag cost">ห้องพัก ฿193 / คน (รวม ฿386.32)</span></div>
           </div>
         </div>
+
         <div class="tl-row sleep">
           <div class="tl-time">01:00 – 07:30</div>
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
           <div class="tl-card">
-            <div class="tl-card-title">😴 นอนหลับพักผ่อน ชาร์จพลัง</div>
+            <div class="tl-card-title"><span class="cat-pill hotel">พักผ่อน</span>นอนหลับพักผ่อน โฮมสเตย์ใกล้สนามบิน</div>
             <ul class="tl-bullets">
-              <li>นอนหลับพักผ่อน 6 ชั่วโมงครึ่ง เตรียมความพร้อมสำหรับทริปลี่เจียง</li>
+              <li>พักผ่อน 6 ชม. ครึ่ง เตรียมพร้อมสำหรับทริปลี่เจียง</li>
             </ul>
+            <div class="tags"><span class="tag free">พักผ่อน</span></div>
           </div>
         </div>
+
         <div class="tl-row">
           <div class="tl-time">07:30 – 08:15</div>
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
           <div class="tl-card">
-            <div class="tl-card-title">🌅 ตื่นนอน เช็กเอาต์ นั่งรถกลับสนามบิน</div>
+            <div class="tl-card-title"><span class="cat-pill transit">เดินทาง</span>เช็กเอาต์ & รถโฮมสเตย์ส่งจุดขึ้นบัสสนามบิน</div>
             <ul class="tl-bullets">
-              <li>ตื่นนอน ล้างหน้า แปรงฟัน เช็กเอาต์</li>
-              <li>นั่งรถโฮมสเตย์มาส่งจุดขึ้นบัสสนามบินลี่เจียงหน้าอาคารผู้โดยสาร</li>
+              <li>เช็กเอาต์ นั่งรถโฮมสเตย์มาส่งจุดขึ้นบัสสนามบินลี่เจียงหน้าอาคาร</li>
             </ul>
-            <div class="tags"><span class="tag free">รถโฮมสเตย์ส่งสนามบิน</span></div>
+            <div class="tags"><span class="tag free">รถโฮมสเตย์ส่งสนามบินฟรี</span></div>
           </div>
         </div>
+
         <div class="tl-row transport">
           <div class="tl-time">08:15 – 09:15</div>
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
           <div class="tl-card">
-            <div class="tl-card-title">🚌 Airport Shuttle Bus → จุดจอดหนานเหมิน (南门)</div>
+            <div class="tl-card-title"><span class="cat-pill transit">บัสสนามบิน</span>Airport Shuttle Bus → จุดจอดหนานเหมิน (南门)</div>
             <ul class="tl-bullets">
-              <li>ขึ้นรถบัสสนามบินลี่เจียง มุ่งตรงสู่จุดจอดประตูใต้เมืองเก่า (南门)</li>
+              <li>ขึ้นรถบัสสนามบินมุ่งตรงสู่ประตูใต้เมืองเก่าลี่เจียง (南门)</li>
               <li>สแกนจ่ายผ่าน Alipay คนละ 20 หยวน (~100 บาท)</li>
             </ul>
             <div class="tags"><span class="tag cost">฿100 / คน (รวม ฿200 / 20 หยวน)</span></div>
           </div>
         </div>
+
         <div class="tl-row">
           <div class="tl-time">09:15 – 09:45</div>
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
           <div class="tl-card">
-            <div class="tl-card-title">🚶 เดินเท้าเข้าเมืองเก่าสู่โรงแรม Qiyue</div>
+            <div class="tl-card-title"><span class="cat-pill transit">เดินเท้า</span>เดินเข้าเมืองเก่าสู่โรงแรม Qiyue Linyin Bieyuan</div>
             <ul class="tl-bullets">
-              <li>เดินเท้าจากจุดจอดหนานเหมิน ~1.6 กม. เลียบซอยเมืองเก่าและลำธารใส</li>
-              <li>สู่โรงแรม Qiyue Linyin Bieyuan (สาขา Mufu) ใกล้คฤหาสน์ตระกูลมู่</li>
+              <li>เดินจากจุดจอดหนานเหมิน ~1.6 กม. เลียบซอยเมืองเก่า</li>
+              <li>ถึงโรงแรม Qiyue Linyin Bieyuan สาขาคฤหาสน์มู่ (木府)</li>
             </ul>
+            <div class="card-action-bar">
+              <button class="action-btn" onclick="copyText('丽江栖跃林荫别院木府店')">📋 ก๊อปปี้ชื่อจีน</button>
+              <button class="action-btn show-driver" onclick="openDriverModal('丽江栖跃林荫别院(木府店)', 'Lìjiāng Qīyuè Línyīn Biéyuàn (Mùfǔ Diàn)', 'โรงแรมชีเยว่ หลินอิน เปี๋ยเยวียน (สาขาคฤหาสน์มู่)')">🔍 โชว์คนขับ</button>
+            </div>
           </div>
         </div>
+
         <div class="tl-row checkin">
           <div class="tl-time">09:45 – 10:15</div>
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
           <div class="tl-card">
-            <div class="tl-card-title">🏩 ฝากกระเป๋าใหญ่ @ Qiyue Linyin Bieyuan (栖跃林荫别院)</div>
+            <div class="tl-card-title"><span class="cat-pill hotel">ฝากกระเป๋า</span>ฝากกระเป๋าใหญ่ @ Qiyue Linyin Bieyuan (栖跃林荫别院)</div>
             <ul class="tl-bullets">
-              <li>เช็กอินฝากกระเป๋าเดินทางใหญ่ 20 กก. ไว้ที่โรงแรม ล้างหน้าล้างตา</li>
+              <li>เช็กอินฝากกระเป๋าใหญ่ 20 กก. ไว้ที่โรงแรม ล้างหน้าล้างตา</li>
               <li>ตัวเบาสบายก่อนออกไปซื้อตั๋วรถบัสและเที่ยวชมเมือง</li>
             </ul>
             <div class="tags"><span class="tag cost">ห้องพัก ฿191 / คน (รวม ฿381.29)</span></div>
           </div>
         </div>
+
         <div class="tl-row transport">
           <div class="tl-time">10:15 – 11:00</div>
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
           <div class="tl-card">
-            <div class="tl-card-title">🚌 ซื้อตั๋วบัสไปสะพานเฉียวโถว @ สถานีขนส่งลี่เจียง</div>
+            <div class="tl-card-title"><span class="cat-pill transit">ซื้อตั๋ว</span>ซื้อตั๋วบัสไปสะพานเฉียวโถว @ สถานีขนส่งลี่เจียง</div>
             <ul class="tl-bullets">
-              <li>เดินจากโรงแรมเพียง ~12 นาที (1.2 กม.) ไปสถานีขนส่งลี่เจียง (丽江客运站)</li>
-              <li>ซื้อตั๋วบัสไปสะพานเฉียวโถวรอบเช้าสุด 08:00 หรือ 08:30 น. (คนละ ~35 หยวน)</li>
-              <li>การันตีที่นั่งแน่นอน และสอบถามคนขับเรื่องการฝากส่งกระเป๋าใหญ่ไป Tina's</li>
+              <li>เดินจากโรงแรม ~12 นาที (1.2 กม.) ไปสถานีขนส่งลี่เจียง (丽江客运站)</li>
+              <li>ซื้อตั๋วบัสล่วงหน้าไปสะพานเฉียวโถวรอบเช้าสุด 08:00 หรือ 08:30 น. (คนละ ~35 หยวน)</li>
+              <li>สอบถามคนขับเรื่องการฝากส่งกระเป๋าเดินทางใหญ่ไป Tina's Guesthouse</li>
             </ul>
+            <div class="card-action-bar">
+              <button class="action-btn" onclick="copyText('丽江客运站')">📋 ก๊อปปี้ชื่อจีน</button>
+              <button class="action-btn show-driver" onclick="openDriverModal('丽江客运站', 'Lìjiāng Kèyùn Zhàn', 'สถานีขนส่งผู้โดยสารลี่เจียง (ซื้อตั๋วบัสไปหุบเขาเสือกระโจน)')">🔍 โชว์คนขับ</button>
+            </div>
             <div class="tags"><span class="tag cost">ตั๋วบัส ฿175 / คน (รวม ฿350 / ~35 หยวน)</span><span class="tag info">การันตีรอบเช้า 08:00/08:30</span></div>
           </div>
         </div>
+
         <div class="tl-row food">
           <div class="tl-time">11:00 – 12:00</div>
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
-          <div class="tl-card has-bg" style="background-image: url('images/zhongyi_market.jpg');">
-            <div class="tl-card-title">🍢 เดินสตรีทฟู้ด ตลาดจงอี้ (忠义市场)</div>
+          <div class="tl-card">
+            <div class="card-media"><img src="images/zhongyi_market.jpg" alt="ตลาดจงอี้ ลี่เจียง" /></div>
+            <div class="tl-card-title"><span class="cat-pill food">สตรีทฟู้ด</span>เดินสตรีทฟู้ด ตลาดจงอี้ (忠义市场)</div>
             <ul class="tl-bullets">
-              <li>เดินกลับมาจากสถานีขนส่ง แวะตลาดจงอี้ศูนย์รวมวิถีชีวิตชาวน่าซี</li>
+              <li>แวะตลาดจงอี้ศูนย์รวมวิถีชีวิตชาวน่าซี ใกล้ประตูใต้</li>
               <li>ชิมขนมพื้นเมือง โรตีทิเบต ข้าวปุกงาดำปิ้ง และผลไม้สดตามฤดูกาล</li>
             </ul>
+            <div class="card-action-bar">
+              <button class="action-btn" onclick="copyText('忠义市场')">📋 ก๊อปปี้ชื่อจีน</button>
+              <button class="action-btn show-driver" onclick="openDriverModal('忠义市场', 'Zhōngyì Shìchǎng', 'ตลาดจงอี้ เมืองเก่าลี่เจียง')">🔍 โชว์คนขับ</button>
+            </div>
             <div class="tags"><span class="tag cost">สตรีทฟู้ด ฿75 / คน (รวม ฿150)</span></div>
           </div>
         </div>
+
         <div class="tl-row food">
           <div class="tl-time">12:00 – 14:00</div>
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
-          <div class="tl-card has-bg" style="background-image: url('images/zhongyi_market.jpg');">
-            <div class="tl-card-title">🍲 หม้อไฟซี่โครงหมู @ สะพานหนานเหมิน (南门桥)</div>
+          <div class="tl-card">
+            <div class="tl-card-title"><span class="cat-pill food">อาหารเด็ด</span>หม้อไฟซี่โครงหมู @ สะพานหนานเหมิน (南门桥)</div>
             <ul class="tl-bullets">
               <li>มื้อเที่ยงหม้อไฟซี่โครงหมูหมักเกลือสูตรดั้งเดิม ร้านดัง 阿婆情腊排骨火锅</li>
-              <li>ซี่โครงหมูต้มซุปกระดูกเคี่ยวนาน เสิร์ฟพร้อมผักสดและเห็ดป่า (เซต 2 ท่าน)</li>
+              <li>ซี่โครงหมูต้มซุปกระดูกเคี่ยว เสิร์ฟพร้อมผักสดและเห็ดป่า (เซต 2 คน)</li>
             </ul>
-            <div class="tags"><span class="tag cost">หม้อไฟ ฿300 / คน (รวม ฿600)</span><span class="tag star">🌟 มิชลิน/ห้ามพลาด</span></div>
+            <div class="card-action-bar">
+              <button class="action-btn" onclick="copyText('阿婆情腊排骨火锅')">📋 ก๊อปปี้ชื่อจีน</button>
+              <button class="action-btn show-driver" onclick="openDriverModal('阿婆情腊排骨火锅(南门桥店)', 'Āpó Qíng Làpáigǔ Huǒguō (Nánménqiáo Diàn)', 'ร้านหม้อไฟซี่โครงหมู อาผอฉิง (สาขาสะพานหนานเหมิน)')">🔍 โชว์คนขับ</button>
+            </div>
+            <div class="tags"><span class="tag cost">หม้อไฟ ฿300 / คน (รวม ฿600)</span><span class="tag star">🌟 ห้ามพลาด</span></div>
           </div>
         </div>
+
         <div class="tl-row activity">
           <div class="tl-time">14:00 – 17:30</div>
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
-          <div class="tl-card has-bg" style="background-image: url('images/lijiang_hero.jpg');">
-            <div class="tl-card-title">🐉 สระมังกรดำ (黑龙潭公园)</div>
+          <div class="tl-card">
+            <div class="card-media"><img src="images/lijiang_hero.jpg" alt="สระมังกรดำ ลี่เจียง" /></div>
+            <div class="tl-card-title"><span class="cat-pill sight">ไฮไลท์</span>สระมังกรดำ (黑龙潭公园) วิวเขาหิมะมังกรหยก</div>
             <ul class="tl-bullets">
-              <li>นั่งรถเมล์สาย 3, 4 หรือ 8 ที่ป้ายตลาดจงอี้ (คนละ 1 หยวน)</li>
+              <li>ขึ้นรถเมล์สาย 3, 4 หรือ 8 ที่ป้ายตลาดจงอี้ (คนละ 1 หยวน)</li>
               <li>ถ่ายรูปมุมมหาชน: สะพานหินและศาลาโบราณสะท้อนเงาเขาหิมะมังกรหยก (玉龙雪山)</li>
             </ul>
-            <div class="tags"><span class="tag cost">รถเมล์ ฿10 / คน (รวม ฿20 / 4 หยวน)</span><span class="tag star">📸 จุดถ่ายรูป</span></div>
+            <div class="card-action-bar">
+              <button class="action-btn" onclick="copyText('黑龙潭公园')">📋 ก๊อปปี้ชื่อจีน</button>
+              <button class="action-btn show-driver" onclick="openDriverModal('黑龙潭公园', 'Hēilóngtán Gōngyuán', 'สวนสระมังกรดำ ลี่เจียง')">🔍 โชว์คนขับ</button>
+            </div>
+            <div class="tags"><span class="tag cost">รถเมล์ ฿10 / คน (รวม ฿20 / 4 หยวน)</span><span class="tag star">📸 จุดถ่ายรูปหลัก</span></div>
           </div>
         </div>
+
         <div class="tl-row activity">
           <div class="tl-time">17:30 – 20:30</div>
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
-          <div class="tl-card has-bg" style="background-image: url('images/lijiang_hero.jpg');">
-            <div class="tl-card-title">🏮 เดินเล่นชมแสงไฟ & เสน่ห์เมืองเก่าลี่เจียงยามค่ำ</div>
+          <div class="tl-card">
+            <div class="tl-card-title"><span class="cat-pill sight">เที่ยวชม</span>เดินเล่นเมืองเก่าลี่เจียง & กังหันน้ำโบราณ</div>
             <ul class="tl-bullets">
-              <li>เดินเที่ยวชิลๆ ไร้กังวลเรื่องเวลาและตั๋วรถบัสเพราะซื้อเสร็จแล้วตั้งแต่เช้า</li>
-              <li>ฟังเสียงลำธารใส ชมสะพานหิน กังหันน้ำโบราณ และโคมแดงสว่างไสว</li>
+              <li>ถ่ายรูปแลนด์มาร์กกังหันน้ำโบราณคู่ (大水车) และจัตุรัสซื่อฟางเจีย (四方街)</li>
+              <li>เดินลัดเลาะถนนคนเดินหินโบราณ ข้ามสะพานเล็กๆ ชมโคมไฟสลัวยามค่ำ</li>
             </ul>
-            <div class="tags"><span class="tag free">เดินเที่ยวชิลไร้กังวล</span><span class="tag star">🏮 แสงสีเมืองเก่า</span></div>
+            <div class="card-action-bar">
+              <button class="action-btn" onclick="copyText('丽江古城大水车')">📋 ก๊อปปี้ชื่อจีน</button>
+              <button class="action-btn show-driver" onclick="openDriverModal('丽江古城大水车', 'Lìjiāng Gǔchéng Dàshuǐchē', 'กังหันน้ำใหญ่ เมืองเก่าลี่เจียง')">🔍 โชว์คนขับ</button>
+            </div>
+            <div class="tags"><span class="tag free">เดินเที่ยวชมฟรี</span></div>
           </div>
         </div>
-        <div class="tl-row checkin">
-          <div class="tl-time">20:30 – 22:00</div>
+
+        <div class="tl-row food">
+          <div class="tl-time">20:30 – 21:30</div>
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
           <div class="tl-card">
-            <div class="tl-card-title">🎒 เช็กอินห้องพัก & เตรียมแยกสัมภาระ</div>
+            <div class="tl-card-title"><span class="cat-pill food">อาหารเย็น</span>มื้อเย็น & อาหารพื้นเมืองน่าซี ถนนคนเดิน</div>
             <ul class="tl-bullets">
-              <li>เช็กอินเข้าห้องพักคืนแรก</li>
-              <li>แยกของจำเป็นใส่เป้เดย์แพ็ก (Daypack) สำหรับเทรคกิ้ง 2 วัน 1 คืน</li>
-              <li>ล็อกกระเป๋าใหญ่ 20 กก. เตรียมนำขึ้นรถบัสพรุ่งนี้เช้าเพื่อส่งไปรอที่ Tina's</li>
+              <li>มื้อเย็นชิมอาหารพื้นเมืองยูนนาน ผัดผักป่า ไก่ตุ๋นหม้อดิน ชาร้อน</li>
             </ul>
-            <div class="tags"><span class="tag info">เตรียมส่งกระเป๋าไป Tina's</span></div>
+            <div class="tags"><span class="tag cost">มื้อเย็น ฿150 / คน (รวม ฿300)</span></div>
           </div>
         </div>
-      </div>    <div class="day-footer-nav">
+
+        <div class="tl-row">
+          <div class="tl-time">21:30 – 22:30</div>
+          <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
+          <div class="tl-card">
+            <div class="tl-card-title"><span class="cat-pill prep">เตรียมตัว</span>แพ็กเป้ Daypack & เตรียมฝากส่งกระเป๋าใหญ่</div>
+            <ul class="tl-bullets">
+              <li>แบ่งสัมภาระ 2 วัน 1 คืนลงเป้ Daypack (เสื้อกันหนาว, เสื้อกันลม, ยา, ไฟฉาย, น้ำดื่ม)</li>
+              <li>เตรียมกระเป๋าเดินทางใหญ่ 20 กก. สำหรับฝากส่งผ่านรถบัสไปรอที่ Tina's Guesthouse</li>
+            </ul>
+            <div class="tags"><span class="tag info">เตรียมตัวเทรคกิ้ง</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="day-footer-nav">
         <button type="button" class="dfn-btn prev" data-goto="d1">
           <span class="dfn-icon">‹</span>
           <div class="dfn-info">
@@ -1724,7 +2119,6 @@ body {
           <span class="dfn-icon">›</span>
         </button>
       </div>
-
     </div>
 
     <!-- DAY 3 -->
@@ -1734,108 +2128,145 @@ body {
           <span class="dh-label">วันที่ 4</span>
           <div class="dh-title">หุบเขาเสือกระโจน วันแรก — High Trail</div>
           <span class="dh-date">วันอังคารที่ 27 ตุลาคม 2569</span>
+          <div class="dh-weather">🏔️ หุบเขาเสือกระโจน 6–16°C · ความสูง 2,670m · สันเขา ลมแรง พกเสื้อกันลม</div>
         </div>
         <div class="dh-emoji">🥾</div>
       </div>
       <div class="timeline">
-        <div class="tl-row food">
-          <div class="tl-time">06:00 – 06:30</div>
+        <div class="tl-row checkin">
+          <div class="tl-time">07:00 – 07:45</div>
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
           <div class="tl-card">
-            <div class="tl-card-title">☕ ตื่นนอน ทานมื้อเช้า เช็กเอาต์</div>
+            <div class="tl-card-title"><span class="cat-pill hotel">เช็กเอาต์</span>เช็กเอาต์ & ลากกระเป๋าเดินทางใหญ่ไปสถานีขนส่ง</div>
             <ul class="tl-bullets">
-              <li>เช็กเอาต์พร้อมกระเป๋าเดินทางใหญ่และเป้เดย์แพ็ก</li>
-              <li>ทานมื้อเช้าเบาๆ จิบชาร้อนเติมพลัง</li>
+              <li>เช็กเอาต์ออกจากโรงแรม Qiyue</li>
+              <li>ลากกระเป๋าเดินทางใหญ่ 1.2 กม. สู่สถานีขนส่งลี่เจียง (丽江客运站)</li>
             </ul>
-            <div class="tags"><span class="tag cost">มื้อเช้า ฿50 / คน (รวม ฿100)</span></div>
+            <div class="tags"><span class="tag info">สถานีขนส่งลี่เจียง</span></div>
           </div>
         </div>
+
         <div class="tl-row transport">
-          <div class="tl-time">06:30 – 07:15</div>
+          <div class="tl-time">07:45 – 08:30</div>
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
           <div class="tl-card">
-            <div class="tl-card-title">🚶 เดินเท้าไปสถานีขนส่งผู้โดยสารลี่เจียง</div>
+            <div class="tl-card-title"><span class="cat-pill transit">ฝากกระเป๋า</span>ขึ้นรถบัส & ฝากส่งกระเป๋าเดินทางใหญ่ไป Tina's</div>
             <ul class="tl-bullets">
-              <li>เดินเท้าช่วงเช้า ~1.5 กม. นำสัมภาระไปยังสถานีขนส่งลี่เจียง (丽江客运站)</li>
+              <li>แจ้งคนขับรถบัสขอฝากส่งกระเป๋าใหญ่ไปรอที่ Tina's Guesthouse (~20 หยวน/ใบ)</li>
+              <li>นั่งรถบัสตัวเปล่าสะพายเฉพาะเป้ Daypack ออกเดินทางสู่หุบเขาเสือกระโจน</li>
             </ul>
+            <div class="card-action-bar">
+              <button class="action-btn" onclick="copyText('中峡蒂娜客栈')">📋 ก๊อปปี้ชื่อจีน</button>
+              <button class="action-btn show-driver" onclick="openDriverModal('中峡蒂娜青年旅舍', 'Zhōngxiá Dìnà Qīngnián Lǚshè', 'ทิน่า เกสต์เฮาส์ (จุดรับกระเป๋าใหญ่ หุบเขาเสือกระโจน)')">🔍 โชว์คนขับ</button>
+            </div>
+            <div class="tags"><span class="tag info">ฝากกระเป๋าใหญ่ไป Tina's (~20 หยวน)</span></div>
           </div>
         </div>
+
         <div class="tl-row transport">
-          <div class="tl-time">08:00 – 11:00</div>
+          <div class="tl-time">08:30 – 10:30</div>
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
           <div class="tl-card">
-            <div class="tl-card-title">🚌 รถบัสลี่เจียง → เฉียวโถว + ส่งกระเป๋าใหญ่ไป Tina's</div>
+            <div class="tl-card-title"><span class="cat-pill transit">เดินทาง</span>รถบัสมุ่งหน้าสะพานเฉียวโถว (桥头镇)</div>
             <ul class="tl-bullets">
-              <li>ขึ้นรถบัส แจ้งคนขับฝากส่งกระเป๋าเดินทางใหญ่ไปรอที่ Tina's (~20 หยวน/ใบ)</li>
-              <li>ลงรถที่สะพานเฉียวโถว (Qiaotou) ซื้อบัตรเข้าอุทยานคนละ 45 หยวน</li>
-              <li>เริ่มเดินเทรลตัวเบาสบายด้วยเป้เดย์แพ็กใบเดียว</li>
+              <li>นั่งรถบัสชมวิวภูเขาและแม่น้ำจินชา ~2 ชั่วโมง สู่สะพานเฉียวโถว (Qiaotou) จุดเริ่มเดิน</li>
             </ul>
-            <div class="tags"><span class="tag cost">บัตรเข้า ฿225 / คน (รวม ฿450)</span><span class="tag cost">ฝากกระเป๋า ~20 หยวน/ใบ</span><span class="tag info">ส่งกระเป๋าไป Tina's</span></div>
+            <div class="tags"><span class="tag info">เดินทาง 2 ชม.</span></div>
           </div>
         </div>
+
+        <div class="tl-row">
+          <div class="tl-time">10:30 – 11:00</div>
+          <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
+          <div class="tl-card">
+            <div class="tl-card-title"><span class="cat-pill sight">ซื้อตั๋ว</span>ซื้อตั๋วเข้าอุทยานหุบเขาเสือกระโจน (虎跳峡门票)</div>
+            <ul class="tl-bullets">
+              <li>รถบัสจอดที่จุดจำหน่ายตั๋วหน้าด่าน สแกน Alipay ซื้อบัตรเข้าอุทยาน (คนละ 45 หยวน)</li>
+            </ul>
+            <div class="card-action-bar">
+              <button class="action-btn" onclick="copyText('虎跳峡景区售票处')">📋 ก๊อปปี้ชื่อจีน</button>
+              <button class="action-btn show-driver" onclick="openDriverModal('虎跳峡景区售票处', 'Hǔtiàoxiá Jǐngqū Shòupiàochù', 'จุดจำหน่ายตั๋วอุทยานหุบเขาเสือกระโจน')">🔍 โชว์คนขับ</button>
+            </div>
+            <div class="tags"><span class="tag cost">ค่าเข้า ฿225 / คน (รวม ฿450 / 45 หยวน)</span></div>
+          </div>
+        </div>
+
         <div class="tl-row trekking">
           <div class="tl-time">11:00 – 13:00</div>
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
-          <div class="tl-card has-bg" style="background-image: url('images/tiger_leaping_gorge.jpg');">
-            <div class="tl-card-title">🥾 เริ่มเดินเทรคกิ้ง High Trail → Naxi Family</div>
+          <div class="tl-card">
+            <div class="card-media"><img src="images/tiger_leaping_gorge.jpg" alt="High Trail หุบเขาเสือกระโจน" /></div>
+            <div class="tl-card-title"><span class="cat-pill trek">เทรคกิ้ง</span>เริ่มเดินเทรคกิ้ง High Trail → Naxi Family</div>
             <ul class="tl-bullets">
-              <li>ก้าวสู่เส้นทาง Upper Trekking Route (ยาวรวม 24 กม.) สันเขาฝั่งฮาปา</li>
-              <li>ทางลูกรังลาดเอียงเลียบทุ่งนา วิวภูเขาหิมะมังกรหยก เดินสบายๆ ~2 ชม.</li>
-              <li>(หากต้องการทุ่นแรงมีรถตู้ชาวบ้านหน้าด่านส่งถึงจุดเดินขึ้นเขา 20 หยวน/คน)</li>
+              <li>ก้าวสู่เส้นทาง Upper High Trail เลียบไหล่เขาฮาปา วิวหน้าผาอวี้หลง (~2 ชม.)</li>
+              <li>ทางลูกรังลาดเอียงเลียบทุ่งนา (หน้าด่านมีรถตู้ชาวบ้านทุ่นแรง 20 หยวน/คน)</li>
             </ul>
             <div class="tags"><span class="tag trek">High Trail 2 ชม.</span></div>
           </div>
         </div>
+
         <div class="tl-row food">
           <div class="tl-time">13:00 – 14:30</div>
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
           <div class="tl-card">
-            <div class="tl-card-title">🍚 พักทานมื้อเที่ยง @ Naxi Family (纳西雅阁)</div>
+            <div class="tl-card-title"><span class="cat-pill food">อาหารเที่ยง</span>พักกินมื้อเที่ยง @ Naxi Family (纳西雅阁)</div>
             <ul class="tl-bullets">
-              <li>แวะพักที่หมู่บ้านแรก สั่งอาหารตามสั่ง 2 จาน เติมพลัง ดื่มน้ำ</li>
-              <li>พักผ่อนกล้ามเนื้อขาและเข้าห้องน้ำ เตรียมพร้อมก่อนเริ่มช่วงไต่ความชัน</li>
+              <li>แวะพักที่หมู่บ้านแรก สั่งอาหารตามสั่ง 2 จาน เติมพลัง ดื่มน้ำ เข้าห้องน้ำ</li>
+              <li>พักกล้ามเนื้อขาให้พร้อมก่อนเริ่มช่วงไต่ความชัน 28 Bends</li>
             </ul>
+            <div class="card-action-bar">
+              <button class="action-btn" onclick="copyText('纳西雅阁客栈')">📋 ก๊อปปี้ชื่อจีน</button>
+              <button class="action-btn show-driver" onclick="openDriverModal('纳西雅阁客栈', 'Nàxī Yǎgé Kèzhàn', 'นาซี แฟมิลี่ เกสต์เฮาส์ (หุบเขาเสือกระโจน)')">🔍 โชว์คนขับ</button>
+            </div>
             <div class="tags"><span class="tag cost">มื้อเที่ยง ฿150 / คน (รวม ฿300)</span></div>
           </div>
         </div>
+
         <div class="tl-row trekking">
           <div class="tl-time">14:30 – 17:00</div>
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
-          <div class="tl-card has-bg" style="background-image: url('images/tiger_leaping_gorge.jpg');">
-            <div class="tl-card-title">⛰️ 28 Bends — โค้งปราบเซียน (二十八道拐)</div>
+          <div class="tl-card">
+            <div class="tl-card-title"><span class="cat-pill trek">ไฮไลท์</span>28 Bends — โค้งปราบเซียน (二十八道拐)</div>
             <ul class="tl-bullets">
-              <li>ไต่ระดับความชันขึ้นเขาสลับฟันปลา 28 โค้ง บนความสูงกว่า 3,000 เมตร</li>
-              <li>จุดสูงสุดมองเห็นแม่น้ำจินชาและวิวเขาหิมะมังกรหยกแบบ 360 องศา</li>
-              <li>ผ่านจุดสูงสุด ทางเดินจะเปลี่ยนเป็นทางราบเลียบผา มีเงาภูเขาช่วยบังแดด</li>
+              <li>ไต่ระดับความชันสลับฟันปลา 28 โค้ง บนความสูงกว่า 2,670 เมตร</li>
+              <li>จุดสูงสุดมองเห็นโค้งแม่น้ำจินชาและยอดเขาหิมะมังกรหยกแบบ 360 องศา</li>
+              <li>พ้นจุดสูงสุด ทางเดินจะเปลี่ยนเป็นทางราบเลียบผา มีร่มเงาเขาช่วยบังแดด</li>
             </ul>
             <div class="tags"><span class="tag trek">28 โค้งชัน ไต่ระดับ</span><span class="tag star">🌟 ไฮไลท์ระดับโลก</span></div>
           </div>
         </div>
+
         <div class="tl-row checkin">
           <div class="tl-time">17:00 – 18:00</div>
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
           <div class="tl-card">
-            <div class="tl-card-title">🏠 ถึงหมู่บ้านย่าชา → เช็กอิน Summit Inn (茶马客栈)</div>
+            <div class="tl-card-title"><span class="cat-pill hotel">ที่พัก</span>ถึงหมู่บ้านย่าชา → เช็กอิน Summit Inn (茶马客栈)</div>
             <ul class="tl-bullets">
               <li>เดินตามทางราบเลียบผาเข้าสู่หมู่บ้านย่าชา</li>
               <li>เช็กอิน Summit Inn (Tea Horse Guesthouse) เกสต์เฮาส์ริมผาวิวหลักล้าน (1 ห้อง 1 คืน)</li>
             </ul>
+            <div class="card-action-bar">
+              <button class="action-btn" onclick="copyText('虎跳峡茶马客栈')">📋 ก๊อปปี้ชื่อจีน</button>
+              <button class="action-btn show-driver" onclick="openDriverModal('虎跳峡茶马客栈', 'Hǔtiàoxiá Chámǎ Kèzhàn', 'ซัมมิท อินน์ / ทีฮอร์ส เกสต์เฮาส์ (หมู่บ้านย่าชา)')">🔍 โชว์คนขับ</button>
+            </div>
             <div class="tags"><span class="tag cost">ห้องพัก ฿526 / คน (รวม ฿1,052.78)</span></div>
           </div>
         </div>
+
         <div class="tl-row food">
           <div class="tl-time">18:00 – 21:00</div>
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
           <div class="tl-card">
-            <div class="tl-card-title">🌄 ทานมื้อเย็น ชมวิวยอดเขาหิมะอวี้หลง & ดูดาว</div>
+            <div class="tl-card-title"><span class="cat-pill food">อาหารเย็น</span>มื้อเย็นชมแสงสีทองฉาบยอดเขาอวี้หลง & ดูดาว</div>
             <ul class="tl-bullets">
-              <li>ทานมื้อเย็น ชมแสงอาทิตย์สีทองฉาบยอดเขาหิมะมังกรหยกยามอัสดง</li>
-              <li>ตกดึกชมทะเลดาวนับล้านดวงส่องสว่างพร่างพราวเต็มท้องฟ้าเหนือยอดเขาหิมะ</li>
+              <li>กินมื้อเย็นบนระเบียง ชมแสงเย็นสีทองฉาบยอดเขาหิมะมังกรหยกยามอัสดง</li>
+              <li>ตกดึกดูทะเลดาวเต็มท้องฟ้าเหนือยอดเขาหิมะ อากาศหนาวสดชื่น</li>
             </ul>
-            <div class="tags"><span class="tag cost">มื้อเย็น ฿200 / คน (รวม ฿400)</span><span class="tag star">🌌 ดาวเต็มฟ้า</span></div>
+            <div class="tags"><span class="tag cost">มื้อเย็น ฿200 / คน (รวม ฿400)</span><span class="tag star">🌌 ดูดาว</span></div>
           </div>
         </div>
-      </div>    <div class="day-footer-nav">
+      </div>
+      <div class="day-footer-nav">
         <button type="button" class="dfn-btn prev" data-goto="d2">
           <span class="dfn-icon">‹</span>
           <div class="dfn-info">
@@ -1855,7 +2286,6 @@ body {
           <span class="dfn-icon">›</span>
         </button>
       </div>
-
     </div>
 
     <!-- DAY 4 -->
@@ -1865,6 +2295,7 @@ body {
           <span class="dh-label">วันที่ 5</span>
           <div class="dh-title">หุบเขาเสือกระโจน วันสอง แล้วมุ่งหน้าแชงกรี-ลา</div>
           <span class="dh-date">วันพุธที่ 28 ตุลาคม 2569</span>
+          <div class="dh-weather warn">❄️ เดินสู่แชงกรี-ลา 2–14°C · ความสูง 3,200m · ⚠️ เตรียมรับมือความสูง (AMS)</div>
         </div>
         <div class="dh-emoji">🙏</div>
       </div>
@@ -1873,77 +2304,100 @@ body {
           <div class="tl-time">07:30 – 09:00</div>
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
           <div class="tl-card">
-            <div class="tl-card-title">☕ เช้าตรู่บนยอดเขา มื้อเช้า & กาแฟชมวิว</div>
+            <div class="tl-card-title"><span class="cat-pill food">อาหารเช้า</span>มื้อเช้าบนยอดเขา & กาแฟชมวิวพาโนรามา</div>
             <ul class="tl-bullets">
-              <li>ตื่นรับแสงเช้าสะท้อนช่องเขา จิบกาแฟอุ่นๆ พร้อมวิวพาโนรามา</li>
-              <li>เช็กเอาต์เตรียมออกเดินแต่เช้าตรู่ก่อนแดดร้อน</li>
+              <li>ตื่นเช้าจิบกาแฟชมวิวช่องเขา เช็กเอาต์เตรียมออกเดินก่อนแดดร้อน</li>
             </ul>
             <div class="tags"><span class="tag cost">มื้อเช้า ฿100 / คน (รวม ฿200)</span></div>
           </div>
         </div>
+
         <div class="tl-row trekking">
           <div class="tl-time">09:00 – 12:30</div>
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
-          <div class="tl-card has-bg" style="background-image: url('images/tiger_leaping_gorge.jpg');">
-            <div class="tl-card-title">🥾 High Trail เลียบผา ผ่าน Halfway & น้ำตกกวนอิม</div>
+          <div class="tl-card">
+            <div class="card-media"><img src="images/tiger_leaping_gorge.jpg" alt="Halfway Guesthouse ผาหินเสือกระโจน" /></div>
+            <div class="tl-card-title"><span class="cat-pill trek">เทรคกิ้ง</span>High Trail เลียบผา ผ่าน Halfway & น้ำตกกวนอิม</div>
             <ul class="tl-bullets">
-              <li>ทางเดินเลียบหน้าผาหินแคบๆ ไม่มีรั้วกั้น ขวามือคือเหวลึกสู่แม่น้ำจินชา</li>
-              <li>แวะพักคาเฟ่ระเบียงชมวิวพาโนรามาที่ Halfway Guesthouse ชมยอดเขาฮาปา</li>
-              <li>เดินลุยละอองน้ำเย็นสดชื่นที่น้ำตกกวนอิม และค่อยๆ ลัดเลาะลงสู่ถนนใหญ่</li>
+              <li>ทางเดินเลียบผาหินแคบ ขวามือเป็นเหวลึกสู่แม่น้ำจินชา</li>
+              <li>แวะพัก Halfway Guesthouse ระเบียงชมวิวพาโนรามา ยอดเขาฮาปา</li>
+              <li>เดินผ่านละอองน้ำตกกวนอิม และค่อยๆ ลัดเลาะลงสู่ถนนใหญ่</li>
             </ul>
+            <div class="card-action-bar">
+              <button class="action-btn" onclick="copyText('中途客栈')">📋 ก๊อปปี้ชื่อจีน</button>
+              <button class="action-btn show-driver" onclick="openDriverModal('中途客栈', 'Zhōngtú Kèzhàn', 'ฮาล์ฟเวย์ เกสต์เฮาส์ (หุบเขาเสือกระโจน)')">🔍 โชว์คนขับ</button>
+            </div>
             <div class="tags"><span class="tag trek">เลียบผา ~3.5 ชม.</span><span class="tag info">น้ำตกกวนอิม 💧</span></div>
           </div>
         </div>
+
         <div class="tl-row food">
           <div class="tl-time">12:30 – 15:30</div>
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
           <div class="tl-card">
-            <div class="tl-card-title">🍜 รับกระเป๋าใหญ่คืน + มื้อเที่ยง & ซื้อตั๋วบัส @ Tina's</div>
+            <div class="tl-card-title"><span class="cat-pill transit">รับกระเป๋า</span>รับกระเป๋าใหญ่คืน + มื้อเที่ยง & ซื้อตั๋วบัส @ Tina's</div>
             <ul class="tl-bullets">
               <li>เดินถึง Tina's ติดต่อรับกระเป๋าใหญ่คืนที่คาเฟ่ Moye / จุดบริการฝั่งตรงข้าม</li>
-              <li>ทานมื้อเที่ยง พักผ่อนกล้ามเนื้อ และซื้อตั๋วบัสรอบ 15:30 น. (คนละ 55 หยวน)</li>
+              <li>กินมื้อเที่ยง และซื้อตั๋วบัสรอบ 15:30 น. มุ่งหน้าแชงกรี-ลา (คนละ 55 หยวน)</li>
             </ul>
+            <div class="card-action-bar">
+              <button class="action-btn" onclick="copyText('蒂娜青年旅舍')">📋 ก๊อปปี้ชื่อจีน</button>
+              <button class="action-btn show-driver" onclick="openDriverModal('蒂娜青年旅舍', 'Dìnà Qīngnián Lǚshè', 'ทิน่า เกสต์เฮาส์ (จุดขึ้นบัสไปแชงกรี-ลา)')">🔍 โชว์คนขับ</button>
+            </div>
             <div class="tags"><span class="tag info">รับกระเป๋าใหญ่คืนที่ Tina's</span><span class="tag cost">มื้อเที่ยง & ตั๋วบัส ฿175 / คน (รวม ฿350)</span></div>
           </div>
         </div>
+
         <div class="tl-row transport">
           <div class="tl-time">15:30 – 17:30</div>
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
           <div class="tl-card">
-            <div class="tl-card-title">🚌 รถบัสสายตรง Tina's → เมืองโบราณตู๋เค่อจง</div>
+            <div class="tl-card-title"><span class="cat-pill transit">บัสสายตรง</span>รถบัสสายตรง Tina's → เมืองโบราณตู๋เค่อจง</div>
             <ul class="tl-bullets">
-              <li>นำกระเป๋าใหญ่เก็บใต้ท้องรถบัส มุ่งหน้าสู่แชงกรี-ลา (~2 ชม.)</li>
+              <li>เก็บกระเป๋าใหญ่ใต้ท้องรถบัส มุ่งหน้าสู่แชงกรี-ลา (~2 ชม.)</li>
               <li>นั่งพักผ่อนสบายๆ ชมวิวที่ราบสูงทิเบตสองข้างทาง</li>
             </ul>
             <div class="tags"><span class="tag free">ชำระรวมด้านบนแล้ว</span></div>
           </div>
         </div>
+
         <div class="tl-row checkin">
           <div class="tl-time">17:30 – 18:30</div>
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
           <div class="tl-card">
-            <div class="tl-card-title">🏨 เช็กอิน Shangri-La Wangshan Xiaoyuan Inn</div>
+            <div class="tl-card-title"><span class="cat-pill hotel">ที่พัก</span>เช็กอิน Shangri-La Wangshan Xiaoyuan Inn</div>
             <ul class="tl-bullets">
-              <li>เช็กอินโรงแรมในเมืองโบราณตู๋เค่อจงพร้อมกระเป๋าเดินทางใบใหญ่ (1 ห้อง 1 คืน)</li>
-              <li>มีเสื้อกันหนาวหนา ถุงมือ พร้อมรับอากาศหนาวเลขตัวเดียว</li>
+              <li>เช็กอินโรงแรมในเมืองโบราณตู๋เค่อจง พร้อมกระเป๋าเดินทางใหญ่ (1 ห้อง 1 คืน)</li>
+              <li>เปลี่ยนใส่เสื้อกันหนาวหนา ถุงมือ พร้อมรับอากาศหนาวจัด</li>
             </ul>
+            <div class="card-action-bar">
+              <button class="action-btn" onclick="copyText('香格里拉望山小院客栈')">📋 ก๊อปปี้ชื่อจีน</button>
+              <button class="action-btn show-driver" onclick="openDriverModal('香格里拉望山小院客栈', 'Xiānggélǐlā Wàngshān Xiǎoyuàn Kèzhàn', 'โรงแรมว่างซาน เสี่ยวเยวียน แชงกรี-ลา (เมืองโบราณตู๋เค่อจง)')">🔍 โชว์คนขับ</button>
+            </div>
             <div class="tags"><span class="tag cost">ห้องพัก ฿241 / คน (รวม ฿481.90)</span></div>
           </div>
         </div>
+
         <div class="tl-row food">
           <div class="tl-time">18:30 – 21:30</div>
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
-          <div class="tl-card has-bg" style="background-image: url('images/shangrila_night.jpg');">
-            <div class="tl-card-title">🙏 กงล้อมนต์ยักษ์วัดกุยซาน + หม้อไฟเนื้อจามรี 🐃</div>
+          <div class="tl-card">
+            <div class="card-media"><img src="images/shangrila_night.jpg" alt="แชงกรี-ลา เมืองโบราณตู๋เค่อจง" /></div>
+            <div class="tl-card-title"><span class="cat-pill sight">ไฮไลท์</span>กงล้อมนต์ยักษ์วัดกุยซาน + หม้อไฟเนื้อจามรี 🐃</div>
             <ul class="tl-bullets">
-              <li>หมุนกงล้อมนต์ทองคำยักษ์ที่ใหญ่ที่สุดในโลก (3 รอบตามเข็มนาฬิกา)</li>
+              <li>ร่วมหมุนกงล้อมนต์ทองคำยักษ์ที่ใหญ่ที่สุดในโลก (3 รอบตามเข็มนาฬิกา)</li>
               <li>ชมวิวแสงไฟเมืองโบราณตู๋เค่อจงยามค่ำคืน</li>
-              <li>ทานมื้อเย็น "หม้อไฟเนื้อจามรี" น้ำซุปสมุนไพรทิเบตเข้มข้นคลายหนาว</li>
+              <li>กินมื้อเย็น "หม้อไฟเนื้อจามรี" น้ำซุปสมุนไพรทิเบตเข้มข้นคลายหนาว</li>
             </ul>
+            <div class="card-action-bar">
+              <button class="action-btn" onclick="copyText('独克宗古城龟山公园')">📋 ก๊อปปี้ชื่อจีน</button>
+              <button class="action-btn show-driver" onclick="openDriverModal('独克宗古城龟山公园', 'Dúkèzōng Gǔchéng Guīshān Gōngyuán', 'วัดกุยซาน กงล้อมนต์ทองคำยักษ์ เมืองโบราณตู๋เค่อจง')">🔍 โชว์คนขับ</button>
+            </div>
             <div class="tags"><span class="tag cost">หม้อไฟ ฿300 / คน (รวม ฿600)</span><span class="tag star">🌟 ไฮไลท์</span></div>
           </div>
         </div>
-      </div>    <div class="day-footer-nav">
+      </div>
+      <div class="day-footer-nav">
         <button type="button" class="dfn-btn prev" data-goto="d3">
           <span class="dfn-icon">‹</span>
           <div class="dfn-info">
@@ -1963,7 +2417,6 @@ body {
           <span class="dfn-icon">›</span>
         </button>
       </div>
-
     </div>
 
     <!-- DAY 5 -->
@@ -1973,6 +2426,7 @@ body {
           <span class="dh-label">วันที่ 6</span>
           <div class="dh-title">อุทยานผู่ต๋าชั่ว สวรรค์บนดิน</div>
           <span class="dh-date">วันพฤหัสบดีที่ 29 ตุลาคม 2569</span>
+          <div class="dh-weather warn">❄️ ผู่ต๋าชั่ว -2 ถึง 10°C · ความสูง 3,500m · ⚠️ เสี่ยง AMS งดวิ่ง/พกออกซิเจนกระป๋อง</div>
         </div>
         <div class="dh-emoji">🏔️</div>
       </div>
@@ -1981,65 +2435,102 @@ body {
           <div class="tl-time">07:30 – 08:30</div>
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
           <div class="tl-card">
-            <div class="tl-card-title">🍳 มื้อเช้า เดินไปประตูตะวันออก (独克宗东门)</div>
+            <div class="tl-card-title"><span class="cat-pill food">อาหารเช้า</span>มื้อเช้า & เดินไปจุดขึ้นรถบัส ประตูตะวันออก</div>
             <ul class="tl-bullets">
-              <li>ทานมื้อเช้า สวมเสื้อกันหนาว หมวก ถุงมือ</li>
-              <li>เดินไปจุดขึ้นรถบัสท่องเที่ยวที่ลานจอดรถประตูตะวันออกเมืองโบราณ</li>
+              <li>กินมื้อเช้า เดินไปประตูตะวันออกเมืองโบราณตู๋เค่อจง (独克宗东门停车场)</li>
+              <li>เตรียมออกซิเจนกระป๋อง น้ำดื่ม และเสื้อกันหนาวหนา</li>
             </ul>
-            <div class="tags"><span class="tag cost">มื้อเช้า ฿75 / คน (รวม ฿150)</span></div>
+            <div class="card-action-bar">
+              <button class="action-btn" onclick="copyText('独克宗古城东门停车场')">📋 ก๊อปปี้ชื่อจีน</button>
+              <button class="action-btn show-driver" onclick="openDriverModal('独克宗古城东门停车场', 'Dúkèzōng Gǔchéng Dōngmén Tíngchēchǎng', 'ประตูทิศตะวันออก เมืองโบราณตู๋เค่อจง (จุดขึ้นรถบัสผู่ต๋าชั่ว)')">🔍 โชว์คนขับ</button>
+            </div>
+            <div class="tags"><span class="tag info">เตรียมตัวขึ้นที่สูง</span></div>
           </div>
         </div>
-        <div class="tl-row activity">
-          <div class="tl-time">08:30 – 15:30</div>
-          <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
-          <div class="tl-card has-bg" style="background-image: url('images/potatso_park.jpg');">
-            <div class="tl-card-title">🏞️ อุทยานแห่งชาติผู่ต๋าชั่ว (普达措国家公园)</div>
-            <ul class="tl-bullets">
-              <li>อุทยานแห่งชาติแห่งแรกของจีน สูงกว่า 3,500 เมตรจากระดับน้ำทะเล</li>
-              <li>นั่งรถ Scenic Shuttle Bus (รถเหลือง) ชมวิวทุ่งหญ้าเลี้ยงม้า</li>
-              <li>เดินเทรคกิ้งบนสะพานไม้เลียบทะเลสาบซู่ตู๋ (Shudu Lake) ผืนน้ำใสบริสุทธิ์</li>
-              <li>สัมผัสป่าสนโบราณและไอหมอก ท่ามกลางความเงียบสงบดั่งสวรรค์บนดิน</li>
-            </ul>
-            <div class="tags"><span class="tag cost">ตั๋วเข้า+รถ+บัส ฿890 / คน (รวม ฿1,780 / 178 หยวน)</span><span class="tag star">🌟 ไฮไลท์</span></div>
-          </div>
-        </div>
+
         <div class="tl-row transport">
-          <div class="tl-time">15:30 – 16:30</div>
+          <div class="tl-time">08:30 – 09:30</div>
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
           <div class="tl-card">
-            <div class="tl-card-title">🚌 รถบัสท่องเที่ยวกลับเมืองโบราณตู๋เค่อจง</div>
+            <div class="tl-card-title"><span class="cat-pill transit">บัสอุทยาน</span>รถบัสประจำทาง → อุทยานแห่งชาติผู่ต๋าชั่ว (普达措)</div>
             <ul class="tl-bullets">
-              <li>ขึ้นรถบัสท่องเที่ยวขากลับจากหน้าทางออกอุทยาน</li>
-              <li>นั่งพักผ่อนกลับมาลงที่ลานจอดรถประตูตะวันออกเมืองโบราณตู๋เค่อจง</li>
+              <li>ขึ้นรถบัสท่องเที่ยวประจำทาง มุ่งหน้าอุทยานผู่ต๋าชั่ว (~22 กม. ใช้เวลา ~40 นาที)</li>
+              <li>ค่ารถไป-กลับคนละ 30 หยวน (~150 บาท)</li>
             </ul>
-            <div class="tags"><span class="tag free">รวมในตั๋วไป-กลับเรียบร้อยแล้ว</span></div>
+            <div class="tags"><span class="tag cost">บัสไป-กลับ ฿150 / คน (รวม ฿300 / 30 หยวน)</span></div>
           </div>
         </div>
-        <div class="tl-row checkin">
-          <div class="tl-time">17:30 – 18:30</div>
+
+        <div class="tl-row activity">
+          <div class="tl-time">09:30 – 14:30</div>
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
           <div class="tl-card">
-            <div class="tl-card-title">🏨 พักผ่อน @ Shangri-La Wangshan Xiaoyuan Inn (คืนที่ 2)</div>
+            <div class="card-media"><img src="images/potatso_park.jpg" alt="อุทยานผู่ต๋าชั่ว แชงกรี-ลา" /></div>
+            <div class="tl-card-title"><span class="cat-pill sight">ไฮไลท์</span>เที่ยวชมอุทยานผู่ต๋าชั่ว (ทะเลสาบซู่ตู๋ 属都湖)</div>
             <ul class="tl-bullets">
-              <li>กลับเข้าห้องพักโรงแรมในเมืองโบราณตู๋เค่อจงต่อเนื่องเป็นคืนที่ 2</li>
-              <li>ดื่มชาร้อน พักผ่อนคลายความเมื่อยล้า</li>
+              <li>ซื้อตั๋วเข้าอุทยานรวมรถชัตเติลบัส (คนละ 138 หยวน / ~690 บาท)</li>
+              <li>เดินบนสะพานไม้เลียบทะเลสาบซู่ตู๋ (ยาว 3.3 กม.) ชมป่าสน ทุ่งหญ้า และสัตว์ป่า</li>
+              <li>ความสูงกว่า 3,500 ม. แนะนำเดินช้าๆ หายใจลึกๆ จิบน้ำบ่อยๆ</li>
+            </ul>
+            <div class="card-action-bar">
+              <button class="action-btn" onclick="copyText('普达措国家公园')">📋 ก๊อปปี้ชื่อจีน</button>
+              <button class="action-btn show-driver" onclick="openDriverModal('普达措国家公园', 'Pǔdácuò Guójiā Gōngyuán', 'อุทยานแห่งชาติผู่ต๋าชั่ว แชงกรี-ลา')">🔍 โชว์คนขับ</button>
+            </div>
+            <div class="tags"><span class="tag cost">ตั๋วเข้า ฿690 / คน (รวม ฿1,380 / 138 หยวน)</span><span class="tag star">🌟 อุทยานแห่งชาติ</span></div>
+          </div>
+        </div>
+
+        <div class="tl-row transport">
+          <div class="tl-time">14:30 – 15:30</div>
+          <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
+          <div class="tl-card">
+            <div class="tl-card-title"><span class="cat-pill transit">เดินทาง</span>นั่งรถบัสกลับสู่เมืองโบราณตู๋เค่อจง</div>
+            <ul class="tl-bullets">
+              <li>ขึ้นรถบัสกลับมายังประตูตะวันออกเมืองโบราณตู๋เค่อจง</li>
+            </ul>
+            <div class="tags"><span class="tag free">รถบัสรวมในตั๋วไป-กลับแล้ว</span></div>
+          </div>
+        </div>
+
+        <div class="tl-row activity">
+          <div class="tl-time">15:30 – 18:30</div>
+          <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
+          <div class="tl-card">
+            <div class="tl-card-title"><span class="cat-pill sight">เที่ยวชม</span>พักผ่อน & เดินเล่นคาเฟ่วิวพาโนรามา</div>
+            <ul class="tl-bullets">
+              <li>นั่งจิบชาเนยจามรีอุ่นๆ ชมวิวหลังคาเมืองโบราณจากมุมสูง</li>
+              <li>ช็อปปิ้งของที่ระลึกทิเบต ผ้าพันคอจามรี ชาหอม</li>
+            </ul>
+            <div class="tags"><span class="tag cost">มื้อบ่าย ฿100 / คน (รวม ฿200)</span></div>
+          </div>
+        </div>
+
+        <div class="tl-row food">
+          <div class="tl-time">18:30 – 21:00</div>
+          <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
+          <div class="tl-card">
+            <div class="tl-card-title"><span class="cat-pill food">อาหารเย็น</span>มื้อเย็นอาหารทิเบต & ชมการเต้นรำพื้นเมือง</div>
+            <ul class="tl-bullets">
+              <li>มื้อเย็นลองกินข้าวโอ๊ตทิเบต เนื้อย่างจามรี ซุปกระดูกแกะ</li>
+              <li>ชมชาวทิเบตเต้นรำรอบกองไฟที่ลานกว้างซื่อฟางเจีย</li>
+            </ul>
+            <div class="tags"><span class="tag cost">มื้อเย็น ฿150 / คน (รวม ฿300)</span></div>
+          </div>
+        </div>
+
+        <div class="tl-row checkin">
+          <div class="tl-time">21:00 – 22:00</div>
+          <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
+          <div class="tl-card">
+            <div class="tl-card-title"><span class="cat-pill hotel">ที่พัก</span>กลับที่พัก Shangri-La Wangshan Xiaoyuan</div>
+            <ul class="tl-bullets">
+              <li>พักผ่อนคืนที่ 2 ที่แชงกรี-ลา (1 ห้อง 1 คืน)</li>
             </ul>
             <div class="tags"><span class="tag cost">ห้องพัก ฿241 / คน (รวม ฿481.90)</span></div>
           </div>
         </div>
-        <div class="tl-row food">
-          <div class="tl-time">18:30 – 21:00</div>
-          <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
-          <div class="tl-card has-bg" style="background-image: url('images/shangrila_night.jpg');">
-            <div class="tl-card-title">🌙 เดินเล่นเมืองโบราณตู๋เค่อจง + มื้อค่ำ</div>
-            <ul class="tl-bullets">
-              <li>เดินเล่นชมเมืองโบราณ ชิมโยเกิร์ตนมจามรี ช็อปปิ้งของที่ระลึกทิเบต</li>
-              <li>ทานมื้อค่ำในบรรยากาศอบอุ่นสไตล์ท้องถิ่น</li>
-            </ul>
-            <div class="tags"><span class="tag cost">มื้อค่ำ ฿200 / คน (รวม ฿400)</span></div>
-          </div>
-        </div>
-      </div>    <div class="day-footer-nav">
+      </div>
+      <div class="day-footer-nav">
         <button type="button" class="dfn-btn prev" data-goto="d4">
           <span class="dfn-icon">‹</span>
           <div class="dfn-info">
@@ -2059,7 +2550,6 @@ body {
           <span class="dfn-icon">›</span>
         </button>
       </div>
-
     </div>
 
     <!-- DAY 6 -->
@@ -2067,98 +2557,153 @@ body {
       <div class="day-head">
         <div class="dh-left">
           <span class="dh-label">วันที่ 7</span>
-          <div class="dh-title">วัดซงจ้านหลิน แล้วรถไฟความเร็วสูงกลับลี่เจียง</div>
+          <div class="dh-title">วัดซงจ้านหลิน & เมืองโบราณตู๋เค่อจง</div>
           <span class="dh-date">วันศุกร์ที่ 30 ตุลาคม 2569</span>
+          <div class="dh-weather warn">❄️ แชงกรี-ลา 0–12°C · ความสูง 3,280m · อากาศแห้ง หนาวจัด แดดจัด</div>
         </div>
-        <div class="dh-emoji">⛩️</div>
+        <div class="dh-emoji">🛕</div>
       </div>
       <div class="timeline">
         <div class="tl-row food">
-          <div class="tl-time">07:30 – 08:30</div>
+          <div class="tl-time">08:00 – 09:00</div>
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
           <div class="tl-card">
-            <div class="tl-card-title">☕ มื้อเช้า + เช็กเอาต์ ฝากกระเป๋าเดินทางที่โรงแรม</div>
+            <div class="tl-card-title"><span class="cat-pill food">อาหารเช้า</span>มื้อเช้า & เช็กเอาต์ ฝากกระเป๋าไว้ที่โรงแรม</div>
             <ul class="tl-bullets">
-              <li>ทานมื้อเช้า เช็กเอาต์ และฝากกระเป๋าเดินทางใหญ่ไว้ที่เคาน์เตอร์โรงแรม</li>
-              <li>ตัวเบาสบายออกไปไหว้พระและเที่ยวชมวัด</li>
+              <li>กินมื้อเช้า เช็กเอาต์ และฝากกระเป๋าเดินทางใหญ่ไว้ที่โรงแรมฟรี</li>
             </ul>
-            <div class="tags"><span class="tag cost">มื้อเช้า ฿75 / คน (รวม ฿150)</span></div>
+            <div class="tags"><span class="tag free">ฝากกระเป๋าฟรี</span></div>
           </div>
         </div>
+
+        <div class="tl-row transport">
+          <div class="tl-time">09:00 – 09:30</div>
+          <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
+          <div class="tl-card">
+            <div class="tl-card-title"><span class="cat-pill transit">รถเมล์</span>รถเมล์สาย 3 → วัดซงจ้านหลิน (松赞林寺)</div>
+            <ul class="tl-bullets">
+              <li>ขึ้นรถเมล์สาย 3 จากหน้าเมืองโบราณ สแกนจ่าย Alipay คนละ 2 หยวน</li>
+              <li>เดินทาง ~20 นาทีถึงศูนย์บริการนักท่องเที่ยวหน้าวัด</li>
+            </ul>
+            <div class="tags"><span class="tag cost">รถเมล์ ฿10 / คน (รวม ฿20 / 4 หยวน)</span></div>
+          </div>
+        </div>
+
         <div class="tl-row activity">
-          <div class="tl-time">08:30 – 12:30</div>
+          <div class="tl-time">09:30 – 13:30</div>
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
-          <div class="tl-card has-bg" style="background-image: url('images/songzanlin_temple.jpg');">
-            <div class="tl-card-title">🕌 วัดซงจ้านหลิน (松赞林寺)</div>
+          <div class="tl-card">
+            <div class="card-media"><img src="images/songzanlin_temple.jpg" alt="วัดซงจ้านหลิน แชงกรี-ลา" /></div>
+            <div class="tl-card-title"><span class="cat-pill sight">ไฮไลท์</span>วัดซงจ้านหลิน (松赞林寺) — พระราชวังโปตาลาน้อย</div>
             <ul class="tl-bullets">
-              <li>"พระราชวังโปตาลาน้อยแห่งยูนนาน" วัดพุทธทิเบตที่ยิ่งใหญ่ที่สุด สร้างปี 1679</li>
-              <li>ขึ้นรถเมล์สาย 3 (คนละ 2 หยวน) เที่ยวชมพระอุโบสถยอดทองคำ</li>
-              <li>เดินชมวิวรอบทะเลสาบรามยางโช (Ramuyangcuo Lake) มุมสะท้อนน้ำงดงาม</li>
+              <li>ซื้อตั๋วเข้าชมรวมรถบัสด้านใน (คนละ 90 หยวน / ~450 บาท)</li>
+              <li>ชมวัดพุทธทิเบตที่ยิ่งใหญ่ที่สุดในยูนนาน สร้างปี 1679</li>
+              <li>เดินขึ้นบันได 146 ขั้นสู่ยอดอาราม และเดินรอบทะเลสาบลาหมู่ยางชั่ว ถ่ายภาพสะท้อนน้ำ</li>
             </ul>
-            <div class="tags"><span class="tag cost">ค่าเข้าชม+รถเมล์ ฿460 / คน (รวม ฿920 / 90 หยวน)</span><span class="tag star">🌟 ไฮไลท์</span></div>
+            <div class="card-action-bar">
+              <button class="action-btn" onclick="copyText('噶丹松赞林寺')">📋 ก๊อปปี้ชื่อจีน</button>
+              <button class="action-btn show-driver" onclick="openDriverModal('噶丹松赞林寺', 'Gádān Sōngzànlín Sì', 'วัดซงจ้านหลิน (พระราชวังโปตาลาน้อยแห่งยูนนาน)')">🔍 โชว์คนขับ</button>
+            </div>
+            <div class="tags"><span class="tag cost">ตั๋วเข้า ฿450 / คน (รวม ฿900 / 90 หยวน)</span><span class="tag star">🌟 มรดกทิเบต</span></div>
           </div>
         </div>
+
+        <div class="tl-row transport">
+          <div class="tl-time">13:30 – 14:00</div>
+          <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
+          <div class="tl-card">
+            <div class="tl-card-title"><span class="cat-pill transit">รถเมล์</span>รถเมล์สาย 3 กลับสู่เมืองโบราณตู๋เค่อจง</div>
+            <ul class="tl-bullets">
+              <li>นั่งรถเมล์สาย 3 กลับมายังเมืองโบราณ</li>
+            </ul>
+            <div class="tags"><span class="tag cost">รถเมล์ ฿10 / คน (รวม ฿20 / 4 หยวน)</span></div>
+          </div>
+        </div>
+
         <div class="tl-row food">
-          <div class="tl-time">12:30 – 16:00</div>
+          <div class="tl-time">14:00 – 15:30</div>
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
           <div class="tl-card">
-            <div class="tl-card-title">🍵 รถเมล์กลับเข้าเมืองเก่า + มื้อเที่ยง + คาเฟ่ชิล</div>
+            <div class="tl-card-title"><span class="cat-pill food">อาหารเที่ยง</span>มื้อเที่ยง & ร้านกาแฟดริปสไตล์ทิเบต</div>
             <ul class="tl-bullets">
-              <li>นั่งรถเมล์สาย 3 กลับเข้าเมืองเก่า ทานมื้อเที่ยง และรับกระเป๋าเดินทางที่ฝากไว้</li>
-              <li>นั่งชิลในคาเฟ่สไตล์ทิเบต ดื่มด่ำบรรยากาศก่อนเดินทางกลับ</li>
+              <li>กินก๋วยเตี๋ยวเนื้อจามรี และแวะร้านกาแฟดริปเมล็ดพันธุ์ยูนนาน</li>
             </ul>
-            <div class="tags"><span class="tag cost">มื้อเที่ยง & คาเฟ่ ฿150 / คน (รวม ฿300)</span></div>
+            <div class="tags"><span class="tag cost">มื้อเที่ยง ฿125 / คน (รวม ฿250)</span></div>
           </div>
         </div>
+
+        <div class="tl-row activity">
+          <div class="tl-time">15:30 – 17:30</div>
+          <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
+          <div class="tl-card">
+            <div class="tl-card-title"><span class="cat-pill sight">ช็อปปิ้ง</span>เดินช็อปปิ้งของฝาก & เก็บตกเมืองโบราณ</div>
+            <ul class="tl-bullets">
+              <li>ซื้อชีสจามรี ชาดอกไม้ เนื้ออบแห้ง เครื่องประดับเงินทิเบต</li>
+              <li>ถ่ายรูปสถาปัตยกรรมบ้านโบราณทิเบตก่อนกลับ</li>
+            </ul>
+            <div class="tags"><span class="tag info">ช็อปปิ้งของฝาก</span></div>
+          </div>
+        </div>
+
+        <div class="tl-row">
+          <div class="tl-time">17:30 – 18:30</div>
+          <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
+          <div class="tl-card">
+            <div class="tl-card-title"><span class="cat-pill transit">รับกระเป๋า</span>รับกระเป๋าใหญ่ & เรียกรถไปสถานีรถไฟแชงกรี-ลา</div>
+            <ul class="tl-bullets">
+              <li>กลับมารับกระเป๋าใหญ่ที่โรงแรม</li>
+              <li>เรียก DiDi หรือแท็กซี่ไปสถานีรถไฟความเร็วสูงแชงกรี-ลา (香格里拉站)</li>
+            </ul>
+            <div class="card-action-bar">
+              <button class="action-btn" onclick="copyText('香格里拉站')">📋 ก๊อปปี้ชื่อจีน</button>
+              <button class="action-btn show-driver" onclick="openDriverModal('香格里拉火车站', 'Xiānggélǐlā Huǒchēzhàn', 'สถานีรถไฟความเร็วสูงแชงกรี-ลา')">🔍 โชว์คนขับ</button>
+            </div>
+            <div class="tags"><span class="tag cost">แท็กซี่ ฿60 / คน (รวม ฿120 / 24 หยวน)</span></div>
+          </div>
+        </div>
+
         <div class="tl-row transport">
-          <div class="tl-time">16:00 – 17:00</div>
+          <div class="tl-time">18:30 – 20:30</div>
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
           <div class="tl-card">
-            <div class="tl-card-title">🚌 รถเมล์สาย 1 → สถานีรถไฟแชงกรี-ลา (香格里拉站)</div>
+            <div class="tl-card-title"><span class="cat-pill transit">รถไฟหัวกระสุน</span>รถไฟความเร็วสูง (Bullet Train) → ลี่เจียง</div>
             <ul class="tl-bullets">
-              <li>ขึ้นรถเมล์สาย 1 ที่ประตูเหนือ (คนละ 2 หยวน) พร้อมกระเป๋าเดินทาง</li>
-              <li>ถึงสถานีรถไฟความเร็วสูงแชงกรี-ลา สแกนสัมภาระเตรียมขึ้นรถไฟ</li>
+              <li>รถไฟความเร็วสูงวิ่งลอดอุโมงค์เทือกเขาหิมะสู่ลี่เจียง (~1 ชม. 20 นาที)</li>
+              <li>สแกนพาสปอร์ตขึ้นรถไฟ</li>
             </ul>
-            <div class="tags"><span class="tag cost">รถเมล์ ฿10 / คน (รวม ฿20 / 2 หยวน)</span></div>
+            <div class="tags"><span class="tag cost">ตั๋วรถไฟ ฿315 / คน (รวม ฿630 / 63 หยวน)</span></div>
           </div>
         </div>
+
         <div class="tl-row transport">
-          <div class="tl-time">17:30 – 19:00</div>
+          <div class="tl-time">20:30 – 21:00</div>
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
           <div class="tl-card">
-            <div class="tl-card-title">🚄 รถไฟความเร็วสูง แชงกรี-ลา → สถานีลี่เจียง (丽江站)</div>
+            <div class="tl-card-title"><span class="cat-pill transit">แท็กซี่</span>แท็กซี่ / DiDi สถานีรถไฟลี่เจียง → โรงแรมใกล้สนามบิน</div>
             <ul class="tl-bullets">
-              <li>รถไฟความเร็วสูงลอยฟ้าข้ามสะพานและลอดอุโมงค์ผ่านช่องเขาเสือกระโจน</li>
-              <li>นั่งที่นั่งชั้นสองสะดวกสบาย ใช้เวลาเพียง 1 ชม. 30 นาที สู่ลี่เจียง</li>
+              <li>ถึงสถานีรถไฟลี่เจียง เรียก DiDi ไปโรงแรมเติงหางลี่เจียงใกล้สนามบิน</li>
             </ul>
-            <div class="tags"><span class="tag cost">ตั๋วรถไฟ ฿357 / คน (รวม ฿713.30 / ~63 หยวน)</span><span class="tag info">High-Speed Train 🚄</span></div>
+            <div class="card-action-bar">
+              <button class="action-btn" onclick="copyText('丽江三义机场附近酒店')">📋 ก๊อปปี้ชื่อจีน</button>
+              <button class="action-btn show-driver" onclick="openDriverModal('丽江三义国际机场', 'Lìjiāng Sānyì Guójì Jīchǎng', 'สนามบินนานาชาติลี่เจียงซานอี้ (ใกล้โรงแรม)')">🔍 โชว์คนขับ</button>
+            </div>
+            <div class="tags"><span class="tag cost">แท็กซี่ ฿75 / คน (รวม ฿150 / 30 หยวน)</span></div>
           </div>
         </div>
+
         <div class="tl-row checkin">
-          <div class="tl-time">19:00 – 19:45</div>
+          <div class="tl-time">21:00 – 07:00</div>
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
           <div class="tl-card">
-            <div class="tl-card-title">🏩 รถเมล์ 4/18 → เช็กอิน Qiyue Linyin Bieyuan</div>
+            <div class="tl-card-title"><span class="cat-pill hotel">ที่พัก</span>เช็กอินพักผ่อน โรงแรมใกล้สนามบินลี่เจียง</div>
             <ul class="tl-bullets">
-              <li>ขึ้นรถเมล์สาย 4 หรือ 18 หน้าสถานีรถไฟ ลงป้ายตลาดจงอี้ (คนละ 2 หยวน)</li>
-              <li>เดินเข้าโรงแรม Qiyue Linyin Bieyuan เช็กอินห้องพักคืนสุดท้ายในลี่เจียง</li>
+              <li>เช็กอินพักผ่อน 1 คืน เตรียมนั่งรถไปสนามบินแต่เช้าตรู่ (1 ห้อง 1 คืน)</li>
             </ul>
-            <div class="tags"><span class="tag cost">ห้องพัก ฿192 / คน (รวม ฿383.95)</span><span class="tag cost">รถเมล์ ฿10 / คน (รวม ฿20)</span></div>
+            <div class="tags"><span class="tag cost">ห้องพัก ฿193 / คน (รวม ฿386.32)</span></div>
           </div>
         </div>
-        <div class="tl-row food">
-          <div class="tl-time">19:45 – 22:00</div>
-          <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
-          <div class="tl-card has-bg" style="background-image: url('images/zhongyi_market.jpg');">
-            <div class="tl-card-title">🎉 ช็อปปิ้งของฝาก ตลาดจงอี้ + มื้อเย็นปิดทริป</div>
-            <ul class="tl-bullets">
-              <li>เดินช็อปปิ้งของฝาก ชาผู่เอ๋อร์ ดอกไม้แห้ง ขนมเปี๊ยะกุหลาบ</li>
-              <li>ทานมื้อเย็นฉลองปิดทริปในเมืองเก่าลี่เจียง บรรยากาศสุดประทับใจ</li>
-            </ul>
-            <div class="tags"><span class="tag cost">ของฝาก & มื้อเย็น ฿250 / คน (รวม ฿500)</span></div>
-          </div>
-        </div>
-      </div>    <div class="day-footer-nav">
+      </div>
+      <div class="day-footer-nav">
         <button type="button" class="dfn-btn prev" data-goto="d5">
           <span class="dfn-icon">‹</span>
           <div class="dfn-info">
@@ -2178,7 +2723,6 @@ body {
           <span class="dfn-icon">›</span>
         </button>
       </div>
-
     </div>
 
     <!-- DAY 7 -->
@@ -2186,61 +2730,44 @@ body {
       <div class="day-head">
         <div class="dh-left">
           <span class="dh-label">วันที่ 8</span>
-          <div class="dh-title">เดินทางกลับ ลี่เจียง คุนหมิง สุวรรณภูมิ</div>
+          <div class="dh-title">บินสู่คุนหมิง Layover 10 ชม. แล้วกลับกรุงเทพฯ</div>
           <span class="dh-date">วันเสาร์ที่ 31 ตุลาคม 2569</span>
+          <div class="dh-weather">🌤️ คุนหมิง 15–20°C · บินกลับกรุงเทพฯ 28–32°C</div>
         </div>
-        <div class="dh-emoji">🏠</div>
+        <div class="dh-emoji">🏡</div>
       </div>
       <div class="timeline">
-        <div class="tl-row">
-          <div class="tl-time">06:00 – 06:30</div>
-          <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
-          <div class="tl-card">
-            <div class="tl-card-title">🧳 ตื่นนอน จัดกระเป๋าเดินทาง เช็กเอาต์</div>
-            <ul class="tl-bullets">
-              <li>ตื่นนอน จัดกระเป๋าเดินทางใหญ่ 20 กก. บรรจุของฝากและสัมภาระ เช็กเอาต์</li>
-            </ul>
-          </div>
-        </div>
-        <div class="tl-row">
-          <div class="tl-time">06:30 – 07:15</div>
-          <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
-          <div class="tl-card">
-            <div class="tl-card-title">🚶 เดินเท้าไปจุดขึ้นรถบัสหนานเหมิน (南门)</div>
-            <ul class="tl-bullets">
-              <li>เดินเท้าช่วงเช้าจากโรงแรมไปยังจุดขึ้นรถบัสสนามบินลี่เจียง (จุดจอดหนานเหมิน)</li>
-            </ul>
-          </div>
-        </div>
         <div class="tl-row transport">
-          <div class="tl-time">07:15 – 08:15</div>
+          <div class="tl-time">07:00 – 07:30</div>
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
           <div class="tl-card">
-            <div class="tl-card-title">🚌 Airport Shuttle Bus → สนามบินลี่เจียง (LJG)</div>
+            <div class="tl-card-title"><span class="cat-pill transit">รถรับส่ง</span>เช็กเอาต์ & นั่งรถโรงแรมส่งสนามบินลี่เจียง (LJG)</div>
             <ul class="tl-bullets">
-              <li>ขึ้นรถบัสสนามบินลี่เจียงหน้าจุดจอดหนานเหมิน ตรงสู่สนามบิน (คนละ 20 หยวน)</li>
+              <li>เช็กเอาต์ นั่งรถโรงแรมส่งถึงหน้าอาคารผู้โดยสารสนามบินลี่เจียง</li>
             </ul>
-            <div class="tags"><span class="tag cost">฿100 / คน (รวม ฿200 / 20 หยวน)</span></div>
+            <div class="tags"><span class="tag free">รถโรงแรมส่งฟรี</span></div>
           </div>
         </div>
+
         <div class="tl-row">
-          <div class="tl-time">08:15 – 10:00</div>
+          <div class="tl-time">07:30 – 10:00</div>
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
           <div class="tl-card">
-            <div class="tl-card-title">🎫 เช็กอิน China Eastern โหลดกระเป๋า Check-through</div>
+            <div class="tl-card-title"><span class="cat-pill flight">เช็กอิน</span>เช็กอิน & โหลดกระเป๋าใหญ่ยาวถึงกรุงเทพฯ (Through Check-in)</div>
             <ul class="tl-bullets">
-              <li>เช็กอินเคาน์เตอร์ โหลดกระเป๋าใหญ่ยิงตรงถึงสนามบินสุวรรณภูมิ (BKK)</li>
-              <li>รับบอร์ดดิ้งพาสทั้ง 2 เที่ยวบินล่วงหน้า (LJG→KMG และ KMG→BKK)</li>
-              <li>ตอนต่อเครื่อง Layover ที่คุนหมิงตัวเบาสบาย ไม่ต้องรอรับกระเป๋า</li>
+              <li>เช็กอินเคาน์เตอร์ China Eastern แจ้งเจ้าหน้าที่ Through Check-in</li>
+              <li>ส่งกระเป๋าเดินทางใหญ่ตรงสู่ปลายทางสนามบินสุวรรณภูมิ (BKK)</li>
+              <li>ตัวเปล่าเที่ยว Layover ในคุนหมิงได้สบาย ไม่ต้องลากกระเป๋า</li>
             </ul>
-            <div class="tags"><span class="tag info">Check-through ถึงสุวรรณภูมิ</span></div>
+            <div class="tags"><span class="tag info">Through Check-in กระเป๋าตรงสู่ BKK</span></div>
           </div>
         </div>
+
         <div class="tl-row flight">
           <div class="tl-time">10:00 – 11:00</div>
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
           <div class="tl-card">
-            <div class="tl-card-title">✈️ MU-5922 — ลี่เจียง (LJG) → คุนหมิง (KMG)</div>
+            <div class="tl-card-title"><span class="cat-pill flight">เที่ยวบิน</span>MU-5922 — ลี่เจียง (LJG) → คุนหมิง (KMG)</div>
             <ul class="tl-bullets">
               <li>China Eastern เที่ยวบิน MU-5922 บินสู่สนามบินคุนหมิงฉางสุ่ย (บิน 1 ชม.)</li>
               <li>ถึงสนามบินคุนหมิงเวลา 11:00 น.</li>
@@ -2248,55 +2775,65 @@ body {
             <div class="tags"><span class="tag flight-t">1:00 ชม.</span><span class="tag free">รวมในตั๋วเครื่องบินแล้ว</span></div>
           </div>
         </div>
+
         <div class="tl-row activity">
           <div class="tl-time">11:00 – 18:30</div>
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
-          <div class="tl-card has-bg" style="background-image: url('images/kunming_city.jpg');">
-            <div class="tl-card-title">🌆 Layover คุนหมิง 10 ชม. 30 นาที เต็มวันอย่างคุ้มค่า</div>
+          <div class="tl-card">
+            <div class="card-media"><img src="images/kunming_city.jpg" alt="Layover คุนหมิง" /></div>
+            <div class="tl-card-title"><span class="cat-pill sight">Layover</span>เที่ยวตัวเมืองคุนหมิง Layover 10 ชม. 30 นาที</div>
             <ul class="tl-bullets">
               <li>ขึ้น Metro สาย 6 จากสถานี Airport Center เข้าสู่ตัวเมืองคุนหมิง</li>
-              <li>ทานมื้อเที่ยง ชิมอาหารยูนนาน ช็อปปิ้งของฝากสุดท้าย ใบชา ขนมเปี๊ยะดอกไม้</li>
-              <li>เที่ยวชมเมืองอย่างสบายใจโดยไม่ต้องพะวงเรื่องกระเป๋าเดินทาง</li>
+              <li>กินมื้อเที่ยง ชิมอาหารยูนนาน ช็อปปิ้งของฝาก ชาผู่เอ๋อร์ ขนมเปี๊ยะดอกไม้กุหลาบ</li>
+              <li>เที่ยวชมเมืองตัวเบาเพราะกระเป๋าใหญ่ถูกส่งตรงไปกรุงเทพฯ แล้ว</li>
             </ul>
+            <div class="card-action-bar">
+              <button class="action-btn" onclick="copyText('昆明长水机场中心站')">📋 ก๊อปปี้ชื่อจีน</button>
+              <button class="action-btn show-driver" onclick="openDriverModal('昆明长水国际机场地铁站', 'Kūnmíng Chángshuǐ Guójì Jīchǎng Dìtiě Zhàn', 'สถานีรถไฟใต้ดินสนามบินคุนหมิงฉางสุ่ย (สาย 6)')">🔍 โชว์คนขับ</button>
+            </div>
             <div class="tags"><span class="tag cost">Metro + มื้อเที่ยง + ของฝาก ~฿375 / คน (รวม ฿750)</span></div>
           </div>
         </div>
+
         <div class="tl-row transport">
           <div class="tl-time">18:30 – 19:30</div>
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
           <div class="tl-card">
-            <div class="tl-card-title">🚇 Metro สาย 6 กลับสู่สนามบินคุนหมิง (KMG)</div>
+            <div class="tl-card-title"><span class="cat-pill transit">เมโทร</span>Metro สาย 6 กลับสู่สนามบินคุนหมิง (KMG)</div>
             <ul class="tl-bullets">
               <li>นั่ง Metro สาย 6 ยิงตรงกลับมายังสนามบินคุนหมิงฉางสุ่ย</li>
             </ul>
             <div class="tags"><span class="tag free">รวมในงบด้านบน</span></div>
           </div>
         </div>
+
         <div class="tl-row">
           <div class="tl-time">19:30 – 21:30</div>
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
           <div class="tl-card">
-            <div class="tl-card-title">🛂 ตรวจคนเข้าเมืองขาออก & ตรวจความปลอดภัย</div>
+            <div class="tl-card-title"><span class="cat-pill flight">ตม. ขาออก</span>ตรวจคนเข้าเมืองขาออก & ตรวจความปลอดภัย</div>
             <ul class="tl-bullets">
-              <li>ผ่านขั้นตอนตรวจคนเข้าเมืองขาออก (ตม.) และจุดตรวจความปลอดภัยระหว่างประเทศ</li>
+              <li>สแกนพาสปอร์ตผ่าน ตม. ขาออก และผ่านจุดตรวจความปลอดภัยระหว่างประเทศ</li>
               <li>เดินไปรอขึ้นเครื่องที่เกต</li>
             </ul>
             <div class="tags"><span class="tag info">ตม. ขาออกระหว่างประเทศ</span></div>
           </div>
         </div>
+
         <div class="tl-row flight">
           <div class="tl-time">21:30 – 23:05</div>
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
           <div class="tl-card">
-            <div class="tl-card-title">✈️ MU-9621 — คุนหมิง (KMG) → สุวรรณภูมิ (BKK) 🏡</div>
+            <div class="tl-card-title"><span class="cat-pill flight">เที่ยวบิน</span>MU-9621 — คุนหมิง (KMG) → สุวรรณภูมิ (BKK) 🏡</div>
             <ul class="tl-bullets">
-              <li>China Eastern เที่ยวบิน MU-9621 บินตรงจากคุนหมิงกลับสู่สนามบินสุวรรณภูมิ</li>
-              <li>ถึงเวลา 23:05 น. ปิดฉากทริปยูนนาน 8 วัน 7 คืนด้วยความทรงจำอันยอดเยี่ยม</li>
+              <li>China Eastern เที่ยวบิน MU-9621 บินตรงจากคุนหมิงกลับสู่สนามบินสุวรรณภูมิ (1 ชม. 35 นาที)</li>
+              <li>ถึงไทยเวลา 23:05 น. จบทริปยูนนาน 8 วัน 7 คืนอย่างสมบูรณ์แบบ!</li>
             </ul>
-            <div class="tags"><span class="tag flight-t">1:35 ชม.</span><span class="tag star">กลับบ้านโดยสวัสดิภาพ 🏡</span></div>
+            <div class="tags"><span class="tag flight-t">1:35 ชม.</span><span class="tag star">จบทริปโดยสวัสดิภาพ 🏡</span></div>
           </div>
         </div>
-      </div>    <div class="day-footer-nav">
+      </div>
+      <div class="day-footer-nav">
         <button type="button" class="dfn-btn prev" data-goto="d6">
           <span class="dfn-icon">‹</span>
           <div class="dfn-info">
@@ -2316,8 +2853,8 @@ body {
           <span class="dfn-icon">›</span>
         </a>
       </div>
-
-    </div>  </div>
+    </div>
+  </div>
 </section>
 
 <!-- ============ HIGHLIGHTS ============ -->
@@ -2401,6 +2938,88 @@ body {
 
 
 
+
+<!-- ============ BUDGET SUMMARY ============ -->
+<section id="budget" class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">สรุปงบประมาณ</span>
+      <h2 class="section-title">ค่าใช้จ่ายตลอดทริป</h2>
+      <p class="section-desc">รวมทุกหมวดหมู่อย่างโปร่งใส ไม่บานปลาย (เฉลี่ย 2 คน)</p>
+    </div>
+
+    <!-- TOTAL HIGHLIGHT BOX -->
+    <div class="budget-total-box">
+      <div class="bt-label">ประมาณการค่าใช้จ่ายสุทธิต่อคน</div>
+      <div class="bt-amount">~฿15,479</div>
+      <div class="bt-note">รวมทั้งหมด 2 ท่านประมาณ ฿30,958 (รวมตั๋วบินตรง 4 ขา + ที่พัก 7 คืน + ค่าเดินทางในจีน + ค่ากิน + ค่าเข้าชม + ซิม/ประกัน)</div>
+    </div>
+
+    <!-- CARDS BREAKDOWN GRID -->
+    <div class="budget-card-grid">
+      <div class="bc-item">
+        <div class="bc-head">
+          <span class="bc-icon">✈️</span>
+          <span class="bc-status paid">ชำระแล้ว</span>
+        </div>
+        <span class="bc-cat">ตั๋วเครื่องบิน 4 เที่ยวบิน</span>
+        <div class="bc-val">฿8,126 / คน</div>
+        <span class="bc-sub">China Eastern บินตรง BKK ⇄ KMG ⇄ LJG</span>
+      </div>
+
+      <div class="bc-item">
+        <div class="bc-head">
+          <span class="bc-icon">🏨</span>
+          <span class="bc-status paid">จองแล้ว</span>
+        </div>
+        <span class="bc-cat">ที่พัก 7 คืน (หาร 2)</span>
+        <div class="bc-val">฿1,641 / คน</div>
+        <span class="bc-sub">คุนหมิง, ลี่เจียง, เสือกระโจน, แชงกรี-ลา</span>
+      </div>
+
+      <div class="bc-item">
+        <div class="bc-head">
+          <span class="bc-icon">🚌</span>
+          <span class="bc-status est">จ่ายหน้างาน</span>
+        </div>
+        <span class="bc-cat">การเดินทางในจีน</span>
+        <div class="bc-val">~฿940 / คน</div>
+        <span class="bc-sub">บัสข้ามเมือง, รถไฟความเร็วสูง, Metro, รถตู้ส่งกระเป๋า</span>
+      </div>
+
+      <div class="bc-item">
+        <div class="bc-head">
+          <span class="bc-icon">🎟️</span>
+          <span class="bc-status est">จ่ายหน้างาน</span>
+        </div>
+        <span class="bc-cat">บัตรเข้าชมสถานที่</span>
+        <div class="bc-val">~฿1,365 / คน</div>
+        <span class="bc-sub">หุบเขาเสือกระโจน, ผู่ต๋าชั่ว, วัดซงจ้านหลิน</span>
+      </div>
+
+      <div class="bc-item">
+        <div class="bc-head">
+          <span class="bc-icon">🍲</span>
+          <span class="bc-status est">จ่ายหน้างาน</span>
+        </div>
+        <span class="bc-cat">อาหาร & สตรีทฟู้ด 8 วัน</span>
+        <div class="bc-val">~฿2,500 / คน</div>
+        <span class="bc-sub">หม้อไฟซี่โครงหมู, หม้อไฟจามรี, ก๋วยเตี๋ยวข้ามสะพาน</span>
+      </div>
+
+      <div class="bc-item">
+        <div class="bc-head">
+          <span class="bc-icon">🛡️</span>
+          <span class="bc-status paid">ชำระแล้ว</span>
+        </div>
+        <span class="bc-cat">ซิมโรมมิ่ง & ประกันเดินทาง</span>
+        <div class="bc-val">฿907 / คน</div>
+        <span class="bc-sub">Insurverse คุ้มครองอุบัติเหตุ/สุขภาพ + SIM เน็ต</span>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ============ FOOTER ============ -->
 <footer id="footer">
   <div class="footer-grid">
@@ -2445,6 +3064,62 @@ document.querySelectorAll('.nav-link').forEach(l => {
     navToggle.classList.remove('active');
   });
 });
+
+
+// DRIVER MODAL & CLIPBOARD
+function openDriverModal(zh, pinyin, th) {
+  document.getElementById('dmZh').textContent = zh;
+  document.getElementById('dmPinyin').textContent = pinyin;
+  document.getElementById('dmTh').textContent = th;
+  document.getElementById('driverModal').classList.add('active');
+  document.getElementById('driverModal').setAttribute('aria-hidden', 'false');
+}
+
+function closeDriverModal() {
+  document.getElementById('driverModal').classList.remove('active');
+  document.getElementById('driverModal').setAttribute('aria-hidden', 'true');
+}
+
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2200);
+}
+
+function copyText(text) {
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(() => showToast('คัดลอก ' + text + ' แล้ว ✓'));
+  } else {
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+    showToast('คัดลอก ' + text + ' แล้ว ✓');
+  }
+}
+
+function copyDriverText() {
+  const zh = document.getElementById('dmZh').textContent;
+  copyText(zh);
+}
+
+function saveOffline() {
+  if ('serviceWorker' in navigator) {
+    showToast('บันทึกหน้าเว็บพร้อมเปิดออฟไลน์แล้ว ✓');
+  } else {
+    window.print();
+  }
+}
+
+// Service Worker Registration for Offline Cache
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('./sw.js').catch(() => {});
+  });
+}
 
 // DAY TABS & NAVIGATION (Apple HIG Seamless Switching)
 function scrollToItineraryTop() {
@@ -2542,5 +3217,26 @@ window.addEventListener('scroll', () => {
   });
 }, { passive: true });
 </script>
+
+<!-- ============ DRIVER MODAL (Show to Driver) ============ -->
+<div id="driverModal" class="driver-modal" aria-hidden="true">
+  <div class="driver-modal-backdrop" onclick="closeDriverModal()"></div>
+  <div class="driver-modal-content">
+    <div class="dm-header">
+      <span class="dm-badge">บัตรโชว์คนขับแท็กซี่ / คนจีน</span>
+      <button class="dm-close" onclick="closeDriverModal()">&times;</button>
+    </div>
+    <div class="dm-body">
+      <div class="dm-zh" id="dmZh">丽江客运站</div>
+      <div class="dm-pinyin" id="dmPinyin">Lìjiāng Kèyùn Zhàn</div>
+      <div class="dm-th" id="dmTh">สถานีขนส่งลี่เจียง</div>
+    </div>
+    <button class="dm-copy-btn" onclick="copyDriverText()">📋 คัดลอกภาษาจีน</button>
+  </div>
+</div>
+
+<!-- ============ TOAST POPUP ============ -->
+<div id="toast" class="toast-popup">คัดลอกภาษาจีนแล้ว ✓</div>
+
 </body>
 </html>
