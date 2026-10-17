@@ -614,6 +614,42 @@ body {
   margin-bottom: 0;
 }
 
+.tl-bullets {
+  list-style: none;
+  margin: 6px 0 10px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.tl-bullets li {
+  position: relative;
+  padding-left: 16px;
+  font-size: 0.86rem;
+  color: var(--label-secondary);
+  line-height: 1.5;
+}
+
+.tl-bullets li::before {
+  content: '•';
+  position: absolute;
+  left: 2px;
+  top: 0;
+  color: var(--apple-blue);
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.tl-card.has-bg .tl-bullets li {
+  color: rgba(255, 255, 255, 0.94);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+.tl-card.has-bg .tl-bullets li::before {
+  color: rgba(255, 255, 255, 0.8);
+}
+
 /* TIMELINE CARDS WITH BACKGROUND IMAGES */
 .tl-card.has-bg {
   background-size: cover;
@@ -1048,7 +1084,11 @@ body {
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
           <div class="tl-card">
             <div class="tl-card-title">🛡️ ซิมโรมมิ่ง & ประกันการเดินทางต่างประเทศ</div>
-            <p>เปิดใช้ซิมการ์ดโรมมิ่ง/อินเทอร์เน็ตที่ใช้งานในจีนได้ลื่นไหล ไม่ติดบล็อกโซเชียล พร้อมทำประกันภัยการเดินทางต่างประเทศ Insurverse คุ้มครองอุบัติเหตุและสุขภาพตลอดทริป 2 ท่าน และติดตั้งแอป Alipay / WeChat Pay ผูกบัตรเครดิตให้พร้อมใช้งาน</p>
+            <ul class="tl-bullets">
+              <li>เปิดใช้ซิมการ์ดโรมมิ่ง/อินเทอร์เน็ตที่ใช้งานในจีนได้ลื่นไหล ไม่ติดบล็อกโซเชียล</li>
+              <li>ทำประกันภัยการเดินทางต่างประเทศ Insurverse (คุ้มครองอุบัติเหตุและสุขภาพ 2 ท่าน)</li>
+              <li>ติดตั้งแอป Alipay / WeChat Pay ผูกบัตรเครดิตให้พร้อมสแกนจ่าย</li>
+            </ul>
             <div class="tags"><span class="tag cost">฿907 / คน (รวม ฿1,814)</span><span class="tag info">Insurverse + SIM</span></div>
           </div>
         </div>
@@ -1057,7 +1097,10 @@ body {
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
           <div class="tl-card">
             <div class="tl-card-title">✈️ ตั๋วเครื่องบินไป-กลับ China Eastern Airlines</div>
-            <p>China Eastern Airlines บินครบทุกเส้นทาง BKK ⇄ KMG ⇄ LJG (เที่ยวบิน MU-9614, MU-5923, MU-5922, MU-9621) เช็กอินล่วงหน้า ตรวจสอบความถูกต้องของพาสปอร์ต (อายุคงเหลือเกิน 6 เดือน)</p>
+            <ul class="tl-bullets">
+              <li>บินครบ 4 เที่ยวบิน BKK ⇄ KMG ⇄ LJG (MU-9614, MU-5923, MU-5922, MU-9621)</li>
+              <li>ตรวจสอบพาสปอร์ต (อายุคงเหลือเกิน 6 เดือน) และเช็กอินออนไลน์ล่วงหน้า</li>
+            </ul>
             <div class="tags"><span class="tag cost">฿8,126 / คน (รวม ฿16,252.23)</span><span class="tag free">ชำระแล้ว</span></div>
           </div>
         </div>
@@ -1066,7 +1109,10 @@ body {
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
           <div class="tl-card">
             <div class="tl-card-title">✈️ MU-9614 — สุวรรณภูมิ (BKK) → คุนหมิง (KMG)</div>
-            <p>China Eastern เที่ยวบิน MU-9614 บินตรงจากท่าอากาศยานสุวรรณภูมิสู่สนามบินคุนหมิงฉางสุ่ย (ระยะเวลาบิน 3 ชม. 40 นาที) ลงจอดเวลา 00:30 น. (เวลาท้องถิ่นประเทศจีน เร็วกว่าไทย 1 ชั่วโมง)</p>
+            <ul class="tl-bullets">
+              <li>China Eastern บินตรงจากสุวรรณภูมิสู่สนามบินคุนหมิงฉางสุ่ย (3 ชม. 40 นาที)</li>
+              <li>ลงจอดเวลา 00:30 น. (เวลาท้องถิ่นประเทศจีน เร็วกว่าไทย 1 ชั่วโมง)</li>
+            </ul>
             <div class="tags"><span class="tag flight-t">บินตรง 3:40 ชม.</span><span class="tag free">รวมในตั๋วเครื่องบินแล้ว</span></div>
           </div>
         </div>
@@ -1089,7 +1135,11 @@ body {
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
           <div class="tl-card">
             <div class="tl-card-title">🛬 ผ่าน ตม. & สแกนศุลกากร สนามบิน KMG</div>
-            <p>ผ่านด่านตรวจคนเข้าเมือง (ตม.) สแกนลายนิ้วมือ รับกระเป๋าเดินทางใบใหญ่ 20 กก. ที่สายพาน และนำผ่านเครื่องเอกซเรย์ศุลกากร (⚠️ <strong>สำคัญมาก:</strong> แม้ตั๋วจะเป็นสายการบินเดียวกัน ต้องรับสัมภาระกระเป๋าใหญ่ออกมาผ่านด่านศุลกากรที่คุนหมิงเสมอ)</p>
+            <ul class="tl-bullets">
+              <li>ผ่านด่าน ตม. สแกนลายนิ้วมือ และตรวจคนเข้าเมือง</li>
+              <li>รับกระเป๋าเดินทางใหญ่ 20 กก. ที่สายพาน นำผ่านเครื่องเอกซเรย์ศุลกากร</li>
+              <li>⚠️ <strong>สำคัญมาก:</strong> ต้องรับกระเป๋าใหญ่ออกมาผ่านด่านศุลกากรที่คุนหมิงเสมอ</li>
+            </ul>
             <div class="tags"><span class="tag info">ต้องรับสัมภาระใหญ่</span></div>
           </div>
         </div>
@@ -1098,7 +1148,10 @@ body {
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
           <div class="tl-card">
             <div class="tl-card-title">🚌 Shuttle Bus → โรงแรมเติงหาง (腾航酒店)</div>
-            <p>ติดต่อจุดบริการรถรับ-ส่งฟรี 24 ชม. ของโรงแรมเติงหางหน้าอาคารผู้โดยสาร นั่งรถตู้เพียง 10-15 นาทีถึงโรงแรม เช็กอินเข้าห้องพัก</p>
+            <ul class="tl-bullets">
+              <li>ติดต่อจุดบริการรถรับ-ส่งฟรี 24 ชม. ของโรงแรมเติงหางหน้าอาคาร</li>
+              <li>นั่งรถตู้ประมาณ 10–15 นาทีถึงโรงแรม และเช็กอินเข้าห้องพัก</li>
+            </ul>
             <div class="tags"><span class="tag free">บริการรถรับ-ส่งฟรี 24 ชม.</span></div>
           </div>
         </div>
@@ -1107,7 +1160,10 @@ body {
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
           <div class="tl-card">
             <div class="tl-card-title">😴 พักผ่อนชาร์จพลัง @ โรงแรมเติงหาง (腾航酒店)</div>
-            <p>อาบน้ำอุ่น พักผ่อนนอนหลับให้เต็มอิ่ม 8 ชั่วโมงเต็มบนเตียงนุ่มสบาย ชาร์จพลังหลังจากเดินทางข้ามคืน (1 ห้อง 1 คืน ชำระออนไลน์แล้ว)</p>
+            <ul class="tl-bullets">
+              <li>อาบน้ำอุ่น นอนหลับพักผ่อนเต็มอิ่ม 8 ชั่วโมงบนเตียงนุ่มสบาย (1 ห้อง 1 คืน)</li>
+              <li>ชาร์จพลังให้ร่างกายสดชื่นหลังจากเดินทางข้ามคืน</li>
+            </ul>
             <div class="tags"><span class="tag cost">ห้องพัก ฿249 / คน (รวม ฿498.53)</span></div>
           </div>
         </div>
@@ -1116,7 +1172,10 @@ body {
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
           <div class="tl-card">
             <div class="tl-card-title">🧳 เช็กเอาต์ & ฝากกระเป๋าเดินทางใบใหญ่</div>
-            <p>เช็กเอาต์ที่เคาน์เตอร์โรงแรม และฝากกระเป๋าเดินทางใบใหญ่ 20 กก. ไว้ที่โรงแรมเติงหางฟรี ทำให้สามารถออกไปเที่ยวในเมืองคุนหมิงได้อย่างคล่องตัวแบบตัวเปล่า</p>
+            <ul class="tl-bullets">
+              <li>เช็กเอาต์และฝากกระเป๋าเดินทางใหญ่ 20 กก. ไว้ที่เคาน์เตอร์โรงแรมฟรี</li>
+              <li>ตัวเปล่าออกไปเที่ยวในเมืองคุนหมิงได้อย่างคล่องตัว</li>
+            </ul>
             <div class="tags"><span class="tag free">บริการรับฝากสัมภาระฟรี</span></div>
           </div>
         </div>
@@ -1125,7 +1184,11 @@ body {
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
           <div class="tl-card has-bg" style="background-image: url('images/kunming_city.jpg');">
             <div class="tl-card-title">🌿 สวนชุ่ยหู (翠湖公园) + ก๋วยเตี๋ยวข้ามสะพาน</div>
-            <p>นั่งรถโรงแรมไปต่อรถไฟฟ้า Metro สาย 6 ที่สถานี Airport Center (机场中心站) มุ่งหน้าสู่ใจกลางเมือง เที่ยวชมบรรยากาศร่มรื่นของสวนชุ่ยหู สวนสาธารณะมรกตใจกลางคุนหมิง และแวะชิม "ก๋วยเตี๋ยวข้ามสะพาน" (过桥米线) น้ำซุปร้อนกรุ่นและเครื่องเคียงสดใหม่ ซิกเนเจอร์อันดับหนึ่งของยูนนาน</p>
+            <ul class="tl-bullets">
+              <li>นั่งรถโรงแรมต่อ Metro สาย 6 (สถานี Airport Center / 机场中心站) สู่ใจกลางเมือง</li>
+              <li>เดินเที่ยวชมบรรยากาศร่มรื่นของสวนชุ่ยหู สวนมรกตใจกลางคุนหมิง</li>
+              <li>ชิม "ก๋วยเตี๋ยวข้ามสะพาน" (过桥米线) ซิกเนเจอร์อันดับหนึ่งของยูนนาน</li>
+            </ul>
             <div class="tags"><span class="tag info">Metro สาย 6 (~5-7 หยวน)</span><span class="tag cost">อาหาร & รถ ฿100 / คน (รวม ฿200)</span></div>
           </div>
         </div>
@@ -1134,7 +1197,10 @@ body {
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
           <div class="tl-card has-bg" style="background-image: url('images/kunming_city.jpg');">
             <div class="tl-card-title">🛍️ ถนนคนเดินหนานผิง & ลานประตูม้าทองไก่หยก</div>
-            <p>เดินเล่นสัมผัสสีสันเมืองใหญ่ที่ถนนคนเดินหนานผิง (南屏步行街) ย่านช็อปปิ้งแฟชั่นและของฝาก และเดินชมสถาปัตยกรรมซุ้มประตูโบราณคู่ขวัญเมือง "ลานประตูม้าทองไก่หยก" (金马碧鸡坊) แลนด์มาร์กประวัติศาสตร์อายุกว่า 400 ปี</p>
+            <ul class="tl-bullets">
+              <li>เดินเล่นช็อปปิ้งย่านการค้าถนนคนเดินหนานผิง (南屏步行街)</li>
+              <li>ถ่ายภาพแลนด์มาร์กประวัติศาสตร์ "ลานประตูม้าทองไก่หยก" (金马碧鸡坊)</li>
+            </ul>
             <div class="tags"><span class="tag free">เดินเท้าเที่ยวชมฟรี</span></div>
           </div>
         </div>
@@ -1143,7 +1209,10 @@ body {
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
           <div class="tl-card">
             <div class="tl-card-title">🍜 มื้อเย็นตัวเมืองคุนหมิง + Metro กลับโรงแรม</div>
-            <p>ทานอาหารเย็นสตรีทฟู้ด/ร้านอาหารยูนนานอร่อยๆ ในตัวเมือง จากนั้นแตะจ่าย Alipay ขึ้น Metro สาย 6 กลับตรงสู่สถานี Airport Center เพื่อกลับมารับกระเป๋าเดินทางใหญ่ที่โรงแรมเติงหาง</p>
+            <ul class="tl-bullets">
+              <li>ทานอาหารเย็นอร่อยๆ ในตัวเมืองคุนหมิง</li>
+              <li>แตะจ่าย Alipay ขึ้น Metro สาย 6 กลับสถานี Airport Center มารับกระเป๋าที่โรงแรม</li>
+            </ul>
             <div class="tags"><span class="tag cost">มื้อเย็น & Metro ฿100 / คน (รวม ฿200)</span></div>
           </div>
         </div>
@@ -1152,7 +1221,10 @@ body {
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
           <div class="tl-card">
             <div class="tl-card-title">🚐 Shuttle Bus โรงแรม → สนามบินคุนหมิง (KMG)</div>
-            <p>รับกระเป๋าเดินทางใหญ่ขึ้นรถ Shuttle Bus ของโรงแรมเติงหางไปส่งถึงหน้าประตูทางเข้าอาคารผู้โดยสารขาออกในประเทศ (Domestic Terminal)</p>
+            <ul class="tl-bullets">
+              <li>รับกระเป๋าใหญ่ขึ้นรถ Shuttle Bus ฟรีของโรงแรมเติงหาง</li>
+              <li>ส่งตรงถึงหน้าประตูทางเข้าอาคารผู้โดยสารขาออกในประเทศ (Domestic Terminal)</li>
+            </ul>
             <div class="tags"><span class="tag free">บริการรถโรงแรมฟรี</span></div>
           </div>
         </div>
@@ -1161,7 +1233,10 @@ body {
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
           <div class="tl-card">
             <div class="tl-card-title">🎫 เช็กอินเคาน์เตอร์ในประเทศ สนามบิน KMG</div>
-            <p>เช็กอินที่เคาน์เตอร์สายการบิน China Eastern โหลดกระเป๋าเดินทางใบใหญ่ 20 กก. รับบอร์ดดิ้งพาส และผ่านจุดตรวจค้นสัมภาระในประเทศ เดินไปรอที่เกต</p>
+            <ul class="tl-bullets">
+              <li>เช็กอินเคาน์เตอร์ China Eastern โหลดกระเป๋าเดินทางใหญ่ 20 กก.</li>
+              <li>ผ่านจุดตรวจค้นความปลอดภัยและเดินไปรอขึ้นเครื่องที่เกต</li>
+            </ul>
             <div class="tags"><span class="tag info">เคาน์เตอร์ China Eastern</span></div>
           </div>
         </div>
@@ -1170,7 +1245,10 @@ body {
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
           <div class="tl-card">
             <div class="tl-card-title">✈️ MU-5923 — คุนหมิง (KMG) → ลี่เจียง (LJG)</div>
-            <p>China Eastern เที่ยวบิน MU-5923 บินข้ามขุนเขาสู่สนามบินลี่เจียงซานอี้ (ระยะเวลาบิน 1 ชม. 10 นาที) เครื่องลงจอดเวลา 23:35 น.</p>
+            <ul class="tl-bullets">
+              <li>China Eastern เที่ยวบิน MU-5923 บินข้ามขุนเขาสู่สนามบินลี่เจียงซานอี้ (1 ชม. 10 นาที)</li>
+              <li>เครื่องลงจอดเวลา 23:35 น.</li>
+            </ul>
             <div class="tags"><span class="tag flight-t">1:10 ชม.</span><span class="tag free">รวมในตั๋วเครื่องบินแล้ว</span></div>
           </div>
         </div>
@@ -1179,7 +1257,10 @@ body {
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
           <div class="tl-card">
             <div class="tl-card-title">🛬 รับกระเป๋าใหญ่ & นัดหมายรถโฮมสเตย์</div>
-            <p>รับกระเป๋าเดินทางที่สายพานสนามบินลี่เจียง ติดต่อคนขับรถของโฮมสเตย์หลงลั่วเหอที่มารอรับหน้าทางออกอาคารผู้โดยสาร</p>
+            <ul class="tl-bullets">
+              <li>รับกระเป๋าเดินทางที่สายพานสนามบินลี่เจียง</li>
+              <li>ติดต่อคนขับรถของโฮมสเตย์หลงลั่วเหอที่มารอรับหน้าทางออกอาคารผู้โดยสาร</li>
+            </ul>
             <div class="tags"><span class="tag info">สนามบินลี่เจียง (LJG)</span></div>
           </div>
         </div>
@@ -1202,7 +1283,9 @@ body {
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
           <div class="tl-card">
             <div class="tl-card-title">🚗 รถรับส่ง → โฮมสเตย์หลงลั่วเหอ (龙络河客栈)</div>
-            <p>นั่งรถรับส่งโฮมสเตย์ใกล้สนามบิน เช็กอิน อาบน้ำอุ่น คลายความเหนื่อยล้า พักผ่อน 1 คืนในห้องพักที่อบอุ่นและเงียบสงบ</p>
+            <ul class="tl-bullets">
+              <li>นั่งรถรับส่งของโฮมสเตย์ใกล้สนามบิน เช็กอิน อาบน้ำอุ่น พักผ่อน 1 คืน</li>
+            </ul>
             <div class="tags"><span class="tag cost">ห้องพัก ฿193 / คน (รวม ฿386.32)</span></div>
           </div>
         </div>
@@ -1211,7 +1294,9 @@ body {
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
           <div class="tl-card">
             <div class="tl-card-title">😴 นอนหลับพักผ่อน ชาร์จพลัง</div>
-            <p>นอนหลับพักผ่อนให้เต็มที่ 6 ชั่วโมงครึ่ง เตรียมความพร้อมสำหรับการเดินเที่ยวเมืองเก่าและขึ้นเขาวันถัดไป</p>
+            <ul class="tl-bullets">
+              <li>นอนหลับพักผ่อน 6 ชั่วโมงครึ่ง เตรียมความพร้อมสำหรับทริปลี่เจียง</li>
+            </ul>
           </div>
         </div>
         <div class="tl-row">
@@ -1219,7 +1304,10 @@ body {
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
           <div class="tl-card">
             <div class="tl-card-title">🌅 ตื่นนอน เช็กเอาต์ นั่งรถกลับสนามบิน</div>
-            <p>ตื่นนอน ล้างหน้า แปรงฟัน เช็กเอาต์ นั่งรถของโฮมสเตย์กลับมาส่งที่จุดขึ้นรถบัสสนามบินลี่เจียงหน้าอาคารผู้โดยสาร</p>
+            <ul class="tl-bullets">
+              <li>ตื่นนอน ล้างหน้า แปรงฟัน เช็กเอาต์</li>
+              <li>นั่งรถโฮมสเตย์มาส่งจุดขึ้นบัสสนามบินลี่เจียงหน้าอาคารผู้โดยสาร</li>
+            </ul>
             <div class="tags"><span class="tag free">รถโฮมสเตย์ส่งสนามบิน</span></div>
           </div>
         </div>
@@ -1228,7 +1316,10 @@ body {
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
           <div class="tl-card">
             <div class="tl-card-title">🚌 Airport Shuttle Bus → จุดจอดหนานเหมิน (南门)</div>
-            <p>ขึ้นรถบัสสนามบินลี่เจียง (Airport Shuttle Bus) จากหน้าอาคารผู้โดยสาร มุ่งตรงสู่จุดจอดประตูใต้เมืองเก่าลี่เจียง (南门) สะดวกและรวดเร็ว สแกนจ่าย Alipay คนละ 20 หยวน</p>
+            <ul class="tl-bullets">
+              <li>ขึ้นรถบัสสนามบินลี่เจียง มุ่งตรงสู่จุดจอดประตูใต้เมืองเก่า (南门)</li>
+              <li>สแกนจ่ายผ่าน Alipay คนละ 20 หยวน (~100 บาท)</li>
+            </ul>
             <div class="tags"><span class="tag cost">฿100 / คน (รวม ฿200 / 20 หยวน)</span></div>
           </div>
         </div>
@@ -1237,7 +1328,10 @@ body {
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
           <div class="tl-card">
             <div class="tl-card-title">🚶 เดินเท้าเข้าเมืองเก่าสู่โรงแรม Qiyue</div>
-            <p>เดินเท้าจากจุดจอดหนานเหมินประมาณ 1.6 กม. ลากกระเป๋าผ่านซอกซอยปูหินโบราณและลำธารใส สู่โรงแรม Qiyue Linyin Bieyuan (栖跃林荫别院·木府店) ใกล้คฤหาสน์ตระกูลมู่</p>
+            <ul class="tl-bullets">
+              <li>เดินเท้าจากจุดจอดหนานเหมิน ~1.6 กม. เลียบซอยเมืองเก่าและลำธารใส</li>
+              <li>สู่โรงแรม Qiyue Linyin Bieyuan (สาขา Mufu) ใกล้คฤหาสน์ตระกูลมู่</li>
+            </ul>
           </div>
         </div>
         <div class="tl-row checkin">
@@ -1245,7 +1339,10 @@ body {
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
           <div class="tl-card">
             <div class="tl-card-title">🏩 ฝากกระเป๋าใหญ่ @ Qiyue Linyin Bieyuan (栖跃林荫别院)</div>
-            <p>เช็กอินฝากกระเป๋าเดินทางใบใหญ่ 20 กก. ไว้ที่โรงแรม Qiyue Linyin Bieyuan ล้างหน้าล้างตาเพื่อตัวเบาสบายก่อนออกไปซื้อตั๋วและเที่ยวเมือง</p>
+            <ul class="tl-bullets">
+              <li>เช็กอินฝากกระเป๋าเดินทางใหญ่ 20 กก. ไว้ที่โรงแรม ล้างหน้าล้างตา</li>
+              <li>ตัวเบาสบายก่อนออกไปซื้อตั๋วรถบัสและเที่ยวชมเมือง</li>
+            </ul>
             <div class="tags"><span class="tag cost">ห้องพัก ฿191 / คน (รวม ฿381.29)</span></div>
           </div>
         </div>
@@ -1254,7 +1351,11 @@ body {
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
           <div class="tl-card">
             <div class="tl-card-title">🚌 ซื้อตั๋วบัสไปสะพานเฉียวโถว @ สถานีขนส่งลี่เจียง</div>
-            <p>เดินจากโรงแรมเพียง ~12 นาที (1.2 กม.) ไปยังสถานีขนส่งผู้โดยสารลี่เจียง (丽江客运站) ซื้อตั๋วรถบัสล่วงหน้าไปสะพานเฉียวโถว (Qiaotou) รอบเช้าสุด 08:00 หรือ 08:30 น. (คนละ ~35 หยวน) การันตีที่นั่งแน่นอน และสอบถามคนขับเรื่องการฝากส่งกระเป๋าใหญ่ไปรอรับที่ Tina's ได้อย่างสบายใจตั้งแต่เช้า</p>
+            <ul class="tl-bullets">
+              <li>เดินจากโรงแรมเพียง ~12 นาที (1.2 กม.) ไปสถานีขนส่งลี่เจียง (丽江客运站)</li>
+              <li>ซื้อตั๋วบัสไปสะพานเฉียวโถวรอบเช้าสุด 08:00 หรือ 08:30 น. (คนละ ~35 หยวน)</li>
+              <li>การันตีที่นั่งแน่นอน และสอบถามคนขับเรื่องการฝากส่งกระเป๋าใหญ่ไป Tina's</li>
+            </ul>
             <div class="tags"><span class="tag cost">ตั๋วบัส ฿175 / คน (รวม ฿350 / ~35 หยวน)</span><span class="tag info">การันตีรอบเช้า 08:00/08:30</span></div>
           </div>
         </div>
@@ -1263,7 +1364,10 @@ body {
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
           <div class="tl-card has-bg" style="background-image: url('images/zhongyi_market.jpg');">
             <div class="tl-card-title">🍢 เดินสตรีทฟู้ด ตลาดจงอี้ (忠义市场)</div>
-            <p>เดินกลับมาจากสถานีขนส่ง แวะตลาดจงอี้ศูนย์รวมวิถีชีวิตชาวน่าซี ชิมขนมพื้นเมือง โรตีทิเบต ข้าวปุกงาดำปิ้ง และผลไม้สดหวานกรอบตามฤดูกาล</p>
+            <ul class="tl-bullets">
+              <li>เดินกลับมาจากสถานีขนส่ง แวะตลาดจงอี้ศูนย์รวมวิถีชีวิตชาวน่าซี</li>
+              <li>ชิมขนมพื้นเมือง โรตีทิเบต ข้าวปุกงาดำปิ้ง และผลไม้สดตามฤดูกาล</li>
+            </ul>
             <div class="tags"><span class="tag cost">สตรีทฟู้ด ฿75 / คน (รวม ฿150)</span></div>
           </div>
         </div>
@@ -1272,7 +1376,10 @@ body {
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
           <div class="tl-card has-bg" style="background-image: url('images/zhongyi_market.jpg');">
             <div class="tl-card-title">🍲 หม้อไฟซี่โครงหมู @ สะพานหนานเหมิน (南门桥)</div>
-            <p>ทานมื้อเที่ยงสุดยอดเมนูห้ามพลาดของลี่เจียง "หม้อไฟซี่โครงหมูหมักเกลือ" (ร้าน 阿婆情腊排骨火锅) ซี่โครงหมูหมักแห้งต้มในน้ำซุปกระดูกเคี่ยวนาน เสิร์ฟพร้อมผักสด เห็ดป่า เต้าหู้ เซต 2 ท่านรสชาติกลมกล่อมหอมละมุน</p>
+            <ul class="tl-bullets">
+              <li>มื้อเที่ยงหม้อไฟซี่โครงหมูหมักเกลือสูตรดั้งเดิม ร้านดัง 阿婆情腊排骨火锅</li>
+              <li>ซี่โครงหมูต้มซุปกระดูกเคี่ยวนาน เสิร์ฟพร้อมผักสดและเห็ดป่า (เซต 2 ท่าน)</li>
+            </ul>
             <div class="tags"><span class="tag cost">หม้อไฟ ฿300 / คน (รวม ฿600)</span><span class="tag star">🌟 มิชลิน/ห้ามพลาด</span></div>
           </div>
         </div>
@@ -1281,7 +1388,10 @@ body {
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
           <div class="tl-card has-bg" style="background-image: url('images/lijiang_hero.jpg');">
             <div class="tl-card-title">🐉 สระมังกรดำ (黑龙潭公园)</div>
-            <p>ขึ้นรถเมล์สาย 3, 4 หรือ 8 ที่ป้ายตลาดจงอี้ (คนละ 1 หยวน) สู่สวนสระมังกรดำ แหล่งน้ำศักดิ์สิทธิ์ จุดชมวิวและถ่ายภาพเงาสะท้อนน้ำของภูเขาหิมะมังกรหยก (玉龙雪山) คู่กับสะพานหินและศาลาโบราณอันเป็นมุมโปสการ์ดระดับโลก</p>
+            <ul class="tl-bullets">
+              <li>นั่งรถเมล์สาย 3, 4 หรือ 8 ที่ป้ายตลาดจงอี้ (คนละ 1 หยวน)</li>
+              <li>ถ่ายรูปมุมมหาชน: สะพานหินและศาลาโบราณสะท้อนเงาเขาหิมะมังกรหยก (玉龙雪山)</li>
+            </ul>
             <div class="tags"><span class="tag cost">รถเมล์ ฿10 / คน (รวม ฿20 / 4 หยวน)</span><span class="tag star">📸 จุดถ่ายรูป</span></div>
           </div>
         </div>
@@ -1290,7 +1400,10 @@ body {
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
           <div class="tl-card has-bg" style="background-image: url('images/lijiang_hero.jpg');">
             <div class="tl-card-title">🏮 เดินเล่นชมแสงไฟ & เสน่ห์เมืองเก่าลี่เจียงยามค่ำ</div>
-            <p>เนื่องจากซื้อตั๋วบัสเรียบร้อยแล้ว จึงสามารถเดินเล่นชมเสน่ห์เมืองเก่าลี่เจียงได้อย่างสบายใจไร้กังวล ฟังเสียงลำธารใส ชมสะพานหิน กังหันน้ำโบราณ และโคมแดงสว่างไสวสุดโรแมนติก</p>
+            <ul class="tl-bullets">
+              <li>เดินเที่ยวชิลๆ ไร้กังวลเรื่องเวลาและตั๋วรถบัสเพราะซื้อเสร็จแล้วตั้งแต่เช้า</li>
+              <li>ฟังเสียงลำธารใส ชมสะพานหิน กังหันน้ำโบราณ และโคมแดงสว่างไสว</li>
+            </ul>
             <div class="tags"><span class="tag free">เดินเที่ยวชิลไร้กังวล</span><span class="tag star">🏮 แสงสีเมืองเก่า</span></div>
           </div>
         </div>
@@ -1299,7 +1412,11 @@ body {
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
           <div class="tl-card">
             <div class="tl-card-title">🎒 เช็กอินห้องพัก & เตรียมแยกสัมภาระ</div>
-            <p>เช็กอินเข้าห้องพักคืนแรก แยกสัมภาระจำเป็นใส่เป้เดย์แพ็ก (Daypack) สำหรับเทรคกิ้ง 2 วัน 1 คืน (น้ำดื่ม, ยาประจำตัว, กล้อง, แจ็กเก็ตกันลม/กันหนาว, เสื้อผ้าเปลี่ยน 1 ชุด, เพาเวอร์แบงก์) ส่วนกระเป๋าเดินทางใหญ่ 20 กก. ล็อกกุญแจให้เรียบร้อยเพื่อเตรียมนำขึ้นรถบัสพรุ่งนี้เช้า ส่งตรงไปสแตนด์บายรอที่ Tina's Guesthouse</p>
+            <ul class="tl-bullets">
+              <li>เช็กอินเข้าห้องพักคืนแรก</li>
+              <li>แยกของจำเป็นใส่เป้เดย์แพ็ก (Daypack) สำหรับเทรคกิ้ง 2 วัน 1 คืน</li>
+              <li>ล็อกกระเป๋าใหญ่ 20 กก. เตรียมนำขึ้นรถบัสพรุ่งนี้เช้าเพื่อส่งไปรอที่ Tina's</li>
+            </ul>
             <div class="tags"><span class="tag info">เตรียมส่งกระเป๋าไป Tina's</span></div>
           </div>
         </div>
@@ -1322,7 +1439,10 @@ body {
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
           <div class="tl-card">
             <div class="tl-card-title">☕ ตื่นนอน ทานมื้อเช้า เช็กเอาต์</div>
-            <p>ตื่นนอน เช็กเอาต์ พร้อมกระเป๋าเดินทางใบใหญ่และเป้เดย์แพ็ก ทานมื้อเช้าเบาๆ จิบชาร้อนเติมพลัง</p>
+            <ul class="tl-bullets">
+              <li>เช็กเอาต์พร้อมกระเป๋าเดินทางใหญ่และเป้เดย์แพ็ก</li>
+              <li>ทานมื้อเช้าเบาๆ จิบชาร้อนเติมพลัง</li>
+            </ul>
             <div class="tags"><span class="tag cost">มื้อเช้า ฿50 / คน (รวม ฿100)</span></div>
           </div>
         </div>
@@ -1331,15 +1451,21 @@ body {
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
           <div class="tl-card">
             <div class="tl-card-title">🚶 เดินเท้าไปสถานีขนส่งผู้โดยสารลี่เจียง</div>
-            <p>เดินเท้าช่วงเช้าประมาณ 1.5 กม. นำสัมภาระไปยังสถานีขนส่งผู้โดยสารลี่เจียง (丽江客运站) เพื่อเตรียมขึ้นรถบัส</p>
+            <ul class="tl-bullets">
+              <li>เดินเท้าช่วงเช้า ~1.5 กม. นำสัมภาระไปยังสถานีขนส่งลี่เจียง (丽江客运站)</li>
+            </ul>
           </div>
         </div>
         <div class="tl-row transport">
           <div class="tl-time">08:00 – 11:00</div>
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
           <div class="tl-card">
-            <div class="tl-card-title">🚌 รถบัสลี่เจียง → เฉียวโถว + ส่งกระเป๋าใหญ่ผ่านรถบัสไป Tina's</div>
-            <p>ขึ้นรถบัสที่สถานีขนส่ง <strong>แจ้งคนขับทันทีว่าจะขอฝากส่งกระเป๋าเดินทางใหญ่ไปรอที่ Tina's Guesthouse (~20 หยวน/ใบ)</strong> รถบัสจะนำกระเป๋าไปส่งรอไว้ที่จุดบริการ/คาเฟ่ Moye ฝั่งตรงข้าม Tina's ส่วนตัวเราลงที่สะพานเฉียวโถว (Qiaotou) ซื้อบัตรเข้าอุทยานคนละ 45 หยวน เริ่มต้นการเดินเทรลตัวเบาสบายด้วยเป้เดย์แพ็กใบเดียว</p>
+            <div class="tl-card-title">🚌 รถบัสลี่เจียง → เฉียวโถว + ส่งกระเป๋าใหญ่ไป Tina's</div>
+            <ul class="tl-bullets">
+              <li>ขึ้นรถบัส แจ้งคนขับฝากส่งกระเป๋าเดินทางใหญ่ไปรอที่ Tina's (~20 หยวน/ใบ)</li>
+              <li>ลงรถที่สะพานเฉียวโถว (Qiaotou) ซื้อบัตรเข้าอุทยานคนละ 45 หยวน</li>
+              <li>เริ่มเดินเทรลตัวเบาสบายด้วยเป้เดย์แพ็กใบเดียว</li>
+            </ul>
             <div class="tags"><span class="tag cost">บัตรเข้า ฿225 / คน (รวม ฿450)</span><span class="tag cost">ฝากกระเป๋า ~20 หยวน/ใบ</span><span class="tag info">ส่งกระเป๋าไป Tina's</span></div>
           </div>
         </div>
@@ -1348,7 +1474,11 @@ body {
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
           <div class="tl-card has-bg" style="background-image: url('images/tiger_leaping_gorge.jpg');">
             <div class="tl-card-title">🥾 เริ่มเดินเทรคกิ้ง High Trail → Naxi Family</div>
-            <p>เริ่มต้นก้าวสู่เส้นทาง Upper Trekking Route (ยาวรวม 24 กม.) สภาพทางช่วงแรกเป็นถนนลูกรัง 3 เลนค่อยๆ ลาดเอียงขึ้นเขา สองข้างทางเป็นทุ่งนาและหมู่บ้าน ด้านหน้าคือแนวภูเขาหิมะมังกรหยกตระหง่าน เดินสบายๆ ประมาณ 2 ชั่วโมง ซึมซับอากาศบริสุทธิ์ (หากต้องการทุ่นแรงมีรถตู้ชาวบ้านหน้าด่านส่งถึงจุดเดินขึ้นเขา 20 หยวน/คน)</p>
+            <ul class="tl-bullets">
+              <li>ก้าวสู่เส้นทาง Upper Trekking Route (ยาวรวม 24 กม.) สันเขาฝั่งฮาปา</li>
+              <li>ทางลูกรังลาดเอียงเลียบทุ่งนา วิวภูเขาหิมะมังกรหยก เดินสบายๆ ~2 ชม.</li>
+              <li>(หากต้องการทุ่นแรงมีรถตู้ชาวบ้านหน้าด่านส่งถึงจุดเดินขึ้นเขา 20 หยวน/คน)</li>
+            </ul>
             <div class="tags"><span class="tag trek">High Trail 2 ชม.</span></div>
           </div>
         </div>
@@ -1357,7 +1487,10 @@ body {
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
           <div class="tl-card">
             <div class="tl-card-title">🍚 พักทานมื้อเที่ยง @ Naxi Family (纳西雅阁)</div>
-            <p>แวะพักที่หมู่บ้านแรก นั่งทานอาหารตามสั่งรสชาติดี 2 จาน เติมพลัง ดื่มน้ำ พักผ่อนกล้ามเนื้อ และเข้าห้องน้ำให้เรียบร้อยเพื่อเตรียมร่างกายลุยช่วงที่ชันและโหดที่สุดของเส้นทาง</p>
+            <ul class="tl-bullets">
+              <li>แวะพักที่หมู่บ้านแรก สั่งอาหารตามสั่ง 2 จาน เติมพลัง ดื่มน้ำ</li>
+              <li>พักผ่อนกล้ามเนื้อขาและเข้าห้องน้ำ เตรียมพร้อมก่อนเริ่มช่วงไต่ความชัน</li>
+            </ul>
             <div class="tags"><span class="tag cost">มื้อเที่ยง ฿150 / คน (รวม ฿300)</span></div>
           </div>
         </div>
@@ -1366,7 +1499,11 @@ body {
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
           <div class="tl-card has-bg" style="background-image: url('images/tiger_leaping_gorge.jpg');">
             <div class="tl-card-title">⛰️ 28 Bends — โค้งปราบเซียน (二十八道拐)</div>
-            <p>ไต่ระดับความชันขึ้นเขาสลับฟันปลาต่อเนื่อง 28 โค้ง บนความสูงกว่า 3,000 เมตร ทดสอบพลังใจและขีดจำกัด (มีชาวบ้านจูงลาคอยตาม แต่ทางแคบแนะนำเดินด้วยกำลังตัวเองอย่างระมัดระวัง) เมื่อพิชิตถึงจุดสูงสุดจะมองเห็นแม่น้ำจินชาเบื้องล่างและภูเขาหิมะมังกรหยกในมุมมองสุดอลังการ จากนั้นทางเดินจะเปลี่ยนเป็นทางราบเลียบหน้าผา มีเงาภูเขาช่วยบังแดด</p>
+            <ul class="tl-bullets">
+              <li>ไต่ระดับความชันขึ้นเขาสลับฟันปลา 28 โค้ง บนความสูงกว่า 3,000 เมตร</li>
+              <li>จุดสูงสุดมองเห็นแม่น้ำจินชาและวิวเขาหิมะมังกรหยกแบบ 360 องศา</li>
+              <li>ผ่านจุดสูงสุด ทางเดินจะเปลี่ยนเป็นทางราบเลียบผา มีเงาภูเขาช่วยบังแดด</li>
+            </ul>
             <div class="tags"><span class="tag trek">28 โค้งชัน ไต่ระดับ</span><span class="tag star">🌟 ไฮไลท์ระดับโลก</span></div>
           </div>
         </div>
@@ -1375,7 +1512,10 @@ body {
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
           <div class="tl-card">
             <div class="tl-card-title">🏠 ถึงหมู่บ้านย่าชา → เช็กอิน Summit Inn (茶马客栈)</div>
-            <p>เดินตามทางราบเลียบผาเข้าสู่หมู่บ้านย่าชา เช็กอินห้องพัก Summit Inn (丫叉村茶马客栈 / Tea Horse Guesthouse) เกสต์เฮาส์ริมผาพร้อมวิวเทือกเขาหิมะมังกรหยกตระการตา (1 ห้อง 1 คืน จองก่อน ชำระทีหลัง)</p>
+            <ul class="tl-bullets">
+              <li>เดินตามทางราบเลียบผาเข้าสู่หมู่บ้านย่าชา</li>
+              <li>เช็กอิน Summit Inn (Tea Horse Guesthouse) เกสต์เฮาส์ริมผาวิวหลักล้าน (1 ห้อง 1 คืน)</li>
+            </ul>
             <div class="tags"><span class="tag cost">ห้องพัก ฿526 / คน (รวม ฿1,052.78)</span></div>
           </div>
         </div>
@@ -1384,7 +1524,10 @@ body {
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
           <div class="tl-card">
             <div class="tl-card-title">🌄 ทานมื้อเย็น ชมวิวยอดเขาหิมะอวี้หลง & ดูดาว</div>
-            <p>ทานมื้อเย็นที่เกสต์เฮาส์ ชมแสงอาทิตย์อัสดงสีทองฉาบยอดเขาหิมะมังกรหยก และช่วงค่ำไฮไลท์ห้ามพลาดคือการออกมารับลมหนาวชมดวงดาวนับล้านดวงพร่างพราวเต็มท้องฟ้าเหนือยอดเขาหิมะ บรรยากาศเงียบสงบตราตรึงใจ</p>
+            <ul class="tl-bullets">
+              <li>ทานมื้อเย็น ชมแสงอาทิตย์สีทองฉาบยอดเขาหิมะมังกรหยกยามอัสดง</li>
+              <li>ตกดึกชมทะเลดาวนับล้านดวงส่องสว่างพร่างพราวเต็มท้องฟ้าเหนือยอดเขาหิมะ</li>
+            </ul>
             <div class="tags"><span class="tag cost">มื้อเย็น ฿200 / คน (รวม ฿400)</span><span class="tag star">🌌 ดาวเต็มฟ้า</span></div>
           </div>
         </div>
@@ -1407,7 +1550,10 @@ body {
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
           <div class="tl-card">
             <div class="tl-card-title">☕ เช้าตรู่บนยอดเขา มื้อเช้า & กาแฟชมวิว</div>
-            <p>ตื่นรับแสงแรกของวัน ชมแสงเช้าสาดส่องช่องเขา ทานอาหารเช้า จิบกาแฟอุ่นๆ พร้อมวิวพาโนรามา เช็กเอาต์เตรียมพร้อมออกเดินแต่เช้าตรู่ก่อนแดดจะเริ่มร้อน</p>
+            <ul class="tl-bullets">
+              <li>ตื่นรับแสงเช้าสะท้อนช่องเขา จิบกาแฟอุ่นๆ พร้อมวิวพาโนรามา</li>
+              <li>เช็กเอาต์เตรียมออกเดินแต่เช้าตรู่ก่อนแดดร้อน</li>
+            </ul>
             <div class="tags"><span class="tag cost">มื้อเช้า ฿100 / คน (รวม ฿200)</span></div>
           </div>
         </div>
@@ -1416,7 +1562,11 @@ body {
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
           <div class="tl-card has-bg" style="background-image: url('images/tiger_leaping_gorge.jpg');">
             <div class="tl-card-title">🥾 High Trail เลียบผา ผ่าน Halfway & น้ำตกกวนอิม</div>
-            <p>เดินเทรคกิ้ง High Trail เลียบหน้าผาหินแคบๆ ฝั่งภูเขาหิมะฮาปา ไม่มีรั้วกั้น ขวามือคือเหวลึกดิ่งกว่า 2,000 เมตรสู่แม่น้ำจินชา ผ่าน **Halfway Guesthouse** แวะพักคาเฟ่ที่มีระเบียงชมวิวสวยที่สุดแห่งหนึ่ง มองเห็นยอดเขาฮาปาชัดเจน จากนั้นเดินต่อผ่าน **น้ำตกกวนอิม** รับละอองน้ำเย็นฉ่ำ และค่อยๆ เดินลัดเลาะลงเขาสู่ถนนใหญ่</p>
+            <ul class="tl-bullets">
+              <li>ทางเดินเลียบหน้าผาหินแคบๆ ไม่มีรั้วกั้น ขวามือคือเหวลึกสู่แม่น้ำจินชา</li>
+              <li>แวะพักคาเฟ่ระเบียงชมวิวพาโนรามาที่ Halfway Guesthouse ชมยอดเขาฮาปา</li>
+              <li>เดินลุยละอองน้ำเย็นสดชื่นที่น้ำตกกวนอิม และค่อยๆ ลัดเลาะลงสู่ถนนใหญ่</li>
+            </ul>
             <div class="tags"><span class="tag trek">เลียบผา ~3.5 ชม.</span><span class="tag info">น้ำตกกวนอิม 💧</span></div>
           </div>
         </div>
@@ -1425,7 +1575,10 @@ body {
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
           <div class="tl-card">
             <div class="tl-card-title">🍜 รับกระเป๋าใหญ่คืน + มื้อเที่ยง & ซื้อตั๋วบัส @ Tina's</div>
-            <p>เดินลงมาถึงถนนใหญ่หน้า Tina's Guesthouse <strong>ติดต่อรับกระเป๋าเดินทางใหญ่คืนที่คาเฟ่ Moye / จุดบริการฝั่งตรงข้าม Tina's ได้ทันที</strong> สัมภาระมาสแตนด์บายรออย่างปลอดภัย ทานมื้อเที่ยง พักผ่อนกล้ามเนื้อ และซื้อตั๋วรถบัสรอบ 15:30 น. (คนละ 55 หยวน) เพื่อนำกระเป๋าใหญ่เดินทางต่อไปยังแชงกรี-ลา</p>
+            <ul class="tl-bullets">
+              <li>เดินถึง Tina's ติดต่อรับกระเป๋าใหญ่คืนที่คาเฟ่ Moye / จุดบริการฝั่งตรงข้าม</li>
+              <li>ทานมื้อเที่ยง พักผ่อนกล้ามเนื้อ และซื้อตั๋วบัสรอบ 15:30 น. (คนละ 55 หยวน)</li>
+            </ul>
             <div class="tags"><span class="tag info">รับกระเป๋าใหญ่คืนที่ Tina's</span><span class="tag cost">มื้อเที่ยง & ตั๋วบัส ฿175 / คน (รวม ฿350)</span></div>
           </div>
         </div>
@@ -1434,7 +1587,10 @@ body {
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
           <div class="tl-card">
             <div class="tl-card-title">🚌 รถบัสสายตรง Tina's → เมืองโบราณตู๋เค่อจง</div>
-            <p>นำกระเป๋าเดินทางใหญ่เก็บใต้ท้องรถบัสสายตรงหน้า Tina's มุ่งหน้าสู่เมืองโบราณตู๋เค่อจง นั่งพักผ่อนชมวิวธรรมชาติทิวเขาและที่ราบสูงทิเบตตลอด 2 ชั่วโมง</p>
+            <ul class="tl-bullets">
+              <li>นำกระเป๋าใหญ่เก็บใต้ท้องรถบัส มุ่งหน้าสู่แชงกรี-ลา (~2 ชม.)</li>
+              <li>นั่งพักผ่อนสบายๆ ชมวิวที่ราบสูงทิเบตสองข้างทาง</li>
+            </ul>
             <div class="tags"><span class="tag free">ชำระรวมด้านบนแล้ว</span></div>
           </div>
         </div>
@@ -1443,7 +1599,10 @@ body {
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
           <div class="tl-card">
             <div class="tl-card-title">🏨 เช็กอิน Shangri-La Wangshan Xiaoyuan Inn</div>
-            <p>เช็กอินโรงแรมในเมืองโบราณตู๋เค่อจง พร้อมกระเป๋าเดินทางใบใหญ่ สะดวกสบาย มีเสื้อกันหนาวหนา ถุงมือ ผ้าพันคอพร้อมรับสภาพอากาศหนาวเย็นยามค่ำคืนในแชงกรี-ลา (1 ห้อง 1 คืน)</p>
+            <ul class="tl-bullets">
+              <li>เช็กอินโรงแรมในเมืองโบราณตู๋เค่อจงพร้อมกระเป๋าเดินทางใบใหญ่ (1 ห้อง 1 คืน)</li>
+              <li>มีเสื้อกันหนาวหนา ถุงมือ พร้อมรับอากาศหนาวเลขตัวเดียว</li>
+            </ul>
             <div class="tags"><span class="tag cost">ห้องพัก ฿241 / คน (รวม ฿481.90)</span></div>
           </div>
         </div>
@@ -1452,7 +1611,11 @@ body {
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
           <div class="tl-card has-bg" style="background-image: url('images/shangrila_night.jpg');">
             <div class="tl-card-title">🙏 กงล้อมนต์ยักษ์วัดกุยซาน + หม้อไฟเนื้อจามรี 🐃</div>
-            <p>เดินขึ้นเนินเขาวัดกุยซาน ร่วมแรงกับผู้คนหมุนกงล้อมนต์ทองคำยักษ์ที่ใหญ่ที่สุดในโลก (最大转经筒) หมุนตามเข็มนาฬิกา 3 รอบเพื่อความเป็นสิริมงคล ชมวิวแสงไฟเมืองโบราณตู๋เค่อจงยามค่ำคืน และทานมื้อเย็น "หม้อไฟเนื้อจามรี" น้ำซุปสมุนไพรทิเบตเข้มข้นคลายหนาว</p>
+            <ul class="tl-bullets">
+              <li>หมุนกงล้อมนต์ทองคำยักษ์ที่ใหญ่ที่สุดในโลก (3 รอบตามเข็มนาฬิกา)</li>
+              <li>ชมวิวแสงไฟเมืองโบราณตู๋เค่อจงยามค่ำคืน</li>
+              <li>ทานมื้อเย็น "หม้อไฟเนื้อจามรี" น้ำซุปสมุนไพรทิเบตเข้มข้นคลายหนาว</li>
+            </ul>
             <div class="tags"><span class="tag cost">หม้อไฟ ฿300 / คน (รวม ฿600)</span><span class="tag star">🌟 ไฮไลท์</span></div>
           </div>
         </div>
@@ -1475,7 +1638,10 @@ body {
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
           <div class="tl-card">
             <div class="tl-card-title">🍳 มื้อเช้า เดินไปประตูตะวันออก (独克宗东门)</div>
-            <p>ทานมื้อเช้า จิบชาร้อน เตรียมเสื้อกันหนาว หมวก ถุงมือ เดินไปจุดขึ้นรถบัสท่องเที่ยวที่ลานจอดรถประตูตะวันออกเมืองโบราณ</p>
+            <ul class="tl-bullets">
+              <li>ทานมื้อเช้า สวมเสื้อกันหนาว หมวก ถุงมือ</li>
+              <li>เดินไปจุดขึ้นรถบัสท่องเที่ยวที่ลานจอดรถประตูตะวันออกเมืองโบราณ</li>
+            </ul>
             <div class="tags"><span class="tag cost">มื้อเช้า ฿75 / คน (รวม ฿150)</span></div>
           </div>
         </div>
@@ -1484,7 +1650,12 @@ body {
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
           <div class="tl-card has-bg" style="background-image: url('images/potatso_park.jpg');">
             <div class="tl-card-title">🏞️ อุทยานแห่งชาติผู่ต๋าชั่ว (普达措国家公园)</div>
-            <p>อุทยานแห่งชาติแห่งแรกของจีน สูงกว่า 3,500 เมตรจากระดับน้ำทะเล นั่งรถบัสท่องเที่ยว Scenic Shuttle Bus (รถเหลือง) ชมวิวทุ่งหญ้าเลี้ยงม้า และเดินเทรคกิ้งบนทางเดินไม้เลียบ **ทะเลสาบซู่ตู๋ (Shudu Lake)** ผืนน้ำใสบริสุทธิ์ราวกับกระจก ท่ามกลางป่าสนโบราณและไอหมอก สัมผัสความเงียบสงบดั่งสวรรค์บนดิน</p>
+            <ul class="tl-bullets">
+              <li>อุทยานแห่งชาติแห่งแรกของจีน สูงกว่า 3,500 เมตรจากระดับน้ำทะเล</li>
+              <li>นั่งรถ Scenic Shuttle Bus (รถเหลือง) ชมวิวทุ่งหญ้าเลี้ยงม้า</li>
+              <li>เดินเทรคกิ้งบนสะพานไม้เลียบทะเลสาบซู่ตู๋ (Shudu Lake) ผืนน้ำใสบริสุทธิ์</li>
+              <li>สัมผัสป่าสนโบราณและไอหมอก ท่ามกลางความเงียบสงบดั่งสวรรค์บนดิน</li>
+            </ul>
             <div class="tags"><span class="tag cost">ตั๋วเข้า+รถ+บัส ฿890 / คน (รวม ฿1,780 / 178 หยวน)</span><span class="tag star">🌟 ไฮไลท์</span></div>
           </div>
         </div>
@@ -1493,7 +1664,10 @@ body {
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
           <div class="tl-card">
             <div class="tl-card-title">🚌 รถบัสท่องเที่ยวกลับเมืองโบราณตู๋เค่อจง</div>
-            <p>ขึ้นรถบัสท่องเที่ยวรอบขากลับจากหน้าทางออกอุทยาน นั่งพักผ่อนกลับมาลงที่ลานจอดรถประตูตะวันออกเมืองโบราณตู๋เค่อจง</p>
+            <ul class="tl-bullets">
+              <li>ขึ้นรถบัสท่องเที่ยวขากลับจากหน้าทางออกอุทยาน</li>
+              <li>นั่งพักผ่อนกลับมาลงที่ลานจอดรถประตูตะวันออกเมืองโบราณตู๋เค่อจง</li>
+            </ul>
             <div class="tags"><span class="tag free">รวมในตั๋วไป-กลับเรียบร้อยแล้ว</span></div>
           </div>
         </div>
@@ -1502,7 +1676,10 @@ body {
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
           <div class="tl-card">
             <div class="tl-card-title">🏨 พักผ่อน @ Shangri-La Wangshan Xiaoyuan Inn (คืนที่ 2)</div>
-            <p>กลับเข้าห้องพักโรงแรมในเมืองโบราณตู๋เค่อจงต่อเนื่องเป็นคืนที่ 2 ดื่มชาร้อน พักผ่อนคลายความเมื่อยล้า</p>
+            <ul class="tl-bullets">
+              <li>กลับเข้าห้องพักโรงแรมในเมืองโบราณตู๋เค่อจงต่อเนื่องเป็นคืนที่ 2</li>
+              <li>ดื่มชาร้อน พักผ่อนคลายความเมื่อยล้า</li>
+            </ul>
             <div class="tags"><span class="tag cost">ห้องพัก ฿241 / คน (รวม ฿481.90)</span></div>
           </div>
         </div>
@@ -1511,7 +1688,10 @@ body {
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
           <div class="tl-card has-bg" style="background-image: url('images/shangrila_night.jpg');">
             <div class="tl-card-title">🌙 เดินเล่นเมืองโบราณตู๋เค่อจง + มื้อค่ำ</div>
-            <p>เดินเล่นสัมผัสบรรยากาศเมืองโบราณตู๋เค่อจงยามค่ำ ชิมโยเกิร์ตนมจามรี ช็อปปิ้งของที่ระลึกทิเบต และทานมื้อค่ำในบรรยากาศอบอุ่น</p>
+            <ul class="tl-bullets">
+              <li>เดินเล่นชมเมืองโบราณ ชิมโยเกิร์ตนมจามรี ช็อปปิ้งของที่ระลึกทิเบต</li>
+              <li>ทานมื้อค่ำในบรรยากาศอบอุ่นสไตล์ท้องถิ่น</li>
+            </ul>
             <div class="tags"><span class="tag cost">มื้อค่ำ ฿200 / คน (รวม ฿400)</span></div>
           </div>
         </div>
@@ -1534,7 +1714,10 @@ body {
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
           <div class="tl-card">
             <div class="tl-card-title">☕ มื้อเช้า + เช็กเอาต์ ฝากกระเป๋าเดินทางที่โรงแรม</div>
-            <p>ทานมื้อเช้า เช็กเอาต์ และฝากกระเป๋าเดินทางใหญ่ไว้ที่เคาน์เตอร์โรงแรมในเมืองโบราณตู๋เค่อจง เพื่อความคล่องตัวในการไปไหว้พระ</p>
+            <ul class="tl-bullets">
+              <li>ทานมื้อเช้า เช็กเอาต์ และฝากกระเป๋าเดินทางใหญ่ไว้ที่เคาน์เตอร์โรงแรม</li>
+              <li>ตัวเบาสบายออกไปไหว้พระและเที่ยวชมวัด</li>
+            </ul>
             <div class="tags"><span class="tag cost">มื้อเช้า ฿75 / คน (รวม ฿150)</span></div>
           </div>
         </div>
@@ -1543,7 +1726,11 @@ body {
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
           <div class="tl-card has-bg" style="background-image: url('images/songzanlin_temple.jpg');">
             <div class="tl-card-title">🕌 วัดซงจ้านหลิน (松赞林寺)</div>
-            <p>"พระราชวังโปตาลาน้อยแห่งยูนนาน" วัดพุทธทิเบตนิกายหมวกเหลืองที่ยิ่งใหญ่ที่สุด สร้างขึ้นในปี ค.ศ. 1679 ขึ้นรถเมล์สาย 3 (คนละ 2 หยวน) เที่ยวชมความวิจิตรของพระอุโบสถยอดทองคำ จิตรกรรมฝาผนังทิเบตโบราณ และเดินชมวิวรอบทะเลสาบรามยางโช (Ramuyangcuo Lake) มุมถ่ายรูปสะท้อนเงาวัดบนผิวน้ำที่งดงามตระการตา</p>
+            <ul class="tl-bullets">
+              <li>"พระราชวังโปตาลาน้อยแห่งยูนนาน" วัดพุทธทิเบตที่ยิ่งใหญ่ที่สุด สร้างปี 1679</li>
+              <li>ขึ้นรถเมล์สาย 3 (คนละ 2 หยวน) เที่ยวชมพระอุโบสถยอดทองคำ</li>
+              <li>เดินชมวิวรอบทะเลสาบรามยางโช (Ramuyangcuo Lake) มุมสะท้อนน้ำงดงาม</li>
+            </ul>
             <div class="tags"><span class="tag cost">ค่าเข้าชม+รถเมล์ ฿460 / คน (รวม ฿920 / 90 หยวน)</span><span class="tag star">🌟 ไฮไลท์</span></div>
           </div>
         </div>
@@ -1552,7 +1739,10 @@ body {
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
           <div class="tl-card">
             <div class="tl-card-title">🍵 รถเมล์กลับเข้าเมืองเก่า + มื้อเที่ยง + คาเฟ่ชิล</div>
-            <p>นั่งรถเมล์สาย 3 กลับเข้าเมืองเก่า ทานมื้อเที่ยง รับกระเป๋าเดินทางที่ฝากไว้ และนั่งชิลในคาเฟ่สไตล์ทิเบต ดื่มด่ำบรรยากาศแชงกรี-ลาก่อนออกเดินทาง</p>
+            <ul class="tl-bullets">
+              <li>นั่งรถเมล์สาย 3 กลับเข้าเมืองเก่า ทานมื้อเที่ยง และรับกระเป๋าเดินทางที่ฝากไว้</li>
+              <li>นั่งชิลในคาเฟ่สไตล์ทิเบต ดื่มด่ำบรรยากาศก่อนเดินทางกลับ</li>
+            </ul>
             <div class="tags"><span class="tag cost">มื้อเที่ยง & คาเฟ่ ฿150 / คน (รวม ฿300)</span></div>
           </div>
         </div>
@@ -1561,7 +1751,10 @@ body {
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
           <div class="tl-card">
             <div class="tl-card-title">🚌 รถเมล์สาย 1 → สถานีรถไฟแชงกรี-ลา (香格里拉站)</div>
-            <p>เดินไปป้ายประตูเหนือ (北门) ขึ้นรถเมล์สาย 1 (คนละ 2 หยวน) พร้อมกระเป๋าเดินทางตรงไปสถานีรถไฟความเร็วสูงแชงกรี-ลา อาคารสถาปัตยกรรมทิเบตโมเดิร์น ผ่านจุดตรวจตั๋วและสแกนสัมภาระ</p>
+            <ul class="tl-bullets">
+              <li>ขึ้นรถเมล์สาย 1 ที่ประตูเหนือ (คนละ 2 หยวน) พร้อมกระเป๋าเดินทาง</li>
+              <li>ถึงสถานีรถไฟความเร็วสูงแชงกรี-ลา สแกนสัมภาระเตรียมขึ้นรถไฟ</li>
+            </ul>
             <div class="tags"><span class="tag cost">รถเมล์ ฿10 / คน (รวม ฿20 / 2 หยวน)</span></div>
           </div>
         </div>
@@ -1570,7 +1763,10 @@ body {
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
           <div class="tl-card">
             <div class="tl-card-title">🚄 รถไฟความเร็วสูง แชงกรี-ลา → สถานีลี่เจียง (丽江站)</div>
-            <p>สัมผัสเส้นทางรถไฟลอยฟ้าความเร็วสูง (High-Speed Train) ข้ามสะพานและลอดอุโมงค์ ลัดเลาะผ่านช่องเขาเสือกระโจนและแนวเขาหิมะ นั่งที่นั่งชั้นสองสะดวกสบาย ใช้เวลาเดินทางเพียง 1 ชม. 30 นาที สู่สถานีรถไฟลี่เจียง</p>
+            <ul class="tl-bullets">
+              <li>รถไฟความเร็วสูงลอยฟ้าข้ามสะพานและลอดอุโมงค์ผ่านช่องเขาเสือกระโจน</li>
+              <li>นั่งที่นั่งชั้นสองสะดวกสบาย ใช้เวลาเพียง 1 ชม. 30 นาที สู่ลี่เจียง</li>
+            </ul>
             <div class="tags"><span class="tag cost">ตั๋วรถไฟ ฿357 / คน (รวม ฿713.30 / ~63 หยวน)</span><span class="tag info">High-Speed Train 🚄</span></div>
           </div>
         </div>
@@ -1579,7 +1775,10 @@ body {
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
           <div class="tl-card">
             <div class="tl-card-title">🏩 รถเมล์ 4/18 → เช็กอิน Qiyue Linyin Bieyuan</div>
-            <p>ขึ้นรถเมล์สาย 4 หรือ 18 หน้าสถานีรถไฟ ลงป้ายตลาดจงอี้ (คนละ 2 หยวน) เดินเข้าโรงแรม Qiyue Linyin Bieyuan เช็กอินห้องพักคืนสุดท้ายในลี่เจียง</p>
+            <ul class="tl-bullets">
+              <li>ขึ้นรถเมล์สาย 4 หรือ 18 หน้าสถานีรถไฟ ลงป้ายตลาดจงอี้ (คนละ 2 หยวน)</li>
+              <li>เดินเข้าโรงแรม Qiyue Linyin Bieyuan เช็กอินห้องพักคืนสุดท้ายในลี่เจียง</li>
+            </ul>
             <div class="tags"><span class="tag cost">ห้องพัก ฿192 / คน (รวม ฿383.95)</span><span class="tag cost">รถเมล์ ฿10 / คน (รวม ฿20)</span></div>
           </div>
         </div>
@@ -1588,7 +1787,10 @@ body {
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
           <div class="tl-card has-bg" style="background-image: url('images/zhongyi_market.jpg');">
             <div class="tl-card-title">🎉 ช็อปปิ้งของฝาก ตลาดจงอี้ + มื้อเย็นปิดทริป</div>
-            <p>เดินช็อปปิ้งของฝาก ชาผู่เอ๋อร์ ดอกไม้แห้ง ขนมเปี๊ยะกุหลาบ ทานมื้อเย็นฉลองปิดทริปในเมืองเก่าลี่เจียง บรรยากาศสุดประทับใจ</p>
+            <ul class="tl-bullets">
+              <li>เดินช็อปปิ้งของฝาก ชาผู่เอ๋อร์ ดอกไม้แห้ง ขนมเปี๊ยะกุหลาบ</li>
+              <li>ทานมื้อเย็นฉลองปิดทริปในเมืองเก่าลี่เจียง บรรยากาศสุดประทับใจ</li>
+            </ul>
             <div class="tags"><span class="tag cost">ของฝาก & มื้อเย็น ฿250 / คน (รวม ฿500)</span></div>
           </div>
         </div>
@@ -1611,7 +1813,9 @@ body {
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
           <div class="tl-card">
             <div class="tl-card-title">🧳 ตื่นนอน จัดกระเป๋าเดินทาง เช็กเอาต์</div>
-            <p>ตื่นนอน จัดกระเป๋าเดินทางใบใหญ่ 20 กก. บรรจุของฝากและสัมภาระ เช็กเอาต์เตรียมเดินทางกลับ</p>
+            <ul class="tl-bullets">
+              <li>ตื่นนอน จัดกระเป๋าเดินทางใหญ่ 20 กก. บรรจุของฝากและสัมภาระ เช็กเอาต์</li>
+            </ul>
           </div>
         </div>
         <div class="tl-row">
@@ -1619,7 +1823,9 @@ body {
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
           <div class="tl-card">
             <div class="tl-card-title">🚶 เดินเท้าไปจุดขึ้นรถบัสหนานเหมิน (南门)</div>
-            <p>เดินเท้าช่วงเช้าจากโรงแรมไปยังจุดขึ้นรถบัสสนามบินลี่เจียง (จุดจอดหนานเหมิน)</p>
+            <ul class="tl-bullets">
+              <li>เดินเท้าช่วงเช้าจากโรงแรมไปยังจุดขึ้นรถบัสสนามบินลี่เจียง (จุดจอดหนานเหมิน)</li>
+            </ul>
           </div>
         </div>
         <div class="tl-row transport">
@@ -1627,7 +1833,9 @@ body {
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
           <div class="tl-card">
             <div class="tl-card-title">🚌 Airport Shuttle Bus → สนามบินลี่เจียง (LJG)</div>
-            <p>ขึ้นรถบัสสนามบินลี่เจียงหน้าจุดจอดหนานเหมิน ตรงสู่สนามบินลี่เจียงซานอี้ (คนละ 20 หยวน)</p>
+            <ul class="tl-bullets">
+              <li>ขึ้นรถบัสสนามบินลี่เจียงหน้าจุดจอดหนานเหมิน ตรงสู่สนามบิน (คนละ 20 หยวน)</li>
+            </ul>
             <div class="tags"><span class="tag cost">฿100 / คน (รวม ฿200 / 20 หยวน)</span></div>
           </div>
         </div>
@@ -1636,7 +1844,11 @@ body {
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
           <div class="tl-card">
             <div class="tl-card-title">🎫 เช็กอิน China Eastern โหลดกระเป๋า Check-through</div>
-            <p>เช็กอินที่เคาน์เตอร์ China Eastern โหลดกระเป๋าใหญ่ยิงตรงถึงสนามบินสุวรรณภูมิ (BKK) รับบอร์ดดิ้งพาสทั้ง 2 เที่ยวบินล่วงหน้า (LJG→KMG และ KMG→BKK) ทำให้ตอนต่อเครื่อง Layover ที่คุนหมิงตัวเบาสบาย ไม่ต้องรอรับกระเป๋า</p>
+            <ul class="tl-bullets">
+              <li>เช็กอินเคาน์เตอร์ โหลดกระเป๋าใหญ่ยิงตรงถึงสนามบินสุวรรณภูมิ (BKK)</li>
+              <li>รับบอร์ดดิ้งพาสทั้ง 2 เที่ยวบินล่วงหน้า (LJG→KMG และ KMG→BKK)</li>
+              <li>ตอนต่อเครื่อง Layover ที่คุนหมิงตัวเบาสบาย ไม่ต้องรอรับกระเป๋า</li>
+            </ul>
             <div class="tags"><span class="tag info">Check-through ถึงสุวรรณภูมิ</span></div>
           </div>
         </div>
@@ -1645,7 +1857,10 @@ body {
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
           <div class="tl-card">
             <div class="tl-card-title">✈️ MU-5922 — ลี่เจียง (LJG) → คุนหมิง (KMG)</div>
-            <p>China Eastern เที่ยวบิน MU-5922 บินจากลี่เจียงสู่สนามบินคุนหมิงฉางสุ่ย (ระยะเวลาบิน 1 ชั่วโมง) ถึงเวลา 11:00 น.</p>
+            <ul class="tl-bullets">
+              <li>China Eastern เที่ยวบิน MU-5922 บินสู่สนามบินคุนหมิงฉางสุ่ย (บิน 1 ชม.)</li>
+              <li>ถึงสนามบินคุนหมิงเวลา 11:00 น.</li>
+            </ul>
             <div class="tags"><span class="tag flight-t">1:00 ชม.</span><span class="tag free">รวมในตั๋วเครื่องบินแล้ว</span></div>
           </div>
         </div>
@@ -1654,7 +1869,11 @@ body {
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
           <div class="tl-card has-bg" style="background-image: url('images/kunming_city.jpg');">
             <div class="tl-card-title">🌆 Layover คุนหมิง 10 ชม. 30 นาที เต็มวันอย่างคุ้มค่า</div>
-            <p>ขึ้น Metro สาย 6 จากสถานี Airport Center เข้าสู่ตัวเมืองคุนหมิง ทานมื้อเที่ยง ชิมอาหารยูนนาน ช็อปปิ้งของฝากสุดท้าย ใบชา ขนมเปี๊ยะดอกไม้ เที่ยวเล่นในเมืองอย่างจุใจโดยไม่ต้องพะวงเรื่องกระเป๋าเดินทาง</p>
+            <ul class="tl-bullets">
+              <li>ขึ้น Metro สาย 6 จากสถานี Airport Center เข้าสู่ตัวเมืองคุนหมิง</li>
+              <li>ทานมื้อเที่ยง ชิมอาหารยูนนาน ช็อปปิ้งของฝากสุดท้าย ใบชา ขนมเปี๊ยะดอกไม้</li>
+              <li>เที่ยวชมเมืองอย่างสบายใจโดยไม่ต้องพะวงเรื่องกระเป๋าเดินทาง</li>
+            </ul>
             <div class="tags"><span class="tag cost">Metro + มื้อเที่ยง + ของฝาก ~฿375 / คน (รวม ฿750)</span></div>
           </div>
         </div>
@@ -1663,7 +1882,9 @@ body {
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
           <div class="tl-card">
             <div class="tl-card-title">🚇 Metro สาย 6 กลับสู่สนามบินคุนหมิง (KMG)</div>
-            <p>นั่ง Metro สาย 6 ยิงตรงกลับมายังสนามบินคุนหมิงฉางสุ่ย เตรียมตัวขึ้นเครื่องขากลับ</p>
+            <ul class="tl-bullets">
+              <li>นั่ง Metro สาย 6 ยิงตรงกลับมายังสนามบินคุนหมิงฉางสุ่ย</li>
+            </ul>
             <div class="tags"><span class="tag free">รวมในงบด้านบน</span></div>
           </div>
         </div>
@@ -1672,7 +1893,10 @@ body {
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
           <div class="tl-card">
             <div class="tl-card-title">🛂 ตรวจคนเข้าเมืองขาออก & ตรวจความปลอดภัย</div>
-            <p>ผ่านขั้นตอนตรวจคนเข้าเมืองขาออก (ตม.) และจุดตรวจความปลอดภัยระหว่างประเทศ เดินไปรอขึ้นเครื่องที่เกต</p>
+            <ul class="tl-bullets">
+              <li>ผ่านขั้นตอนตรวจคนเข้าเมืองขาออก (ตม.) และจุดตรวจความปลอดภัยระหว่างประเทศ</li>
+              <li>เดินไปรอขึ้นเครื่องที่เกต</li>
+            </ul>
             <div class="tags"><span class="tag info">ตม. ขาออกระหว่างประเทศ</span></div>
           </div>
         </div>
@@ -1681,7 +1905,10 @@ body {
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
           <div class="tl-card">
             <div class="tl-card-title">✈️ MU-9621 — คุนหมิง (KMG) → สุวรรณภูมิ (BKK) 🏡</div>
-            <p>China Eastern เที่ยวบิน MU-9621 บินตรงจากคุนหมิงกลับสู่สนามบินสุวรรณภูมิ ถึงเวลา 23:05 น. ปิดฉากทริปยูนนาน 8 วัน 7 คืนด้วยความทรงจำอันงดงามและประทับใจ</p>
+            <ul class="tl-bullets">
+              <li>China Eastern เที่ยวบิน MU-9621 บินตรงจากคุนหมิงกลับสู่สนามบินสุวรรณภูมิ</li>
+              <li>ถึงเวลา 23:05 น. ปิดฉากทริปยูนนาน 8 วัน 7 คืนด้วยความทรงจำอันยอดเยี่ยม</li>
+            </ul>
             <div class="tags"><span class="tag flight-t">1:35 ชม.</span><span class="tag star">กลับบ้านโดยสวัสดิภาพ 🏡</span></div>
           </div>
         </div>
