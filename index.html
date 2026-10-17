@@ -1449,15 +1449,33 @@ body {
 
 @media (max-width: 680px) {
   #navbar {
-    height: 46px;
+    height: 44px;
   }
   .tabs-sticky-wrapper {
-    top: 46px;
-    padding: 4px 0 6px;
+    top: 44px;
+    padding: 3px 0 5px !important;
+    margin-bottom: 8px !important;
+  }
+  .tab-row {
+    padding: 2px !important;
+    gap: 3px !important;
+    border-radius: 10px !important;
+  }
+  .tab-btn {
+    min-width: 62px !important;
+    padding: 4px 6px !important;
+    font-size: 0.72rem !important;
+    border-radius: 8px !important;
+  }
+  .tab-btn strong {
+    font-size: 0.72rem !important;
+  }
+  .tab-btn span {
+    font-size: 0.60rem !important;
   }
   .nav-links {
     position: fixed;
-    top: 46px;
+    top: 44px;
     left: 0;
     right: 0;
     background: var(--apple-glass);
@@ -1465,8 +1483,8 @@ body {
     -webkit-backdrop-filter: saturate(180%) blur(20px);
     border-bottom: 1px solid var(--system-border);
     flex-direction: column;
-    padding: 16px 20px;
-    gap: 12px;
+    padding: 12px 16px;
+    gap: 10px;
     transform: translateY(-120%);
     transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
   }
@@ -1476,82 +1494,252 @@ body {
   .nav-toggle {
     display: block;
   }
+  .section {
+    padding: 18px 0 22px !important;
+  }
+  .container {
+    padding: 0 10px !important;
+  }
+  .section-header {
+    margin-bottom: 10px !important;
+  }
+  .section-title {
+    font-size: 1.25rem !important;
+    margin-bottom: 2px !important;
+  }
+  .section-desc {
+    font-size: 0.76rem !important;
+  }
   #hero {
-    min-height: auto;
-    padding: 60px 16px 24px;
+    min-height: auto !important;
+    padding: 46px 12px 16px !important;
+  }
+  .hero-h1 {
+    font-size: 1.5rem !important;
+    margin-bottom: 4px !important;
+  }
+  .hero-sub {
+    font-size: 0.78rem !important;
+    margin-bottom: 8px !important;
+  }
+  .hero-cta {
+    padding: 7px 16px !important;
+    font-size: 0.78rem !important;
   }
   .hero-route-box {
-    padding: 10px 12px;
+    margin-top: 10px !important;
+    padding: 8px 10px !important;
+    border-radius: 10px !important;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
   }
   .rs-bubble {
-    width: 32px;
-    height: 32px;
-    font-size: 0.95rem;
-    border-radius: 8px;
+    width: 28px !important;
+    height: 28px !important;
+    font-size: 0.85rem !important;
+    border-radius: 7px !important;
   }
   .rs-name {
-    font-size: 0.68rem;
+    font-size: 0.64rem !important;
   }
   .rs-date {
-    font-size: 0.62rem;
+    font-size: 0.58rem !important;
   }
   .route-line {
-    min-width: 8px;
-    margin: 0 3px;
-    transform: translateY(-9px);
-  }
-  .timeline {
-    padding-left: 2px;
-    gap: 8px;
-  }
-  .tl-row {
-    grid-template-columns: 56px 14px 1fr;
-    gap: 6px;
-  }
-  .tl-time {
-    font-size: 0.70rem;
-    padding-top: 6px;
-  }
-  .tl-dot {
-    width: 8px;
-    height: 8px;
-    margin-top: 10px;
-  }
-  .tl-card {
-    padding: 8px 12px;
-    border-radius: 10px;
-  }
-  .tl-card-title {
-    font-size: 0.88rem;
-    margin-bottom: 3px;
-  }
-  .tl-bullets li {
-    font-size: 0.78rem;
-    line-height: 1.36;
-    padding-left: 12px;
-  }
-  .hl-grid {
-    gap: 10px;
-    padding-bottom: 10px;
-  }
-  .hl-card {
-    flex: 0 0 240px;
-    width: 240px;
-    height: 230px;
+    min-width: 6px !important;
+    margin: 0 2px !important;
+    transform: translateY(-8px) !important;
   }
   .day-head {
-    padding: 10px 14px;
-    margin-bottom: 12px;
+    padding: 7px 10px !important;
+    margin-bottom: 8px !important;
+    border-radius: 10px !important;
+  }
+  .dh-label {
+    font-size: 0.60rem !important;
+    padding: 1px 5px !important;
+    margin-bottom: 1px !important;
   }
   .dh-title {
-    font-size: 1.05rem;
+    font-size: 0.92rem !important;
+    line-height: 1.25 !important;
+    margin-bottom: 1px !important;
+  }
+  .dh-date {
+    font-size: 0.68rem !important;
+  }
+  .dh-weather {
+    font-size: 0.65rem !important;
+    padding: 2px 7px !important;
+    margin-top: 3px !important;
   }
   .dh-emoji {
-    width: 34px;
-    height: 34px;
-    font-size: 1.3rem;
+    width: 28px !important;
+    height: 28px !important;
+    font-size: 1.1rem !important;
+    border-radius: 7px !important;
+  }
+  .timeline {
+    padding-left: 0 !important;
+    gap: 5px !important;
+  }
+  .tl-row {
+    grid-template-columns: 46px 10px 1fr !important;
+    gap: 4px !important;
+  }
+  .tl-time {
+    font-size: 0.64rem !important;
+    padding-top: 4px !important;
+    line-height: 1.18 !important;
+  }
+  .tl-dot {
+    width: 6px !important;
+    height: 6px !important;
+    margin-top: 6px !important;
+    border-width: 1.5px !important;
+  }
+  .tl-line {
+    margin-top: 2px !important;
+  }
+  .tl-card {
+    padding: 6px 9px !important;
+    border-radius: 8px !important;
+  }
+  .tl-card-title {
+    font-size: 0.82rem !important;
+    margin-bottom: 2px !important;
+    line-height: 1.28 !important;
+  }
+  .cat-pill {
+    font-size: 0.58rem !important;
+    padding: 1px 4px !important;
+    margin-right: 3px !important;
+    border-radius: 4px !important;
+  }
+  .tl-bullets {
+    margin: 2px 0 3px !important;
+    gap: 2px !important;
+  }
+  .tl-bullets li {
+    font-size: 0.72rem !important;
+    line-height: 1.3 !important;
+    padding-left: 10px !important;
+  }
+  .tl-bullets li::before {
+    font-size: 0.72rem !important;
+  }
+  .card-media {
+    height: 85px !important;
+    margin: -6px -9px 6px !important;
+  }
+  .card-action-bar {
+    margin-top: 4px !important;
+    padding-top: 3px !important;
+    gap: 4px !important;
+  }
+  .action-btn {
+    font-size: 0.65rem !important;
+    padding: 2px 7px !important;
+    border-radius: 5px !important;
+    gap: 4px !important;
+  }
+  .tags {
+    margin-top: 4px !important;
+    gap: 3px !important;
+  }
+  .tag {
+    font-size: 0.60rem !important;
+    padding: 1px 5px !important;
+    border-radius: 4px !important;
+  }
+  .hl-grid {
+    gap: 8px !important;
+    padding-bottom: 6px !important;
+  }
+  .hl-card {
+    flex: 0 0 170px !important;
+    width: 170px !important;
+    height: 160px !important;
+    border-radius: 10px !important;
+  }
+  .hl-card-overlay {
+    padding: 8px 10px !important;
+  }
+  .hl-card-overlay h3 {
+    font-size: 0.82rem !important;
+    margin-bottom: 2px !important;
+  }
+  .hl-card-overlay p {
+    font-size: 0.66rem !important;
+    -webkit-line-clamp: 2 !important;
+  }
+  .hl-nav-btn {
+    width: 26px !important;
+    height: 26px !important;
+    font-size: 1rem !important;
+  }
+  .day-footer-nav {
+    margin-top: 10px !important;
+    padding-top: 8px !important;
+    gap: 5px !important;
+  }
+  .dfn-btn {
+    padding: 4px 8px !important;
+    border-radius: 8px !important;
+    gap: 5px !important;
+  }
+  .dfn-icon {
+    width: 20px !important;
+    height: 20px !important;
+    font-size: 0.75rem !important;
+  }
+  .dfn-sub {
+    font-size: 0.56rem !important;
+  }
+  .dfn-title {
+    font-size: 0.70rem !important;
+  }
+  .dfn-top-btn {
+    padding: 4px 8px !important;
+    font-size: 0.65rem !important;
+    border-radius: 8px !important;
+  }
+  .budget-total-box {
+    padding: 12px 14px !important;
+    margin-bottom: 8px !important;
+    border-radius: 10px !important;
+  }
+  .bt-amount {
+    font-size: 1.5rem !important;
+    margin: 2px 0 6px !important;
+  }
+  .bt-sub {
+    font-size: 0.70rem !important;
+  }
+  .budget-card-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 5px !important;
+  }
+  .budget-card {
+    padding: 6px 8px !important;
+    border-radius: 8px !important;
+  }
+  .bc-icon {
+    width: 22px !important;
+    height: 22px !important;
+    font-size: 0.85rem !important;
+    margin-bottom: 2px !important;
+  }
+  .bc-title {
+    font-size: 0.70rem !important;
+    margin-bottom: 1px !important;
+  }
+  .bc-amount {
+    font-size: 0.88rem !important;
+    margin-bottom: 1px !important;
+  }
+  .bc-sub {
+    font-size: 0.60rem !important;
   }
 }
 </style>
@@ -1672,7 +1860,7 @@ body {
           <span class="dh-label">วันที่ 1</span>
           <div class="dh-title">ออกเดินทาง กรุงเทพฯ สู่คุนหมิง</div>
           <span class="dh-date">วันเสาร์ที่ 24 ตุลาคม 2569</span>
-          <div class="dh-weather">🌤️ คุนหมิง 15–22°C · ความสูง 1,890m · อากาศสบาย ฤดูใบไม้ผลิ</div>
+          <div class="dh-weather">🌤️ คุนหมิง 15–22°C (สูง 1,890m)</div>
         </div>
         <div class="dh-emoji">✈️</div>
       </div>
@@ -1744,7 +1932,7 @@ body {
           <span class="dh-label">วันที่ 2</span>
           <div class="dh-title">คุนหมิง เมืองแห่งฤดูใบไม้ผลิ</div>
           <span class="dh-date">วันอาทิตย์ที่ 25 ตุลาคม 2569</span>
-          <div class="dh-weather">🌤️ คุนหมิง 15–22°C · ความสูง 1,890m · แดดอุ่น ลมเย็นสบาย</div>
+          <div class="dh-weather">🌤️ คุนหมิง 15–22°C (สูง 1,890m)</div>
         </div>
         <div class="dh-emoji">🌸</div>
       </div>
@@ -1947,7 +2135,7 @@ body {
           <span class="dh-label">วันที่ 3</span>
           <div class="dh-title">ลี่เจียง เมืองเก่ามรดกโลก</div>
           <span class="dh-date">วันจันทร์ที่ 26 ตุลาคม 2569</span>
-          <div class="dh-weather">⛅ ลี่เจียง 8–18°C · ความสูง 2,400m · แดดแรง กลางคืนหนาวจัด</div>
+          <div class="dh-weather">⛅ ลี่เจียง 8–18°C (สูง 2,400m)</div>
         </div>
         <div class="dh-emoji">🏘️</div>
       </div>
@@ -2180,7 +2368,7 @@ body {
           <span class="dh-label">วันที่ 4</span>
           <div class="dh-title">หุบเขาเสือกระโจน วันแรก — High Trail</div>
           <span class="dh-date">วันอังคารที่ 27 ตุลาคม 2569</span>
-          <div class="dh-weather">🏔️ หุบเขาเสือกระโจน 6–16°C · ความสูง 2,670m · สันเขา ลมแรง พกเสื้อกันลม</div>
+          <div class="dh-weather">🏔️ หุบเขาเสือกระโจน 6–16°C (สูง 2,670m)</div>
         </div>
         <div class="dh-emoji">🥾</div>
       </div>
@@ -2349,7 +2537,7 @@ body {
           <span class="dh-label">วันที่ 5</span>
           <div class="dh-title">หุบเขาเสือกระโจน วันสอง แล้วมุ่งหน้าแชงกรี-ลา</div>
           <span class="dh-date">วันพุธที่ 28 ตุลาคม 2569</span>
-          <div class="dh-weather warn">❄️ เดินสู่แชงกรี-ลา 2–14°C · ความสูง 3,200m · ⚠️ เตรียมรับมือความสูง (AMS)</div>
+          <div class="dh-weather warn">❄️ แชงกรี-ลา 2–14°C (สูง 3,200m) ⚠️ ระวัง AMS</div>
         </div>
         <div class="dh-emoji">🙏</div>
       </div>
@@ -2480,7 +2668,7 @@ body {
           <span class="dh-label">วันที่ 6</span>
           <div class="dh-title">อุทยานผู่ต๋าชั่ว สวรรค์บนดิน</div>
           <span class="dh-date">วันพฤหัสบดีที่ 29 ตุลาคม 2569</span>
-          <div class="dh-weather warn">❄️ ผู่ต๋าชั่ว -2 ถึง 10°C · ความสูง 3,500m · ⚠️ เสี่ยง AMS งดวิ่ง/พกออกซิเจนกระป๋อง</div>
+          <div class="dh-weather warn">❄️ ผู่ต๋าชั่ว -2 ถึง 10°C (สูง 3,500m) ⚠️ ระวัง AMS</div>
         </div>
         <div class="dh-emoji">🏔️</div>
       </div>
@@ -2616,7 +2804,7 @@ body {
           <span class="dh-label">วันที่ 7</span>
           <div class="dh-title">วัดซงจ้านหลิน & เมืองโบราณตู๋เค่อจง</div>
           <span class="dh-date">วันศุกร์ที่ 30 ตุลาคม 2569</span>
-          <div class="dh-weather warn">❄️ แชงกรี-ลา 0–12°C · ความสูง 3,280m · อากาศแห้ง หนาวจัด แดดจัด</div>
+          <div class="dh-weather warn">❄️ แชงกรี-ลา 0–12°C (สูง 3,280m)</div>
         </div>
         <div class="dh-emoji">🛕</div>
       </div>
@@ -2795,7 +2983,7 @@ body {
           <span class="dh-label">วันที่ 8</span>
           <div class="dh-title">บินสู่คุนหมิง Layover 10 ชม. แล้วกลับกรุงเทพฯ</div>
           <span class="dh-date">วันเสาร์ที่ 31 ตุลาคม 2569</span>
-          <div class="dh-weather">🌤️ คุนหมิง 15–20°C · บินกลับกรุงเทพฯ 28–32°C</div>
+          <div class="dh-weather">🌤️ คุนหมิง 15–20°C / กรุงเทพฯ 28–32°C</div>
         </div>
         <div class="dh-emoji">🏡</div>
       </div>
@@ -3193,7 +3381,7 @@ function saveOffline() {
 // Service Worker Registration for Offline Cache
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('./sw.js?v=6').then(reg => {
+    navigator.serviceWorker.register('./sw.js?v=7').then(reg => {
       reg.update();
     }).catch(() => {});
   });
