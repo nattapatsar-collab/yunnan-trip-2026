@@ -327,10 +327,14 @@ body {
 
 .rs-name {
   color: #FFFFFF;
-  font-size: 0.76rem;
+  font-size: 0.74rem;
   font-weight: 600;
   letter-spacing: -0.01em;
-  white-space: nowrap;
+  white-space: normal;
+  max-width: 74px;
+  text-align: center;
+  line-height: 1.2;
+  word-break: break-word;
 }
 
 .rs-date {
@@ -557,8 +561,8 @@ body {
   display: flex;
   flex-direction: column;
   gap: 1px;
-  width: auto;
-  flex: 0 0 auto;
+  min-width: 0;
+  overflow: hidden;
 }
 
 .dfn-sub {
@@ -566,6 +570,9 @@ body {
   color: var(--label-secondary);
   font-weight: 500;
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
 }
 
 .dfn-title {
@@ -574,6 +581,9 @@ body {
   color: var(--label-primary);
   letter-spacing: -0.01em;
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
 }
 
 .dfn-top-btn {
@@ -649,6 +659,8 @@ body {
   padding: 12px 18px;
   box-shadow: var(--shadow-sm);
   margin-bottom: 16px;
+  min-width: 0;
+  overflow: hidden;
 }
 
 .dh-label {
@@ -662,12 +674,19 @@ body {
   margin-bottom: 3px;
 }
 
+.dh-left {
+  min-width: 0;
+  flex: 1 1 auto;
+  overflow: hidden;
+}
 .dh-title {
   font-size: 1.15rem;
   font-weight: 700;
   color: var(--label-primary);
   letter-spacing: -0.02em;
   margin-bottom: 2px;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .dh-date {
@@ -1845,8 +1864,8 @@ body {
         <button class="tab-btn active" data-day="d0">24 ต.ค.<span>เดินทาง</span></button>
         <button class="tab-btn" data-day="d1">25 ต.ค.<span>คุนหมิง</span></button>
         <button class="tab-btn" data-day="d2">26 ต.ค.<span>ลี่เจียง</span></button>
-        <button class="tab-btn" data-day="d3">27 ต.ค.<span>หุบเขาเสือกระโจน I</span></button>
-        <button class="tab-btn" data-day="d4">28 ต.ค.<span>หุบเขาเสือกระโจน II</span></button>
+        <button class="tab-btn" data-day="d3">27 ต.ค.<span>เสือกระโจน I</span></button>
+        <button class="tab-btn" data-day="d4">28 ต.ค.<span>เสือกระโจน II</span></button>
         <button class="tab-btn" data-day="d5">29 ต.ค.<span>แชงกรี-ลา I</span></button>
         <button class="tab-btn" data-day="d6">30 ต.ค.<span>แชงกรี-ลา II</span></button>
         <button class="tab-btn" data-day="d7">31 ต.ค.<span>กลับบ้าน</span></button>
@@ -2354,7 +2373,7 @@ body {
         <button type="button" class="dfn-btn next" data-goto="d3">
           <div class="dfn-info">
             <span class="dfn-sub">วันถัดไป (วันที่ 4)</span>
-            <span class="dfn-title">27 ต.ค. หุบเขาเสือกระโจน I</span>
+            <span class="dfn-title">27 ต.ค. เสือกระโจน I</span>
           </div>
           <span class="dfn-icon">›</span>
         </button>
@@ -2523,7 +2542,7 @@ body {
         <button type="button" class="dfn-btn next" data-goto="d4">
           <div class="dfn-info">
             <span class="dfn-sub">วันถัดไป (วันที่ 5)</span>
-            <span class="dfn-title">28 ต.ค. หุบเขาเสือกระโจน II</span>
+            <span class="dfn-title">28 ต.ค. เสือกระโจน II</span>
           </div>
           <span class="dfn-icon">›</span>
         </button>
@@ -2644,7 +2663,7 @@ body {
           <span class="dfn-icon">‹</span>
           <div class="dfn-info">
             <span class="dfn-sub">วันก่อนหน้า (วันที่ 4)</span>
-            <span class="dfn-title">27 ต.ค. หุบเขาเสือกระโจน I</span>
+            <span class="dfn-title">27 ต.ค. เสือกระโจน I</span>
           </div>
         </button>
         <button type="button" class="dfn-top-btn" title="กลับขึ้นด้านบนของวันนี้">
@@ -2780,7 +2799,7 @@ body {
           <span class="dfn-icon">‹</span>
           <div class="dfn-info">
             <span class="dfn-sub">วันก่อนหน้า (วันที่ 5)</span>
-            <span class="dfn-title">28 ต.ค. หุบเขาเสือกระโจน II</span>
+            <span class="dfn-title">28 ต.ค. เสือกระโจน II</span>
           </div>
         </button>
         <button type="button" class="dfn-top-btn" title="กลับขึ้นด้านบนของวันนี้">
@@ -3381,7 +3400,7 @@ function saveOffline() {
 // Service Worker Registration for Offline Cache
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('./sw.js?v=7').then(reg => {
+    navigator.serviceWorker.register('./sw.js?v=8').then(reg => {
       reg.update();
     }).catch(() => {});
   });
