@@ -478,17 +478,17 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 10px;
-  margin-top: 20px;
-  padding-top: 16px;
+  gap: 12px;
+  margin-top: 18px;
+  padding-top: 14px;
   border-top: 1px solid var(--system-border);
 }
 
 .dfn-btn {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  padding: 8px 14px;
+  gap: 8px;
+  padding: 6px 12px;
   background: var(--system-card);
   border: 1px solid var(--system-border);
   border-radius: 12px;
@@ -498,13 +498,14 @@ body {
   cursor: pointer;
   transition: all 0.2s cubic-bezier(0.25, 1, 0.5, 1);
   font-family: inherit;
-  flex: 0 0 auto;
-  width: fit-content;
-  max-width: none;
+  flex: 0 0 auto !important;
+  width: auto !important;
+  max-width: fit-content !important;
+  box-sizing: border-box;
 }
 
 .dfn-btn:hover {
-  transform: translateY(-2px);
+  transform: translateY(-1px);
   box-shadow: var(--shadow-md);
   border-color: rgba(0, 113, 227, 0.35);
   background: #FFFFFF;
@@ -528,16 +529,20 @@ body {
   margin-left: 0;
 }
 
+.dfn-btn.next .dfn-info {
+  align-items: flex-end;
+}
+
 .dfn-icon {
-  width: 26px;
-  height: 26px;
+  width: 24px;
+  height: 24px;
   border-radius: 50%;
   background: var(--system-bg);
   color: var(--apple-blue);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   font-weight: 600;
   transition: all 0.2s ease;
   flex-shrink: 0;
@@ -552,21 +557,23 @@ body {
   display: flex;
   flex-direction: column;
   gap: 1px;
+  width: auto;
+  flex: 0 0 auto;
 }
 
 .dfn-sub {
-  font-size: 0.66rem;
+  font-size: 0.64rem;
   color: var(--label-secondary);
   font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.02em;
+  white-space: nowrap;
 }
 
 .dfn-title {
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   font-weight: 600;
   color: var(--label-primary);
   letter-spacing: -0.01em;
+  white-space: nowrap;
 }
 
 .dfn-top-btn {
@@ -574,17 +581,19 @@ body {
   align-items: center;
   justify-content: center;
   gap: 5px;
-  padding: 7px 13px;
+  padding: 6px 12px;
   border-radius: var(--radius-pill);
   background: var(--system-card);
   border: 1px solid var(--system-border);
   color: var(--label-secondary);
-  font-size: 0.75rem;
+  font-size: 0.74rem;
   font-weight: 500;
   cursor: pointer;
   transition: all 0.2s ease;
   font-family: inherit;
   white-space: nowrap;
+  flex: 0 0 auto !important;
+  width: auto !important;
 }
 
 .dfn-top-btn:hover {
@@ -604,9 +613,10 @@ body {
     gap: 8px;
   }
   .dfn-btn {
-    width: fit-content;
-    max-width: calc(50% - 4px);
-    padding: 7px 10px;
+    width: auto !important;
+    max-width: calc(50% - 4px) !important;
+    padding: 6px 10px;
+    flex: 0 0 auto !important;
   }
   .dfn-btn.prev ~ .dfn-top-btn {
     width: fit-content;
@@ -3171,7 +3181,9 @@ function saveOffline() {
 // Service Worker Registration for Offline Cache
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('./sw.js').catch(() => {});
+    navigator.serviceWorker.register('./sw.js?v=5').then(reg => {
+      reg.update();
+    }).catch(() => {});
   });
 }
 
