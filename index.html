@@ -461,6 +461,160 @@ body {
   font-weight: 500;
 }
 
+/* STICKY DAY TABS - iOS Floating Segmented Bar */
+.tabs-sticky-wrapper {
+  position: sticky;
+  top: 52px;
+  z-index: 100;
+  background: rgba(245, 245, 247, 0.94);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  padding: 10px 0 14px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.tab-row {
+  display: flex;
+  gap: 6px;
+  background: rgba(0, 0, 0, 0.06);
+  padding: 5px;
+  border-radius: 16px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  margin-bottom: 0 !important;
+}
+
+/* DAY FOOTER NAVIGATION - Apple Style Next/Prev Buttons */
+.day-footer-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 36px;
+  padding-top: 24px;
+  border-top: 1px solid var(--system-border);
+}
+
+.dfn-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 20px;
+  background: var(--system-card);
+  border: 1px solid var(--system-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  color: var(--label-primary);
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.25, 1, 0.5, 1);
+  font-family: inherit;
+  flex: 1;
+  max-width: 320px;
+}
+
+.dfn-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: rgba(0, 113, 227, 0.35);
+  background: #FFFFFF;
+}
+
+.dfn-btn.prev {
+  margin-right: auto;
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.dfn-btn.next {
+  margin-left: auto;
+  justify-content: flex-end;
+  text-align: right;
+}
+
+.dfn-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--system-bg);
+  color: var(--apple-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.dfn-btn:hover .dfn-icon {
+  background: var(--apple-blue);
+  color: #FFFFFF;
+}
+
+.dfn-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.dfn-sub {
+  font-size: 0.72rem;
+  color: var(--label-secondary);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.dfn-title {
+  font-size: 0.90rem;
+  font-weight: 600;
+  color: var(--label-primary);
+  letter-spacing: -0.01em;
+}
+
+.dfn-top-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px 16px;
+  border-radius: var(--radius-pill);
+  background: var(--system-card);
+  border: 1px solid var(--system-border);
+  color: var(--label-secondary);
+  font-size: 0.82rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+  white-space: nowrap;
+}
+
+.dfn-top-btn:hover {
+  background: #FFFFFF;
+  color: var(--apple-blue);
+  border-color: rgba(0, 113, 227, 0.3);
+  transform: translateY(-1px);
+}
+
+@media (max-width: 640px) {
+  .day-footer-nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .dfn-btn {
+    width: 100%;
+    max-width: 100%;
+  }
+  .dfn-top-btn {
+    width: 100%;
+    order: 3;
+  }
+}
+
 /* DAY PANEL & CARDS */
 .day-panel {
   display: none;
@@ -1057,15 +1211,17 @@ body {
       <p class="section-desc">คลิกเลือกวันที่ต้องการดูรายละเอียด</p>
     </div>
 
-    <div class="tab-row">
-      <button class="tab-btn active" data-day="d0">24 ต.ค.<span>เดินทาง</span></button>
-      <button class="tab-btn" data-day="d1">25 ต.ค.<span>คุนหมิง</span></button>
-      <button class="tab-btn" data-day="d2">26 ต.ค.<span>ลี่เจียง</span></button>
-      <button class="tab-btn" data-day="d3">27 ต.ค.<span>Tiger Gorge I</span></button>
-      <button class="tab-btn" data-day="d4">28 ต.ค.<span>Tiger Gorge II</span></button>
-      <button class="tab-btn" data-day="d5">29 ต.ค.<span>แชงกรี-ลา I</span></button>
-      <button class="tab-btn" data-day="d6">30 ต.ค.<span>แชงกรี-ลา II</span></button>
-      <button class="tab-btn" data-day="d7">31 ต.ค.<span>กลับบ้าน</span></button>
+    <div class="tabs-sticky-wrapper">
+      <div class="tab-row">
+        <button class="tab-btn active" data-day="d0">24 ต.ค.<span>เดินทาง</span></button>
+        <button class="tab-btn" data-day="d1">25 ต.ค.<span>คุนหมิง</span></button>
+        <button class="tab-btn" data-day="d2">26 ต.ค.<span>ลี่เจียง</span></button>
+        <button class="tab-btn" data-day="d3">27 ต.ค.<span>Tiger Gorge I</span></button>
+        <button class="tab-btn" data-day="d4">28 ต.ค.<span>Tiger Gorge II</span></button>
+        <button class="tab-btn" data-day="d5">29 ต.ค.<span>แชงกรี-ลา I</span></button>
+        <button class="tab-btn" data-day="d6">30 ต.ค.<span>แชงกรี-ลา II</span></button>
+        <button class="tab-btn" data-day="d7">31 ต.ค.<span>กลับบ้าน</span></button>
+      </div>
     </div>
 
     <!-- DAY 0 -->
@@ -1116,7 +1272,20 @@ body {
             <div class="tags"><span class="tag flight-t">บินตรง 3:40 ชม.</span><span class="tag free">รวมในตั๋วเครื่องบินแล้ว</span></div>
           </div>
         </div>
+      </div>    <div class="day-footer-nav">
+        <button type="button" class="dfn-top-btn" title="กลับขึ้นด้านบนของวันนี้">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="16" height="16"><path d="M18 15l-6-6-6 6"/></svg>
+          <span>บนสุด</span>
+        </button>
+        <button type="button" class="dfn-btn next" data-goto="d1">
+          <div class="dfn-info">
+            <span class="dfn-sub">วันถัดไป (วันที่ 2)</span>
+            <span class="dfn-title">25 ต.ค. คุนหมิง</span>
+          </div>
+          <span class="dfn-icon">›</span>
+        </button>
       </div>
+
     </div>
 
     <!-- DAY 1 -->
@@ -1264,7 +1433,27 @@ body {
             <div class="tags"><span class="tag info">สนามบินลี่เจียง (LJG)</span></div>
           </div>
         </div>
+      </div>    <div class="day-footer-nav">
+        <button type="button" class="dfn-btn prev" data-goto="d0">
+          <span class="dfn-icon">‹</span>
+          <div class="dfn-info">
+            <span class="dfn-sub">วันก่อนหน้า (วันที่ 1)</span>
+            <span class="dfn-title">24 ต.ค. เดินทาง</span>
+          </div>
+        </button>
+        <button type="button" class="dfn-top-btn" title="กลับขึ้นด้านบนของวันนี้">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="16" height="16"><path d="M18 15l-6-6-6 6"/></svg>
+          <span>บนสุด</span>
+        </button>
+        <button type="button" class="dfn-btn next" data-goto="d2">
+          <div class="dfn-info">
+            <span class="dfn-sub">วันถัดไป (วันที่ 3)</span>
+            <span class="dfn-title">26 ต.ค. ลี่เจียง</span>
+          </div>
+          <span class="dfn-icon">›</span>
+        </button>
       </div>
+
     </div>
 
     <!-- DAY 2 -->
@@ -1420,7 +1609,27 @@ body {
             <div class="tags"><span class="tag info">เตรียมส่งกระเป๋าไป Tina's</span></div>
           </div>
         </div>
+      </div>    <div class="day-footer-nav">
+        <button type="button" class="dfn-btn prev" data-goto="d1">
+          <span class="dfn-icon">‹</span>
+          <div class="dfn-info">
+            <span class="dfn-sub">วันก่อนหน้า (วันที่ 2)</span>
+            <span class="dfn-title">25 ต.ค. คุนหมิง</span>
+          </div>
+        </button>
+        <button type="button" class="dfn-top-btn" title="กลับขึ้นด้านบนของวันนี้">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="16" height="16"><path d="M18 15l-6-6-6 6"/></svg>
+          <span>บนสุด</span>
+        </button>
+        <button type="button" class="dfn-btn next" data-goto="d3">
+          <div class="dfn-info">
+            <span class="dfn-sub">วันถัดไป (วันที่ 4)</span>
+            <span class="dfn-title">27 ต.ค. Tiger Gorge I</span>
+          </div>
+          <span class="dfn-icon">›</span>
+        </button>
       </div>
+
     </div>
 
     <!-- DAY 3 -->
@@ -1531,7 +1740,27 @@ body {
             <div class="tags"><span class="tag cost">มื้อเย็น ฿200 / คน (รวม ฿400)</span><span class="tag star">🌌 ดาวเต็มฟ้า</span></div>
           </div>
         </div>
+      </div>    <div class="day-footer-nav">
+        <button type="button" class="dfn-btn prev" data-goto="d2">
+          <span class="dfn-icon">‹</span>
+          <div class="dfn-info">
+            <span class="dfn-sub">วันก่อนหน้า (วันที่ 3)</span>
+            <span class="dfn-title">26 ต.ค. ลี่เจียง</span>
+          </div>
+        </button>
+        <button type="button" class="dfn-top-btn" title="กลับขึ้นด้านบนของวันนี้">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="16" height="16"><path d="M18 15l-6-6-6 6"/></svg>
+          <span>บนสุด</span>
+        </button>
+        <button type="button" class="dfn-btn next" data-goto="d4">
+          <div class="dfn-info">
+            <span class="dfn-sub">วันถัดไป (วันที่ 5)</span>
+            <span class="dfn-title">28 ต.ค. Tiger Gorge II</span>
+          </div>
+          <span class="dfn-icon">›</span>
+        </button>
       </div>
+
     </div>
 
     <!-- DAY 4 -->
@@ -1619,7 +1848,27 @@ body {
             <div class="tags"><span class="tag cost">หม้อไฟ ฿300 / คน (รวม ฿600)</span><span class="tag star">🌟 ไฮไลท์</span></div>
           </div>
         </div>
+      </div>    <div class="day-footer-nav">
+        <button type="button" class="dfn-btn prev" data-goto="d3">
+          <span class="dfn-icon">‹</span>
+          <div class="dfn-info">
+            <span class="dfn-sub">วันก่อนหน้า (วันที่ 4)</span>
+            <span class="dfn-title">27 ต.ค. Tiger Gorge I</span>
+          </div>
+        </button>
+        <button type="button" class="dfn-top-btn" title="กลับขึ้นด้านบนของวันนี้">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="16" height="16"><path d="M18 15l-6-6-6 6"/></svg>
+          <span>บนสุด</span>
+        </button>
+        <button type="button" class="dfn-btn next" data-goto="d5">
+          <div class="dfn-info">
+            <span class="dfn-sub">วันถัดไป (วันที่ 6)</span>
+            <span class="dfn-title">29 ต.ค. แชงกรี-ลา I</span>
+          </div>
+          <span class="dfn-icon">›</span>
+        </button>
       </div>
+
     </div>
 
     <!-- DAY 5 -->
@@ -1695,7 +1944,27 @@ body {
             <div class="tags"><span class="tag cost">มื้อค่ำ ฿200 / คน (รวม ฿400)</span></div>
           </div>
         </div>
+      </div>    <div class="day-footer-nav">
+        <button type="button" class="dfn-btn prev" data-goto="d4">
+          <span class="dfn-icon">‹</span>
+          <div class="dfn-info">
+            <span class="dfn-sub">วันก่อนหน้า (วันที่ 5)</span>
+            <span class="dfn-title">28 ต.ค. Tiger Gorge II</span>
+          </div>
+        </button>
+        <button type="button" class="dfn-top-btn" title="กลับขึ้นด้านบนของวันนี้">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="16" height="16"><path d="M18 15l-6-6-6 6"/></svg>
+          <span>บนสุด</span>
+        </button>
+        <button type="button" class="dfn-btn next" data-goto="d6">
+          <div class="dfn-info">
+            <span class="dfn-sub">วันถัดไป (วันที่ 7)</span>
+            <span class="dfn-title">30 ต.ค. แชงกรี-ลา II</span>
+          </div>
+          <span class="dfn-icon">›</span>
+        </button>
       </div>
+
     </div>
 
     <!-- DAY 6 -->
@@ -1794,7 +2063,27 @@ body {
             <div class="tags"><span class="tag cost">ของฝาก & มื้อเย็น ฿250 / คน (รวม ฿500)</span></div>
           </div>
         </div>
+      </div>    <div class="day-footer-nav">
+        <button type="button" class="dfn-btn prev" data-goto="d5">
+          <span class="dfn-icon">‹</span>
+          <div class="dfn-info">
+            <span class="dfn-sub">วันก่อนหน้า (วันที่ 6)</span>
+            <span class="dfn-title">29 ต.ค. แชงกรี-ลา I</span>
+          </div>
+        </button>
+        <button type="button" class="dfn-top-btn" title="กลับขึ้นด้านบนของวันนี้">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="16" height="16"><path d="M18 15l-6-6-6 6"/></svg>
+          <span>บนสุด</span>
+        </button>
+        <button type="button" class="dfn-btn next" data-goto="d7">
+          <div class="dfn-info">
+            <span class="dfn-sub">วันถัดไป (วันที่ 8)</span>
+            <span class="dfn-title">31 ต.ค. กลับบ้าน</span>
+          </div>
+          <span class="dfn-icon">›</span>
+        </button>
       </div>
+
     </div>
 
     <!-- DAY 7 -->
@@ -1912,7 +2201,27 @@ body {
             <div class="tags"><span class="tag flight-t">1:35 ชม.</span><span class="tag star">กลับบ้านโดยสวัสดิภาพ 🏡</span></div>
           </div>
         </div>
+      </div>    <div class="day-footer-nav">
+        <button type="button" class="dfn-btn prev" data-goto="d6">
+          <span class="dfn-icon">‹</span>
+          <div class="dfn-info">
+            <span class="dfn-sub">วันก่อนหน้า (วันที่ 7)</span>
+            <span class="dfn-title">30 ต.ค. แชงกรี-ลา II</span>
+          </div>
+        </button>
+        <button type="button" class="dfn-top-btn" title="กลับขึ้นด้านบนของวันนี้">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="16" height="16"><path d="M18 15l-6-6-6 6"/></svg>
+          <span>บนสุด</span>
+        </button>
+        <a href="#budget" class="dfn-btn next">
+          <div class="dfn-info">
+            <span class="dfn-sub">สรุปภาพรวม</span>
+            <span class="dfn-title">งบประมาณทริป 💰</span>
+          </div>
+          <span class="dfn-icon">›</span>
+        </a>
       </div>
+
     </div>  </div>
 </section>
 
@@ -2035,13 +2344,53 @@ document.querySelectorAll('.nav-link').forEach(l => {
   });
 });
 
-// DAY TABS
+// DAY TABS & NAVIGATION (Apple HIG Seamless Switching)
+function scrollToItineraryTop() {
+  const itin = document.getElementById('itinerary');
+  if (itin) {
+    const offset = itin.getBoundingClientRect().top + window.scrollY - 10;
+    window.scrollTo({ top: offset, behavior: 'smooth' });
+  }
+}
+
+function switchDay(dayId, shouldScroll = true) {
+  const tabBtn = document.querySelector(`.tab-btn[data-day="${dayId}"]`);
+  const targetPanel = document.getElementById(dayId);
+  if (!tabBtn || !targetPanel) return;
+
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.day-panel').forEach(p => p.classList.remove('active'));
+
+  tabBtn.classList.add('active');
+  targetPanel.classList.add('active');
+
+  // Keep active tab centered in horizontal view on mobile
+  tabBtn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+
+  if (shouldScroll) {
+    scrollToItineraryTop();
+  }
+}
+
+// Tab button click
 document.querySelectorAll('.tab-btn').forEach(btn => {
   btn.addEventListener('click', () => {
-    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-    document.querySelectorAll('.day-panel').forEach(p => p.classList.remove('active'));
-    btn.classList.add('active');
-    document.getElementById(btn.dataset.day).classList.add('active');
+    const isAlreadyActive = btn.classList.contains('active');
+    switchDay(btn.dataset.day, true);
+  });
+});
+
+// Bottom navigation buttons (วันก่อนหน้า / วันถัดไป)
+document.querySelectorAll('.dfn-btn[data-goto]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    switchDay(btn.dataset.goto, true);
+  });
+});
+
+// Top button (บนสุดของวัน)
+document.querySelectorAll('.dfn-top-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    scrollToItineraryTop();
   });
 });
 
