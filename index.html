@@ -884,16 +884,77 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.25);
 }
 
-/* HIGHLIGHTS - Compact Grid Cards */
+/* HIGHLIGHTS - Single Row Horizontal Carousel */
+.hl-header-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  text-align: left !important;
+  margin-bottom: 16px;
+}
+
+.hl-nav-arrows {
+  display: flex;
+  gap: 8px;
+}
+
+.hl-arrow-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--system-card);
+  border: 1px solid var(--system-border);
+  color: var(--label-primary);
+  font-size: 1.25rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.2s cubic-bezier(0.25, 1, 0.5, 1);
+  padding: 0;
+  line-height: 1;
+}
+
+.hl-arrow-btn:hover {
+  background: #FFFFFF;
+  color: var(--apple-blue);
+  border-color: rgba(0, 113, 227, 0.35);
+  transform: scale(1.05);
+}
+
 .hl-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
   gap: 14px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
+  padding: 4px 2px 14px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.18) transparent;
+}
+
+.hl-grid::-webkit-scrollbar {
+  height: 5px;
+}
+
+.hl-grid::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.04);
+  border-radius: 10px;
+}
+
+.hl-grid::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.18);
+  border-radius: 10px;
 }
 
 .hl-card {
-  position: relative;
+  flex: 0 0 280px;
+  width: 280px;
   height: 270px;
+  scroll-snap-align: start;
+  position: relative;
   border-radius: 14px;
   overflow: hidden;
   box-shadow: var(--shadow-sm);
@@ -1031,8 +1092,10 @@ body {
 
 /* RESPONSIVE DESIGN */
 @media (max-width: 900px) {
-  .hl-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .hl-card {
+    flex: 0 0 260px;
+    width: 260px;
+    height: 260px;
   }
   .footer-grid {
     grid-template-columns: 1fr;
@@ -1126,11 +1189,13 @@ body {
     padding-left: 12px;
   }
   .hl-grid {
-    grid-template-columns: 1fr;
-    gap: 12px;
+    gap: 10px;
+    padding-bottom: 10px;
   }
   .hl-card {
-    height: 220px;
+    flex: 0 0 240px;
+    width: 240px;
+    height: 230px;
   }
   .day-head {
     padding: 10px 14px;
@@ -2258,9 +2323,16 @@ body {
 <!-- ============ HIGHLIGHTS ============ -->
 <section id="highlights" class="section section-alt">
   <div class="container">
-    <div class="section-header">
-      <span class="section-label">ไฮไลท์</span>
-      <h2 class="section-title">สิ่งที่ไม่ควรพลาด</h2>
+    <div class="section-header hl-header-row">
+      <div>
+        <span class="section-label">ไฮไลท์</span>
+        <h2 class="section-title">สิ่งที่ไม่ควรพลาด</h2>
+        <p class="section-desc">เลื่อนดู 6 จุดไฮไลท์สำคัญตลอดเส้นทาง</p>
+      </div>
+      <div class="hl-nav-arrows">
+        <button type="button" class="hl-arrow-btn" id="hlPrev" aria-label="ก่อนหน้า">‹</button>
+        <button type="button" class="hl-arrow-btn" id="hlNext" aria-label="ถัดไป">›</button>
+      </div>
     </div>
     <div class="hl-grid">
       <div class="hl-card">
