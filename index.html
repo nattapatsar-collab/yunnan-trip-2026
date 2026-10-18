@@ -1497,18 +1497,35 @@ body {
     top: 44px;
     left: 0;
     right: 0;
-    background: var(--apple-glass);
-    backdrop-filter: saturate(180%) blur(20px);
-    -webkit-backdrop-filter: saturate(180%) blur(20px);
-    border-bottom: 1px solid var(--system-border);
+    background: #FFFFFF !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12) !important;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.18) !important;
     flex-direction: column;
-    padding: 12px 16px;
-    gap: 10px;
-    transform: translateY(-120%);
+    padding: 14px 18px 18px !important;
+    gap: 4px !important;
+    transform: translateY(-130%);
     transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    z-index: 1050;
   }
   .nav-links.open {
     transform: translateY(0);
+  }
+  .nav-links .nav-link {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 10px 14px;
+    font-size: 0.95rem !important;
+    font-weight: 600 !important;
+    color: #1D1D1F !important;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.02);
+    transition: all 0.15s ease;
+  }
+  .nav-links .nav-link:hover,
+  .nav-links .nav-link:active {
+    background: rgba(0, 113, 227, 0.08);
+    color: var(--apple-blue) !important;
   }
   .nav-toggle {
     display: block;
@@ -3908,7 +3925,7 @@ function saveOffline() {
 // Service Worker Registration for Offline Cache
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('./sw.js?v=11').then(reg => {
+    navigator.serviceWorker.register('./sw.js?v=12').then(reg => {
       reg.update();
     }).catch(() => {});
   });
