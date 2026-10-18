@@ -3989,113 +3989,246 @@ h1, h2, h3, h4, h5, h6, p, li, a, span, button, div, strong {
 <section id="budget" class="section">
   <div class="container">
     <div class="section-header">
-      <span class="section-label">สรุปงบประมาณ</span>
-      <h2 class="section-title">สรุปงบประมาณค่าเดินทาง & กิจกรรม (คณะ 2 คน)</h2>
-      <p class="section-desc">คำนวณจากแผนเดินทางจริง 28 รายการ อัตราแลกเปลี่ยน 1 หยวน = 5.0 บาท</p>
+      <span class="section-label">สรุปงบประมาณทั้งทริป</span>
+      <h2 class="section-title">สรุปค่าใช้จ่ายรวมทุกหมวดหมู่ (คณะ 2 ท่าน)</h2>
+      <p class="section-desc">คำนวณครบถ้วนทุกรายการตลอดทริป 8 วัน 7 คืน: ตั๋วเครื่องบิน, โรงแรม 7 คืน, ค่าเดินทางในจีน, ค่าเข้าชมสถานที่, ประกัน/ซิม และค่าอาหาร (อัตราแลกเปลี่ยน 1 หยวน = 5.0 บาท)</p>
     </div>
 
     <!-- TOTAL HIGHLIGHT BOX -->
-    <div class="budget-total-box">
-      <div class="bt-label">ยอดรวมค่าเดินทางและกิจกรรม 28 รายการ (คณะ 2 ท่าน)</div>
-      <div class="bt-amount">¥783.00 · ฿3,915.00</div>
-      <div class="bt-note">เฉลี่ยต่อคนเพียง <strong>¥391.50 (฿1,957.50)</strong> สำหรับการเดินทางตลอดทริป 8 วัน 7 คืน</div>
+    <div class="budget-total-box" style="background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%); border: 1px solid rgba(255,255,255,0.12); border-radius: 18px; padding: 26px 20px; text-align: center; box-shadow: 0 10px 30px rgba(15,23,42,0.3); margin-bottom: 24px;">
+      <div style="font-size: 0.95rem; color: #93c5fd; font-weight: 500; margin-bottom: 6px;">ยอดรวมงบประมาณทั้งสิ้นตลอดทริป 8 วัน 7 คืน (คณะ 2 ท่าน)</div>
+      <div style="font-size: 2.3rem; font-weight: 800; color: #ffffff; letter-spacing: -0.02em; line-height: 1.2;">
+        ฿33,702.90 <span style="font-size: 1.25rem; font-weight: 600; color: #cbd5e1;">(¥6,740.58)</span>
+      </div>
+      <div style="margin-top: 8px; font-size: 0.95rem; color: #e2e8f0;">
+        เฉลี่ยต่อท่านเพียง <strong style="color: #38bdf8;">฿16,851.45 (¥3,370.29)</strong> รวมครบทุกอย่างตลอดการเดินทาง
+      </div>
+      <div style="margin-top: 16px; display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; font-size: 0.82rem;">
+        <span style="background: rgba(34, 197, 94, 0.2); border: 1px solid rgba(34, 197, 94, 0.4); padding: 5px 14px; border-radius: 20px; color: #86efac; font-weight: 600;">✓ ชำระล่วงหน้าแล้ว: ฿21,732.90 (คนละ ฿10,866.45)</span>
+        <span style="background: rgba(234, 179, 8, 0.2); border: 1px solid rgba(234, 179, 8, 0.4); padding: 5px 14px; border-radius: 20px; color: #fde047; font-weight: 600;">🪙 จ่ายระหว่างเดินทาง (Alipay): ฿11,970.00 (คนละ ฿5,985.00)</span>
+      </div>
     </div>
 
-    <!-- CARDS BREAKDOWN GRID -->
+    <!-- 6 MASTER CATEGORY CARDS GRID -->
     <div class="budget-card-grid">
+      <!-- 1. Flights -->
       <div class="bc-item">
         <div class="bc-head">
-          <span class="bc-icon"><svg viewBox="0 0 24 24"><path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"/></svg></span>
-          <span class="bc-status est">6 ครั้ง</span>
+          <span class="bc-icon" style="font-size: 1.3rem;">✈️</span>
+          <span class="bc-status paid">ชำระแล้ว</span>
         </div>
-        <span class="bc-cat">รถแท็กซี่ / DiDi</span>
-        <div class="bc-val">¥187.00 (฿935.00)</div>
-        <span class="bc-sub">รวม 2 คน · คนละ ฿467.50 (¥93.50)</span>
+        <span class="bc-cat">ตั๋วเครื่องบินไป-กลับ (4 ไฟลท์)</span>
+        <div class="bc-val">฿16,252.23</div>
+        <span class="bc-sub">คนละ ฿8,126.12 · China Eastern (BKK⇄KMG⇄LJG)</span>
       </div>
 
+      <!-- 2. Hotels -->
       <div class="bc-item">
         <div class="bc-head">
-          <span class="bc-icon"><svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20M7 15h.01M17 15h.01M5 19l-2 2M19 19l2 2"/></svg></span>
-          <span class="bc-status est">5 ครั้ง</span>
+          <span class="bc-icon" style="font-size: 1.3rem;">🏨</span>
+          <span class="bc-status paid">ยืนยันแล้ว Trip.com</span>
         </div>
-        <span class="bc-cat">รถไฟใต้ดิน (Metro)</span>
-        <div class="bc-val">¥60.00 (฿300.00)</div>
-        <span class="bc-sub">รวม 2 คน · คนละ ฿150.00 (¥30.00)</span>
+        <span class="bc-cat">โรงแรมและที่พัก (7 คืน)</span>
+        <div class="bc-val">฿3,666.67</div>
+        <span class="bc-sub">คนละ ฿1,833.34 · คุนหมิง 1, ลี่เจียง 3, เสือกระโจน 1, แชงกรี-ลา 2</span>
       </div>
 
+      <!-- 3. Transport -->
       <div class="bc-item">
         <div class="bc-head">
-          <span class="bc-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="15" rx="3"></rect><line x1="3" y1="9" x2="21" y2="9"></line><circle cx="7" cy="15" r="1.5"></circle><circle cx="17" cy="15" r="1.5"></circle><path d="M4 18v2M20 18v2"></path></svg></span>
-          <span class="bc-status est">7 ครั้ง</span>
+          <span class="bc-icon" style="font-size: 1.3rem;">🚌</span>
+          <span class="bc-status est">จ่ายหน้างาน Alipay</span>
         </div>
-        <span class="bc-cat">รถบัส / รถเมล์ / ตู้ทุ่นแรง</span>
-        <div class="bc-val">¥472.00 (฿2,360.00)</div>
-        <span class="bc-sub">รวม 2 คน · คนละ ฿1,180.00 (¥236.00)</span>
+        <span class="bc-cat">การเดินทางในประเทศจีน (28 รายการ)</span>
+        <div class="bc-val">฿2,990.00 <span style="font-size: 0.82rem; font-weight: normal; color: var(--text-muted);">(¥598)</span></div>
+        <span class="bc-sub">คนละ ฿1,495.00 (¥299) · DiDi, Metro, บัส, รถไฟความเร็วสูง</span>
       </div>
 
+      <!-- 4. Attractions -->
       <div class="bc-item">
         <div class="bc-head">
-          <span class="bc-icon"><svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V7l8-4v18M13 9h4v12M9 9h.01M9 13h.01M9 17h.01M17 13h.01M17 17h.01"/></svg></span>
-          <span class="bc-status est">1 ครั้ง (7 จุด)</span>
+          <span class="bc-icon" style="font-size: 1.3rem;">🎟️</span>
+          <span class="bc-status est">จ่ายหน้างาน</span>
         </div>
-        <span class="bc-cat">ค่าธรรมเนียมบำรุงเมืองเก่า / คฤหาสน์มู่</span>
-        <div class="bc-val">¥100.00 (฿500.00)</div>
-        <span class="bc-sub">รวม 2 คน · คนละ ฿250.00 (¥50.00)</span>
+        <span class="bc-cat">กิจกรรมและบัตรเข้าชมสถานที่</span>
+        <div class="bc-val">฿3,630.00 <span style="font-size: 0.82rem; font-weight: normal; color: var(--text-muted);">(¥726)</span></div>
+        <span class="bc-sub">คนละ ฿1,815.00 (¥363) · เสือกระโจน, มู่ฝู่, ผู่ต๋าชั่ว, ซงจ้านหลิน</span>
+      </div>
+
+      <!-- 5. Pre-trip Prep -->
+      <div class="bc-item">
+        <div class="bc-head">
+          <span class="bc-icon" style="font-size: 1.3rem;">🛡️</span>
+          <span class="bc-status paid">ชำระก่อนเดินทาง</span>
+        </div>
+        <span class="bc-cat">เตรียมตัวก่อนเดินทาง (ประกัน + ซิม)</span>
+        <div class="bc-val">฿1,814.00</div>
+        <span class="bc-sub">คนละ ฿907.00 · ประกัน Insurverse 2 ท่าน + SIM เน็ต 2 ซิม</span>
+      </div>
+
+      <!-- 6. Meals -->
+      <div class="bc-item">
+        <div class="bc-head">
+          <span class="bc-icon" style="font-size: 1.3rem;">🍜</span>
+          <span class="bc-status est">จ่ายหน้างาน Alipay</span>
+        </div>
+        <span class="bc-cat">อาหารและเครื่องดื่ม (ประมาณการ 8 วัน)</span>
+        <div class="bc-val">฿5,350.00 <span style="font-size: 0.82rem; font-weight: normal; color: var(--text-muted);">(¥1,070)</span></div>
+        <span class="bc-sub">คนละ ฿2,675.00 (¥535) · มื้อหลักทุกมื้อ + สตรีทฟู้ด + คาเฟ่</span>
       </div>
     </div>
 
-    <!-- DETAILED TABLE BOX -->
+    <!-- MASTER ITEM SUMMARY TABLE -->
     <div style="margin-top: 32px; background: var(--bg-card); border-radius: 16px; border: 1px solid var(--border-color); overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.06);">
-      <div style="padding: 16px 20px; background: rgba(184,41,41,0.05); border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
-        <span style="font-weight: 700; color: var(--text-primary); font-size: 1rem;">📊 ตารางสรุปงบประมาณตามหมวดหมู่ (คณะ 2 คน | อัตราแลกเปลี่ยน 5.0 บาท/หยวน)</span>
-        <a href="yunnan_travel_plan_2026.xlsx" download class="action-btn doc-btn" style="padding: 6px 14px; font-size: 0.82rem;"><svg class="btn-icon" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg><span>ดาวน์โหลดแผน Excel (.xlsx)</span></a>
+      <div style="padding: 16px 20px; background: rgba(30,58,138,0.06); border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
+        <span style="font-weight: 700; color: var(--text-primary); font-size: 1.02rem;">📊 ตารางสรุปภาพรวมงบประมาณทั้งทริป (คณะ 2 ท่าน | 1 หยวน = 5.0 บาท)</span>
+        <a href="yunnan_travel_plan_2026.xlsx" download class="action-btn doc-btn" style="padding: 6px 14px; font-size: 0.82rem;"><svg class="btn-icon" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg><span>ดาวน์โหลดแผน Master Excel (.xlsx)</span></a>
       </div>
       <div style="overflow-x: auto;">
         <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.9rem;">
           <thead>
             <tr style="background: rgba(0,0,0,0.02); border-bottom: 1px solid var(--border-color);">
-              <th style="padding: 12px 16px; font-weight: 600;">ประเภท (Category)</th>
-              <th style="padding: 12px 16px; font-weight: 600;">จำนวนครั้ง</th>
+              <th style="padding: 12px 16px; font-weight: 600;">หมวดหมู่ (Category)</th>
+              <th style="padding: 12px 16px; font-weight: 600;">รายละเอียด (Description)</th>
+              <th style="padding: 12px 16px; font-weight: 600;">สถานะการชำระ</th>
               <th style="padding: 12px 16px; font-weight: 600;">รวม 2 คน (หยวน)</th>
-              <th style="padding: 12px 16px; font-weight: 600;">แปลงเป็นเงินบาท (@ 5.0)</th>
+              <th style="padding: 12px 16px; font-weight: 600;">รวม 2 คน (บาท)</th>
               <th style="padding: 12px 16px; font-weight: 600;">เฉลี่ยต่อคน (บาท)</th>
             </tr>
           </thead>
           <tbody>
             <tr style="border-bottom: 1px solid var(--border-color);">
-              <td style="padding: 12px 16px;">🚕 รถแท็กซี่ / DiDi</td>
-              <td style="padding: 12px 16px;">6 ครั้ง</td>
-              <td style="padding: 12px 16px; font-weight: 600; color: #b82929;">¥187.00</td>
-              <td style="padding: 12px 16px; font-weight: 600;">฿935.00</td>
-              <td style="padding: 12px 16px; color: var(--text-muted);">฿467.50 (¥93.50)</td>
+              <td style="padding: 12px 16px; font-weight: 600;">✈️ ตั๋วเครื่องบินไป-กลับ</td>
+              <td style="padding: 12px 16px; color: var(--text-muted);">China Eastern 4 เที่ยวบิน (MU-9614, MU-5923, MU-5922, MU-9621)</td>
+              <td style="padding: 12px 16px;"><span class="tag free" style="color: #16a34a; background: rgba(22,163,74,0.1);">ชำระแล้ว (ออกตั๋วแล้ว)</span></td>
+              <td style="padding: 12px 16px; font-weight: 600;">¥3,250.45</td>
+              <td style="padding: 12px 16px; font-weight: 600; color: #2563eb;">฿16,252.23</td>
+              <td style="padding: 12px 16px;">฿8,126.12</td>
             </tr>
             <tr style="border-bottom: 1px solid var(--border-color);">
-              <td style="padding: 12px 16px;">🚇 รถไฟใต้ดิน (Metro)</td>
-              <td style="padding: 12px 16px;">5 ครั้ง</td>
-              <td style="padding: 12px 16px; font-weight: 600; color: #b82929;">¥60.00</td>
-              <td style="padding: 12px 16px; font-weight: 600;">฿300.00</td>
-              <td style="padding: 12px 16px; color: var(--text-muted);">฿150.00 (¥30.00)</td>
+              <td style="padding: 12px 16px; font-weight: 600;">🏨 โรงแรมและที่พัก (7 คืน)</td>
+              <td style="padding: 12px 16px; color: var(--text-muted);">คุนหมิง 1 คืน + ลี่เจียง 3 คืน + เสือกระโจน 1 คืน + แชงกรี-ลา 2 คืน</td>
+              <td style="padding: 12px 16px;"><span class="tag free" style="color: #16a34a; background: rgba(22,163,74,0.1);">ยืนยันแล้ว (Trip.com)</span></td>
+              <td style="padding: 12px 16px; font-weight: 600;">¥733.33</td>
+              <td style="padding: 12px 16px; font-weight: 600; color: #2563eb;">฿3,666.67</td>
+              <td style="padding: 12px 16px;">฿1,833.34</td>
             </tr>
             <tr style="border-bottom: 1px solid var(--border-color);">
-              <td style="padding: 12px 16px;">🚌 รถบัส / รถเมล์ / ตู้ทุ่นแรง</td>
-              <td style="padding: 12px 16px;">7 ครั้ง</td>
-              <td style="padding: 12px 16px; font-weight: 600; color: #b82929;">¥472.00</td>
-              <td style="padding: 12px 16px; font-weight: 600;">฿2,360.00</td>
-              <td style="padding: 12px 16px; color: var(--text-muted);">฿1,180.00 (¥236.00)</td>
+              <td style="padding: 12px 16px; font-weight: 600;">🚌 การเดินทางในประเทศจีน</td>
+              <td style="padding: 12px 16px; color: var(--text-muted);">DiDi 6 ครั้ง, Metro 5 ครั้ง, รถบัส, C-Train, รถตู้, ฝากกระเป๋า (28 รายการ)</td>
+              <td style="padding: 12px 16px;"><span class="tag cost" style="color: #ca8a04; background: rgba(202,138,4,0.1);">จ่ายหน้างาน (Alipay)</span></td>
+              <td style="padding: 12px 16px; font-weight: 600;">¥598.00</td>
+              <td style="padding: 12px 16px; font-weight: 600; color: #ca8a04;">฿2,990.00</td>
+              <td style="padding: 12px 16px;">฿1,495.00</td>
             </tr>
             <tr style="border-bottom: 1px solid var(--border-color);">
-              <td style="padding: 12px 16px;">🏛️ ค่าธรรมเนียมบำรุงเมืองเก่า / คฤหาสน์มู่</td>
-              <td style="padding: 12px 16px;">1 ครั้ง (ลี่เจียง 7 จุด)</td>
-              <td style="padding: 12px 16px; font-weight: 600; color: #b82929;">¥100.00</td>
-              <td style="padding: 12px 16px; font-weight: 600;">฿500.00</td>
-              <td style="padding: 12px 16px; color: var(--text-muted);">฿250.00 (¥50.00)</td>
+              <td style="padding: 12px 16px; font-weight: 600;">🎟️ กิจกรรมและบัตรเข้าชมสถานที่</td>
+              <td style="padding: 12px 16px; color: var(--text-muted);">อุทยานเสือกระโจน, คฤหาสน์มู่, อุทยานแห่งชาติผู่ต๋าชั่ว, วัดซงจ้านหลิน</td>
+              <td style="padding: 12px 16px;"><span class="tag cost" style="color: #ca8a04; background: rgba(202,138,4,0.1);">จ่ายหน้างาน (Alipay/เคาน์เตอร์)</span></td>
+              <td style="padding: 12px 16px; font-weight: 600;">¥726.00</td>
+              <td style="padding: 12px 16px; font-weight: 600; color: #ca8a04;">฿3,630.00</td>
+              <td style="padding: 12px 16px;">฿1,815.00</td>
             </tr>
-            <tr style="background: rgba(184,41,41,0.06); font-weight: 700;">
-              <td style="padding: 14px 16px; color: #b82929;">⭐ ยอดรวมทั้งสิ้น (28 รายการ)</td>
-              <td style="padding: 14px 16px; color: #b82929;">28 รายการ</td>
-              <td style="padding: 14px 16px; color: #b82929; font-size: 1.05rem;">¥783.00</td>
-              <td style="padding: 14px 16px; color: #b82929; font-size: 1.05rem;">฿3,915.00</td>
-              <td style="padding: 14px 16px; color: #b82929;">¥391.50 (฿1,957.50)</td>
+            <tr style="border-bottom: 1px solid var(--border-color);">
+              <td style="padding: 12px 16px; font-weight: 600;">🛡️ เตรียมตัวก่อนเดินทาง</td>
+              <td style="padding: 12px 16px; color: var(--text-muted);">ประกันการเดินทางต่างประเทศ Insurverse (2 คน) + SIM โรมมิ่ง (2 ซิม)</td>
+              <td style="padding: 12px 16px;"><span class="tag free" style="color: #16a34a; background: rgba(22,163,74,0.1);">ชำระก่อนเดินทาง</span></td>
+              <td style="padding: 12px 16px; font-weight: 600;">¥362.80</td>
+              <td style="padding: 12px 16px; font-weight: 600; color: #2563eb;">฿1,814.00</td>
+              <td style="padding: 12px 16px;">฿907.00</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border-color);">
+              <td style="padding: 12px 16px; font-weight: 600;">🍜 ค่าอาหารและเครื่องดื่ม</td>
+              <td style="padding: 12px 16px; color: var(--text-muted);">อาหารมื้อหลักตลอด 8 วัน + สตรีทฟู้ด + คาเฟ่ (ประมาณการ)</td>
+              <td style="padding: 12px 16px;"><span class="tag cost" style="color: #ca8a04; background: rgba(202,138,4,0.1);">จ่ายหน้างาน (Alipay/WeChat)</span></td>
+              <td style="padding: 12px 16px; font-weight: 600;">¥1,070.00</td>
+              <td style="padding: 12px 16px; font-weight: 600; color: #ca8a04;">฿5,350.00</td>
+              <td style="padding: 12px 16px;">฿2,675.00</td>
+            </tr>
+            <tr style="background: rgba(30,58,138,0.08); font-weight: 700;">
+              <td style="padding: 16px; color: #1e3a8a; font-size: 1rem;">⭐ ยอดรวมงบประมาณทั้งสิ้น (Grand Total)</td>
+              <td style="padding: 16px; color: #1e3a8a;">รวมค่าใช้จ่ายครบถ้วนทุกหมวดหมู่ตลอดทริป (2 ท่าน)</td>
+              <td style="padding: 16px; color: #1e3a8a;">ครบถ้วน 100%</td>
+              <td style="padding: 16px; color: #1e3a8a; font-size: 1.1rem;">¥6,740.58</td>
+              <td style="padding: 16px; color: #1e3a8a; font-size: 1.15rem;">฿33,702.90</td>
+              <td style="padding: 16px; color: #1e3a8a; font-size: 1.05rem;">฿16,851.45</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- DETAILED BREAKDOWN TABLES (HOTELS & ATTRACTIONS) -->
+    <div style="margin-top: 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 16px;">
+      <!-- Hotel Breakdown Table -->
+      <div style="background: var(--bg-card); border-radius: 14px; border: 1px solid var(--border-color); overflow: hidden; padding: 16px;">
+        <div style="font-weight: 700; color: var(--text-primary); font-size: 0.95rem; margin-bottom: 12px; display: flex; align-items: center; justify-content: space-between;">
+          <span>🏨 รายละเอียดค่าที่พัก 7 คืน (ยืนยัน Trip.com)</span>
+          <span style="font-weight: 600; color: #2563eb;">฿3,666.67</span>
+        </div>
+        <table style="width: 100%; border-collapse: collapse; font-size: 0.82rem;">
+          <tbody>
+            <tr style="border-bottom: 1px solid var(--border-color);">
+              <td style="padding: 6px 0;"><strong>คืน 1 (24 ต.ค.):</strong> โรงแรมเติงหาง คุนหมิง</td>
+              <td style="padding: 6px 0; text-align: right; color: var(--text-muted);">Trip: 1359047990059246</td>
+              <td style="padding: 6px 0; text-align: right; font-weight: 600;">฿498.53</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border-color);">
+              <td style="padding: 6px 0;"><strong>คืน 2 (25 ต.ค.):</strong> หลงลั่วเหอ สนามบินลี่เจียง</td>
+              <td style="padding: 6px 0; text-align: right; color: var(--text-muted);">Trip: 1359048036644931</td>
+              <td style="padding: 6px 0; text-align: right; font-weight: 600;">฿386.32</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border-color);">
+              <td style="padding: 6px 0;"><strong>คืน 3 (26 ต.ค.):</strong> ชีเยวี่ยหลินอิ๋น ลี่เจียง</td>
+              <td style="padding: 6px 0; text-align: right; color: var(--text-muted);">Trip: 1359047990153900</td>
+              <td style="padding: 6px 0; text-align: right; font-weight: 600;">฿381.29</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border-color);">
+              <td style="padding: 6px 0;"><strong>คืน 4 (27 ต.ค.):</strong> ซานเหม่ยเกสต์เฮาส์ เสือกระโจน</td>
+              <td style="padding: 6px 0; text-align: right; color: var(--text-muted);">Trip: 1359047990248699</td>
+              <td style="padding: 6px 0; text-align: right; font-weight: 600;">฿1,052.78</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border-color);">
+              <td style="padding: 6px 0;"><strong>คืน 5-6 (28-29 ต.ค.):</strong> หวังซานเสี่ยวย่วน แชงกรี-ลา (2 คืน)</td>
+              <td style="padding: 6px 0; text-align: right; color: var(--text-muted);">Trip: 1359048589640445</td>
+              <td style="padding: 6px 0; text-align: right; font-weight: 600;">฿963.80</td>
+            </tr>
+            <tr>
+              <td style="padding: 6px 0;"><strong>คืน 7 (30 ต.ค.):</strong> ชีเยวี่ยหลินอิ๋น ลี่เจียง</td>
+              <td style="padding: 6px 0; text-align: right; color: var(--text-muted);">Trip: 1359048443168258</td>
+              <td style="padding: 6px 0; text-align: right; font-weight: 600;">฿383.95</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Attraction Breakdown Table -->
+      <div style="background: var(--bg-card); border-radius: 14px; border: 1px solid var(--border-color); overflow: hidden; padding: 16px;">
+        <div style="font-weight: 700; color: var(--text-primary); font-size: 0.95rem; margin-bottom: 12px; display: flex; align-items: center; justify-content: space-between;">
+          <span>🎟️ รายละเอียดค่าเข้าชมสถานที่ 4 จุด</span>
+          <span style="font-weight: 600; color: #ea580c;">฿3,630.00 (¥726)</span>
+        </div>
+        <table style="width: 100%; border-collapse: collapse; font-size: 0.82rem;">
+          <tbody>
+            <tr style="border-bottom: 1px solid var(--border-color);">
+              <td style="padding: 8px 0;"><strong>อุทยานเสือกระโจน</strong> (คนละ ¥45)</td>
+              <td style="padding: 8px 0; text-align: right; color: var(--text-muted);">รวม 2 คน: ¥90</td>
+              <td style="padding: 8px 0; text-align: right; font-weight: 600;">฿450.00</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border-color);">
+              <td style="padding: 8px 0;"><strong>คฤหาสน์มู่ เมืองเก่าลี่เจียง</strong> (คนละ ¥50)</td>
+              <td style="padding: 8px 0; text-align: right; color: var(--text-muted);">รวม 2 คน: ¥100</td>
+              <td style="padding: 8px 0; text-align: right; font-weight: 600;">฿500.00</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border-color);">
+              <td style="padding: 8px 0;"><strong>อุทยานแห่งชาติผู่ต๋าชั่ว</strong> (แพ็กเกจบัตรรวม+บัส คนละ ¥178)</td>
+              <td style="padding: 8px 0; text-align: right; color: var(--text-muted);">รวม 2 คน: ¥356</td>
+              <td style="padding: 8px 0; text-align: right; font-weight: 600;">฿1,780.00</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px 0;"><strong>วัดกาด่านซงจ้านหลิน</strong> (บัตรเข้าชม+บัส คนละ ¥90)</td>
+              <td style="padding: 8px 0; text-align: right; color: var(--text-muted);">รวม 2 คน: ¥180</td>
+              <td style="padding: 8px 0; text-align: right; font-weight: 600;">฿900.00</td>
             </tr>
           </tbody>
         </table>
