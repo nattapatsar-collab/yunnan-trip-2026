@@ -207,7 +207,7 @@ body {
   gap: 6px;
   padding: 4px 12px;
   border-radius: var(--radius-pill);
-  background: rgba(255, 255, 255, 0.16);
+  background: rgba(0, 0, 0, 0.45);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(255, 255, 255, 0.25);
@@ -282,7 +282,7 @@ body {
   max-width: 780px;
   margin-left: auto;
   margin-right: auto;
-  background: rgba(255, 255, 255, 0.14);
+  background: rgba(0, 0, 0, 0.55);
   backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
   border: 1px solid rgba(255, 255, 255, 0.22);
@@ -346,7 +346,7 @@ body {
 .route-line {
   flex: 1 1 auto;
   height: 2px;
-  background: rgba(255, 255, 255, 0.25);
+  background: rgba(0, 0, 0, 0.55);
   margin: 0 6px;
   position: relative;
   min-width: 12px;
@@ -860,8 +860,9 @@ body {
   align-items: center;
   gap: 6px;
   font-size: 0.74rem;
-  color: var(--label-secondary);
-  background: rgba(0, 0, 0, 0.04);
+  color: #1D1D1F;
+  background: #E8E8ED;
+  border: 1px solid rgba(0, 0, 0, 0.08);
   padding: 3px 10px;
   border-radius: var(--radius-pill);
   margin-top: 6px;
@@ -1363,7 +1364,7 @@ body {
   font-size: 0.68rem;
   font-weight: 600;
   color: #FFFFFF;
-  background: rgba(255, 255, 255, 0.25);
+  background: rgba(0, 0, 0, 0.55);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.3);
@@ -1428,7 +1429,7 @@ body {
 
 .ft-info p, .ft-emergency p {
   font-size: 0.82rem;
-  color: var(--label-secondary);
+  color: #1D1D1F;
   line-height: 1.7;
 }
 
@@ -2189,8 +2190,8 @@ body {
   fill: none;
 }
 .ft-label {
-  font-weight: 600;
-  color: #FFFFFF;
+  font-weight: 700;
+  color: var(--label-primary);
   margin-right: 4px;
 }
 
@@ -4083,7 +4084,7 @@ function saveOffline() {
 // Service Worker Registration for Offline Cache
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('./sw.js?v=18').then(reg => {
+    navigator.serviceWorker.register('./sw.js?v=19').then(reg => {
       reg.update();
     }).catch(() => {});
   });
