@@ -1976,36 +1976,35 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 5px;
-  background: rgba(0, 0, 0, 0.05);
-  border: 1px solid var(--system-border);
-  padding: 5px 10px;
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.16);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  padding: 5px 11px;
   border-radius: var(--radius-pill);
   font-size: 0.80rem;
-  font-weight: 500;
-  color: var(--label-primary);
+  font-weight: 600;
+  color: #1D1D1F;
   cursor: pointer;
   transition: all 0.2s ease;
   font-family: inherit;
 }
 .lang-btn:hover {
-  background: rgba(0, 0, 0, 0.1);
-  border-color: rgba(0, 0, 0, 0.2);
+  background: #F5F5F7;
+  border-color: rgba(0, 0, 0, 0.25);
 }
 .lang-dropdown {
   position: absolute;
   top: calc(100% + 6px);
   right: 0;
-  background: var(--apple-glass);
-  backdrop-filter: saturate(180%) blur(20px);
-  -webkit-backdrop-filter: saturate(180%) blur(20px);
-  border: 1px solid var(--system-border);
+  background: #FFFFFF !important;
+  border: 1px solid rgba(0, 0, 0, 0.15) !important;
   border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-  min-width: 140px;
-  padding: 4px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.22) !important;
+  min-width: 150px;
+  padding: 6px;
   display: none;
   flex-direction: column;
-  z-index: 1100;
+  z-index: 1200;
   animation: langFadeIn 0.18s ease-out;
 }
 .lang-dropdown.show {
@@ -2018,13 +2017,14 @@ body {
 .lang-opt {
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 7px 10px;
+  gap: 10px;
+  padding: 9px 12px;
   border-radius: 8px;
   border: none;
   background: transparent;
-  color: var(--label-primary);
-  font-size: 0.82rem;
+  color: #1D1D1F !important;
+  font-size: 0.86rem;
+  font-weight: 500;
   cursor: pointer;
   text-align: left;
   width: 100%;
@@ -2032,21 +2032,101 @@ body {
   font-family: inherit;
 }
 .lang-opt:hover {
-  background: rgba(0, 0, 0, 0.06);
+  background: #F5F5F7;
 }
 .lang-opt.active {
-  color: var(--apple-blue);
-  font-weight: 600;
-  background: rgba(0, 113, 227, 0.08);
+  color: #0071E3 !important;
+  font-weight: 700;
+  background: rgba(0, 113, 227, 0.1) !important;
 }
 .lang-opt-flag {
-  font-size: 1.05rem;
+  font-size: 1.15rem;
 }
 @media (max-width: 680px) {
   .lang-btn {
-    padding: 3px 8px;
+    padding: 4px 10px;
+    font-size: 0.74rem;
+    font-weight: 600;
+    gap: 4px;
+    background: #FFFFFF !important;
+    color: #1D1D1F !important;
+    border: 1px solid rgba(0, 0, 0, 0.2) !important;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12) !important;
+  }
+  .lang-dropdown {
+    top: calc(100% + 8px);
+    right: -4px;
+    background: #FFFFFF !important;
+    border: 1px solid rgba(0, 0, 0, 0.18) !important;
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.28) !important;
+    min-width: 160px;
+    padding: 6px;
+    z-index: 1300 !important;
+  }
+  .lang-opt {
+    padding: 10px 12px;
+    font-size: 0.88rem !important;
+    color: #1D1D1F !important;
+    font-weight: 600;
+  }
+  .lang-opt.active {
+    color: #0071E3 !important;
+    background: rgba(0, 113, 227, 0.12) !important;
+    font-weight: 700;
+  }
+  .mobile-lang-row {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 10px 0 4px;
+    margin-top: 6px;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+  }
+  .mobile-lang-title {
     font-size: 0.72rem;
-    gap: 3px;
+    font-weight: 700;
+    color: #86868B;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    padding: 0 4px;
+  }
+  .mobile-lang-group {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+  }
+  .mobile-lang-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 9px 6px;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    background: #FFFFFF;
+    color: #1D1D1F;
+    font-size: 0.82rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    font-family: inherit;
+  }
+  .mobile-lang-btn:active {
+    transform: scale(0.97);
+  }
+  .mobile-lang-btn.active {
+    background: #0071E3 !important;
+    color: #FFFFFF !important;
+    border-color: #0071E3 !important;
+    box-shadow: 0 2px 8px rgba(0, 113, 227, 0.3) !important;
+  }
+}
+.mobile-lang-row {
+  display: none;
+}
+@media (max-width: 680px) {
+  .mobile-lang-row {
+    display: flex;
   }
 }
 
@@ -2067,6 +2147,20 @@ body {
       <li><a href="#documents"  class="nav-link">เอกสารการจอง</a></li>
       <li><a href="#budget"     class="nav-link">งบประมาณ</a></li>
       <li><a href="javascript:void(0)" onclick="saveOffline()" class="nav-link" style="color:var(--apple-blue);font-weight:500;">💾 โหมดออฟไลน์</a></li>
+      <li class="mobile-lang-row">
+        <div class="mobile-lang-title">เลือกภาษา / Language / 语言</div>
+        <div class="mobile-lang-group">
+          <button type="button" class="mobile-lang-btn active" data-lang="th" onclick="setLanguage('th'); closeMobileNav();">
+            <span>🇹🇭</span><span>ไทย</span>
+          </button>
+          <button type="button" class="mobile-lang-btn" data-lang="zh" onclick="setLanguage('zh'); closeMobileNav();">
+            <span>🇨🇳</span><span>中文</span>
+          </button>
+          <button type="button" class="mobile-lang-btn" data-lang="en" onclick="setLanguage('en'); closeMobileNav();">
+            <span>🇬🇧</span><span>EN</span>
+          </button>
+        </div>
+      </li>
     </ul>
     <div class="lang-switcher" id="langSwitcher">
       <button type="button" class="lang-btn" id="langBtn" aria-label="เลือกภาษา / Change Language" onclick="toggleLangDropdown(event)">
@@ -3925,7 +4019,7 @@ function saveOffline() {
 // Service Worker Registration for Offline Cache
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('./sw.js?v=14').then(reg => {
+    navigator.serviceWorker.register('./sw.js?v=16').then(reg => {
       reg.update();
     }).catch(() => {});
   });
@@ -4137,10 +4231,14 @@ function setLanguage(lang, persist = true) {
     }
   }
 
-  // Update active state in dropdown
+  // Update active state in dropdown & mobile drawer
   document.querySelectorAll('.lang-opt').forEach(opt => {
     const isTarget = opt.getAttribute('onclick') && opt.getAttribute('onclick').includes("'" + lang + "'");
     opt.classList.toggle('active', !!isTarget);
+  });
+  document.querySelectorAll('.mobile-lang-btn').forEach(btn => {
+    const isTarget = btn.getAttribute('data-lang') === lang;
+    btn.classList.toggle('active', !!isTarget);
   });
 
   // Close dropdown
@@ -4174,6 +4272,11 @@ function setLanguage(lang, persist = true) {
       dmBadge.textContent = lang === 'zh' ? '🗣️ 中文常用对话 (出示给中国人看)' : (lang === 'en' ? '🗣️ Chinese Phrase (Show to locals)' : '🗣️ ประโยคสื่อสารภาษาจีน (ยื่นให้คนจีนอ่าน)');
     }
   }
+}
+
+function closeMobileNav() {
+  const navLinks = document.querySelector('.nav-links');
+  if (navLinks) navLinks.classList.remove('open');
 }
 
 // Initialize on DOMContentLoaded or immediate
