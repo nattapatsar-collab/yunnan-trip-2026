@@ -1,4 +1,4 @@
-const CACHE_NAME = 'china-travel-2026-v29';
+const CACHE_NAME = 'china-travel-2026-v30';
 const ASSETS = [
   './',
   './index.html',
