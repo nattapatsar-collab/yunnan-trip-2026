@@ -1761,6 +1761,193 @@ body {
     font-size: 0.60rem !important;
   }
 }
+
+/* AMAP & BOOKING DOC BUTTONS */
+.action-btn.map-btn {
+  color: #1A8038;
+  background: rgba(52, 199, 89, 0.08);
+  border-color: rgba(52, 199, 89, 0.28);
+  text-decoration: none;
+  font-weight: 500;
+}
+.action-btn.map-btn:hover {
+  background: rgba(52, 199, 89, 0.16);
+  color: #156A2E;
+  border-color: rgba(52, 199, 89, 0.45);
+}
+
+.action-btn.doc-btn {
+  color: #5856D6;
+  background: rgba(88, 86, 214, 0.08);
+  border-color: rgba(88, 86, 214, 0.28);
+  text-decoration: none;
+  font-weight: 600;
+}
+.action-btn.doc-btn:hover {
+  background: rgba(88, 86, 214, 0.18);
+  color: #4341B4;
+  border-color: rgba(88, 86, 214, 0.45);
+}
+
+.dm-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  margin-top: 4px;
+}
+
+.dm-map-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 100%;
+  padding: 10px 14px;
+  background: rgba(52, 199, 89, 0.1);
+  color: #156A2E;
+  border: 1px solid rgba(52, 199, 89, 0.3);
+  border-radius: var(--radius-pill);
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+.dm-map-btn:hover {
+  background: rgba(52, 199, 89, 0.18);
+  border-color: rgba(52, 199, 89, 0.5);
+}
+
+.dm-doc-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 100%;
+  padding: 10px 14px;
+  background: rgba(88, 86, 214, 0.1);
+  color: #4341B4;
+  border: 1px solid rgba(88, 86, 214, 0.3);
+  border-radius: var(--radius-pill);
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+.dm-doc-btn:hover {
+  background: rgba(88, 86, 214, 0.18);
+  border-color: rgba(88, 86, 214, 0.5);
+}
+
+/* DOCUMENTS HUB SECTION */
+.doc-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 12px;
+  margin-top: 14px;
+}
+.doc-card {
+  background: var(--system-card);
+  border: 1px solid var(--system-border);
+  border-radius: 14px;
+  padding: 14px 16px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.doc-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: rgba(88, 86, 214, 0.3);
+}
+.doc-card-head {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+.doc-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: rgba(88, 86, 214, 0.1);
+  color: #5856D6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+.doc-icon.flight {
+  background: rgba(0, 113, 227, 0.1);
+  color: #0071E3;
+}
+.doc-info {
+  flex: 1 1 auto;
+}
+.doc-title {
+  font-size: 0.90rem;
+  font-weight: 600;
+  color: var(--label-primary);
+  margin-bottom: 2px;
+}
+.doc-sub {
+  font-size: 0.76rem;
+  color: var(--label-secondary);
+  line-height: 1.35;
+}
+.doc-ref {
+  font-size: 0.70rem;
+  color: var(--label-tertiary);
+  margin-top: 3px;
+  font-family: monospace;
+}
+.doc-btns {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 4px;
+}
+.doc-open-btn {
+  flex: 1 1 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 7px 12px;
+  background: var(--apple-blue);
+  color: #FFFFFF;
+  border-radius: var(--radius-pill);
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.15s ease;
+}
+.doc-open-btn:hover {
+  background: var(--apple-blue-hover);
+}
+.doc-map-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7px 11px;
+  background: rgba(52, 199, 89, 0.1);
+  color: #156A2E;
+  border: 1px solid rgba(52, 199, 89, 0.3);
+  border-radius: var(--radius-pill);
+  font-size: 0.78rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.15s ease;
+}
+.doc-map-btn:hover {
+  background: rgba(52, 199, 89, 0.2);
+}
+
 </style>
 </head>
 <body>
@@ -1775,6 +1962,7 @@ body {
     <ul class="nav-links">
       <li><a href="#itinerary"  class="nav-link">กำหนดการ</a></li>
       <li><a href="#highlights" class="nav-link">ไฮไลท์</a></li>
+      <li><a href="#documents"  class="nav-link">เอกสารการจอง</a></li>
       <li><a href="#budget"     class="nav-link">งบประมาณ</a></li>
       <li><a href="javascript:void(0)" onclick="saveOffline()" class="nav-link" style="color:var(--apple-blue);font-weight:500;">💾 โหมดออฟไลน์</a></li>
     </ul>
@@ -1908,6 +2096,10 @@ body {
               <li>เช็กพาสปอร์ตอายุเกิน 6 เดือน (ต้องเช็กอินเคาน์เตอร์สนามบินเท่านั้น ไม่รองรับออนไลน์)</li>
               <li>ถึงสุวรรณภูมิ 17:50 น. (ล่วงหน้า 3 ชม.) เพื่อต่อคิวเช็กอินเคาน์เตอร์ China Eastern</li>
             </ul>
+            <div class="card-action-bar">
+              <a href="docs/FLIGHT%231-Nattpat%20Saripat-BKK-QXC4PT-LJG-FLIGHT_ORIGINATING.pdf" target="_blank" rel="noopener" class="action-btn doc-btn">📄 ตั๋วเครื่องบิน (ขาไป)</a>
+              <a href="docs/FLIGHT%232-Nattpat%20Saripat-BKK-QXC4PT-LJG-FLIGHT_RETURNING.pdf" target="_blank" rel="noopener" class="action-btn doc-btn">📄 ตั๋วเครื่องบิน (ขากลับ)</a>
+            </div>
             <div class="tags"><span class="tag cost">฿8,126 / คน (รวม ฿16,252.23)</span><span class="tag free">ชำระแล้ว</span></div>
           </div>
         </div>
@@ -1922,8 +2114,10 @@ body {
               <li>ระยะเวลาบินตรง 3 ชม. 40 นาที</li>
             </ul>
             <div class="card-action-bar">
-              <button class="action-btn show-driver" onclick="openDriverModal('昆明长水国际机场', 'Kūnmíng Chángshuǐ Guójì Jīchǎng', 'สนามบินนานาชาติคุนหมิงฉางสุ่ย')">🔍 ชื่อภาษาจีน</button>
+              <button class="action-btn show-driver" onclick="openDriverModal('昆明长水国际机场', 'Kūnmíng Chángshuǐ Guójì Jīchǎng', 'สนามบินนานาชาติคุนหมิงฉางสุ่ย', 'docs/FLIGHT%231-Nattpat%20Saripat-BKK-QXC4PT-LJG-FLIGHT_ORIGINATING.pdf')">🔍 ชื่อภาษาจีน</button>
               <button class="action-btn show-phrase" onclick="openPhraseModal('请问国际到达的行李提取转盘在哪里？', 'Qǐngwèn guójì dàodá de xíngli tíqǔ zhuànpán zài nǎlǐ?', 'ขอสอบถามครับ สายพานรับสัมภาระขาเข้าระหว่างประเทศอยู่ที่ไหนครับ?')">🗣️ ประโยคจีน</button>
+              <a href="https://www.amap.com/ssr/search?query=%E6%98%86%E6%98%8E%E9%95%BF%E6%B0%B4%E5%9B%BD%E9%99%85%E6%9C%BA%E5%9C%BA" target="_blank" rel="noopener" class="action-btn map-btn">🗺️ แผนที่ Amap</a>
+              <a href="docs/FLIGHT%231-Nattpat%20Saripat-BKK-QXC4PT-LJG-FLIGHT_ORIGINATING.pdf" target="_blank" rel="noopener" class="action-btn doc-btn">📄 E-Ticket</a>
             </div>
             <div class="tags"><span class="tag flight-t">บินตรง 3:40 ชม.</span><span class="tag free">รวมในตั๋วเครื่องบินแล้ว</span></div>
           </div>
@@ -1980,8 +2174,9 @@ body {
               <li>นั่งรถ ~10 นาทีถึงโรงแรม เช็กอินเข้าห้องพัก</li>
             </ul>
             <div class="card-action-bar">
-              <button class="action-btn show-driver" onclick="openDriverModal('昆明腾航酒店', 'Kūnmíng Téngháng Jiǔdiàn', 'โรงแรมเติงหาง คุนหมิง (ใกล้สนามบิน)')">🔍 ชื่อภาษาจีน</button>
+              <button class="action-btn show-driver" onclick="openDriverModal('昆明腾航酒店', 'Kūnmíng Téngháng Jiǔdiàn', 'โรงแรมเติงหาง คุนหมิง (ใกล้สนามบิน)', 'docs/腾航大酒店(昆明长水国际机场店).pdf')">🔍 ชื่อภาษาจีน</button>
               <button class="action-btn show-phrase" onclick="openPhraseModal('请问有腾航酒店的接驳车吗？', 'Qǐngwèn yǒu Téngháng Jiǔdiàn de jiēbó chē ma?', 'มีรถตู้รับส่งของโรงแรมเติงหางไหมครับ?')">🗣️ ประโยคจีน</button>
+              <a href="https://www.amap.com/ssr/search?query=%E6%98%86%E6%98%8E%E8%85%BE%E8%88%AA%E9%85%92%E5%BA%97" target="_blank" rel="noopener" class="action-btn map-btn">🗺️ แผนที่ Amap</a>
             </div>
             <div class="tags"><span class="tag free">บริการรถรับ-ส่งฟรี 24 ชม.</span></div>
           </div>
@@ -1996,8 +2191,10 @@ body {
               <li>พักผ่อน 1 คืน อาบน้ำอุ่น ชาร์จแบตเตอรี่ (1 ห้อง 1 คืน)</li>
             </ul>
             <div class="card-action-bar">
-              <button class="action-btn show-driver" onclick="openDriverModal('昆明腾航酒店', 'Kūnmíng Téngháng Jiǔdiàn', 'โรงแรมเติงหาง คุนหมิง (ใกล้สนามบิน)')">🔍 ชื่อภาษาจีน</button>
+              <button class="action-btn show-driver" onclick="openDriverModal('昆明腾航酒店', 'Kūnmíng Téngháng Jiǔdiàn', 'โรงแรมเติงหาง คุนหมิง (ใกล้สนามบิน)', 'docs/腾航大酒店(昆明长水国际机场店).pdf')">🔍 ชื่อภาษาจีน</button>
               <button class="action-btn show-phrase" onclick="openPhraseModal('你好，我们在网上预订了房间，办理入住。明天早上需要送机班车。', 'Nǐ hǎo, wǒmen zài wǎngshang yùdìng le fángjiān, bànlǐ rùzhù. Míngtiān zǎoshang xūyào sòngjī bānchē.', 'สวัสดีครับ เราจองห้องพักออนไลน์ไว้ ขอเช็กอินครับ พรุ่งนี้เช้าขอจองรถส่งสนามบินด้วยครับ')">🗣️ ประโยคจีน</button>
+              <a href="https://www.amap.com/ssr/search?query=%E6%98%86%E6%98%8E%E8%85%BE%E8%88%AA%E9%85%92%E5%BA%97" target="_blank" rel="noopener" class="action-btn map-btn">🗺️ แผนที่ Amap</a>
+              <a href="docs/腾航大酒店(昆明长水国际机场店).pdf" target="_blank" rel="noopener" class="action-btn doc-btn">📄 ใบจองโรงแรม</a>
             </div>
             <div class="tags"><span class="tag cost">ห้องพัก ฿249 / คน (รวม ฿498.53)</span></div>
           </div>
@@ -2033,6 +2230,7 @@ body {
             <div class="card-action-bar">
               <button class="action-btn show-driver" onclick="openDriverModal('翠湖公园', 'Cuìhú Gōngyuán', 'สวนชุ่ยหู คุนหมิง')">🔍 ชื่อภาษาจีน</button>
               <button class="action-btn show-phrase" onclick="openPhraseModal('来两份过桥米线，不要太辣，不要香菜', 'Lái liǎng fèn guòqiáo mǐxiàn, búyào tài là, búyào xiāngcài', 'ขอก๋วยเตี๋ยวข้ามสะพาน 2 ชาม ไม่เผ็ดมาก ไม่ใส่ผักชีครับ')">🗣️ ประโยคจีน</button>
+              <a href="https://www.amap.com/ssr/search?query=%E7%BF%A0%E6%B9%96%E5%85%AC%E5%9B%AD" target="_blank" rel="noopener" class="action-btn map-btn">🗺️ แผนที่ Amap</a>
             </div>
             <div class="tags"><span class="tag info">Metro สาย 6 (~5-7 หยวน)</span><span class="tag cost">อาหาร & รถ ฿100 / คน (รวม ฿200)</span></div>
           </div>
@@ -2050,6 +2248,7 @@ body {
             <div class="card-action-bar">
               <button class="action-btn show-driver" onclick="openDriverModal('南屏步行街', 'Nánpíng Bùxíngjiē', 'ถนนคนเดินหนานผิง คุนหมิง')">🔍 ชื่อภาษาจีน</button>
               <button class="action-btn show-phrase" onclick="openPhraseModal('请问这里的现烤鲜花饼多少钱一盒？可以试吃吗？', 'Qǐngwèn zhèlǐ de xiànkǎo xiānhuābǐng duōshǎo qián yì hé? Kěyǐ shìchī ma?', 'ขนมเปี๊ยะดอกไม้อบสดราคากล่องละเท่าไรครับ ขอชิมก่อนได้ไหมครับ?')">🗣️ ประโยคจีน</button>
+              <a href="https://www.amap.com/ssr/search?query=%E5%8D%97%E5%B1%8F%E6%AD%A5%E8%A1%8C%E8%A1%97" target="_blank" rel="noopener" class="action-btn map-btn">🗺️ แผนที่ Amap</a>
             </div>
             <div class="tags"><span class="tag free">เดินเที่ยวชมฟรี</span></div>
           </div>
@@ -2105,6 +2304,10 @@ body {
               <li>เที่ยวบิน MU-5923 บินตรงสู่สนามบินลี่เจียงซานอี้ (丽江三义机场) บิน 1 ชม.</li>
               <li>ลงจอดเวลา 23:45 น.</li>
             </ul>
+            <div class="card-action-bar">
+              <a href="https://www.amap.com/ssr/search?query=%E4%B8%BD%E6%B1%9F%E4%B8%89%E4%B9%89%E5%9B%BD%E9%99%85%E6%9C%BA%E5%9C%BA" target="_blank" rel="noopener" class="action-btn map-btn">🗺️ แผนที่ Amap</a>
+              <a href="docs/FLIGHT%231-Nattpat%20Saripat-BKK-QXC4PT-LJG-FLIGHT_ORIGINATING.pdf" target="_blank" rel="noopener" class="action-btn doc-btn">📄 E-Ticket MU-5923</a>
+            </div>
             <div class="tags"><span class="tag flight-t">1:00 ชม.</span><span class="tag free">รวมในตั๋วเครื่องบินแล้ว</span></div>
           </div>
         </div>
@@ -2168,8 +2371,10 @@ body {
               <li>นั่งรถโฮมสเตย์ใกล้สนามบิน เช็กอินพักผ่อน 1 คืน</li>
             </ul>
             <div class="card-action-bar">
-              <button class="action-btn show-driver" onclick="openDriverModal('丽江龙络河客栈', 'Lìjiāng Lóngluòhé Kèzhàn', 'โฮมสเตย์หลงลั่วเหอ ลี่เจียง (ใกล้สนามบิน)')">🔍 ชื่อภาษาจีน</button>
+              <button class="action-btn show-driver" onclick="openDriverModal('丽江龙络河客栈', 'Lìjiāng Lóngluòhé Kèzhàn', 'โฮมสเตย์หลงลั่วเหอ ลี่เจียง (ใกล้สนามบิน)', 'docs/丽江龙落河民宿(三义国际机场店).pdf')">🔍 ชื่อภาษาจีน</button>
               <button class="action-btn show-phrase" onclick="openPhraseModal('你好，我们办理入住，明天早上有送机班车吗？', 'Nǐ hǎo, wǒmen bànlǐ rùzhù, míngtiān zǎoshang yǒu sòngjī bānchē ma?', 'สวัสดีครับ เราขอเช็กอินครับ พรุ่งนี้เช้ามีรถไปส่งจุดขึ้นบัสสนามบินไหมครับ?')">🗣️ ประโยคจีน</button>
+              <a href="https://www.amap.com/ssr/search?query=%E4%B8%BD%E6%B1%9F%E9%BE%99%E7%BB%9C%E6%B2%B3%E5%AE%A2%E6%A0%88" target="_blank" rel="noopener" class="action-btn map-btn">🗺️ แผนที่ Amap</a>
+              <a href="docs/丽江龙落河民宿(三义国际机场店).pdf" target="_blank" rel="noopener" class="action-btn doc-btn">📄 ใบจองโฮมสเตย์</a>
             </div>
             <div class="tags"><span class="tag cost">ห้องพัก ฿193 / คน (รวม ฿386.32)</span></div>
           </div>
@@ -2224,8 +2429,10 @@ body {
               <li>เดินจากประตูใต้ ~1.6 กม. สู่โรงแรม (สาขาคฤหาสน์มู่)</li>
             </ul>
             <div class="card-action-bar">
-              <button class="action-btn show-driver" onclick="openDriverModal('丽江栖跃林荫别院(木府店)', 'Lìjiāng Qīyuè Línyīn Biéyuàn (Mùfǔ Diàn)', 'โรงแรมชีเยว่ หลินอิน เปี๋ยเยวียน (สาขาคฤหาสน์มู่)')">🔍 ชื่อภาษาจีน</button>
+              <button class="action-btn show-driver" onclick="openDriverModal('丽江栖跃林荫别院(木府店)', 'Lìjiāng Qīyuè Línyīn Biéyuàn (Mùfǔ Diàn)', 'โรงแรมชีเยว่ หลินอิน เปี๋ยเยวียน (สาขาคฤหาสน์มู่)', 'docs/栖悦林隐别院(丽江古城忠义市场店)%201.pdf')">🔍 ชื่อภาษาจีน</button>
               <button class="action-btn show-phrase" onclick="openPhraseModal('请问栖跃林荫别院（木府附近）往哪边走？', 'Qǐngwèn Qīyuè Línyīn Biéyuàn (Mùfǔ fùjìn) wǎng nǎ biān zǒu?', 'ขอสอบถามครับ ทางไปโรงแรมชีเยว่หลินอินเปี๋ยเยเวียน (ใกล้มู่ฝู่) เดินไปทางไหนครับ?')">🗣️ ประโยคจีน</button>
+              <a href="https://www.amap.com/ssr/search?query=%E4%B8%BD%E6%B1%9F%E6%A0%96%E8%B7%83%E6%9E%97%E8%8D%AB%E5%88%AB%E9%99%A2" target="_blank" rel="noopener" class="action-btn map-btn">🗺️ แผนที่ Amap</a>
+              <a href="docs/栖悦林隐别院(丽江古城忠义市场店)%201.pdf" target="_blank" rel="noopener" class="action-btn doc-btn">📄 ใบจองโรงแรม</a>
             </div>
           </div>
         </div>
@@ -2259,6 +2466,7 @@ body {
             <div class="card-action-bar">
               <button class="action-btn show-driver" onclick="openDriverModal('丽江客运站', 'Lìjiāng Kèyùn Zhàn', 'สถานีขนส่งผู้โดยสารลี่เจียง (ซื้อตั๋วบัสไปหุบเขาเสือกระโจน)')">🔍 ชื่อภาษาจีน</button>
               <button class="action-btn show-phrase" onclick="openPhraseModal('买两张明天去桥头镇最早的大巴票，还有大行李能随车托运到Tina客栈吗？', 'Mǎi liǎng zhāng míngtiān qù Qiáotóuzhèn zuì zǎo de dàbā piào, hái yǒu dà xíngli néng suíchē tuōyùn dào Tina kèzhàn ma?', 'ซื้อตั๋วไปสะพานเฉียวโถวพรุ่งนี้รอบเช้าสุด 2 ใบครับ และสามารถฝากกระเป๋าใหญ่ไป Tina เกสต์เฮาส์ได้ไหมครับ?')">🗣️ ประโยคจีน</button>
+              <a href="https://www.amap.com/ssr/search?query=%E4%B8%BD%E6%B1%9F%E5%AE%A2%E8%BF%90%E7%AB%99" target="_blank" rel="noopener" class="action-btn map-btn">🗺️ แผนที่ Amap</a>
             </div>
             <div class="tags"><span class="tag cost">ตั๋วบัส ฿175 / คน (รวม ฿350 / ~35 หยวน)</span><span class="tag info">การันตีรอบเช้า 08:00/08:30</span></div>
           </div>
@@ -2276,6 +2484,7 @@ body {
             <div class="card-action-bar">
               <button class="action-btn show-driver" onclick="openDriverModal('忠义市场', 'Zhōngyì Shìchǎng', 'ตลาดจงอี้ เมืองเก่าลี่เจียง')">🔍 ชื่อภาษาจีน</button>
               <button class="action-btn show-phrase" onclick="openPhraseModal('老板，这个纳西特色小吃一份多少钱？来一份。', 'Lǎobǎn, zhè ge Nàxī tèsè xiǎochī yí fèn duōshǎo qián? Lái yí fèn.', 'เถ้าแก่ครับ ขนมพื้นเมืองน่าซีชุดนี้เท่าไรครับ ขอ 1 ชุดครับ')">🗣️ ประโยคจีน</button>
+              <a href="https://www.amap.com/ssr/search?query=%E5%BF%A0%E4%B9%89%E5%B8%82%E5%9C%BA" target="_blank" rel="noopener" class="action-btn map-btn">🗺️ แผนที่ Amap</a>
             </div>
             <div class="tags"><span class="tag cost">สตรีทฟู้ด ฿75 / คน (รวม ฿150)</span></div>
           </div>
@@ -2293,6 +2502,7 @@ body {
             <div class="card-action-bar">
               <button class="action-btn show-driver" onclick="openDriverModal('阿婆情腊排骨火锅(南门桥店)', 'Āpó Qíng Làpáigǔ Huǒguō (Nánménqiáo Diàn)', 'ร้านหม้อไฟซี่โครงหมู อาผอฉิง (สาขาสะพานหนานเหมิน)')">🔍 ชื่อภาษาจีน</button>
               <button class="action-btn show-phrase" onclick="openPhraseModal('来一份两人份的腊排骨火锅套餐，谢谢', 'Lái yí fèn liǎngrén fèn de làpáigǔ huǒguō tàocān, xièxie', 'ขอหม้อไฟซี่โครงหมูเซตสำหรับ 2 คน 1 ชุดครับ ขอบคุณครับ')">🗣️ ประโยคจีน</button>
+              <a href="https://www.amap.com/ssr/search?query=%E9%98%BF%E5%A9%86%E6%83%85%E8%85%8A%E6%8E%92%E9%AA%A8%E7%81%AB%E9%94%85" target="_blank" rel="noopener" class="action-btn map-btn">🗺️ แผนที่ Amap</a>
             </div>
             <div class="tags"><span class="tag cost">หม้อไฟ ฿300 / คน (รวม ฿600)</span><span class="tag star">🌟 ห้ามพลาด</span></div>
           </div>
@@ -2311,6 +2521,7 @@ body {
             <div class="card-action-bar">
               <button class="action-btn show-driver" onclick="openDriverModal('黑龙潭公园', 'Hēilóngtán Gōngyuán', 'สวนสระมังกรดำ ลี่เจียง')">🔍 ชื่อภาษาจีน</button>
               <button class="action-btn show-phrase" onclick="openPhraseModal('师傅，这趟公交去黑龙潭公园吗？', 'Shīfu, zhè tàng gōngjiāo qù Hēilóngtán Gōngyuán ma?', 'คนขับครับ รถเมล์คันนี้ไปสวนสระมังกรดำไหมครับ?')">🗣️ ประโยคจีน</button>
+              <a href="https://www.amap.com/ssr/search?query=%E9%BB%91%E9%BE%99%E6%BD%AD%E5%85%AC%E5%9B%AD" target="_blank" rel="noopener" class="action-btn map-btn">🗺️ แผนที่ Amap</a>
             </div>
             <div class="tags"><span class="tag cost">รถเมล์ ฿10 / คน (รวม ฿20 / 4 หยวน)</span><span class="tag star">📸 จุดถ่ายรูปหลัก</span></div>
           </div>
@@ -2328,6 +2539,7 @@ body {
             <div class="card-action-bar">
               <button class="action-btn show-driver" onclick="openDriverModal('丽江古城大水车', 'Lìjiāng Gǔchéng Dàshuǐchē', 'กังหันน้ำใหญ่ เมืองเก่าลี่เจียง')">🔍 ชื่อภาษาจีน</button>
               <button class="action-btn show-phrase" onclick="openPhraseModal('请问大水车和四方街往哪个方向走？', 'Qǐngwèn Dàshuǐchē hé Sìfāngjiē wǎng nǎge fāngxiàng zǒu?', 'ทางไปกังหันน้ำโบราณและจัตุรัสซื่อฟางไปทางไหนครับ?')">🗣️ ประโยคจีน</button>
+              <a href="https://www.amap.com/ssr/search?query=%E4%B8%BD%E6%B1%9F%E5%8F%A4%E5%9F%8E%E5%A4%A7%E6%B0%B4%E8%BD%A6" target="_blank" rel="noopener" class="action-btn map-btn">🗺️ แผนที่ Amap</a>
             </div>
             <div class="tags"><span class="tag free">เดินเที่ยวชมฟรี</span></div>
           </div>
@@ -2417,6 +2629,7 @@ body {
             <div class="card-action-bar">
               <button class="action-btn show-driver" onclick="openDriverModal('中峡蒂娜青年旅舍', 'Zhōngxiá Dìnà Qīngnián Lǚshè', 'ทิน่า เกสต์เฮาส์ (จุดรับกระเป๋าใหญ่ หุบเขาเสือกระโจน)')">🔍 ชื่อภาษาจีน</button>
               <button class="action-btn show-phrase" onclick="openPhraseModal('师傅，这两件大行李帮我们托运到中峡Tina旅舍，多少钱？', 'Shīfu, zhè liǎng jiàn dà xíngli bāng wǒmen tuōyùn dào Zhōngxiá Tina lǚshè, duōshǎo qián?', 'คนขับครับ ช่วยส่งกระเป๋าใหญ่ 2 ใบนี้ไป Tina เกสต์เฮาส์ได้ไหมครับ ค่าบริการเท่าไร?')">🗣️ ประโยคจีน</button>
+              <a href="https://www.amap.com/ssr/search?query=%E4%B8%AD%E5%B3%A1%E8%92%82%E5%A8%9C%E9%9D%92%E5%B9%B4%E6%97%85%E8%88%8D" target="_blank" rel="noopener" class="action-btn map-btn">🗺️ แผนที่ Amap</a>
             </div>
             <div class="tags"><span class="tag info">ฝากกระเป๋าใหญ่ไป Tina's (~20 หยวน)</span></div>
           </div>
@@ -2445,6 +2658,7 @@ body {
             <div class="card-action-bar">
               <button class="action-btn show-driver" onclick="openDriverModal('虎跳峡景区售票处', 'Hǔtiàoxiá Jǐngqū Shòupiàochù', 'จุดจำหน่ายตั๋วอุทยานหุบเขาเสือกระโจน')">🔍 ชื่อภาษาจีน</button>
               <button class="action-btn show-phrase" onclick="openPhraseModal('买两张虎跳峡门票，谢谢', 'Mǎi liǎng zhāng Hǔtiàoxiá ménpiào, xièxie', 'ซื้อบัตรเข้าอุทยานหุบเขาเสือกระโจน 2 ใบครับ ขอบคุณครับ')">🗣️ ประโยคจีน</button>
+              <a href="https://www.amap.com/ssr/search?query=%E8%99%8E%E8%B7%B3%E5%B3%A1%E6%99%AF%E5%8C%BA%E5%94%AE%E7%A5%A8%E5%A4%84" target="_blank" rel="noopener" class="action-btn map-btn">🗺️ แผนที่ Amap</a>
             </div>
             <div class="tags"><span class="tag cost">ค่าเข้า ฿225 / คน (รวม ฿450 / 45 หยวน)</span></div>
           </div>
@@ -2478,6 +2692,7 @@ body {
             <div class="card-action-bar">
               <button class="action-btn show-driver" onclick="openDriverModal('纳西雅阁客栈', 'Nàxī Yǎgé Kèzhàn', 'นาซี แฟมิลี่ เกสต์เฮาส์ (หุบเขาเสือกระโจน)')">🔍 ชื่อภาษาจีน</button>
               <button class="action-btn show-phrase" onclick="openPhraseModal('来两份炒饭和两瓶矿泉水，谢谢', 'Lái liǎng fèn chǎofàn hé liǎng píng kuàngquánshuǐ, xièxie', 'ขอข้าวผัด 2 จานและน้ำเปล่า 2 ขวดครับ ขอบคุณครับ')">🗣️ ประโยคจีน</button>
+              <a href="https://www.amap.com/ssr/search?query=%E7%BA%B3%E8%A5%BF%E9%9B%85%E9%98%81%E5%AE%A2%E6%A0%88" target="_blank" rel="noopener" class="action-btn map-btn">🗺️ แผนที่ Amap</a>
             </div>
             <div class="tags"><span class="tag cost">มื้อเที่ยง ฿150 / คน (รวม ฿300)</span></div>
           </div>
@@ -2507,8 +2722,10 @@ body {
               <li>เช็กอิน Summit Inn (Tea Horse Guesthouse) เกสต์เฮาส์ริมผาวิวหลักล้าน (฿526/คน)</li>
             </ul>
             <div class="card-action-bar">
-              <button class="action-btn show-driver" onclick="openDriverModal('虎跳峡茶马客栈', 'Hǔtiàoxiá Chámǎ Kèzhàn', 'ซัมมิท อินน์ / ทีฮอร์ส เกสต์เฮาส์ (หมู่บ้านย่าชา)')">🔍 ชื่อภาษาจีน</button>
+              <button class="action-btn show-driver" onclick="openDriverModal('虎跳峡茶马客栈', 'Hǔtiàoxiá Chámǎ Kèzhàn', 'ซัมมิท อินน์ / ทีฮอร์ส เกสต์เฮาส์ (หมู่บ้านย่าชา)', 'docs/虎跳峡山美客栈(虎跳峡景区店).pdf')">🔍 ชื่อภาษาจีน</button>
               <button class="action-btn show-phrase" onclick="openPhraseModal('你好，我们在网上预订了房间，办理入住', 'Nǐ hǎo, wǒmen zài wǎngshang yùdìng le fángjiān, bànlǐ rùzhù', 'สวัสดีครับ เราจองห้องพักออนไลน์ไว้ ขอเช็กอินครับ')">🗣️ ประโยคจีน</button>
+              <a href="https://www.amap.com/ssr/search?query=%E8%99%8E%E8%B7%B3%E5%B3%A1%E8%8C%B6%E9%A9%AC%E5%AE%A2%E6%A0%88" target="_blank" rel="noopener" class="action-btn map-btn">🗺️ แผนที่ Amap</a>
+              <a href="docs/虎跳峡山美客栈(虎跳峡景区店).pdf" target="_blank" rel="noopener" class="action-btn doc-btn">📄 ใบจองที่พัก</a>
             </div>
             <div class="tags"><span class="tag cost">ห้องพัก ฿526 / คน (รวม ฿1,052.78)</span></div>
           </div>
@@ -2587,6 +2804,7 @@ body {
             <div class="card-action-bar">
               <button class="action-btn show-driver" onclick="openDriverModal('中途客栈', 'Zhōngtú Kèzhàn', 'ฮาล์ฟเวย์ เกสต์เฮาส์ (หุบเขาเสือกระโจน)')">🔍 ชื่อภาษาจีน</button>
               <button class="action-btn show-phrase" onclick="openPhraseModal('请问去Tina旅舍走这条路还要多久？', 'Qǐngwèn qù Tina lǚshè zǒu zhè tiáo lù hái yào duōjiǔ?', 'เดินตามทางนี้ไป Tina เกสต์เฮาส์ต้องใช้เวลาอีกกี่นาทีครับ?')">🗣️ ประโยคจีน</button>
+              <a href="https://www.amap.com/ssr/search?query=%E8%99%8E%E8%B7%B3%E5%B3%A1%E4%B8%AD%E9%80%94%E5%AE%A2%E6%A0%88" target="_blank" rel="noopener" class="action-btn map-btn">🗺️ แผนที่ Amap</a>
             </div>
             <div class="tags"><span class="tag trek">เลียบผา ~3.5 ชม.</span><span class="tag info">น้ำตกกวนอิม 💧</span></div>
           </div>
@@ -2604,6 +2822,7 @@ body {
             <div class="card-action-bar">
               <button class="action-btn show-driver" onclick="openDriverModal('蒂娜青年旅舍', 'Dìnà Qīngnián Lǚshè', 'ทิน่า เกสต์เฮาส์ (จุดขึ้นบัสไปแชงกรี-ลา)')">🔍 ชื่อภาษาจีน</button>
               <button class="action-btn show-phrase" onclick="openPhraseModal('你好，我们来取上午从丽江托运过来的行李，还要买两张去香格里拉的车票', 'Nǐ hǎo, wǒmen lái qǔ shàngwǔ cóng Lìjiāng tuōyùn guòlái de xíngli, hái yào mǎi liǎng zhāng qù Xiānggélǐlā de chēpiào', 'สวัสดีครับ เรามารับกระเป๋าที่ฝากส่งจากลี่เจียงเมื่อเช้า และขอซื้อตั๋วบัสไปแชงกรี-ลา 2 ใบครับ')">🗣️ ประโยคจีน</button>
+              <a href="https://www.amap.com/ssr/search?query=%E8%92%82%E5%A8%9C%E9%9D%92%E5%B9%B4%E6%97%85%E8%88%8D" target="_blank" rel="noopener" class="action-btn map-btn">🗺️ แผนที่ Amap</a>
             </div>
             <div class="tags"><span class="tag info">รับกระเป๋าใหญ่คืนที่ Tina's</span><span class="tag cost">มื้อเที่ยง & ตั๋วบัส ฿175 / คน (รวม ฿350)</span></div>
           </div>
@@ -2632,8 +2851,10 @@ body {
               <li>เปลี่ยนใส่เสื้อกันหนาวหนา ถุงมือ พร้อมรับอากาศหนาวจัดเลขตัวเดียว</li>
             </ul>
             <div class="card-action-bar">
-              <button class="action-btn show-driver" onclick="openDriverModal('香格里拉望山小院客栈', 'Xiānggélǐlā Wàngshān Xiǎoyuàn Kèzhàn', 'โรงแรมว่างซาน เสี่ยวเยวียน แชงกรี-ลา (เมืองโบราณตู๋เค่อจง)')">🔍 ชื่อภาษาจีน</button>
+              <button class="action-btn show-driver" onclick="openDriverModal('香格里拉望山小院客栈', 'Xiānggélǐlā Wàngshān Xiǎoyuàn Kèzhàn', 'โรงแรมว่างซาน เสี่ยวเยวียน แชงกรี-ลา (เมืองโบราณตู๋เค่อจง)', 'docs/香格里拉望山小院客栈(独克宗古城店).pdf')">🔍 ชื่อภาษาจีน</button>
               <button class="action-btn show-phrase" onclick="openPhraseModal('你好，我们有预订，办理入住手续', 'Nǐ hǎo, wǒmen yǒu yùdìng, bànlǐ rùzhù shǒuxù', 'สวัสดีครับ เราจองห้องพักไว้ ขอเช็กอินครับ')">🗣️ ประโยคจีน</button>
+              <a href="https://www.amap.com/ssr/search?query=%E9%A6%99%E6%A0%BC%E9%87%8C%E6%8B%89%E6%9C%9B%E5%B1%B1%E5%B0%8F%E9%99%A2%E5%AE%A2%E6%A0%88" target="_blank" rel="noopener" class="action-btn map-btn">🗺️ แผนที่ Amap</a>
+              <a href="docs/香格里拉望山小院客栈(独克宗古城店).pdf" target="_blank" rel="noopener" class="action-btn doc-btn">📄 ใบจองโรงแรม (2 คืน)</a>
             </div>
             <div class="tags"><span class="tag cost">ห้องพัก ฿241 / คน (รวม ฿481.90)</span></div>
           </div>
@@ -2653,6 +2874,7 @@ body {
             <div class="card-action-bar">
               <button class="action-btn show-driver" onclick="openDriverModal('独克宗古城龟山公园', 'Dúkèzōng Gǔchéng Guīshān Gōngyuán', 'วัดกุยซาน กงล้อมนต์ทองคำยักษ์ เมืองโบราณตู๋เค่อจง')">🔍 ชื่อภาษาจีน</button>
               <button class="action-btn show-phrase" onclick="openPhraseModal('来一份两人份的牦牛肉火锅，微辣，谢谢', 'Lái yí fèn liǎngrén fèn de máoniúròu huǒguō, wēilà, xièxie', 'ขอหม้อไฟเนื้อจามรีเซตสำหรับ 2 คน เผ็ดน้อยครับ ขอบคุณครับ')">🗣️ ประโยคจีน</button>
+              <a href="https://www.amap.com/ssr/search?query=%E7%8B%AC%E5%85%8B%E5%AE%97%E5%8F%A4%E5%9F%8E%E9%BE%9F%E5%B1%B1%E5%85%AC%E5%9B%AD" target="_blank" rel="noopener" class="action-btn map-btn">🗺️ แผนที่ Amap</a>
             </div>
             <div class="tags"><span class="tag cost">หม้อไฟ ฿300 / คน (รวม ฿600)</span><span class="tag star">🌟 ไฮไลท์</span></div>
           </div>
@@ -2704,6 +2926,7 @@ body {
             <div class="card-action-bar">
               <button class="action-btn show-driver" onclick="openDriverModal('独克宗古城东门停车场', 'Dúkèzōng Gǔchéng Dōngmén Tíngchēchǎng', 'ประตูทิศตะวันออก เมืองโบราณตู๋เค่อจง (จุดขึ้นรถบัสผู่ต๋าชั่ว)')">🔍 ชื่อภาษาจีน</button>
               <button class="action-btn show-phrase" onclick="openPhraseModal('师傅，请问去普达措国家公园的大巴停在哪里？', 'Shīfu, qǐngwèn qù Pǔdácuò Guójiā Gōngyuán de bānchē tíng zài nǎlǐ?', 'คนขับครับ รถบัสไปอุทยานผู่ต๋าชั่วจอดอยู่ตรงไหนครับ?')">🗣️ ประโยคจีน</button>
+              <a href="https://www.amap.com/ssr/search?query=%E7%8B%AC%E5%85%8B%E5%AE%97%E5%8F%A4%E5%9F%8E%E4%B8%9C%E9%97%A8%E5%81%9C%E8%BD%A6%E5%9C%BA" target="_blank" rel="noopener" class="action-btn map-btn">🗺️ แผนที่ Amap</a>
             </div>
             <div class="tags"><span class="tag info">เตรียมตัวขึ้นที่สูง</span></div>
           </div>
@@ -2739,6 +2962,7 @@ body {
             <div class="card-action-bar">
               <button class="action-btn show-driver" onclick="openDriverModal('普达措国家公园', 'Pǔdácuò Guójiā Gōngyuán', 'อุทยานแห่งชาติผู่ต๋าชั่ว แชงกรี-ลา')">🔍 ชื่อภาษาจีน</button>
               <button class="action-btn show-phrase" onclick="openPhraseModal('买两张门票含景区观光车，谢谢', 'Mǎi liǎng zhāng ménpiào hán jǐngqū guānguāng chē, xièxie', 'ซื้อบัตรเข้าชมรวมรถรางบริการ 2 ใบครับ ขอบคุณครับ')">🗣️ ประโยคจีน</button>
+              <a href="https://www.amap.com/ssr/search?query=%E6%99%AE%E8%BE%BE%E6%8E%AA%E5%9B%BD%E5%AE%B6%E5%85%AC%E5%9B%AD" target="_blank" rel="noopener" class="action-btn map-btn">🗺️ แผนที่ Amap</a>
             </div>
             <div class="tags"><span class="tag cost">ตั๋วเข้า ฿690 / คน (รวม ฿1,380 / 138 หยวน)</span><span class="tag star">🌟 อุทยานแห่งชาติ</span></div>
           </div>
@@ -2873,6 +3097,7 @@ body {
             <div class="card-action-bar">
               <button class="action-btn show-driver" onclick="openDriverModal('噶丹松赞林寺', 'Gádān Sōngzànlín Sì', 'วัดซงจ้านหลิน (พระราชวังโปตาลาน้อยแห่งยูนนาน)')">🔍 ชื่อภาษาจีน</button>
               <button class="action-btn show-phrase" onclick="openPhraseModal('买两张松赞林寺门票含景区车，谢谢', 'Mǎi liǎng zhāng Sōngzànlín Sì ménpiào hán jǐngqū chē, xièxie', 'ซื้อบัตรเข้าวัดซงจ้านหลินรวมรถบริการ 2 ใบครับ ขอบคุณครับ')">🗣️ ประโยคจีน</button>
+              <a href="https://www.amap.com/ssr/search?query=%E5%99%B6%E4%B8%B9%E6%9D%BE%E8%B5%9E%E6%9E%97%E5%8F%BA" target="_blank" rel="noopener" class="action-btn map-btn">🗺️ แผนที่ Amap</a>
             </div>
             <div class="tags"><span class="tag cost">ตั๋วเข้า ฿450 / คน (รวม ฿900 / 90 หยวน)</span><span class="tag star">🌟 มรดกทิเบต</span></div>
           </div>
@@ -2927,6 +3152,7 @@ body {
             <div class="card-action-bar">
               <button class="action-btn show-driver" onclick="openDriverModal('香格里拉火车站', 'Xiānggélǐlā Huǒchēzhàn', 'สถานีรถไฟความเร็วสูงแชงกรี-ลา')">🔍 ชื่อภาษาจีน</button>
               <button class="action-btn show-phrase" onclick="openPhraseModal('师傅，送我们去香格里拉火车站，谢谢', 'Shīfu, sòng wǒmen qù Xiānggélǐlā Huǒchēzhàn, xièxie', 'คนขับครับ ช่วยไปส่งที่สถานีรถไฟแชงกรี-ลาครับ ขอบคุณครับ')">🗣️ ประโยคจีน</button>
+              <a href="https://www.amap.com/ssr/search?query=%E9%A6%99%E6%A0%BC%E9%87%8C%E6%8B%89%E7%81%AB%E8%BD%A6%E7%AB%99" target="_blank" rel="noopener" class="action-btn map-btn">🗺️ แผนที่ Amap</a>
             </div>
             <div class="tags"><span class="tag cost">แท็กซี่ ฿60 / คน (รวม ฿120 / 24 หยวน)</span></div>
           </div>
@@ -2954,8 +3180,10 @@ body {
               <li>ถึงสถานีรถไฟลี่เจียง เรียก DiDi ไปโรงแรมเติงหางลี่เจียงใกล้สนามบิน</li>
             </ul>
             <div class="card-action-bar">
-              <button class="action-btn show-driver" onclick="openDriverModal('丽江三义国际机场', 'Lìjiāng Sānyì Guójì Jīchǎng', 'สนามบินนานาชาติลี่เจียงซานอี้ (ใกล้โรงแรม)')">🔍 ชื่อภาษาจีน</button>
+              <button class="action-btn show-driver" onclick="openDriverModal('丽江三义国际机场', 'Lìjiāng Sānyì Guójì Jīchǎng', 'สนามบินนานาชาติลี่เจียงซานอี้ (ใกล้โรงแรม)', 'docs/栖悦林隐别院(丽江古城忠义市场店)%202.pdf')">🔍 ชื่อภาษาจีน</button>
               <button class="action-btn show-phrase" onclick="openPhraseModal('师傅，送我们去三义机场附近的腾航酒店', 'Shīfu, sòng wǒmen qù Sānyì Jīchǎng fùjìn de Téngháng Jiǔdiàn', 'คนขับครับ ช่วยไปส่งที่โรงแรมเติงหางใกล้สนามบินซานอี้ครับ')">🗣️ ประโยคจีน</button>
+              <a href="https://www.amap.com/ssr/search?query=%E4%B8%BD%E6%B1%9F%E4%B8%89%E4%B9%89%E5%9B%BD%E9%99%85%E6%9C%BA%E5%9C%BA" target="_blank" rel="noopener" class="action-btn map-btn">🗺️ แผนที่ Amap</a>
+              <a href="docs/栖悦林隐别院(丽江古城忠义市场店)%202.pdf" target="_blank" rel="noopener" class="action-btn doc-btn">📄 ใบจองโรงแรม</a>
             </div>
             <div class="tags"><span class="tag cost">แท็กซี่ ฿75 / คน (รวม ฿150 / 30 หยวน)</span></div>
           </div>
@@ -3031,6 +3259,7 @@ body {
             </ul>
             <div class="card-action-bar">
               <button class="action-btn show-phrase" onclick="openPhraseModal('请帮我们办理行李直挂曼谷素万那普机场（BKK），不用在昆明提取行李，谢谢', 'Qǐng bāng wǒmen bànlǐ xíngli zhíguà Màngǔ Sùwànnàpǔ Jīchǎng (BKK), búyòng zài Kūnmíng tíqǔ xíngli, xièxie', 'ช่วยทำ Through Check-in โหลดกระเป๋าตรงไปกรุงเทพฯ สุวรรณภูมิ (BKK) เลยได้ไหมครับ จะได้ไม่ต้องรับกระเป๋าที่คุนหมิง ขอบคุณครับ')">🗣️ ประโยคจีน</button>
+              <a href="docs/FLIGHT%232-Nattpat%20Saripat-BKK-QXC4PT-LJG-FLIGHT_RETURNING.pdf" target="_blank" rel="noopener" class="action-btn doc-btn">📄 E-Ticket ขากลับ</a>
             </div>
             <div class="tags"><span class="tag info">Through Check-in กระเป๋าตรงสู่ BKK</span></div>
           </div>
@@ -3044,6 +3273,9 @@ body {
             <ul class="tl-bullets">
               <li>เที่ยวบิน MU-5922 บินสู่สนามบินคุนหมิงฉางสุ่ย (บิน 1 ชม.) ถึง 11:00 น.</li>
             </ul>
+            <div class="card-action-bar">
+              <a href="docs/FLIGHT%232-Nattpat%20Saripat-BKK-QXC4PT-LJG-FLIGHT_RETURNING.pdf" target="_blank" rel="noopener" class="action-btn doc-btn">📄 E-Ticket MU-5922</a>
+            </div>
             <div class="tags"><span class="tag flight-t">1:00 ชม.</span><span class="tag free">รวมในตั๋วเครื่องบินแล้ว</span></div>
           </div>
         </div>
@@ -3062,6 +3294,7 @@ body {
             <div class="card-action-bar">
               <button class="action-btn show-driver" onclick="openDriverModal('昆明长水国际机场地铁站', 'Kūnmíng Chángshuǐ Guójì Jīchǎng Dìtiě Zhàn', 'สถานีรถไฟใต้ดินสนามบินคุนหมิงฉางสุ่ย (สาย 6)')">🔍 ชื่อภาษาจีน</button>
               <button class="action-btn show-phrase" onclick="openPhraseModal('来两盒现烤鲜花饼和两饼普洱茶，可以刷支付宝吗？', 'Lái liǎng hé xiànkǎo xiānhuābǐng hé liǎng bǐng pǔ'ěrchá, kěyǐ shuā Zhīfùbǎo ma?', 'ขอซื้อขนมเปี๊ยะดอกไม้สด 2 กล่องและชาผู่เอ๋อร์ 2 แผ่นครับ จ่าย Alipay ได้ไหมครับ?')">🗣️ ประโยคจีน</button>
+              <a href="https://www.amap.com/ssr/search?query=%E6%98%86%E6%98%8E%E9%95%BF%E6%B0%B4%E5%9B%BD%E9%99%85%E6%9C%BA%E5%9C%BA%E5%9C%B0%E9%93%81%E7%AB%99" target="_blank" rel="noopener" class="action-btn map-btn">🗺️ แผนที่ Amap</a>
             </div>
             <div class="tags"><span class="tag cost">Metro + มื้อเที่ยง + ของฝาก ~฿375 / คน (รวม ฿750)</span></div>
           </div>
@@ -3100,6 +3333,9 @@ body {
               <li>China Eastern เที่ยวบิน MU-9621 บินตรงกลับสู่สุวรรณภูมิ (บิน 1 ชม. 35 นาที)</li>
               <li>ถึงไทยเวลา 23:05 น. จบทริป!</li>
             </ul>
+            <div class="card-action-bar">
+              <a href="docs/FLIGHT%232-Nattpat%20Saripat-BKK-QXC4PT-LJG-FLIGHT_RETURNING.pdf" target="_blank" rel="noopener" class="action-btn doc-btn">📄 E-Ticket MU-9621</a>
+            </div>
             <div class="tags"><span class="tag flight-t">1:35 ชม.</span><span class="tag star">จบทริปโดยสวัสดิภาพ 🏡</span></div>
           </div>
         </div>
@@ -3211,6 +3447,146 @@ body {
 
 
 <!-- ============ BUDGET SUMMARY ============ -->
+
+<!-- ============ DOCUMENTS HUB ============ -->
+<section id="documents" class="section section-alt">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Travel Documents</span>
+      <h2 class="section-title">📁 เอกสารยืนยันการจอง</h2>
+      <p class="section-desc">แตะเพื่อเปิดดูหรือดาวน์โหลดเอกสารยืนยัน (PDF) พร้อมลิงก์แผนที่ Amap</p>
+    </div>
+
+    <div class="doc-grid">
+      <!-- Flight Departure -->
+      <div class="doc-card">
+        <div class="doc-card-head">
+          <div class="doc-icon flight">✈️</div>
+          <div class="doc-info">
+            <div class="doc-title">ตั๋วเครื่องบิน ขาไป (BKK ➔ KMG ➔ LJG)</div>
+            <div class="doc-sub">24-25 ต.ค. · China Eastern (MU-9614 / MU-5923)</div>
+            <div class="doc-ref">Ref: QXC4PT · ผู้เดินทาง: Nattapat Saripat</div>
+          </div>
+        </div>
+        <div class="doc-btns">
+          <a href="docs/FLIGHT%231-Nattpat%20Saripat-BKK-QXC4PT-LJG-FLIGHT_ORIGINATING.pdf" target="_blank" rel="noopener" class="doc-open-btn">📄 เปิดดูตั๋วเครื่องบิน</a>
+        </div>
+      </div>
+
+      <!-- Flight Return -->
+      <div class="doc-card">
+        <div class="doc-card-head">
+          <div class="doc-icon flight">✈️</div>
+          <div class="doc-info">
+            <div class="doc-title">ตั๋วเครื่องบิน ขากลับ (LJG ➔ KMG ➔ BKK)</div>
+            <div class="doc-sub">31 ต.ค. · China Eastern (MU-5922 / MU-9621)</div>
+            <div class="doc-ref">Ref: QXC4PT · ถึง กทม. 23:55 น.</div>
+          </div>
+        </div>
+        <div class="doc-btns">
+          <a href="docs/FLIGHT%232-Nattpat%20Saripat-BKK-QXC4PT-LJG-FLIGHT_RETURNING.pdf" target="_blank" rel="noopener" class="doc-open-btn">📄 เปิดดูตั๋วเครื่องบิน</a>
+        </div>
+      </div>
+
+      <!-- Hotel Night 1: Tenghang Kunming -->
+      <div class="doc-card">
+        <div class="doc-card-head">
+          <div class="doc-icon">🏨</div>
+          <div class="doc-info">
+            <div class="doc-title">คืนที่ 1: โรงแรมเติงหาง คุนหมิง</div>
+            <div class="doc-sub">24-25 ต.ค. (1 คืน) · 腾航大酒店(昆明长水机场店)</div>
+            <div class="doc-ref">Trip Ref: 1359047990059246 · ฿498.53</div>
+          </div>
+        </div>
+        <div class="doc-btns">
+          <a href="docs/腾航大酒店(昆明长水国际机场店).pdf" target="_blank" rel="noopener" class="doc-open-btn">📄 ใบจองโรงแรม</a>
+          <a href="https://www.amap.com/ssr/search?query=%E6%98%86%E6%98%8E%E8%85%BE%E8%88%AA%E9%85%92%E5%BA%97" target="_blank" rel="noopener" class="doc-map-btn">🗺️ Amap</a>
+        </div>
+      </div>
+
+      <!-- Hotel Night 2: Longluohe Lijiang -->
+      <div class="doc-card">
+        <div class="doc-card-head">
+          <div class="doc-icon">🏡</div>
+          <div class="doc-info">
+            <div class="doc-title">คืนที่ 2: โฮมสเตย์หลงลั่วเหอ ลี่เจียง</div>
+            <div class="doc-sub">25-26 ต.ค. (1 คืน) · 丽江龙落河民宿(三义机场店)</div>
+            <div class="doc-ref">Trip Ref: 1359048036644931 · ฿386.32</div>
+          </div>
+        </div>
+        <div class="doc-btns">
+          <a href="docs/丽江龙落河民宿(三义国际机场店).pdf" target="_blank" rel="noopener" class="doc-open-btn">📄 ใบจองโฮมสเตย์</a>
+          <a href="https://www.amap.com/ssr/search?query=%E4%B8%BD%E6%B1%9F%E9%BE%99%E7%BB%9C%E6%B2%B3%E5%AE%A2%E6%A0%88" target="_blank" rel="noopener" class="doc-map-btn">🗺️ Amap</a>
+        </div>
+      </div>
+
+      <!-- Hotel Night 3: Qiyue Lijiang Old Town -->
+      <div class="doc-card">
+        <div class="doc-card-head">
+          <div class="doc-icon">🏮</div>
+          <div class="doc-info">
+            <div class="doc-title">คืนที่ 3: โรงแรมชีเยว่หลินอินเปี๋ยเยเวียน (มู่ฝู่)</div>
+            <div class="doc-sub">26-27 ต.ค. (1 คืน) · 栖悦林隐别院(丽江古城忠义市场店)</div>
+            <div class="doc-ref">Trip Ref: 1359047990153900 · ฿381.29</div>
+          </div>
+        </div>
+        <div class="doc-btns">
+          <a href="docs/栖悦林隐别院(丽江古城忠义市场店)%201.pdf" target="_blank" rel="noopener" class="doc-open-btn">📄 ใบจองโรงแรม</a>
+          <a href="https://www.amap.com/ssr/search?query=%E4%B8%BD%E6%B1%9F%E6%A0%96%E8%B7%83%E6%9E%97%E8%8D%AB%E5%88%AB%E9%99%A2" target="_blank" rel="noopener" class="doc-map-btn">🗺️ Amap</a>
+        </div>
+      </div>
+
+      <!-- Hotel Night 4: Summit Inn / Shanmei (Tiger Leaping Gorge) -->
+      <div class="doc-card">
+        <div class="doc-card-head">
+          <div class="doc-icon">🏔️</div>
+          <div class="doc-info">
+            <div class="doc-title">คืนที่ 4: Summit Inn / ซานเหม่ย (หุบเขาเสือกระโจน)</div>
+            <div class="doc-sub">27-28 ต.ค. (1 คืน) · 虎跳峡山美客栈(景区店) / 茶马客栈</div>
+            <div class="doc-ref">Trip Ref: 1359047990248699 · ฿1,052.78</div>
+          </div>
+        </div>
+        <div class="doc-btns">
+          <a href="docs/虎跳峡山美客栈(虎跳峡景区店).pdf" target="_blank" rel="noopener" class="doc-open-btn">📄 ใบจองที่พัก</a>
+          <a href="https://www.amap.com/ssr/search?query=%E8%99%8E%E8%B7%B3%E5%B3%A1%E8%8C%B6%E9%A9%AC%E5%AE%A2%E6%A0%88" target="_blank" rel="noopener" class="doc-map-btn">🗺️ Amap</a>
+        </div>
+      </div>
+
+      <!-- Hotel Night 5-6: Wangshan Xiaoyuan Shangri-La -->
+      <div class="doc-card">
+        <div class="doc-card-head">
+          <div class="doc-icon">❄️</div>
+          <div class="doc-info">
+            <div class="doc-title">คืนที่ 5–6: โรงแรมว่างซาน เสี่ยวเยวียน แชงกรี-ลา</div>
+            <div class="doc-sub">28-30 ต.ค. (2 คืน) · 香格里拉望山小院客栈(独克宗古城店)</div>
+            <div class="doc-ref">Trip Ref: 1359048589640445 · ฿963.80 (2 คืน)</div>
+          </div>
+        </div>
+        <div class="doc-btns">
+          <a href="docs/香格里拉望山小院客栈(独克宗古城店).pdf" target="_blank" rel="noopener" class="doc-open-btn">📄 ใบจองโรงแรม (2 คืน)</a>
+          <a href="https://www.amap.com/ssr/search?query=%E9%A6%99%E6%A0%BC%E9%87%8C%E6%8B%89%E6%9C%9B%E5%B1%B1%E5%B0%8F%E9%99%A2%E5%AE%A2%E6%A0%88" target="_blank" rel="noopener" class="doc-map-btn">🗺️ Amap</a>
+        </div>
+      </div>
+
+      <!-- Hotel Night 7: Qiyue Linyin Bieyuan 2 (Lijiang) -->
+      <div class="doc-card">
+        <div class="doc-card-head">
+          <div class="doc-icon">🏮</div>
+          <div class="doc-info">
+            <div class="doc-title">คืนที่ 7: โรงแรมชีเยว่หลินอินเปี๋ยเยเวียน (มู่ฝู่)</div>
+            <div class="doc-sub">30-31 ต.ค. (1 คืน) · 栖悦林隐别院(丽江古城忠义市场店)</div>
+            <div class="doc-ref">Trip Ref: 1359048443168258 · ฿383.95</div>
+          </div>
+        </div>
+        <div class="doc-btns">
+          <a href="docs/栖悦林隐别院(丽江古城忠义市场店)%202.pdf" target="_blank" rel="noopener" class="doc-open-btn">📄 ใบจองโรงแรม</a>
+          <a href="https://www.amap.com/ssr/search?query=%E4%B8%BD%E6%B1%9F%E6%A0%96%E8%B7%83%E6%9E%97%E8%8D%AB%E5%88%AB%E9%99%A2" target="_blank" rel="noopener" class="doc-map-btn">🗺️ Amap</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="budget" class="section">
   <div class="container">
     <div class="section-header">
@@ -3338,12 +3714,31 @@ document.querySelectorAll('.nav-link').forEach(l => {
 
 
 // DRIVER & PHRASE MODAL & CLIPBOARD
-function openDriverModal(zh, pinyin, th) {
+function openDriverModal(zh, pinyin, th, docUrl) {
   const badge = document.getElementById('dmBadge');
   if (badge) badge.textContent = '📍 ชื่อสถานที่ภาษาจีน (ยื่นแสดง / โชว์คนขับ)';
   document.getElementById('dmZh').textContent = zh;
   document.getElementById('dmPinyin').textContent = pinyin;
   document.getElementById('dmTh').textContent = th;
+  
+  // Amap Map Link
+  const mapLink = document.getElementById('dmMapLink');
+  if (mapLink) {
+    mapLink.href = 'https://www.amap.com/ssr/search?query=' + encodeURIComponent(zh);
+    mapLink.style.display = 'flex';
+  }
+  
+  // Doc link
+  const docLink = document.getElementById('dmDocLink');
+  if (docLink) {
+    if (docUrl) {
+      docLink.href = docUrl;
+      docLink.style.display = 'flex';
+    } else {
+      docLink.style.display = 'none';
+    }
+  }
+  
   document.getElementById('driverModal').classList.add('active');
   document.getElementById('driverModal').setAttribute('aria-hidden', 'false');
 }
@@ -3354,6 +3749,13 @@ function openPhraseModal(zh, pinyin, th) {
   document.getElementById('dmZh').textContent = zh;
   document.getElementById('dmPinyin').textContent = pinyin;
   document.getElementById('dmTh').textContent = th;
+  
+  // Hide Map and Doc links in phrase mode
+  const mapLink = document.getElementById('dmMapLink');
+  if (mapLink) mapLink.style.display = 'none';
+  const docLink = document.getElementById('dmDocLink');
+  if (docLink) docLink.style.display = 'none';
+  
   document.getElementById('driverModal').classList.add('active');
   document.getElementById('driverModal').setAttribute('aria-hidden', 'false');
 }
@@ -3400,7 +3802,7 @@ function saveOffline() {
 // Service Worker Registration for Offline Cache
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('./sw.js?v=8').then(reg => {
+    navigator.serviceWorker.register('./sw.js?v=9').then(reg => {
       reg.update();
     }).catch(() => {});
   });
@@ -3516,7 +3918,11 @@ window.addEventListener('scroll', () => {
       <div class="dm-pinyin" id="dmPinyin">Lìjiāng Kèyùn Zhàn</div>
       <div class="dm-th" id="dmTh">สถานีขนส่งลี่เจียง</div>
     </div>
-    <button class="dm-copy-btn" onclick="copyDriverText()">📋 คัดลอกภาษาจีน</button>
+    <div class="dm-actions">
+      <button class="dm-copy-btn" onclick="copyDriverText()">📋 คัดลอกภาษาจีน</button>
+      <a id="dmMapLink" href="#" target="_blank" rel="noopener" class="dm-map-btn">🗺️ เปิดแผนที่ Amap (高德地图) ↗</a>
+      <a id="dmDocLink" href="#" target="_blank" rel="noopener" class="dm-doc-btn" style="display:none;">📄 เปิดดูเอกสารยืนยันการจอง (PDF) ↗</a>
+    </div>
   </div>
 </div>
 
