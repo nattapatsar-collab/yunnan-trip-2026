@@ -728,15 +728,81 @@ h1, h2, h3, h4, h5, h6, p, li, a, span, button, div, strong {
   color: var(--label-secondary);
 }
 
-.dh-emoji {
-  font-size: 1.5rem;
-  background: var(--system-bg);
-  width: 40px;
-  height: 40px;
-  border-radius: 10px;
+.dh-right {
   display: flex;
   align-items: center;
-  justify-content: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+.btn-copy-day {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--system-bg-secondary, #f2f2f7);
+  border: 1px solid var(--system-border, rgba(0,0,0,0.12));
+  color: var(--system-text, #1d1d1f);
+  font-family: inherit;
+  font-size: 0.74rem;
+  font-weight: 550;
+  padding: 5px 12px;
+  border-radius: 980px;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+  white-space: nowrap;
+  user-select: none;
+}
+.btn-copy-day:hover {
+  background: #0071e3;
+  color: #ffffff;
+  border-color: #0071e3;
+  box-shadow: 0 2px 8px rgba(0, 113, 227, 0.28);
+  transform: translateY(-1px);
+}
+.btn-copy-day:hover svg {
+  stroke: #ffffff;
+}
+.btn-copy-day:active {
+  transform: scale(0.97);
+}
+.btn-copy-day.copied {
+  background: #34c759 !important;
+  color: #ffffff !important;
+  border-color: #34c759 !important;
+  box-shadow: 0 2px 8px rgba(52, 199, 89, 0.3) !important;
+}
+.btn-copy-day.copied svg {
+  stroke: #ffffff !important;
+}
+.toast-copy {
+  position: fixed;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%) translateY(30px);
+  background: rgba(29, 29, 31, 0.92);
+  color: #ffffff;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: 10px 18px;
+  border-radius: 980px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.22);
+  border: 1px solid rgba(255,255,255,0.15);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 99999;
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+}
+.toast-copy.active {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+}
+.toast-copy svg {
+  stroke: #34c759;
   flex-shrink: 0;
 }
 
@@ -1647,6 +1713,21 @@ h1, h2, h3, h4, h5, h6, p, li, a, span, button, div, strong {
     padding: 14px 16px !important;
     margin-bottom: 14px !important;
     border-radius: 14px !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 8px !important;
+  }
+  .dh-right {
+    width: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding-top: 8px !important;
+    border-top: 1px solid var(--system-border, rgba(0,0,0,0.06)) !important;
+  }
+  .btn-copy-day {
+    font-size: 0.68rem !important;
+    padding: 4px 10px !important;
   }
   .dh-label {
     font-size: 0.60rem !important;
@@ -2642,7 +2723,13 @@ h1, h2, h3, h4, h5, h6, p, li, a, span, button, div, strong {
           <span class="dh-date">วันเสาร์ที่ 24 ตุลาคม 2569</span>
           <div class="dh-weather">คุนหมิง 15–22°C (ความสูง 1,890 ม.)</div>
         </div>
-        <div class="dh-badge">DAY 01</div>
+        <div class="dh-right">
+          <div class="dh-badge">DAY 01</div>
+          <button type="button" class="btn-copy-day" onclick="copyDayPlan('d0')" aria-label="คัดลอกสรุปวันที่ 1 สำหรับส่ง LINE">
+            <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            <span class="copy-text">คัดลอกส่ง LINE</span>
+          </button>
+        </div>
       </div>
       <div class="timeline">
         <div class="tl-row prep">
@@ -2702,7 +2789,13 @@ h1, h2, h3, h4, h5, h6, p, li, a, span, button, div, strong {
           <span class="dh-date">วันอาทิตย์ที่ 25 ตุลาคม 2569</span>
           <div class="dh-weather">คุนหมิง 15–22°C (ความสูง 1,890 ม.)</div>
         </div>
-        <div class="dh-badge">DAY 02</div>
+        <div class="dh-right">
+          <div class="dh-badge">DAY 02</div>
+          <button type="button" class="btn-copy-day" onclick="copyDayPlan('d1')" aria-label="คัดลอกสรุปวันที่ 2 สำหรับส่ง LINE">
+            <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            <span class="copy-text">คัดลอกส่ง LINE</span>
+          </button>
+        </div>
       </div>
       <div class="timeline">
         <div class="tl-row">
@@ -2935,7 +3028,13 @@ h1, h2, h3, h4, h5, h6, p, li, a, span, button, div, strong {
           <span class="dh-date">วันจันทร์ที่ 26 ตุลาคม 2569</span>
           <div class="dh-weather">ลี่เจียง 8–18°C (ความสูง 2,400 ม.)</div>
         </div>
-        <div class="dh-badge">DAY 03</div>
+        <div class="dh-right">
+          <div class="dh-badge">DAY 03</div>
+          <button type="button" class="btn-copy-day" onclick="copyDayPlan('d2')" aria-label="คัดลอกสรุปวันที่ 3 สำหรับส่ง LINE">
+            <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            <span class="copy-text">คัดลอกส่ง LINE</span>
+          </button>
+        </div>
       </div>
       <div class="timeline">
         <div class="tl-row transport">
@@ -3083,7 +3182,13 @@ h1, h2, h3, h4, h5, h6, p, li, a, span, button, div, strong {
           <span class="dh-date">วันอังคารที่ 27 ตุลาคม 2569</span>
           <div class="dh-weather">เสือกระโจน 6–16°C (ความสูง 2,670 ม.)</div>
         </div>
-        <div class="dh-badge">DAY 04</div>
+        <div class="dh-right">
+          <div class="dh-badge">DAY 04</div>
+          <button type="button" class="btn-copy-day" onclick="copyDayPlan('d3')" aria-label="คัดลอกสรุปวันที่ 4 สำหรับส่ง LINE">
+            <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            <span class="copy-text">คัดลอกส่ง LINE</span>
+          </button>
+        </div>
       </div>
       <div class="timeline">
         <div class="tl-row checkin">
@@ -3241,7 +3346,13 @@ h1, h2, h3, h4, h5, h6, p, li, a, span, button, div, strong {
           <span class="dh-date">วันพุธที่ 28 ตุลาคม 2569</span>
           <div class="dh-weather warn has-split"><span>แชงกรี-ลา 2–14°C (ความสูง 3,200 ม.)</span><span class="dh-warn-text">ข้อควรระวัง: ภาวะแพ้ที่สูง (AMS)</span></div>
         </div>
-        <div class="dh-badge">DAY 05</div>
+        <div class="dh-right">
+          <div class="dh-badge">DAY 05</div>
+          <button type="button" class="btn-copy-day" onclick="copyDayPlan('d4')" aria-label="คัดลอกสรุปวันที่ 5 สำหรับส่ง LINE">
+            <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            <span class="copy-text">คัดลอกส่ง LINE</span>
+          </button>
+        </div>
       </div>
       <div class="timeline">
         <div class="tl-row food">
@@ -3378,7 +3489,13 @@ h1, h2, h3, h4, h5, h6, p, li, a, span, button, div, strong {
           <span class="dh-date">วันพฤหัสบดีที่ 29 ตุลาคม 2569</span>
           <div class="dh-weather warn has-split"><span>ผู่ต๋าชั่ว -2 ถึง 10°C (ความสูง 3,500 ม.)</span><span class="dh-warn-text">ข้อควรระวัง: ภาวะแพ้ที่สูง (AMS)</span></div>
         </div>
-        <div class="dh-badge">DAY 06</div>
+        <div class="dh-right">
+          <div class="dh-badge">DAY 06</div>
+          <button type="button" class="btn-copy-day" onclick="copyDayPlan('d5')" aria-label="คัดลอกสรุปวันที่ 6 สำหรับส่ง LINE">
+            <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            <span class="copy-text">คัดลอกส่ง LINE</span>
+          </button>
+        </div>
       </div>
       <div class="timeline">
         <div class="tl-row food">
@@ -3511,7 +3628,13 @@ h1, h2, h3, h4, h5, h6, p, li, a, span, button, div, strong {
           <span class="dh-date">วันศุกร์ที่ 30 ตุลาคม 2569</span>
           <div class="dh-weather warn">แชงกรี-ลา 0–12°C (ความสูง 3,280 ม.)</div>
         </div>
-        <div class="dh-badge">DAY 07</div>
+        <div class="dh-right">
+          <div class="dh-badge">DAY 07</div>
+          <button type="button" class="btn-copy-day" onclick="copyDayPlan('d6')" aria-label="คัดลอกสรุปวันที่ 7 สำหรับส่ง LINE">
+            <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            <span class="copy-text">คัดลอกส่ง LINE</span>
+          </button>
+        </div>
       </div>
       <div class="timeline">
         <div class="tl-row activity">
@@ -3683,7 +3806,13 @@ h1, h2, h3, h4, h5, h6, p, li, a, span, button, div, strong {
           <span class="dh-date">วันเสาร์ที่ 31 ตุลาคม 2569</span>
           <div class="dh-weather">คุนหมิง 15–20°C / กรุงเทพฯ 28–32°C</div>
         </div>
-        <div class="dh-badge">DAY 08</div>
+        <div class="dh-right">
+          <div class="dh-badge">DAY 08</div>
+          <button type="button" class="btn-copy-day" onclick="copyDayPlan('d7')" aria-label="คัดลอกสรุปวันที่ 8 สำหรับส่ง LINE">
+            <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            <span class="copy-text">คัดลอกส่ง LINE</span>
+          </button>
+        </div>
       </div>
       <div class="timeline">
         <div class="tl-row transport">
@@ -4341,10 +4470,190 @@ function copyDriverText() {
 // Service Worker Registration (Network-First Cache v25)
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('./sw.js?v=53').then(reg => {
+    navigator.serviceWorker.register('./sw.js?v=54').then(reg => {
       reg.update();
     }).catch(() => {});
   });
+}
+
+
+// LINE SUMMARY COPY FUNCTION
+const DAY_PLANS_SUMMARY = {
+  d0: {
+    title: 'แผนเที่ยววันที่ 1 (24 ต.ค. 2569)\nกรุงเทพฯ สู่ คุนหมิง',
+    highlights: [
+      '17:50 เช็กอินเคาน์เตอร์ China Eastern สุวรรณภูมิ (BKK)',
+      '20:50 บินตรงสู่คุนหมิง (เที่ยวบิน MU-9614)',
+      '00:30 ถึงสนามบินคุนหมิงฉางสุ่ย (เวลาจีน)'
+    ]
+  },
+  d1: {
+    title: 'แผนเที่ยววันที่ 2 (25 ต.ค. 2569)\nคุนหมิง & บินสู่ลี่เจียง',
+    highlights: [
+      '00:30 ผ่าน ตม. คุนหมิง และรับกระเป๋าใหญ่ 20 กก.',
+      '01:30 รถรับส่งสู่ที่พัก Tenghang Hotel พักผ่อนเอาแรง',
+      '10:00 เช็กเอาต์ Tenghang Hotel ฝากกระเป๋าเดินทางใหญ่',
+      '11:00 นั่ง Metro สาย 6 ชิมก๋วยเตี๋ยวข้ามสะพานร้านเจี้ยนซินหยวน',
+      '12:30 ซุ้มประตูกิมหม่าปี้จีฟาง, ถนนคนเดินหนานผิง, เมืองเก่าคุนหมิงเหล่าเจีย',
+      '15:00 เดินตลาดสดต้ากวนจ้วนซิน ชิมสตรีทฟู้ดพื้นเมือง',
+      '18:30 นั่ง Metro สาย 6 กลับ Tenghang Hotel รับกระเป๋า',
+      '20:30 เช็กอินเคาน์เตอร์ China Eastern สนามบินคุนหมิงฉางสุ่ย',
+      '22:45 บินตรงสู่ลี่เจียง (เที่ยวบิน MU-5923) ถึง 23:45 น.',
+      '23:45 รถรับส่งเข้าพัก Longluohe Homestay'
+    ]
+  },
+  d2: {
+    title: 'แผนเที่ยววันที่ 3 (26 ต.ค. 2569)\nเมืองเก่าลี่เจียง & สระมังกรดำ',
+    highlights: [
+      '08:30 เช็กเอาต์ นั่ง DiDi ยิงตรงสู่ที่พักเมืองเก่าลี่เจียง',
+      '11:30 กินหม้อไฟซี่โครงหมูอาผอฉิง & ซื้อตั๋วบัสไปเสือกระโจน',
+      '13:45 สระมังกรดำ (ศาลาเต๋อเยวี่ยโหลว, สะพานสั่วชุ่ยเฉียว ชมวิวมังกรหยก)',
+      '14:15 เดินไฮไลท์เมืองเก่า: กังหันน้ำใหญ่, จัตุรัสซื่อฟางเจีย, สะพานหินต้าสือเฉียว, หน้าคฤหาสน์ตระกูลมู่',
+      '18:30 สตรีทฟู้ดและปิ้งย่างหม่าล่าตลาดโต้รุ่งจงอี้',
+      'พัก: Qiyue Linyin Bieyuan'
+    ]
+  },
+  d3: {
+    title: 'แผนเที่ยววันที่ 4 (27 ต.ค. 2569)\nเทรคกิ้งหุบเขาเสือกระโจน (วันแรก)',
+    highlights: [
+      '07:15 เดินไปสถานีขนส่งลี่เจียง ฝากส่งกระเป๋าใหญ่ 20 กก. ไป Tina\'s',
+      '08:00 รถบัสไปสะพานเฉียวโถว / ด่านจำหน่ายตั๋วเสือกระโจน',
+      '10:15 รถตู้ท้องถิ่นไป Naxi Family Guesthouse',
+      '11:45 มื้อเที่ยงที่ Naxi Family Guesthouse เติมพลัง',
+      '14:00 พิชิต 28 โค้งหักศอก สู่จุดชมวิวสูงสุด 2,670 ม.',
+      '16:30 พักดื่มน้ำ Tea Horse Guesthouse',
+      '18:00 ถึงที่พัก Summit Inn พักผ่อนชมวิวหน้าผาหุบเขาเสือกระโจน',
+      'พัก: Summit Inn'
+    ]
+  },
+  d4: {
+    title: 'แผนเที่ยววันที่ 5 (28 ต.ค. 2569)\nเสือกระโจน (วันที่สอง) สู่ แชงกรี-ลา',
+    highlights: [
+      '07:30 กินมื้อเช้าที่ Summit Inn ท่ามกลางอากาศบริสุทธิ์',
+      '09:00 เดินเทรคเลียบหน้าผา Halfway Guesthouse → น้ำตกกวนอิม → Tina\'s Guesthouse',
+      '12:30 กินมื้อเที่ยง & รับกระเป๋าใหญ่ที่ Tina\'s Guesthouse',
+      '15:30 รถบัสจาก Tina\'s มุ่งหน้าเมืองโบราณตู๋เค่อจง แชงกรี-ลา',
+      '17:30 เช็กอินที่พัก Shangri-La Wangshan Xiaoyuan Inn',
+      '18:15 หมุนกงล้อมนต์ทองคำยักษ์ & ชมวิวไฟกลางคืนวัดกุยซาน',
+      '19:45 ดินเนอร์หม้อไฟเนื้อจามรี & ชิมสตรีทฟู้ดเมืองโบราณ',
+      'พัก: Shangri-La Wangshan Xiaoyuan Inn'
+    ]
+  },
+  d5: {
+    title: 'แผนเที่ยววันที่ 6 (29 ต.ค. 2569)\nอุทยานแห่งชาติผู่ต๋าชั่ว แชงกรี-ลา',
+    highlights: [
+      '07:30 มื้อเช้า เดินไปขึ้นรถบัสประตูตะวันออกตู๋เค่อจง',
+      '08:20 นั่งรถบัสสู่อุทยานแห่งชาติผู่ต๋าชั่ว',
+      '09:05 ชมทะเลสาบสู่ตูหู เดินเลียบสะพานไม้ธรรมชาติ 3.3 กม.',
+      '15:00 นั่งรถบัสกลับเมืองโบราณตู๋เค่อจง',
+      '16:00 จิบชาเนยทิเบต คาเฟ่กู่เฉิงเจี่ยวลั่ว',
+      '17:30 ปิ้งย่างหินทิเบตร้านหงหง',
+      '19:30 เดินเล่นชมไฟเมืองโบราณตู๋เค่อจงยามค่ำคืน',
+      'พัก: Shangri-La Wangshan Xiaoyuan Inn'
+    ]
+  },
+  d6: {
+    title: 'แผนเที่ยววันที่ 7 (30 ต.ค. 2569)\nวัดซงจ้านหลิน & รถไฟความเร็วสูงสู่ลี่เจียง',
+    highlights: [
+      '07:30 เดินเที่ยวตลาดเช้าเซี่ยงหยาง ชิมอาหารพื้นเมือง',
+      '09:00 รถเมล์สาย 3 ไปวัดซงจ้านหลิน (พระราชวังโปตาลาน้อย)',
+      '13:30 เช็กเอาต์ เดินทางไปสถานีรถไฟความเร็วสูงแชงกรี-ลา',
+      '14:45 รถไฟความเร็วสูง C116: แชงกรี-ลา → ลี่เจียง (1 ชม. 19 นาที)',
+      '16:15 รถบัสตรงเข้าเมืองเก่าลี่เจียง เช็กอิน Qiyue Linyin Bieyuan',
+      '17:00 เดินถ่ายรูปเมืองเก่าลี่เจียง & ถนนสายร่มหลากสี',
+      '18:30 ชิมสตรีทฟู้ดตลาดโต้รุ่งจงอี้',
+      'พัก: Qiyue Linyin Bieyuan'
+    ]
+  },
+  d7: {
+    title: 'แผนเที่ยววันที่ 8 (31 ต.ค. 2569)\nลี่เจียง → คุนหมิง (เที่ยวเมืองเก่า) → กรุงเทพฯ',
+    highlights: [
+      '06:30 นั่ง DiDi ไปสนามบินลี่เจียงซานอี้ (LJG)',
+      '07:30 เช็กอินเคาน์เตอร์ China Eastern (แจ้ง Through Check-in)',
+      '10:00 บินตรงสู่คุนหมิง (เที่ยวบิน MU-5922) ถึง 11:00 น.',
+      '12:15 นั่ง Metro สาย 6 + 3 เข้าเมืองคุนหมิง',
+      '13:30 มื้อเที่ยงร้านกว่างอี้, เดินเล่นสวนสาธารณะชุ่ยหู, พิพิธภัณฑ์ทหารยูนนาน, ถนนคนเดินหนานผิง',
+      '17:15 นั่ง Metro สาย 3 + 6 กลับสนามบินคุนหมิงฉางสุ่ย (KMG)',
+      '19:00 ผ่าน ตม. ขาออก ตรวจความปลอดภัย รอขึ้นเครื่องที่เกต',
+      '21:30 เที่ยวบิน China Eastern MU-9621 บินตรงสู่กรุงเทพฯ',
+      '23:05 เดินทางถึงสนามบินสุวรรณภูมิ (BKK) โดยสวัสดิภาพ'
+    ]
+  }
+};
+
+function copyDayPlan(dayId) {
+  const plan = DAY_PLANS_SUMMARY[dayId];
+  if (!plan) return;
+
+  const textToCopy = [
+    plan.title,
+    '------------------------------',
+    ...plan.highlights.map(h => '• ' + h),
+    '------------------------------',
+    'ดูแผนเต็ม: https://yunnan-trip-2026-9g2.pages.dev/'
+  ].join('\n');
+
+  const btn = document.querySelector(`#${dayId} .btn-copy-day`);
+  const copySpan = btn ? btn.querySelector('.copy-text') : null;
+  const originalText = copySpan ? copySpan.textContent : '';
+
+  const showSuccess = () => {
+    if (btn && copySpan) {
+      btn.classList.add('copied');
+      copySpan.textContent = 'คัดลอกแล้ว ✓';
+      setTimeout(() => {
+        btn.classList.remove('copied');
+        copySpan.textContent = originalText;
+      }, 2000);
+    }
+    showCopyToast('คัดลอกสรุปสำหรับส่ง LINE เรียบร้อยแล้ว');
+  };
+
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(textToCopy).then(showSuccess).catch(() => {
+      fallbackCopy(textToCopy, showSuccess);
+    });
+  } else {
+    fallbackCopy(textToCopy, showSuccess);
+  }
+}
+
+function fallbackCopy(text, cb) {
+  const ta = document.createElement('textarea');
+  ta.value = text;
+  ta.style.position = 'fixed';
+  ta.style.left = '-9999px';
+  document.body.appendChild(ta);
+  ta.select();
+  try {
+    document.execCommand('copy');
+    if (cb) cb();
+  } catch (err) {
+    console.error('Fallback copy failed', err);
+  }
+  document.body.removeChild(ta);
+}
+
+function showCopyToast(msg) {
+  let toast = document.getElementById('copyToast');
+  if (!toast) {
+    toast = document.createElement('div');
+    toast.id = 'copyToast';
+    toast.className = 'toast-copy';
+    toast.innerHTML = `
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="20 6 9 17 4 12"></polyline>
+      </svg>
+      <span class="toast-msg"></span>
+    `;
+    document.body.appendChild(toast);
+  }
+  toast.querySelector('.toast-msg').textContent = msg;
+  toast.classList.add('active');
+  clearTimeout(toast._timer);
+  toast._timer = setTimeout(() => {
+    toast.classList.remove('active');
+  }, 2200);
 }
 
 // DAY TABS & NAVIGATION (Apple HIG Seamless Switching)
