@@ -4284,14 +4284,6 @@ h1, h2, h3, h4, h5, h6, p, li, a, span, button, div, strong {
       </div>
     </div>
 
-    <!-- DOWNLOAD MASTER EXCEL ACTION -->
-    <div style="margin-top: 24px; text-align: center;">
-      <a href="yunnan_travel_plan_2026.xlsx" download class="action-btn doc-btn" style="display: inline-flex; align-items: center; gap: 8px; padding: 10px 24px; font-size: 0.92rem; border-radius: 12px; font-weight: 600; box-shadow: 0 4px 14px rgba(0,0,0,0.08);">
-        <svg class="btn-icon" viewBox="0 0 24 24" style="width: 18px; height: 18px;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-        <span>ดาวน์โหลดแผนงบประมาณฉบับเต็ม (.xlsx)</span>
-      </a>
-    </div>
-
 
   </div>
 </section>
@@ -4470,7 +4462,7 @@ function copyDriverText() {
 // Service Worker Registration (Network-First Cache v25)
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('./sw.js?v=54').then(reg => {
+    navigator.serviceWorker.register('./sw.js?v=55').then(reg => {
       reg.update();
     }).catch(() => {});
   });
