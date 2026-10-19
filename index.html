@@ -2646,20 +2646,6 @@ h1, h2, h3, h4, h5, h6, p, li, a, span, button, div, strong {
       </div>
       <div class="timeline">
         <div class="tl-row prep">
-          <div class="tl-time">ก่อนเดินทาง</div>
-          <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
-          <div class="tl-card">
-            <div class="tl-card-title"><span class="cat-pill prep">เตรียมตัว</span>เตรียมพร้อมก่อนเดินทาง: SIM โรมมิ่ง, ประกันภัย, Alipay / WeChat Pay</div>
-            <ul class="tl-bullets">
-              <li>เปิดใช้งาน SIM โรมมิ่ง (ใช้งาน LINE, FB, Google ได้ปกติ)</li>
-              <li>ซื้อประกันภัยการเดินทาง Insurverse</li>
-              <li>ผูกบัตรเครดิตใน Alipay และ WeChat Pay ให้พร้อมใช้งาน</li>
-            </ul>
-            <div class="tags"><span class="tag info">Insurverse + SIM</span><span class="tag free">เตรียมพร้อมก่อนบิน</span></div>
-          </div>
-        </div>
-
-        <div class="tl-row prep">
           <div class="tl-time">17:50 – 20:50</div>
           <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
           <div class="tl-card">
@@ -4355,7 +4341,7 @@ function copyDriverText() {
 // Service Worker Registration (Network-First Cache v25)
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('./sw.js?v=49').then(reg => {
+    navigator.serviceWorker.register('./sw.js?v=50').then(reg => {
       reg.update();
     }).catch(() => {});
   });
