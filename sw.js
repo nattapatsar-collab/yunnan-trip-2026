@@ -1,4 +1,4 @@
-const CACHE_NAME = 'china-travel-2026-v59';
+const CACHE_NAME = 'china-travel-2026-v60';
 const ASSETS = [
   './',
   './index.html',
@@ -37,16 +37,19 @@ self.addEventListener('activate', e => {
   );
 });
 
-// Network-First: Always fetch freshest page from GitHub, fall back to offline cache
+// Network-First: Always fetch freshest page from network, fall back to offline cache
 self.addEventListener('fetch', e => {
   if (e.request.method !== 'GET') return;
+  const isNavigate = e.request.mode === 'navigate';
+  const fetchPromise = isNavigate ? fetch(e.request, { cache: 'reload' }) : fetch(e.request);
+
   e.respondWith(
-    fetch(e.request)
+    fetchPromise
       .then(res => {
         const clone = res.clone();
         caches.open(CACHE_NAME).then(cache => cache.put(e.request, clone));
         return res;
       })
-      .catch(() => caches.match(e.request))
+      .catch(() => caches.match(e.request).then(cached => cached || (isNavigate ? caches.match('./index.html') : null)))
   );
 });

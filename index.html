@@ -4460,10 +4460,18 @@ function copyDriverText() {
 
 
 
-// Service Worker Registration (Network-First Cache v25)
+// Service Worker Registration (Network-First Cache v60 with auto-reload)
 if ('serviceWorker' in navigator) {
+  let refreshing = false;
+  navigator.serviceWorker.addEventListener('controllerchange', () => {
+    if (!refreshing) {
+      refreshing = true;
+      window.location.reload();
+    }
+  });
+
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('./sw.js?v=59').then(reg => {
+    navigator.serviceWorker.register('./sw.js?v=60').then(reg => {
       reg.update();
     }).catch(() => {});
   });
@@ -4593,13 +4601,14 @@ function copyDayPlan(dayId) {
   const showSuccess = () => {
     if (btn && copySpan) {
       btn.classList.add('copied');
-      copySpan.textContent = 'คัดลอกแล้ว ✓';
+      copySpan.textContent = currentLang === 'zh' ? '已复制 ✓' : (currentLang === 'en' ? 'Copied ✓' : 'คัดลอกแล้ว ✓');
       setTimeout(() => {
         btn.classList.remove('copied');
         copySpan.textContent = originalText;
       }, 2000);
     }
-    showCopyToast('คัดลอกสรุปสำหรับส่ง LINE เรียบร้อยแล้ว');
+    const toastMsg = currentLang === 'zh' ? '已复制行程摘要，可直接发送至微信/LINE' : (currentLang === 'en' ? 'Day summary copied to clipboard!' : 'คัดลอกสรุปสำหรับส่ง LINE เรียบร้อยแล้ว');
+    showCopyToast(toastMsg);
   };
 
   if (navigator.clipboard && navigator.clipboard.writeText) {
@@ -4789,35 +4798,40 @@ const I18N_DICT = {"เที่ยวจีน 2026":{"en":"China Trip 2026","z
 let originalTextNodes = [];
 let currentLang = 'th';
 
-function initI18n() {
-  // Capture all text nodes in body once
-  const walker = document.createTreeWalker(
-    document.body,
-    NodeFilter.SHOW_TEXT,
-    {
-      acceptNode(node) {
-        const parent = node.parentElement;
-        if (!parent) return NodeFilter.FILTER_REJECT;
-        const tag = parent.tagName.toLowerCase();
-        if (tag === 'script' || tag === 'style' || tag === 'noscript') return NodeFilter.FILTER_REJECT;
-        // Don't translate inside the language switcher itself
-        if (parent.closest('#langSwitcher')) return NodeFilter.FILTER_REJECT;
-        // Don't translate pure Chinese texts inside dmZh or show-driver modals
-        if (parent.classList.contains('dm-zh') || parent.classList.contains('hl-zh')) return NodeFilter.FILTER_REJECT;
-        
-        const text = node.nodeValue.replace(/\s+/g, ' ').trim();
-        return (text.length > 0 && /[\u0E00-\u0E7F]/.test(text)) ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_SKIP;
-      }
-    }
-  );
+function collectAllThaiNodes(root) {
+  const nodes = [];
+  function traverse(el) {
+    if (!el) return;
+    try {
+      const tag = (el.tagName || '').toLowerCase();
+      if (tag === 'script' || tag === 'style' || tag === 'noscript' || tag === 'svg' || tag === 'path') return;
+      if (el.id === 'langSwitcher' || el.id === 'langDropdown') return;
+      
+      const className = typeof el.className === 'string' ? el.className : (el.className && el.className.baseVal ? el.className.baseVal : '');
+      if (className.includes('dm-zh') || className.includes('hl-zh')) return;
 
-  let n;
-  while ((n = walker.nextNode())) {
-    originalTextNodes.push({
-      node: n,
-      raw: n.nodeValue,
-      trimmed: n.nodeValue.replace(/\s+/g, ' ').trim()
-    });
+      for (let child = el.firstChild; child; child = child.nextSibling) {
+        if (child.nodeType === 3) { // Node.TEXT_NODE
+          const raw = child.nodeValue;
+          if (raw && /[\u0E00-\u0E7F]/.test(raw)) {
+            const trimmed = raw.replace(/[\s\u00A0]+/g, ' ').trim();
+            if (trimmed.length > 0) {
+              nodes.push({ node: child, raw: raw, trimmed: trimmed });
+            }
+          }
+        } else if (child.nodeType === 1) { // Node.ELEMENT_NODE
+          traverse(child);
+        }
+      }
+    } catch (err) {}
+  }
+  traverse(root);
+  return nodes;
+}
+
+function initI18n() {
+  if (!originalTextNodes || originalTextNodes.length === 0) {
+    originalTextNodes = collectAllThaiNodes(document.body);
   }
 
   // Restore preferred language
@@ -4845,6 +4859,11 @@ function setLanguage(lang, persist = true) {
   currentLang = lang;
   if (persist) {
     try { localStorage.setItem('pocket_trip_lang', lang); } catch (e) {}
+  }
+
+  // Guarantee text nodes are collected
+  if (!originalTextNodes || originalTextNodes.length === 0) {
+    originalTextNodes = collectAllThaiNodes(document.body);
   }
 
   // Update UI flags & names
