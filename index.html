@@ -331,10 +331,12 @@ body {
   font-weight: 600;
   letter-spacing: -0.01em;
   white-space: normal;
-  max-width: 74px;
+  max-width: 90px;
   text-align: center;
-  line-height: 1.2;
-  word-break: break-word;
+  line-height: 1.25;
+  word-break: normal;
+  overflow-wrap: normal;
+  line-break: strict;
 }
 
 .rs-date {
@@ -620,21 +622,29 @@ body {
 :lang(th), html[lang="th"], body {
   letter-spacing: normal !important;
   word-break: normal !important;
-  overflow-wrap: break-word !important;
-  word-wrap: break-word !important;
-  line-break: auto !important;
-  text-wrap: pretty;
+  overflow-wrap: normal !important;
+  word-wrap: normal !important;
+  line-break: strict !important;
+  text-wrap: normal !important;
 }
 
 h1, h2, h3, h4, h5, h6, p, li, a, span, button, div, strong {
   letter-spacing: normal !important;
 }
 
-.hero-title, .hero-h1, .dh-title, .tl-card-title, .section-title, .doc-title, .bc-cat, .modal-title {
+.hero-title, .hero-h1, .dh-title, .tl-card-title, .section-title, .doc-title, .bc-cat, .modal-title, .tl-bullets li, .tip-card, .bl-item, .day-summary-text, .tl-card p {
   word-break: normal !important;
-  overflow-wrap: break-word !important;
-  line-break: auto !important;
-  text-wrap: pretty;
+  overflow-wrap: normal !important;
+  word-wrap: normal !important;
+  line-break: strict !important;
+  text-wrap: normal !important;
+}
+
+/* Unbreakable atomic units */
+.nobrk, .zh-nowrap {
+  display: inline-block;
+  white-space: nowrap !important;
+  word-break: keep-all !important;
 }
 
 .tl-time {
@@ -719,8 +729,11 @@ h1, h2, h3, h4, h5, h6, p, li, a, span, button, div, strong {
   color: var(--label-primary);
   letter-spacing: -0.02em;
   margin-bottom: 2px;
-  word-break: break-word;
-  overflow-wrap: break-word;
+  word-break: normal;
+  overflow-wrap: normal;
+  word-wrap: normal;
+  line-break: strict;
+  text-wrap: normal;
 }
 
 .dh-date {
@@ -1748,8 +1761,10 @@ h1, h2, h3, h4, h5, h6, p, li, a, span, button, div, strong {
     line-height: 1.45 !important;
     margin-bottom: 3px !important;
     word-break: normal !important;
-    overflow-wrap: break-word !important;
-    line-break: relaxed !important;
+    overflow-wrap: normal !important;
+    word-wrap: normal !important;
+    line-break: strict !important;
+    text-wrap: normal !important;
   }
   .dh-date {
     font-size: 0.68rem !important;
@@ -1820,8 +1835,10 @@ h1, h2, h3, h4, h5, h6, p, li, a, span, button, div, strong {
     margin-bottom: 8px !important;
     font-weight: 700 !important;
     word-break: normal !important;
-    overflow-wrap: break-word !important;
-    line-break: relaxed !important;
+    overflow-wrap: normal !important;
+    word-wrap: normal !important;
+    line-break: strict !important;
+    text-wrap: normal !important;
   }
   .cat-pill {
     font-size: 0.68rem !important;
@@ -1842,8 +1859,10 @@ h1, h2, h3, h4, h5, h6, p, li, a, span, button, div, strong {
     padding-left: 14px !important;
     color: var(--label-primary) !important;
     word-break: normal !important;
-    overflow-wrap: break-word !important;
-    line-break: relaxed !important;
+    overflow-wrap: normal !important;
+    word-wrap: normal !important;
+    line-break: strict !important;
+    text-wrap: normal !important;
   }
   .tl-bullets li::before {
     font-size: 0.84rem !important;
@@ -1887,9 +1906,9 @@ h1, h2, h3, h4, h5, h6, p, li, a, span, button, div, strong {
     padding-bottom: 8px !important;
   }
   .hl-card {
-    flex: 0 0 250px !important;
-    width: 250px !important;
-    height: 240px !important;
+    flex: 0 0 270px !important;
+    width: 270px !important;
+    height: 245px !important;
     border-radius: 12px !important;
   }
   .hl-layer {
@@ -4503,7 +4522,7 @@ function copyDriverText() {
 
 
 
-// Service Worker Registration (Network-First Cache v66 with auto-reload)
+// Service Worker Registration (Network-First Cache v67 with auto-reload)
 if ('serviceWorker' in navigator) {
   let refreshing = false;
   navigator.serviceWorker.addEventListener('controllerchange', () => {
