@@ -1241,6 +1241,8 @@ h1, h2, h3, h4, h5, h6, p, li, a, span, button, div, strong {
   padding: 2px 7px;
   border-radius: 5px;
   letter-spacing: -0.01em;
+  background: rgba(142, 142, 147, 0.12);
+  color: #636366;
 }
 
 .tag.cost {
@@ -1271,6 +1273,26 @@ h1, h2, h3, h4, h5, h6, p, li, a, span, button, div, strong {
 .tag.star {
   background: rgba(255, 45, 85, 0.12);
   color: #D61840;
+}
+
+.tag.food {
+  background: rgba(255, 45, 85, 0.12);
+  color: #D61840;
+}
+
+.tag.taxi-t {
+  background: rgba(255, 149, 0, 0.12);
+  color: #C96800;
+}
+
+.tag.sight-t {
+  background: rgba(88, 86, 214, 0.12);
+  color: #5856D6;
+}
+
+.tag.photo {
+  background: rgba(50, 173, 230, 0.14);
+  color: #0077A6;
 }
 
 /* TAGS INSIDE HAS-BG CARDS (Apple Frosted Glass) */
@@ -4338,7 +4360,7 @@ function copyDriverText() {
 // Service Worker Registration (Network-First Cache v25)
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('./sw.js?v=46').then(reg => {
+    navigator.serviceWorker.register('./sw.js?v=47').then(reg => {
       reg.update();
     }).catch(() => {});
   });
