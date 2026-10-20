@@ -1,4 +1,4 @@
-const CACHE_NAME = 'china-travel-2026-v93';
+const CACHE_NAME = 'china-travel-2026-v94';
 const ASSETS = [
   './',
   './index.html',
@@ -17,15 +17,21 @@ const ASSETS = [
   './images/guishan_prayer_wheel.jpg',
   './images/cuihu_park.jpg',
   './images/jianxinyuan_noodles.jpg',
-  './images/bus_ticket_127073_0.jpg',
-  './images/bus_ticket_127074_0.jpg',
   './images/bus_ticket_tlg_1.jpg',
   './images/bus_ticket_tlg_2.jpg',
   './images/bus_ticket_shangrila_1.jpg',
   './images/bus_ticket_shangrila_2.jpg',
   './images/bus_ticket_meili_go.jpg',
   './images/bus_ticket_meili_return.jpg',
-  './images/train_ticket_lijiang.jpg'
+  './images/train_ticket_lijiang.jpg',
+  './images/flight_ticket_departure-1.jpg',
+  './images/flight_ticket_return-1.jpg',
+  './images/hotel_booking_tenghang-1.jpg',
+  './images/hotel_booking_longluohe-1.jpg',
+  './images/hotel_booking_qiyue_1-1.jpg',
+  './images/hotel_booking_summit-1.jpg',
+  './images/hotel_booking_wangshan-1.jpg',
+  './images/hotel_booking_qiyue_2-1.jpg'
 ];
 
 self.addEventListener('install', e => {
@@ -50,6 +56,7 @@ self.addEventListener('activate', e => {
 // Network-First: Always fetch freshest page from network, fall back to offline cache
 self.addEventListener('fetch', e => {
   if (e.request.method !== 'GET') return;
+  if (e.request.url.includes('/docs/')) return;
   const isNavigate = e.request.mode === 'navigate';
   const fetchPromise = isNavigate ? fetch(e.request, { cache: 'reload' }) : fetch(e.request);
 
