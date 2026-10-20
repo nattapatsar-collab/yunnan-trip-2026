@@ -1,4 +1,4 @@
-const CACHE_NAME = 'china-travel-2026-v90';
+const CACHE_NAME = 'china-travel-2026-v91';
 const ASSETS = [
   './',
   './index.html',
@@ -23,6 +23,8 @@ const ASSETS = [
   './images/bus_ticket_tlg_2.jpg',
   './images/bus_ticket_shangrila_1.jpg',
   './images/bus_ticket_shangrila_2.jpg',
+  './images/bus_ticket_meili_go.jpg',
+  './images/bus_ticket_meili_return.jpg',
   './images/train_ticket_lijiang.jpg'
 ];
 
