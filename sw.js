@@ -1,4 +1,4 @@
-const CACHE_NAME = 'china-travel-2026-v84';
+const CACHE_NAME = 'china-travel-2026-v85';
 const ASSETS = [
   './',
   './index.html',
@@ -18,7 +18,9 @@ const ASSETS = [
   './images/cuihu_park.jpg',
   './images/jianxinyuan_noodles.jpg',
   './images/bus_ticket_127073_0.jpg',
-  './images/bus_ticket_127074_0.jpg'
+  './images/bus_ticket_127074_0.jpg',
+  './images/bus_ticket_shangrila.jpg',
+  './images/train_ticket_lijiang.jpg'
 ];
 
 self.addEventListener('install', e => {
