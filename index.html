@@ -3834,7 +3834,7 @@ if ('serviceWorker' in navigator) {
  });
 
  window.addEventListener('load', () => {
- navigator.serviceWorker.register('./sw.js?v=98').then(reg => {
+ navigator.serviceWorker.register('./sw.js?v=99').then(reg => {
  reg.update();
  }).catch(() => {});
  });
@@ -4150,10 +4150,6 @@ window.addEventListener('scroll', () => {
  <svg class="btn-icon" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"></path><circle cx="12" cy="9" r="2.5"></circle></svg>
  <span>เปิดในแอป Amap</span>
  </button>
- <a id="amapWebLink" href="#" target="_blank" rel="noopener" class="dm-map-btn">
- <svg class="btn-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
- <span>เปิดในเว็บเบราว์เซอร์ (Amap Web ↗)</span>
- </a>
  <button type="button" class="dm-copy-outline-btn" onclick="copyCurrentAmapZh()">
  <svg class="btn-icon" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
  <span>คัดลอกชื่อภาษาจีน</span>
