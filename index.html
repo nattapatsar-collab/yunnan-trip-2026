@@ -2568,17 +2568,17 @@ h1, h2, h3, h4, h5, h6, p, li, a, span, button, div, strong {
 
 
 
-br
-@media (max-width: 768px) {
-  br
+/* Mobile-only Line Break: only breaks on mobile devices (<= 768px), hidden on desktop */
+.mobile-br {
+  display: none !important;
 }
 
-
-
-.mobile-br {
-  display: block !important;
-  content: "" !important;
-  margin-top: 2px !important;
+@media (max-width: 768px) {
+  .mobile-br {
+    display: block !important;
+    content: "" !important;
+    margin-top: 2px !important;
+  }
 }
 
 </style>
@@ -4649,7 +4649,7 @@ if ('serviceWorker' in navigator) {
  });
 
  window.addEventListener('load', () => {
- navigator.serviceWorker.register('./sw.js?v=86').then(reg => {
+ navigator.serviceWorker.register('./sw.js?v=87').then(reg => {
  reg.update();
  }).catch(() => {});
  });
