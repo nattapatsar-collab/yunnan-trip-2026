@@ -2634,18 +2634,7 @@ h1, h2, h3, h4, h5, h6, p, li, a, span, button, div, strong {
  <span class="logo-main">เที่ยวจีน 2026</span>
  <span class="logo-sub">Yunnan Travel 2026</span>
  </div>
- <ul class="nav-links">
- <li><a href="#itinerary" class="nav-link">กำหนดการ</a></li>
- <li><a href="#documents" class="nav-link">เอกสารการจอง</a></li>
- <li class="mobile-lang-row">
- <div class="mobile-lang-title">เลือกภาษา / Language / 语言</div>
- <div class="mobile-lang-group">
- <button type="button" class="mobile-lang-btn active" data-lang="th" onclick="setLanguage('th'); closeMobileNav();" style="white-space:nowrap;"><span class="lang-opt-badge">TH</span><span style="white-space:nowrap;">ไทย</span></button>
- <button type="button" class="mobile-lang-btn" data-lang="zh" onclick="setLanguage('zh'); closeMobileNav();" style="white-space:nowrap;"><span class="lang-opt-badge">ZH</span><span style="white-space:nowrap;">中文</span></button>
- <button type="button" class="mobile-lang-btn" data-lang="en" onclick="setLanguage('en'); closeMobileNav();" style="white-space:nowrap;"><span class="lang-opt-badge">EN</span><span style="white-space:nowrap;">English</span></button>
- </div>
- </li>
- </ul>
+ 
  <div class="lang-switcher" id="langSwitcher">
  <button type="button" class="lang-btn" id="langBtn" aria-label="เลือกภาษา / Change Language" onclick="toggleLangDropdown(event)">
  <svg class="lang-globe-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
@@ -2668,9 +2657,7 @@ h1, h2, h3, h4, h5, h6, p, li, a, span, button, div, strong {
  </button>
  </div>
  </div>
- <button class="nav-toggle" id="navToggle" aria-label="เปิดเมนู">
- <span></span><span></span><span></span>
- </button>
+ 
  </div>
 </nav>
 
@@ -3673,10 +3660,12 @@ window.addEventListener('scroll', () => {
 // MOBILE NAV
 const navToggle = document.getElementById('navToggle');
 const navLinks = document.querySelector('.nav-links');
-navToggle.addEventListener('click', () => {
- navLinks.classList.toggle('open');
- navToggle.classList.toggle('active');
-});
+if (navToggle && navLinks) {
+ navToggle.addEventListener('click', () => {
+  navLinks.classList.toggle('open');
+  navToggle.classList.toggle('active');
+ });
+}
 document.querySelectorAll('.nav-link').forEach(l => {
  l.addEventListener('click', () => {
  navLinks.classList.remove('open');
@@ -3845,7 +3834,7 @@ if ('serviceWorker' in navigator) {
  });
 
  window.addEventListener('load', () => {
- navigator.serviceWorker.register('./sw.js?v=97').then(reg => {
+ navigator.serviceWorker.register('./sw.js?v=98').then(reg => {
  reg.update();
  }).catch(() => {});
  });
