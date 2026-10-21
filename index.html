@@ -2178,6 +2178,18 @@ h1, h2, h3, h4, h5, h6, p, li, a, span, button, div, strong {
  background: rgba(0, 113, 227, 0.1);
  color: #0071E3;
 }
+.doc-icon.hotel {
+ background: rgba(88, 86, 214, 0.1);
+ color: #5856D6;
+}
+.doc-icon.bus {
+ background: rgba(52, 199, 89, 0.1);
+ color: #156A2E;
+}
+.doc-icon.train {
+ background: rgba(255, 149, 0, 0.1);
+ color: #C96800;
+}
 .doc-info {
  flex: 1 1 auto;
 }
@@ -2727,241 +2739,7 @@ h1, h2, h3, h4, h5, h6, p, li, a, span, button, div, strong {
  </div>
 </section>
 
-<!-- ============ DOCUMENTS & BOOKING EVIDENCE SECTION ============ -->
-<section id="documents" class="section section-alt" style="padding-top: 36px; padding-bottom: 50px;">
-  <div class="container">
-    <div class="section-header" style="margin-bottom: 24px;">
-      <span class="section-label">Travel & Hotel Documents</span>
-      <h2 class="section-title">เอกสารการจอง & ตั๋วเดินทาง</h2>
-      <p class="section-desc" style="font-size:0.88rem; color:var(--label-secondary); margin-top:4px;">
-        หลักฐานการจองที่พัก 7 คืน + ตั๋วเครื่องบินและยานพาหนะทั้งหมด เปิดดูได้ทันที
-      </p>
-    </div>
 
-    <!-- Group 1: Hotel Bookings -->
-    <div style="margin-bottom: 30px;">
-      <div style="display:flex; align-items:center; gap:8px; margin-bottom:14px;">
-        <span style="font-size:1.15rem;">🏨</span>
-        <h3 style="font-size:1.05rem; font-weight:700; color:var(--label-primary);">หลักฐานการจองที่พัก (7 คืน)</h3>
-      </div>
-      <div class="doc-grid">
-        <!-- Hotel 1: Tenghang -->
-        <div class="doc-card">
-          <div class="doc-card-head">
-            <div class="doc-icon">🏨</div>
-            <div class="doc-info">
-              <div class="doc-title">Tenghang Hotel (昆明长水机场店)</div>
-              <div class="doc-sub">คืนที่ 1 (24–25 ต.ค.) · คุนหมิง (ใกล้สนามบิน)</div>
-            </div>
-          </div>
-          <div class="doc-btns">
-            <a href="images/hotel_booking_tenghang-1.jpg" onclick="event.preventDefault(); openImageModal('images/hotel_booking_tenghang-1.jpg', 'เอกสารเช็กอิน Tenghang Hotel', 'docs/腾航大酒店(昆明长水国际机场店).pdf', ['images/hotel_booking_tenghang-1.jpg', 'images/hotel_booking_tenghang-2.jpg']);" target="_blank" rel="noopener" class="action-btn doc-btn"><svg class="btn-icon" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v17a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg><span>เอกสารเช็กอิน</span></a>
-            <a href="https://surl.amap.com/48Hbodgzb6l" onclick="event.preventDefault(); openAmapModal('腾航大酒店(昆明长水国际机场店)', 'Tenghang Hotel คุนหมิงฉางสุ่ย', 'https://surl.amap.com/48Hbodgzb6l');" target="_blank" rel="noopener" class="action-btn map-btn"><svg class="btn-icon" viewBox="0 0 24 24"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon><line x1="8" y1="2" x2="8" y2="18"></line><line x1="16" y1="6" x2="16" y2="22"></line></svg><span>Amap</span></a>
-          </div>
-        </div>
-
-        <!-- Hotel 2: Longluohe -->
-        <div class="doc-card">
-          <div class="doc-card-head">
-            <div class="doc-icon">🏡</div>
-            <div class="doc-info">
-              <div class="doc-title">Longluohe Homestay (丽江三义机场店)</div>
-              <div class="doc-sub">คืนที่ 2 (25–26 ต.ค.) · ลี่เจียง (ใกล้สนามบิน)</div>
-            </div>
-          </div>
-          <div class="doc-btns">
-            <a href="images/hotel_booking_longluohe-1.jpg" onclick="event.preventDefault(); openImageModal('images/hotel_booking_longluohe-1.jpg', 'เอกสารเช็กอิน Longluohe Homestay', 'docs/丽江龙落河民宿(三义国际机场店).pdf', ['images/hotel_booking_longluohe-1.jpg', 'images/hotel_booking_longluohe-2.jpg']);" target="_blank" rel="noopener" class="action-btn doc-btn"><svg class="btn-icon" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v17a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg><span>เอกสารเช็กอิน</span></a>
-            <a href="https://surl.amap.com/3QbFK2i1b1v8" onclick="event.preventDefault(); openAmapModal('丽江龙落河客栈(三义机场店)', 'Longluohe Homestay ใกล้สนามบินลี่เจียง', 'https://surl.amap.com/3QbFK2i1b1v8');" target="_blank" rel="noopener" class="action-btn map-btn"><svg class="btn-icon" viewBox="0 0 24 24"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon><line x1="8" y1="2" x2="8" y2="18"></line><line x1="16" y1="6" x2="16" y2="22"></line></svg><span>Amap</span></a>
-          </div>
-        </div>
-
-        <!-- Hotel 3: Qiyue 1 -->
-        <div class="doc-card">
-          <div class="doc-card-head">
-            <div class="doc-icon">🏮</div>
-            <div class="doc-info">
-              <div class="doc-title">Qiyue Linyin Bieyuan 1 (丽江古城店)</div>
-              <div class="doc-sub">คืนที่ 3 (26–27 ต.ค.) · เมืองเก่าลี่เจียง (ตลาดจงอี้)</div>
-            </div>
-          </div>
-          <div class="doc-btns">
-            <a href="images/hotel_booking_qiyue_1-1.jpg" onclick="event.preventDefault(); openImageModal('images/hotel_booking_qiyue_1-1.jpg', 'เอกสารเช็กอิน Qiyue Linyin Bieyuan 1', 'docs/栖悦林隐别院(丽江古城忠义市场店) 1.pdf', ['images/hotel_booking_qiyue_1-1.jpg', 'images/hotel_booking_qiyue_1-2.jpg']);" target="_blank" rel="noopener" class="action-btn doc-btn"><svg class="btn-icon" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v17a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg><span>เอกสารเช็กอิน</span></a>
-            <a href="https://surl.amap.com/288adkVI13apU" onclick="event.preventDefault(); openAmapModal('丽江栖悦林隐别院', 'โรงแรม Qiyue Linyin Bieyuan เมืองเก่าลี่เจียง', 'https://surl.amap.com/288adkVI13apU');" target="_blank" rel="noopener" class="action-btn map-btn"><svg class="btn-icon" viewBox="0 0 24 24"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon><line x1="8" y1="2" x2="8" y2="18"></line><line x1="16" y1="6" x2="16" y2="22"></line></svg><span>Amap</span></a>
-          </div>
-        </div>
-
-        <!-- Hotel 4: Summit Inn -->
-        <div class="doc-card">
-          <div class="doc-card-head">
-            <div class="doc-icon">⛰️</div>
-            <div class="doc-info">
-              <div class="doc-title">Summit Inn (虎跳峡山美客栈)</div>
-              <div class="doc-sub">คืนที่ 4 (27–28 ต.ค.) · ช่องแคบเสือกระโจนริมผา</div>
-            </div>
-          </div>
-          <div class="doc-btns">
-            <a href="images/hotel_booking_summit-1.jpg" onclick="event.preventDefault(); openImageModal('images/hotel_booking_summit-1.jpg', 'เอกสารเช็กอิน Summit Inn', 'docs/虎跳峡山美客栈(虎跳峡景区店).pdf', ['images/hotel_booking_summit-1.jpg']);" target="_blank" rel="noopener" class="action-btn doc-btn"><svg class="btn-icon" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v17a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg><span>เอกสารเช็กอิน</span></a>
-            <a href="https://surl.amap.com/4vW03M2meNH" onclick="event.preventDefault(); openAmapModal('虎跳峡山美客栈', 'Summit Inn ช่องแคบเสือกระโจน', 'https://surl.amap.com/4vW03M2meNH');" target="_blank" rel="noopener" class="action-btn map-btn"><svg class="btn-icon" viewBox="0 0 24 24"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon><line x1="8" y1="2" x2="8" y2="18"></line><line x1="16" y1="6" x2="16" y2="22"></line></svg><span>Amap</span></a>
-          </div>
-        </div>
-
-        <!-- Hotel 5: Wangshan Xiaoyuan -->
-        <div class="doc-card">
-          <div class="doc-card-head">
-            <div class="doc-icon">🏔️</div>
-            <div class="doc-info">
-              <div class="doc-title">Wangshan Xiaoyuan (香格里拉独克宗店)</div>
-              <div class="doc-sub">คืนที่ 5 (28–29 ต.ค.) · เมืองโบราณตู๋เค่อจง แชงกรี-ลา</div>
-            </div>
-          </div>
-          <div class="doc-btns">
-            <a href="images/hotel_booking_wangshan-1.jpg" onclick="event.preventDefault(); openImageModal('images/hotel_booking_wangshan-1.jpg', 'เอกสารเช็กอิน Wangshan Xiaoyuan', 'docs/香格里拉望山小院客栈(独克宗古城店).pdf', ['images/hotel_booking_wangshan-1.jpg', 'images/hotel_booking_wangshan-2.jpg']);" target="_blank" rel="noopener" class="action-btn doc-btn"><svg class="btn-icon" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v17a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg><span>เอกสารเช็กอิน</span></a>
-            <a href="https://surl.amap.com/4GV1nLEf6q5" onclick="event.preventDefault(); openAmapModal('香格里拉望山小院客栈(独克宗古城店)', 'Wangshan Xiaoyuan Inn เมืองโบราณตู๋เค่อจง', 'https://surl.amap.com/4GV1nLEf6q5');" target="_blank" rel="noopener" class="action-btn map-btn"><svg class="btn-icon" viewBox="0 0 24 24"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon><line x1="8" y1="2" x2="8" y2="18"></line><line x1="16" y1="6" x2="16" y2="22"></line></svg><span>Amap</span></a>
-          </div>
-        </div>
-
-        <!-- Hotel 6: Baqin Duji -->
-        <div class="doc-card">
-          <div class="doc-card-head">
-            <div class="doc-icon">❄️</div>
-            <div class="doc-info">
-              <div class="doc-title">Baqin Duji Boutique B&B (飞来寺店)</div>
-              <div class="doc-sub">คืนที่ 6 (29–30 ต.ค.) · วิวเทือกเขาหิมะเหมยลี่ เฟยไหลซื่อ</div>
-            </div>
-          </div>
-          <div class="doc-btns">
-            <a href="images/hotel_booking_baqin-1.jpg" onclick="event.preventDefault(); openImageModal('images/hotel_booking_baqin-1.jpg', 'เอกสารเช็กอิน Baqin Duji Boutique B&B', 'docs/巴钦都吉精品民宿(飞来寺店).pdf', ['images/hotel_booking_baqin-1.jpg']);" target="_blank" rel="noopener" class="action-btn doc-btn"><svg class="btn-icon" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v17a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg><span>เอกสารเช็กอิน</span></a>
-            <a href="https://surl.amap.com/j79yoYS1idd3" onclick="event.preventDefault(); openAmapModal('德钦巴钦都吉精品民宿', 'Baqin Duji Boutique B&B เฟยไหลซื่อ', 'https://surl.amap.com/j79yoYS1idd3');" target="_blank" rel="noopener" class="action-btn map-btn"><svg class="btn-icon" viewBox="0 0 24 24"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon><line x1="8" y1="2" x2="8" y2="18"></line><line x1="16" y1="6" x2="16" y2="22"></line></svg><span>Amap</span></a>
-          </div>
-        </div>
-
-        <!-- Hotel 7: Qiyue 2 -->
-        <div class="doc-card">
-          <div class="doc-card-head">
-            <div class="doc-icon">🏮</div>
-            <div class="doc-info">
-              <div class="doc-title">Qiyue Linyin Bieyuan 2 (丽江古城店)</div>
-              <div class="doc-sub">คืนที่ 7 (30–31 ต.ค.) · เมืองเก่าลี่เจียง (รอบที่ 2)</div>
-            </div>
-          </div>
-          <div class="doc-btns">
-            <a href="images/hotel_booking_qiyue_2-1.jpg" onclick="event.preventDefault(); openImageModal('images/hotel_booking_qiyue_2-1.jpg', 'เอกสารเช็กอิน Qiyue Linyin Bieyuan 2', 'docs/栖悦林隐别院(丽江古城忠义市场店) 2.pdf', ['images/hotel_booking_qiyue_2-1.jpg', 'images/hotel_booking_qiyue_2-2.jpg']);" target="_blank" rel="noopener" class="action-btn doc-btn"><svg class="btn-icon" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v17a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg><span>เอกสารเช็กอิน</span></a>
-            <a href="https://surl.amap.com/288adkVI13apU" onclick="event.preventDefault(); openAmapModal('丽江栖悦林隐别院', 'โรงแรม Qiyue Linyin Bieyuan เมืองเก่าลี่เจียง', 'https://surl.amap.com/288adkVI13apU');" target="_blank" rel="noopener" class="action-btn map-btn"><svg class="btn-icon" viewBox="0 0 24 24"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon><line x1="8" y1="2" x2="8" y2="18"></line><line x1="16" y1="6" x2="16" y2="22"></line></svg><span>Amap</span></a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Group 2: Transport & Flight Tickets -->
-    <div>
-      <div style="display:flex; align-items:center; gap:8px; margin-bottom:14px;">
-        <span style="font-size:1.15rem;">✈️</span>
-        <h3 style="font-size:1.05rem; font-weight:700; color:var(--label-primary);">หลักฐานการเดินทาง (ตั๋วเครื่องบิน & ยานพาหนะ)</h3>
-      </div>
-      <div class="doc-grid">
-        <!-- Flight Departure -->
-        <div class="doc-card">
-          <div class="doc-card-head">
-            <div class="doc-icon flight"><svg class="btn-icon" viewBox="0 0 24 24"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.3c.4-.2.6-.6.5-1.1z"/></svg></div>
-            <div class="doc-info">
-              <div class="doc-title">ตั๋วเครื่องบิน ขาไป (BKK → KMG → LJG)</div>
-              <div class="doc-sub">24–25 ต.ค. · China Eastern (MU-9614 + MU-5923)</div>
-            </div>
-          </div>
-          <div class="doc-btns">
-            <a href="images/flight_ticket_departure-1.jpg" onclick="event.preventDefault(); openImageModal('images/flight_ticket_departure-1.jpg', 'E-Ticket ขาไป (BKK → KMG → LJG)', 'docs/FLIGHT%231-Nattpat%20Saripat-BKK-QXC4PT-LJG-FLIGHT_ORIGINATING.pdf', ['images/flight_ticket_departure-1.jpg', 'images/flight_ticket_departure-2.jpg', 'images/flight_ticket_departure-3.jpg']);" target="_blank" rel="noopener" class="action-btn doc-btn"><svg class="btn-icon" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v17a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg><span>E-Ticket</span></a>
-          </div>
-        </div>
-
-        <!-- Bus TLG -->
-        <div class="doc-card">
-          <div class="doc-card-head">
-            <div class="doc-icon">🚌</div>
-            <div class="doc-info">
-              <div class="doc-title">ตั๋วรถบัส ลี่เจียง → ช่องแคบเสือกระโจน</div>
-              <div class="doc-sub">27 ต.ค. (07:35 น.) · รถ 云R26248 (2 ที่นั่ง)</div>
-            </div>
-          </div>
-          <div class="doc-btns">
-            <a href="images/bus_ticket_tlg_1.jpg" onclick="event.preventDefault(); openImageModal('images/bus_ticket_tlg_1.jpg', 'ตั๋วรถบัส 1 (云R26248)');" target="_blank" rel="noopener" class="action-btn doc-btn"><svg class="btn-icon" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v17a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg><span>ตั๋วรถบัส 1</span></a>
-            <a href="images/bus_ticket_tlg_2.jpg" onclick="event.preventDefault(); openImageModal('images/bus_ticket_tlg_2.jpg', 'ตั๋วรถบัส 2 (云R26248)');" target="_blank" rel="noopener" class="action-btn doc-btn"><svg class="btn-icon" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v17a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg><span>ตั๋วรถบัส 2</span></a>
-          </div>
-        </div>
-
-        <!-- Bus Shangri-La -->
-        <div class="doc-card">
-          <div class="doc-card-head">
-            <div class="doc-icon">🚌</div>
-            <div class="doc-info">
-              <div class="doc-title">ตั๋วรถบัส เสือกระโจน → แชงกรี-ลา</div>
-              <div class="doc-sub">28 ต.ค. (15:30 น.) · รถ 云RX8288 (2 ที่นั่ง)</div>
-            </div>
-          </div>
-          <div class="doc-btns">
-            <a href="images/bus_ticket_shangrila_1.jpg" onclick="event.preventDefault(); openImageModal('images/bus_ticket_shangrila_1.jpg', 'ตั๋วรถบัส 1 (云RX8288)');" target="_blank" rel="noopener" class="action-btn doc-btn"><svg class="btn-icon" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v17a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg><span>ตั๋วรถบัส 1</span></a>
-            <a href="images/bus_ticket_shangrila_2.jpg" onclick="event.preventDefault(); openImageModal('images/bus_ticket_shangrila_2.jpg', 'ตั๋วรถบัส 2 (云RX8288)');" target="_blank" rel="noopener" class="action-btn doc-btn"><svg class="btn-icon" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v17a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg><span>ตั๋วรถบัส 2</span></a>
-          </div>
-        </div>
-
-        <!-- Bus Meili Go -->
-        <div class="doc-card">
-          <div class="doc-card-head">
-            <div class="doc-icon">🚌</div>
-            <div class="doc-info">
-              <div class="doc-title">ตั๋วรถบัส แชงกรี-ลา → เหมยลี่ (ขาไป)</div>
-              <div class="doc-sub">29 ต.ค. (14:30 น.) · รถ 云R22662 (ประตูตะวันออก)</div>
-            </div>
-          </div>
-          <div class="doc-btns">
-            <a href="images/bus_ticket_meili_go.jpg" onclick="event.preventDefault(); openImageModal('images/bus_ticket_meili_go.jpg', 'ตั๋วรถบัส แชงกรี-ลา → เหมยลี่ (ขาไป)');" target="_blank" rel="noopener" class="action-btn doc-btn"><svg class="btn-icon" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v17a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg><span>ตั๋วขาไป</span></a>
-          </div>
-        </div>
-
-        <!-- Bus Meili Return -->
-        <div class="doc-card">
-          <div class="doc-card-head">
-            <div class="doc-icon">🚌</div>
-            <div class="doc-info">
-              <div class="doc-title">ตั๋วรถบัส เหมยลี่ → แชงกรี-ลา (ขากลับ)</div>
-              <div class="doc-sub">30 ต.ค. (09:30 น.) · รถ 云R22662 (กลับตู๋เค่อจง)</div>
-            </div>
-          </div>
-          <div class="doc-btns">
-            <a href="images/bus_ticket_meili_return.jpg" onclick="event.preventDefault(); openImageModal('images/bus_ticket_meili_return.jpg', 'ตั๋วรถบัส เหมยลี่ → แชงกรี-ลา (ขากลับ)');" target="_blank" rel="noopener" class="action-btn doc-btn"><svg class="btn-icon" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v17a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg><span>ตั๋วขากลับ</span></a>
-          </div>
-        </div>
-
-        <!-- Train C88 -->
-        <div class="doc-card">
-          <div class="doc-card-head">
-            <div class="doc-icon">🚄</div>
-            <div class="doc-info">
-              <div class="doc-title">ตั๋วรถไฟความเร็วสูง C88 (แชงกรี-ลา → ลี่เจียง)</div>
-              <div class="doc-sub">30 ต.ค. (17:25–18:35 น.) · ขบวน C88 ตู้ 16</div>
-            </div>
-          </div>
-          <div class="doc-btns">
-            <a href="images/train_ticket_lijiang.jpg" onclick="event.preventDefault(); openImageModal('images/train_ticket_lijiang.jpg', 'ตั๋วรถไฟความเร็วสูง C88: แชงกรี-ลา → ลี่เจียง');" target="_blank" rel="noopener" class="action-btn doc-btn"><svg class="btn-icon" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v17a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg><span>ตั๋วรถไฟ C88</span></a>
-          </div>
-        </div>
-
-        <!-- Flight Return -->
-        <div class="doc-card">
-          <div class="doc-card-head">
-            <div class="doc-icon flight"><svg class="btn-icon" viewBox="0 0 24 24"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.3c.4-.2.6-.6.5-1.1z"/></svg></div>
-            <div class="doc-info">
-              <div class="doc-title">ตั๋วเครื่องบิน ขากลับ (LJG → KMG → BKK)</div>
-              <div class="doc-sub">31 ต.ค. · China Eastern (MU-5922 + MU-9621)</div>
-            </div>
-          </div>
-          <div class="doc-btns">
-            <a href="images/flight_ticket_return-1.jpg" onclick="event.preventDefault(); openImageModal('images/flight_ticket_return-1.jpg', 'E-Ticket ขากลับ (LJG → KMG → BKK)', 'docs/FLIGHT%232-Nattpat%20Saripat-BKK-QXC4PT-LJG-FLIGHT_RETURNING.pdf', ['images/flight_ticket_return-1.jpg', 'images/flight_ticket_return-2.jpg', 'images/flight_ticket_return-3.jpg']);" target="_blank" rel="noopener" class="action-btn doc-btn"><svg class="btn-icon" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v17a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg><span>E-Ticket</span></a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
 
 <!-- ============ ITINERARY ============ -->
@@ -3887,6 +3665,240 @@ h1, h2, h3, h4, h5, h6, p, li, a, span, button, div, strong {
  </div>
  </div>
 </section>
+
+<!-- ============ DOCUMENTS & BOOKING EVIDENCE SECTION ============ -->
+<section id="documents" class="section section-alt" style="padding-top: 36px; padding-bottom: 50px;">
+  <div class="container">
+    <div class="section-header" style="margin-bottom: 24px;">
+      <span class="section-label">Travel & Hotel Documents</span>
+      <h2 class="section-title">เอกสารการจอง & ตั๋วเดินทาง</h2>
+    </div>
+
+    <!-- Group 1: Hotel Bookings -->
+    <div style="margin-bottom: 30px;">
+      <div style="display:flex; align-items:center; gap:8px; margin-bottom:14px;">
+        <span style="color:#5856D6; display:inline-flex; align-items:center;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M3 21h18M3 7v14M21 7v14M6 11h2M6 15h2M11 11h2M11 15h2M16 11h2M16 15h2M9 3h6v4H9z"/></svg></span>
+        <h3 style="font-size:1.05rem; font-weight:700; color:var(--label-primary);">หลักฐานการจองที่พัก (7 คืน)</h3>
+      </div>
+      <div class="doc-grid">
+        <!-- Hotel 1: Tenghang -->
+        <div class="doc-card">
+          <div class="doc-card-head">
+            <div class="doc-icon hotel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M3 21h18M3 7v14M21 7v14M6 11h2M6 15h2M11 11h2M11 15h2M16 11h2M16 15h2M9 3h6v4H9z"/></svg></div>
+            <div class="doc-info">
+              <div class="doc-title">Tenghang Hotel (昆明长水机场店)</div>
+              <div class="doc-sub">คืนที่ 1 (24–25 ต.ค.) · คุนหมิง (ใกล้สนามบิน)</div>
+            </div>
+          </div>
+          <div class="doc-btns">
+            <a href="images/hotel_booking_tenghang-1.jpg" onclick="event.preventDefault(); openImageModal('images/hotel_booking_tenghang-1.jpg', 'เอกสารเช็กอิน Tenghang Hotel', 'docs/腾航大酒店(昆明长水国际机场店).pdf', ['images/hotel_booking_tenghang-1.jpg', 'images/hotel_booking_tenghang-2.jpg']);" target="_blank" rel="noopener" class="action-btn doc-btn"><svg class="btn-icon" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v17a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg><span>เอกสารเช็กอิน</span></a>
+            <a href="https://surl.amap.com/48Hbodgzb6l" onclick="event.preventDefault(); openAmapModal('腾航大酒店(昆明长水国际机场店)', 'Tenghang Hotel คุนหมิงฉางสุ่ย', 'https://surl.amap.com/48Hbodgzb6l');" target="_blank" rel="noopener" class="action-btn map-btn"><svg class="btn-icon" viewBox="0 0 24 24"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon><line x1="8" y1="2" x2="8" y2="18"></line><line x1="16" y1="6" x2="16" y2="22"></line></svg><span>Amap</span></a>
+          </div>
+        </div>
+
+        <!-- Hotel 2: Longluohe -->
+        <div class="doc-card">
+          <div class="doc-card-head">
+            <div class="doc-icon hotel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M3 21h18M3 7v14M21 7v14M6 11h2M6 15h2M11 11h2M11 15h2M16 11h2M16 15h2M9 3h6v4H9z"/></svg></div>
+            <div class="doc-info">
+              <div class="doc-title">Longluohe Homestay (丽江三义机场店)</div>
+              <div class="doc-sub">คืนที่ 2 (25–26 ต.ค.) · ลี่เจียง (ใกล้สนามบิน)</div>
+            </div>
+          </div>
+          <div class="doc-btns">
+            <a href="images/hotel_booking_longluohe-1.jpg" onclick="event.preventDefault(); openImageModal('images/hotel_booking_longluohe-1.jpg', 'เอกสารเช็กอิน Longluohe Homestay', 'docs/丽江龙落河民宿(三义国际机场店).pdf', ['images/hotel_booking_longluohe-1.jpg', 'images/hotel_booking_longluohe-2.jpg']);" target="_blank" rel="noopener" class="action-btn doc-btn"><svg class="btn-icon" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v17a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg><span>เอกสารเช็กอิน</span></a>
+            <a href="https://surl.amap.com/3QbFK2i1b1v8" onclick="event.preventDefault(); openAmapModal('丽江龙落河客栈(三义机场店)', 'Longluohe Homestay ใกล้สนามบินลี่เจียง', 'https://surl.amap.com/3QbFK2i1b1v8');" target="_blank" rel="noopener" class="action-btn map-btn"><svg class="btn-icon" viewBox="0 0 24 24"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon><line x1="8" y1="2" x2="8" y2="18"></line><line x1="16" y1="6" x2="16" y2="22"></line></svg><span>Amap</span></a>
+          </div>
+        </div>
+
+        <!-- Hotel 3: Qiyue 1 -->
+        <div class="doc-card">
+          <div class="doc-card-head">
+            <div class="doc-icon hotel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M3 21h18M3 7v14M21 7v14M6 11h2M6 15h2M11 11h2M11 15h2M16 11h2M16 15h2M9 3h6v4H9z"/></svg></div>
+            <div class="doc-info">
+              <div class="doc-title">Qiyue Linyin Bieyuan 1 (丽江古城店)</div>
+              <div class="doc-sub">คืนที่ 3 (26–27 ต.ค.) · เมืองเก่าลี่เจียง (ตลาดจงอี้)</div>
+            </div>
+          </div>
+          <div class="doc-btns">
+            <a href="images/hotel_booking_qiyue_1-1.jpg" onclick="event.preventDefault(); openImageModal('images/hotel_booking_qiyue_1-1.jpg', 'เอกสารเช็กอิน Qiyue Linyin Bieyuan 1', 'docs/栖悦林隐别院(丽江古城忠义市场店) 1.pdf', ['images/hotel_booking_qiyue_1-1.jpg', 'images/hotel_booking_qiyue_1-2.jpg']);" target="_blank" rel="noopener" class="action-btn doc-btn"><svg class="btn-icon" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v17a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg><span>เอกสารเช็กอิน</span></a>
+            <a href="https://surl.amap.com/288adkVI13apU" onclick="event.preventDefault(); openAmapModal('丽江栖悦林隐别院', 'โรงแรม Qiyue Linyin Bieyuan เมืองเก่าลี่เจียง', 'https://surl.amap.com/288adkVI13apU');" target="_blank" rel="noopener" class="action-btn map-btn"><svg class="btn-icon" viewBox="0 0 24 24"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon><line x1="8" y1="2" x2="8" y2="18"></line><line x1="16" y1="6" x2="16" y2="22"></line></svg><span>Amap</span></a>
+          </div>
+        </div>
+
+        <!-- Hotel 4: Summit Inn -->
+        <div class="doc-card">
+          <div class="doc-card-head">
+            <div class="doc-icon hotel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M3 21h18M3 7v14M21 7v14M6 11h2M6 15h2M11 11h2M11 15h2M16 11h2M16 15h2M9 3h6v4H9z"/></svg></div>
+            <div class="doc-info">
+              <div class="doc-title">Summit Inn (虎跳峡山美客栈)</div>
+              <div class="doc-sub">คืนที่ 4 (27–28 ต.ค.) · ช่องแคบเสือกระโจนริมผา</div>
+            </div>
+          </div>
+          <div class="doc-btns">
+            <a href="images/hotel_booking_summit-1.jpg" onclick="event.preventDefault(); openImageModal('images/hotel_booking_summit-1.jpg', 'เอกสารเช็กอิน Summit Inn', 'docs/虎跳峡山美客栈(虎跳峡景区店).pdf', ['images/hotel_booking_summit-1.jpg']);" target="_blank" rel="noopener" class="action-btn doc-btn"><svg class="btn-icon" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v17a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg><span>เอกสารเช็กอิน</span></a>
+            <a href="https://surl.amap.com/4vW03M2meNH" onclick="event.preventDefault(); openAmapModal('虎跳峡山美客栈', 'Summit Inn ช่องแคบเสือกระโจน', 'https://surl.amap.com/4vW03M2meNH');" target="_blank" rel="noopener" class="action-btn map-btn"><svg class="btn-icon" viewBox="0 0 24 24"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon><line x1="8" y1="2" x2="8" y2="18"></line><line x1="16" y1="6" x2="16" y2="22"></line></svg><span>Amap</span></a>
+          </div>
+        </div>
+
+        <!-- Hotel 5: Wangshan Xiaoyuan -->
+        <div class="doc-card">
+          <div class="doc-card-head">
+            <div class="doc-icon hotel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M3 21h18M3 7v14M21 7v14M6 11h2M6 15h2M11 11h2M11 15h2M16 11h2M16 15h2M9 3h6v4H9z"/></svg></div>
+            <div class="doc-info">
+              <div class="doc-title">Wangshan Xiaoyuan (香格里拉独克宗店)</div>
+              <div class="doc-sub">คืนที่ 5 (28–29 ต.ค.) · เมืองโบราณตู๋เค่อจง แชงกรี-ลา</div>
+            </div>
+          </div>
+          <div class="doc-btns">
+            <a href="images/hotel_booking_wangshan-1.jpg" onclick="event.preventDefault(); openImageModal('images/hotel_booking_wangshan-1.jpg', 'เอกสารเช็กอิน Wangshan Xiaoyuan', 'docs/香格里拉望山小院客栈(独克宗古城店).pdf', ['images/hotel_booking_wangshan-1.jpg', 'images/hotel_booking_wangshan-2.jpg']);" target="_blank" rel="noopener" class="action-btn doc-btn"><svg class="btn-icon" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v17a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg><span>เอกสารเช็กอิน</span></a>
+            <a href="https://surl.amap.com/4GV1nLEf6q5" onclick="event.preventDefault(); openAmapModal('香格里拉望山小院客栈(独克宗古城店)', 'Wangshan Xiaoyuan Inn เมืองโบราณตู๋เค่อจง', 'https://surl.amap.com/4GV1nLEf6q5');" target="_blank" rel="noopener" class="action-btn map-btn"><svg class="btn-icon" viewBox="0 0 24 24"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon><line x1="8" y1="2" x2="8" y2="18"></line><line x1="16" y1="6" x2="16" y2="22"></line></svg><span>Amap</span></a>
+          </div>
+        </div>
+
+        <!-- Hotel 6: Baqin Duji -->
+        <div class="doc-card">
+          <div class="doc-card-head">
+            <div class="doc-icon hotel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M3 21h18M3 7v14M21 7v14M6 11h2M6 15h2M11 11h2M11 15h2M16 11h2M16 15h2M9 3h6v4H9z"/></svg></div>
+            <div class="doc-info">
+              <div class="doc-title">Baqin Duji Boutique B&B (飞来寺店)</div>
+              <div class="doc-sub">คืนที่ 6 (29–30 ต.ค.) · วิวเทือกเขาหิมะเหมยลี่ เฟยไหลซื่อ</div>
+            </div>
+          </div>
+          <div class="doc-btns">
+            <a href="images/hotel_booking_baqin-1.jpg" onclick="event.preventDefault(); openImageModal('images/hotel_booking_baqin-1.jpg', 'เอกสารเช็กอิน Baqin Duji Boutique B&B', 'docs/巴钦都吉精品民宿(飞来寺店).pdf', ['images/hotel_booking_baqin-1.jpg']);" target="_blank" rel="noopener" class="action-btn doc-btn"><svg class="btn-icon" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v17a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg><span>เอกสารเช็กอิน</span></a>
+            <a href="https://surl.amap.com/j79yoYS1idd3" onclick="event.preventDefault(); openAmapModal('德钦巴钦都吉精品民宿', 'Baqin Duji Boutique B&B เฟยไหลซื่อ', 'https://surl.amap.com/j79yoYS1idd3');" target="_blank" rel="noopener" class="action-btn map-btn"><svg class="btn-icon" viewBox="0 0 24 24"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon><line x1="8" y1="2" x2="8" y2="18"></line><line x1="16" y1="6" x2="16" y2="22"></line></svg><span>Amap</span></a>
+          </div>
+        </div>
+
+        <!-- Hotel 7: Qiyue 2 -->
+        <div class="doc-card">
+          <div class="doc-card-head">
+            <div class="doc-icon hotel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M3 21h18M3 7v14M21 7v14M6 11h2M6 15h2M11 11h2M11 15h2M16 11h2M16 15h2M9 3h6v4H9z"/></svg></div>
+            <div class="doc-info">
+              <div class="doc-title">Qiyue Linyin Bieyuan 2 (丽江古城店)</div>
+              <div class="doc-sub">คืนที่ 7 (30–31 ต.ค.) · เมืองเก่าลี่เจียง (รอบที่ 2)</div>
+            </div>
+          </div>
+          <div class="doc-btns">
+            <a href="images/hotel_booking_qiyue_2-1.jpg" onclick="event.preventDefault(); openImageModal('images/hotel_booking_qiyue_2-1.jpg', 'เอกสารเช็กอิน Qiyue Linyin Bieyuan 2', 'docs/栖悦林隐别院(丽江古城忠义市场店) 2.pdf', ['images/hotel_booking_qiyue_2-1.jpg', 'images/hotel_booking_qiyue_2-2.jpg']);" target="_blank" rel="noopener" class="action-btn doc-btn"><svg class="btn-icon" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v17a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg><span>เอกสารเช็กอิน</span></a>
+            <a href="https://surl.amap.com/288adkVI13apU" onclick="event.preventDefault(); openAmapModal('丽江栖悦林隐别院', 'โรงแรม Qiyue Linyin Bieyuan เมืองเก่าลี่เจียง', 'https://surl.amap.com/288adkVI13apU');" target="_blank" rel="noopener" class="action-btn map-btn"><svg class="btn-icon" viewBox="0 0 24 24"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon><line x1="8" y1="2" x2="8" y2="18"></line><line x1="16" y1="6" x2="16" y2="22"></line></svg><span>Amap</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Group 2: Transport & Flight Tickets -->
+    <div>
+      <div style="display:flex; align-items:center; gap:8px; margin-bottom:14px;">
+        <span style="color:#0071E3; display:inline-flex; align-items:center;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.3c.4-.2.6-.6.5-1.1z"/></svg></span>
+        <h3 style="font-size:1.05rem; font-weight:700; color:var(--label-primary);">หลักฐานการเดินทาง (ตั๋วเครื่องบิน & ยานพาหนะ)</h3>
+      </div>
+      <div class="doc-grid">
+        <!-- Flight Departure -->
+        <div class="doc-card">
+          <div class="doc-card-head">
+            <div class="doc-icon flight"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.3c.4-.2.6-.6.5-1.1z"/></svg></div>
+            <div class="doc-info">
+              <div class="doc-title">ตั๋วเครื่องบิน ขาไป (BKK → KMG → LJG)</div>
+              <div class="doc-sub">24–25 ต.ค. · China Eastern (MU-9614 + MU-5923)</div>
+            </div>
+          </div>
+          <div class="doc-btns">
+            <a href="images/flight_ticket_departure-1.jpg" onclick="event.preventDefault(); openImageModal('images/flight_ticket_departure-1.jpg', 'E-Ticket ขาไป (BKK → KMG → LJG)', 'docs/FLIGHT%231-Nattpat%20Saripat-BKK-QXC4PT-LJG-FLIGHT_ORIGINATING.pdf', ['images/flight_ticket_departure-1.jpg', 'images/flight_ticket_departure-2.jpg', 'images/flight_ticket_departure-3.jpg']);" target="_blank" rel="noopener" class="action-btn doc-btn"><svg class="btn-icon" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v17a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg><span>E-Ticket</span></a>
+          </div>
+        </div>
+
+        <!-- Bus TLG -->
+        <div class="doc-card">
+          <div class="doc-card-head">
+            <div class="doc-icon bus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><rect x="4" y="3" width="16" height="16" rx="2"/><path d="M4 11h16M8 15h.01M16 15h.01M6 19v2M18 19v2"/></svg></div>
+            <div class="doc-info">
+              <div class="doc-title">ตั๋วรถบัส ลี่เจียง → ช่องแคบเสือกระโจน</div>
+              <div class="doc-sub">27 ต.ค. (07:35 น.) · รถ 云R26248 (2 ที่นั่ง)</div>
+            </div>
+          </div>
+          <div class="doc-btns">
+            <a href="images/bus_ticket_tlg_1.jpg" onclick="event.preventDefault(); openImageModal('images/bus_ticket_tlg_1.jpg', 'ตั๋วรถบัส 1 (云R26248)');" target="_blank" rel="noopener" class="action-btn doc-btn"><svg class="btn-icon" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v17a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg><span>ตั๋วรถบัส 1</span></a>
+            <a href="images/bus_ticket_tlg_2.jpg" onclick="event.preventDefault(); openImageModal('images/bus_ticket_tlg_2.jpg', 'ตั๋วรถบัส 2 (云R26248)');" target="_blank" rel="noopener" class="action-btn doc-btn"><svg class="btn-icon" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v17a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg><span>ตั๋วรถบัส 2</span></a>
+          </div>
+        </div>
+
+        <!-- Bus Shangri-La -->
+        <div class="doc-card">
+          <div class="doc-card-head">
+            <div class="doc-icon bus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><rect x="4" y="3" width="16" height="16" rx="2"/><path d="M4 11h16M8 15h.01M16 15h.01M6 19v2M18 19v2"/></svg></div>
+            <div class="doc-info">
+              <div class="doc-title">ตั๋วรถบัส เสือกระโจน → แชงกรี-ลา</div>
+              <div class="doc-sub">28 ต.ค. (15:30 น.) · รถ 云RX8288 (2 ที่นั่ง)</div>
+            </div>
+          </div>
+          <div class="doc-btns">
+            <a href="images/bus_ticket_shangrila_1.jpg" onclick="event.preventDefault(); openImageModal('images/bus_ticket_shangrila_1.jpg', 'ตั๋วรถบัส 1 (云RX8288)');" target="_blank" rel="noopener" class="action-btn doc-btn"><svg class="btn-icon" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v17a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg><span>ตั๋วรถบัส 1</span></a>
+            <a href="images/bus_ticket_shangrila_2.jpg" onclick="event.preventDefault(); openImageModal('images/bus_ticket_shangrila_2.jpg', 'ตั๋วรถบัส 2 (云RX8288)');" target="_blank" rel="noopener" class="action-btn doc-btn"><svg class="btn-icon" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v17a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg><span>ตั๋วรถบัส 2</span></a>
+          </div>
+        </div>
+
+        <!-- Bus Meili Go -->
+        <div class="doc-card">
+          <div class="doc-card-head">
+            <div class="doc-icon bus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><rect x="4" y="3" width="16" height="16" rx="2"/><path d="M4 11h16M8 15h.01M16 15h.01M6 19v2M18 19v2"/></svg></div>
+            <div class="doc-info">
+              <div class="doc-title">ตั๋วรถบัส แชงกรี-ลา → เหมยลี่ (ขาไป)</div>
+              <div class="doc-sub">29 ต.ค. (14:30 น.) · รถ 云R22662 (ประตูตะวันออก)</div>
+            </div>
+          </div>
+          <div class="doc-btns">
+            <a href="images/bus_ticket_meili_go.jpg" onclick="event.preventDefault(); openImageModal('images/bus_ticket_meili_go.jpg', 'ตั๋วรถบัส แชงกรี-ลา → เหมยลี่ (ขาไป)');" target="_blank" rel="noopener" class="action-btn doc-btn"><svg class="btn-icon" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v17a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg><span>ตั๋วขาไป</span></a>
+          </div>
+        </div>
+
+        <!-- Bus Meili Return -->
+        <div class="doc-card">
+          <div class="doc-card-head">
+            <div class="doc-icon bus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><rect x="4" y="3" width="16" height="16" rx="2"/><path d="M4 11h16M8 15h.01M16 15h.01M6 19v2M18 19v2"/></svg></div>
+            <div class="doc-info">
+              <div class="doc-title">ตั๋วรถบัส เหมยลี่ → แชงกรี-ลา (ขากลับ)</div>
+              <div class="doc-sub">30 ต.ค. (09:30 น.) · รถ 云R22662 (กลับตู๋เค่อจง)</div>
+            </div>
+          </div>
+          <div class="doc-btns">
+            <a href="images/bus_ticket_meili_return.jpg" onclick="event.preventDefault(); openImageModal('images/bus_ticket_meili_return.jpg', 'ตั๋วรถบัส เหมยลี่ → แชงกรี-ลา (ขากลับ)');" target="_blank" rel="noopener" class="action-btn doc-btn"><svg class="btn-icon" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v17a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg><span>ตั๋วขากลับ</span></a>
+          </div>
+        </div>
+
+        <!-- Train C88 -->
+        <div class="doc-card">
+          <div class="doc-card-head">
+            <div class="doc-icon train"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><rect x="4" y="3" width="16" height="15" rx="3"/><path d="M4 11h16M8 15h.01M16 15h.01M7 21l2-3M17 21l-2-3"/></svg></div>
+            <div class="doc-info">
+              <div class="doc-title">ตั๋วรถไฟความเร็วสูง C88 (แชงกรี-ลา → ลี่เจียง)</div>
+              <div class="doc-sub">30 ต.ค. (17:25–18:35 น.) · ขบวน C88 ตู้ 16</div>
+            </div>
+          </div>
+          <div class="doc-btns">
+            <a href="images/train_ticket_lijiang.jpg" onclick="event.preventDefault(); openImageModal('images/train_ticket_lijiang.jpg', 'ตั๋วรถไฟความเร็วสูง C88: แชงกรี-ลา → ลี่เจียง');" target="_blank" rel="noopener" class="action-btn doc-btn"><svg class="btn-icon" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v17a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg><span>ตั๋วรถไฟ C88</span></a>
+          </div>
+        </div>
+
+        <!-- Flight Return -->
+        <div class="doc-card">
+          <div class="doc-card-head">
+            <div class="doc-icon flight"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.3c.4-.2.6-.6.5-1.1z"/></svg></div>
+            <div class="doc-info">
+              <div class="doc-title">ตั๋วเครื่องบิน ขากลับ (LJG → KMG → BKK)</div>
+              <div class="doc-sub">31 ต.ค. · China Eastern (MU-5922 + MU-9621)</div>
+            </div>
+          </div>
+          <div class="doc-btns">
+            <a href="images/flight_ticket_return-1.jpg" onclick="event.preventDefault(); openImageModal('images/flight_ticket_return-1.jpg', 'E-Ticket ขากลับ (LJG → KMG → BKK)', 'docs/FLIGHT%232-Nattpat%20Saripat-BKK-QXC4PT-LJG-FLIGHT_RETURNING.pdf', ['images/flight_ticket_return-1.jpg', 'images/flight_ticket_return-2.jpg', 'images/flight_ticket_return-3.jpg']);" target="_blank" rel="noopener" class="action-btn doc-btn"><svg class="btn-icon" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v17a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg><span>E-Ticket</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
 
 
