@@ -1,4 +1,4 @@
-const CACHE_NAME = 'china-travel-2026-v104';
+const CACHE_NAME = 'china-travel-2026-v105';
 const ASSETS = [
   './',
   './index.html',
@@ -25,14 +25,23 @@ const ASSETS = [
   './images/bus_ticket_meili_return.jpg',
   './images/train_ticket_lijiang.jpg',
   './images/flight_ticket_departure-1.jpg',
+  './images/flight_ticket_departure-2.jpg',
+  './images/flight_ticket_departure-3.jpg',
   './images/flight_ticket_return-1.jpg',
+  './images/flight_ticket_return-2.jpg',
+  './images/flight_ticket_return-3.jpg',
   './images/hotel_booking_baqin-1.jpg',
   './images/hotel_booking_tenghang-1.jpg',
+  './images/hotel_booking_tenghang-2.jpg',
   './images/hotel_booking_longluohe-1.jpg',
+  './images/hotel_booking_longluohe-2.jpg',
   './images/hotel_booking_qiyue_1-1.jpg',
+  './images/hotel_booking_qiyue_1-2.jpg',
   './images/hotel_booking_summit-1.jpg',
   './images/hotel_booking_wangshan-1.jpg',
-  './images/hotel_booking_qiyue_2-1.jpg'
+  './images/hotel_booking_wangshan-2.jpg',
+  './images/hotel_booking_qiyue_2-1.jpg',
+  './images/hotel_booking_qiyue_2-2.jpg'
 ];
 
 self.addEventListener('install', e => {
